@@ -5,16 +5,58 @@ const sections = [
   { href: '/madhhab/books/', name: 'Books', blurb: 'The texts of the madhhab: mutūn, shurūḥ, ḥawāshī and fatāwā.' },
   { href: '/madhhab/interactive/', name: 'Interactive', blurb: 'The madhhab on a map, and the chains of scholars and books across history.' },
 ];
+const chain = ['Rasūlullāh ﷺ', 'ʿAbdullāh ibn Masʿūd', 'ʿAlqamah', 'Ibrāhīm al-Nakhaʿī', 'Ḥammād', 'Imām Abū Ḥanīfah'];
 ---
-<Base title="Madhhab" description="The Ḥanafī madhhab: its scholars, its books and its history.">
-  <h1>Madhhab</h1>
+<Base title="Madhhab" description="The Ḥanafī madhhab: what it is, why it matters, and its chain back to Rasūlullāh ﷺ.">
+  <h1>The Madhhab</h1>
   <hr class="rule" />
-  <!-- Replace with your own introduction on the importance of the madhhab. -->
-  <p class="lead">[Introduction: why the madhhab matters, and how knowledge has been passed down from Rasūlullāh ﷺ through an unbroken chain of scholars.]</p>
 
-  <ul class="cards" style="margin-top:28px">
+  <h2>What is a Madhhab?</h2>
+  <p>A madhhab is a framework built by a group of scholars upon a particular methodology. The Ḥanafī madhhab is the framework established by Imām Abū Ḥanīfah, his students and their companions.</p>
+  <p>The Ḥanafī methodology is a direct inheritance from the Ṣaḥābah and the Tābiʿūn: from amongst the Ṣaḥābah, ʿAbdullāh ibn Masʿūd and ʿAbdullāh ibn ʿAbbās <span class="hon">raḍiya Allāhu ʿanhumā</span>; and from amongst the Tābiʿūn, ʿAlqamah, Ibrāhīm al-Nakhaʿī, Ḥammād and, of course, Imām Abū Ḥanīfah himself.</p>
+
+  <h2>Al-Imām al-Aʿẓam</h2>
+  <p>Imām Abū Ḥanīfah <span class="hon">raḍiya Allāhu ʿanhu wa arḍāh</span> is known by the title <em>al-Imām al-Aʿẓam</em>, the Greatest Imām. Though it may seem merely honorific, the title was given because of his great character, his devotion as a worshipper of Allah subḥānahu wa taʿālā, his great trustworthiness and, most importantly, his connection to Rasūlullāh ﷺ through the ḥadīth:</p>
+  <blockquote class="quote">
+    <p class="ar">مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ</p>
+    <p>“Whomsoever Allah wishes good for, He grants him understanding (fiqh) of the religion.”</p>
+  </blockquote>
+  <p><em>Faqāhah</em> is often translated simply as “understanding.” But understanding of what? It is that deeper understanding of the fundamentals of the laws of Allah subḥānahu wa taʿālā. Imām al-Shāfiʿī <span class="hon">raḥimahullāh</span> commented on this when he said:</p>
+  <blockquote class="quote">
+    <p class="ar">النَّاسُ عِيَالٌ عَلَى أَبِي حَنِيفَةَ فِي الْفِقْهِ</p>
+    <p>“In fiqh, all people are dependants of Abū Ḥanīfah.”</p>
+  </blockquote>
+
+  <h2>Why it Matters</h2>
+  <p>As a Muslim, I need to be sure that I am following the laws of Allah subḥānahu wa taʿālā as they are, in a manner with which the Divine is pleased. For that, I need full conviction in how the law has been interpreted and explained.</p>
+  <p>By following the Ḥanafī framework, a person can have full conviction that they are walking in the footsteps of their pious predecessors, with clear and resolute guidance in their acts of worship, their dealings with others, their social matters and, ultimately, their relationship with Allah the Almighty.</p>
+
+  <h2>The Ḥanafī Chain</h2>
+  <p>The Ḥanafī chain does not begin with Imām Abū Ḥanīfah. It begins with Rasūlullāh ﷺ.</p>
+  <p>Rasūlullāh ﷺ taught his Ṣaḥābah, encouraged them to think matters through, and to ask those who knew when they did not know. In his own lifetime he raised a group of scholars from amongst the Ṣaḥābah, and among them was the famous Companion ʿAbdullāh ibn Masʿūd <span class="hon">raḍiya Allāhu ʿanhu</span>. The whole of the Ḥanafī tradition flows from him: he was the teacher of ʿAlqamah, who was the teacher of Ibrāhīm al-Nakhaʿī, who was the teacher of Ḥammād, who was the teacher of Abū Ḥanīfah.</p>
+
+  <ol class="chain">
+    {chain.map((n) => <li>{n}</li>)}
+  </ol>
+
+  <p>The chain begins with Rasūlullāh ﷺ and reaches Abū Ḥanīfah, but it does not end with him. Imām Abū Ḥanīfah <span class="hon">raḍiya Allāhu ʿanhu wa arḍāh</span> is the one who organised this inheritance into a framework, in such a way that every person after him could benefit from it and apply it in a sound and beneficial manner.</p>
+
+  <h2>Explore the Madhhab</h2>
+  <ul class="cards">
     {sections.map((s) => (
       <li><a href={s.href}><span class="name">{s.name}</span><span class="meta">{s.blurb}</span></a></li>
     ))}
   </ul>
 </Base>
+
+<style>
+  .hon { font-style: italic; color: var(--muted); }
+  .quote { text-align: center; border-left: 0; border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); padding: 14px 8px; margin: 22px 0; }
+  .quote .ar { font-size: 1.7rem; color: var(--ink); margin: 0 0 6px; line-height: 1.8; }
+  .quote p:last-child { margin: 0; font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
+  .chain { list-style: none; padding: 0; margin: 26px 0; display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .chain li { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; padding: 8px 18px; border: 1px solid var(--sand); border-radius: 8px; background: var(--card); min-width: 230px; text-align: center; }
+  .chain li:last-child { border-color: var(--gold); }
+  .chain li + li::before { content: ''; display: block; width: 2px; height: 16px; background: var(--gold); margin: -25px auto 9px; }
+  .chain li + li { margin-top: 18px; }
+</style>
