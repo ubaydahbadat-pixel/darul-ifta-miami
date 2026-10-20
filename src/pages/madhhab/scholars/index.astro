@@ -1,0 +1,16 @@
+---
+import Base from '../../../layouts/Base.astro';
+// Add each new scholar here as their page is written, in chronological order.
+const scholars = [
+  { href: '/madhhab/scholars/rasulullah/', name: 'Rasūlullāh ﷺ', meta: 'The source of the madhhab · d. 11 AH, Madīnah' },
+];
+---
+<Base title="Scholars | Madhhab">
+  <nav class="crumbs"><a href="/madhhab/">Madhhab</a></nav>
+  <h1>Scholars</h1>
+  <hr class="rule" />
+  <p class="lead">The chain of the Ḥanafī madhhab, from its source to the scholars who carried it.</p>
+  <ul class="cards">
+    {scholars.map((s) => <li><a href={s.href}><span class="name">{s.name}</span><span class="meta">{s.meta}</span></a></li>)}
+  </ul>
+</Base>
