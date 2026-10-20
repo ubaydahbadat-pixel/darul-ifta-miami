@@ -16,15 +16,15 @@ const chain = ['Rasūlullāh ﷺ', 'ʿAbdullāh ibn Masʿūd', 'ʿAlqamah', 'Ibr
   <p>The Ḥanafī methodology is a direct inheritance from the Ṣaḥābah and the Tābiʿūn: from amongst the Ṣaḥābah, ʿAbdullāh ibn Masʿūd and ʿAbdullāh ibn ʿAbbās <span class="hon">raḍiya Allāhu ʿanhumā</span>; and from amongst the Tābiʿūn, ʿAlqamah, Ibrāhīm al-Nakhaʿī, Ḥammād and, of course, Imām Abū Ḥanīfah himself.</p>
 
   <h2>Al-Imām al-Aʿẓam</h2>
-  <p>Imām Abū Ḥanīfah <span class="hon">raḍiya Allāhu ʿanhu wa arḍāh</span> is known by the title <em>al-Imām al-Aʿẓam</em>, the Greatest Imām. Though it may seem merely honorific, the title was given because of his great character, his devotion as a worshipper of Allah subḥānahu wa taʿālā, his great trustworthiness and, most importantly, his connection to Rasūlullāh ﷺ through the ḥadīth:</p>
+  <p>Imām Abū Ḥanīfah <span class="hon">raḥimahullāh</span> is known by the title <em>al-Imām al-Aʿẓam</em>, the Greatest Imām. Though it may seem merely honorific, the title was given because of his great character, his devotion as a worshipper of Allah subḥānahu wa taʿālā, his great trustworthiness and, most importantly, his connection to Rasūlullāh ﷺ through the ḥadīth:</p>
   <blockquote class="quote">
     <p class="ar">مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ</p>
-    <p>“Whomsoever Allah wishes good for, He grants him understanding (fiqh) of the religion.”</p>
+    <p>“Whomsoever Allah wishes good for, He grants him understanding (fiqh) of the religion.”<sup><a href="#fn1" id="r1">1</a></sup></p>
   </blockquote>
   <p><em>Faqāhah</em> is often translated simply as “understanding.” But understanding of what? It is that deeper understanding of the fundamentals of the laws of Allah subḥānahu wa taʿālā. Imām al-Shāfiʿī <span class="hon">raḥimahullāh</span> commented on this when he said:</p>
   <blockquote class="quote">
     <p class="ar">النَّاسُ عِيَالٌ عَلَى أَبِي حَنِيفَةَ فِي الْفِقْهِ</p>
-    <p>“In fiqh, all people are dependants of Abū Ḥanīfah.”</p>
+    <p>“In fiqh, all people are dependants of Abū Ḥanīfah.”<sup><a href="#fn2" id="r2">2</a></sup></p>
   </blockquote>
 
   <h2>Why it Matters</h2>
@@ -39,7 +39,7 @@ const chain = ['Rasūlullāh ﷺ', 'ʿAbdullāh ibn Masʿūd', 'ʿAlqamah', 'Ibr
     {chain.map((n) => <li>{n}</li>)}
   </ol>
 
-  <p>The chain begins with Rasūlullāh ﷺ and reaches Abū Ḥanīfah, but it does not end with him. Imām Abū Ḥanīfah <span class="hon">raḍiya Allāhu ʿanhu wa arḍāh</span> is the one who organised this inheritance into a framework, in such a way that every person after him could benefit from it and apply it in a sound and beneficial manner.</p>
+  <p>The chain begins with Rasūlullāh ﷺ and reaches Abū Ḥanīfah, but it does not end with him. Imām Abū Ḥanīfah <span class="hon">raḥimahullāh</span> is the one who organised this inheritance into a framework, in such a way that every person after him could benefit from it and apply it in a sound and beneficial manner.</p>
 
   <h2>Explore the Madhhab</h2>
   <ul class="cards">
@@ -47,9 +47,22 @@ const chain = ['Rasūlullāh ﷺ', 'ʿAbdullāh ibn Masʿūd', 'ʿAlqamah', 'Ibr
       <li><a href={s.href}><span class="name">{s.name}</span><span class="meta">{s.blurb}</span></a></li>
     ))}
   </ul>
+
+  <section class="notes">
+    <h2>References</h2>
+    <ol>
+      <li id="fn1">Ṣaḥīḥ al-Bukhārī, ḥadīth 71; Ṣaḥīḥ Muslim, ḥadīth 1037. <a href="#r1" aria-label="Back to text">↩</a></li>
+      <li id="fn2">Reported by al-Khaṭīb al-Baghdādī, <em>Tārīkh Baghdād</em>, in the biography of Abū Ḥanīfah; and al-Dhahabī, <em>Siyar Aʿlām al-Nubalāʾ</em>, 6:403. <a href="#r2" aria-label="Back to text">↩</a></li>
+    </ol>
+  </section>
 </Base>
 
 <style>
+  sup a { text-decoration: none; font-weight: 600; padding: 0 2px; }
+  .notes { margin-top: 48px; padding-top: 8px; border-top: 1px solid var(--sand); font-size: .92rem; color: var(--muted); }
+  .notes h2 { font-size: 1.15rem; }
+  .notes ol { padding-left: 20px; }
+  .notes li { margin: 6px 0; }
   .hon { font-style: italic; color: var(--muted); }
   .quote { text-align: center; border-left: 0; border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); padding: 14px 8px; margin: 22px 0; }
   .quote .ar { font-size: 1.7rem; color: var(--ink); margin: 0 0 6px; line-height: 1.8; }
