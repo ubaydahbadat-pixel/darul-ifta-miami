@@ -3,7 +3,7 @@
 // Where the Ask and Contact forms send their messages.
 // Sign up free at https://web3forms.com with your email, paste the access key here,
 // and every submission arrives in your inbox.
-export const FORM_ACCESS_KEY = '';
+export const FORM_ACCESS_KEY = '8c0d80fc-e0fd-40e1-8bf9-4027549e9b59';
 
 // Niṣāb figures. Update `updated`, `goldNisab` and `silverNisab` by hand for now.
 // (This will update itself automatically once the price feed is connected.)
