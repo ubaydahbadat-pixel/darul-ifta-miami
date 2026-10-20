@@ -1,27 +1,38 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="About the Methodology" description="The methodology of Darul Iftāʾ Miami.">
-  <h1>About the Methodology</h1>
+<Base title="About" description="The purpose of Darul Iftāʾ Miami and how its fatāwā are written.">
+  <h1>About Darul Iftāʾ Miami</h1>
   <hr class="rule" />
 
-  <!-- Replace each [bracketed] paragraph with your own text. -->
-  <h2>Darul Iftāʾ Miami</h2>
-  <p>[Who we are and why Darul Iftāʾ Miami was established.]</p>
+  <h2>Our Purpose</h2>
+  <p>Darul Iftāʾ Miami provides a service through which any Muslim can ask questions about acts of worship and the wider matters of daily life, and receive religious advice on how to carry out that action correctly.</p>
 
-  <h2>The Madhhab</h2>
-  <p>[The fatāwā on this site follow the Ḥanafī madhhab. Explain the reliance on the madhhab here.]</p>
+  <h2>Our Higher Aim</h2>
+  <p>Beyond answering the question itself, our aim is that every Muslim is advised in a way that helps them fulfil the responsibilities, rituals and requirements set for them by Allah the Almighty, and that they do so with good character, holding themselves to a higher moral standard in every act of worship and in every part of life.</p>
 
   <h2>How a Fatwa is Written</h2>
-  <p>Every fatwa follows the same structure:</p>
+  <p>Every fatwa follows the Ḥanafī madhhab and the same structure:</p>
   <ol>
     <li><strong>Question</strong>: the query, stated clearly.</li>
     <li><strong>Short Answer</strong>: the ruling in one or two lines.</li>
-    <li><strong>Explanation</strong>: two paragraphs from the primary Ḥanafī sources.</li>
+    <li><strong>Explanation</strong>: two paragraphs drawn from the primary Ḥanafī sources.</li>
     <li><strong>Supplementary Sources</strong>: further works supporting the primary references.</li>
     <li><strong>Ḥikmah</strong>: the wisdom behind the ruling.</li>
   </ol>
 
-  <h2>Important Note</h2>
-  <p>[A fatwa answers the question as asked. Add any notice about circumstances, and when readers should ask directly.]</p>
+  <h2>Disclaimer</h2>
+  <div class="disclaimer">
+    <p>The answers published by Darul Iftāʾ Miami are religious advice only. Each answer is based solely on the information provided in the question, and may not apply where the circumstances differ.</p>
+    <p>Darul Iftāʾ Miami accepts no liability or responsibility for any action taken, or not taken, on the basis of its answers. Our answers are not legal, medical, financial or other professional advice.</p>
+    <p>What we convey is offered sincerely, in the hope that it helps the questioner in their relationship with Allah subḥānahu wa taʿālā.</p>
+  </div>
+
+  <p class="dua">We ask Allah subḥānahu wa taʿālā to accept Darul Iftāʾ Miami, to accept it as a service, and to place barakah in it. <span class="ar">آمين</span></p>
 </Base>
+
+<style>
+  .disclaimer { background: var(--card); border: 1px solid var(--sand); border-left: 3px solid var(--gold); border-radius: 8px; padding: 6px 18px; font-size: .97rem; }
+  .dua { font-family: var(--serif); font-size: 1.25rem; text-align: center; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--sand); }
+  .dua .ar { font-family: var(--arabic); }
+</style>
