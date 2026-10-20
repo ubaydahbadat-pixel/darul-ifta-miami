@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import FatwaList from '../../components/FatwaList.astro';
+import { categories } from '../../data/categories';
+import { getFatawa } from '../../data/fatawa';
+
+const fatawa = await getFatawa();
+// Only show categories that have at least one fatwa.
+const withCounts = categories
+  .map((c) => ({ ...c, count: fatawa.filter((f) => f.data.category === c.id).length }))
+  .filter((c) => c.count > 0);
+---
+<Base title="Fatāwā" description="Fatāwā according to the Ḥanafī madhhab, by category.">
+  <h1>Fatāwā</h1>
+  <hr class="rule" />
+  <p class="lead">Answers according to the Ḥanafī madhhab, arranged in the order of the books of fiqh.</p>
+
+  <h2>Categories</h2>
+  {withCounts.length ? (
+    <ul class="cards">
+      {withCounts.map((c) => (
+        <li><a href={`/fatawa/${c.id}/`}>
+          <span class="count">{c.count} {c.count === 1 ? 'fatwa' : 'fatāwā'}</span>
+          <span class="name">{c.name}</span>
+          <span class="meta">{c.blurb}</span>
+        </a></li>
+      ))}
+    </ul>
+  ) : <p class="empty">The first fatāwā will be published soon.</p>}
+
+  {fatawa.length > 0 && <>
+    <h2 style="margin-top:2em">Latest</h2>
+    <FatwaList items={fatawa.slice(0, 10)} showPath />
+  </>}
+</Base>

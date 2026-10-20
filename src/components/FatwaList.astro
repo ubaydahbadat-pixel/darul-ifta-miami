@@ -1,0 +1,19 @@
+---
+import { fatwaUrl, formatDate, type Fatwa } from '../data/fatawa';
+import { categoryName } from '../data/categories';
+interface Props { items: Fatwa[]; showPath?: boolean; }
+const { items, showPath = false } = Astro.props;
+---
+<ul class="cards">
+  {items.map((f) => (
+    <li>
+      <a href={fatwaUrl(f)}>
+        <span class="name">{f.data.title}</span>
+        <span class="meta">
+          {showPath && <>{categoryName(f.data.category)} · {f.data.topic} · </>}
+          {formatDate(f.data.date)}
+        </span>
+      </a>
+    </li>
+  ))}
+</ul>

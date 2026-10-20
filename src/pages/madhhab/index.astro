@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+const sections = [
+  { href: '/madhhab/scholars/', name: 'Scholars', blurb: 'From Rasūlullāh ﷺ through the Companions of Kufa to Imām Abū Ḥanīfah and his students.' },
+  { href: '/madhhab/books/', name: 'Books', blurb: 'The texts of the madhhab: mutūn, shurūḥ, ḥawāshī and fatāwā.' },
+  { href: '/madhhab/interactive/', name: 'Interactive', blurb: 'The madhhab on a map, and the chains of scholars and books across history.' },
+];
+---
+<Base title="Madhhab" description="The Ḥanafī madhhab: its scholars, its books and its history.">
+  <h1>Madhhab</h1>
+  <hr class="rule" />
+  <!-- Replace with your own introduction on the importance of the madhhab. -->
+  <p class="lead">[Introduction: why the madhhab matters, and how knowledge has been passed down from Rasūlullāh ﷺ through an unbroken chain of scholars.]</p>
+
+  <ul class="cards" style="margin-top:28px">
+    {sections.map((s) => (
+      <li><a href={s.href}><span class="name">{s.name}</span><span class="meta">{s.blurb}</span></a></li>
+    ))}
+  </ul>
+</Base>

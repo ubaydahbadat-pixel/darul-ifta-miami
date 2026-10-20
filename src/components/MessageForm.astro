@@ -1,0 +1,36 @@
+---
+import { FORM_ACCESS_KEY } from '../data/site';
+import { categories } from '../data/categories';
+interface Props { kind: 'ask' | 'contact'; }
+const { kind } = Astro.props;
+const subject = kind === 'ask' ? 'New question — Darul Iftāʾ Miami' : 'New message — Darul Iftāʾ Miami';
+---
+<form action="https://api.web3forms.com/submit" method="POST" class="msg-form">
+  <input type="hidden" name="access_key" value={FORM_ACCESS_KEY} />
+  <input type="hidden" name="subject" value={subject} />
+  <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+  <label for="name">Name</label>
+  <input id="name" name="name" autocomplete="name" />
+
+  <label for="email">Email <span aria-hidden="true">*</span></label>
+  <input id="email" name="email" type="email" required autocomplete="email" />
+
+  {kind === 'ask' && <>
+    <label for="category">Topic</label>
+    <select id="category" name="category">
+      {categories.map((c) => <option>{c.name}</option>)}
+      <option>Other</option>
+    </select>
+  </>}
+
+  <label for="message">{kind === 'ask' ? 'Your question' : 'Message'} <span aria-hidden="true">*</span></label>
+  <textarea id="message" name="message" required></textarea>
+
+  <p style="margin-top:20px"><button class="button" type="submit">{kind === 'ask' ? 'Submit Question' : 'Send Message'}</button></p>
+  {!FORM_ACCESS_KEY && <p class="setup">Form not connected yet: add the access key in <code>src/data/site.ts</code>.</p>}
+</form>
+
+<style>
+  .setup { font-size: .85rem; color: #9a3412; }
+</style>

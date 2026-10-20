@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+
+interface Props { title?: string; description?: string; }
+const { title, description = 'Fatāwā and guidance according to the Ḥanafī madhhab. Rooted in Scholarship. Serving South Florida.' } = Astro.props;
+const fullTitle = title ? `${title} | Darul Iftāʾ Miami` : 'Darul Iftāʾ Miami';
+
+// The main menu. Reorder or rename items here.
+const menu = [
+  { href: '/fatawa/', label: 'Fatāwā' },
+  { href: '/madhhab/', label: 'Madhhab' },
+  { href: '/articles/', label: 'Articles' },
+  { href: '/nisab/', label: 'Niṣāb Calculation' },
+  { href: '/ask/', label: 'Ask' },
+  { href: '/about/', label: 'About' },
+  { href: '/contact/', label: 'Contact Us' },
+];
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=EB+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="bar">
+      <a href="/" class="brand" aria-label="Darul Iftāʾ Miami — home">
+        <img src="/logo.svg" alt="Darul Iftāʾ Miami" width="84" height="68" />
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav">
+        <ul>
+          {menu.map((m) => (
+            <li><a href={m.href} aria-current={path.startsWith(m.href) ? 'page' : undefined}>{m.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap"><slot /></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="tag">Rooted in Scholarship. Serving South Florida.</p>
+      <p>© {new Date().getFullYear()} <span class="ar">دار الإفتاء ميامي</span> · Darul Iftāʾ Miami · All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('site-nav');
+    btn?.addEventListener('click', () => {
+      const open = nav!.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+  </script>
+</body>
+</html>
+
+<style>
+  .site-header { background: var(--cream); border-bottom: 1px solid var(--sand); position: sticky; top: 0; z-index: 10; }
+  .bar { max-width: 1100px; margin: 0 auto; padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; }
+  .brand img { height: 64px; width: auto; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; }
+  nav a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: .98rem; padding: 6px 0; border-bottom: 2px solid transparent; }
+  nav a:hover, nav a[aria-current='page'] { color: var(--teal); border-bottom-color: var(--gold); }
+  .menu-toggle { display: none; background: none; border: 0; padding: 10px; cursor: pointer; }
+  .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; }
+
+  @media (max-width: 900px) {
+    .menu-toggle { display: block; }
+    nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--cream); border-bottom: 1px solid var(--sand); }
+    nav.open { display: block; }
+    nav ul { flex-direction: column; gap: 0; padding: 8px 16px 16px; }
+    nav li { border-top: 1px solid var(--sand); }
+    nav a { display: block; padding: 14px 0; font-size: 1.1rem; border-bottom: 0; }
+  }
+
+  .site-footer { border-top: 1px solid var(--sand); padding: 28px 0; font-size: .9rem; color: var(--muted); text-align: center; }
+  .site-footer .tag { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); margin-bottom: 4px; }
+</style>

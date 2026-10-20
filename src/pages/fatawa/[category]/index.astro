@@ -1,0 +1,36 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { categories } from '../../../data/categories';
+import { getFatawa, topicSlug } from '../../../data/fatawa';
+
+export async function getStaticPaths() {
+  const fatawa = await getFatawa();
+  return categories
+    .filter((c) => fatawa.some((f) => f.data.category === c.id))
+    .map((c) => ({ params: { category: c.id }, props: { category: c } }));
+}
+
+const { category } = Astro.props;
+const fatawa = (await getFatawa()).filter((f) => f.data.category === category.id);
+
+// Group into topics, A–Z.
+const topics = [...new Map(fatawa.map((f) => [topicSlug(f), f.data.topic])).entries()]
+  .map(([slug, name]) => ({ slug, name, count: fatawa.filter((f) => topicSlug(f) === slug).length }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+<Base title={category.name} description={`Fatāwā on ${category.name}: ${category.blurb}.`}>
+  <nav class="crumbs"><a href="/fatawa/">Fatāwā</a></nav>
+  <h1>{category.name}</h1>
+  <hr class="rule" />
+  <p class="lead">{category.blurb}</p>
+
+  <h2>Topics</h2>
+  <ul class="cards">
+    {topics.map((t) => (
+      <li><a href={`/fatawa/${category.id}/${t.slug}/`}>
+        <span class="count">{t.count} {t.count === 1 ? 'fatwa' : 'fatāwā'}</span>
+        <span class="name">{t.name}</span>
+      </a></li>
+    ))}
+  </ul>
+</Base>

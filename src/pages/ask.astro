@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import MessageForm from '../components/MessageForm.astro';
+---
+<Base title="Ask a Question" description="Submit a question to Darul Iftāʾ Miami.">
+  <h1>Ask a Question</h1>
+  <hr class="rule" />
+  <p class="lead">Submit your question and it will be answered according to the Ḥanafī madhhab. Selected questions may be published on the site without any identifying details.</p>
+  <p>Before asking, you may find your answer already in the <a href="/fatawa/">Fatāwā</a>.</p>
+  <MessageForm kind="ask" />
+</Base>

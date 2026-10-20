@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { formatDate } from '../../data/fatawa';
+const articles = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base title="Articles">
+  <h1>Articles</h1>
+  <hr class="rule" />
+  {articles.length ? (
+    <ul class="cards">
+      {articles.map((a) => (
+        <li><a href={`/articles/${a.id}/`}>
+          <span class="name">{a.data.title}</span>
+          <span class="meta">{formatDate(a.data.date)}{a.data.summary && <> · {a.data.summary}</>}</span>
+        </a></li>
+      ))}
+    </ul>
+  ) : <p class="empty">The first articles will be published soon.</p>}
+</Base>

@@ -1,2 +1,73 @@
-# darul-ifta-miami
-Darul Ifta Website 
+# Darul Iftāʾ Miami
+
+The website of Darul Iftāʾ Miami, built with Astro and hosted on Cloudflare Pages.
+
+## Posting a new fatwa
+
+1. On GitHub, open `src/content/fatawa/` and then the category folder (for example `salah`).
+2. Select **Add file → Create new file**.
+3. Name the file after the fatwa's short link, ending in `.md`. For example: `fifth-rakah-asr.md`.
+4. Paste in this template, fill it from your Google Doc, and select **Commit changes**.
+
+```
+---
+title: "Standing for a fifth rakʿah in ʿAṣr"
+category: salah
+topic: "Sajdah al-Sahw"
+date: 2026-10-21
+---
+
+## Question
+
+...
+
+## Short Answer
+
+...
+
+## Explanation
+
+...
+
+...
+
+## Supplementary Sources
+
+...
+
+## Ḥikmah
+
+...
+
+---
+
+*And Allah knows best.*
+
+**Answered by:** Mufti Ubaydah
+```
+
+The site rebuilds itself within a minute or two, and the fatwa appears at:
+`/fatawa/<category>/<topic>/<file name>/`
+
+**Category** must be one of: `taharah`, `salah`, `sawm`, `zakah`, `hajj-umrah`, `udhiyah`, `muamalat`, `nikah`.
+
+**Topic** is written normally, with diacritics. Writing the same topic again files the fatwa under the existing topic. A new topic creates a new topic page automatically.
+
+To hold a fatwa back without deleting it, add `draft: true` under the date.
+
+To attach a PDF, upload it to `public/pdf/` and add `pdf: "/pdf/file-name.pdf"` under the date. A **Download PDF** button will appear.
+
+## Other things you can edit
+
+- **Niṣāb figures and Ṣadaqat al-Fiṭr:** `src/data/site.ts`
+- **Menu:** `src/layouts/Base.astro`, the `menu` list near the top
+- **Colours:** `src/styles/global.css`, at the top
+- **Categories:** `src/data/categories.ts`
+- **About and Madhhab text:** `src/pages/about.astro`, `src/pages/madhhab/index.astro`
+- **Articles:** add `.md` files to `src/content/articles/` with `title:` and `date:` at the top
+
+## Cloudflare Pages settings
+
+- Framework preset: **Astro**
+- Build command: `npm run build`
+- Output directory: `dist`

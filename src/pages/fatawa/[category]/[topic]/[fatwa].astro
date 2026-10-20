@@ -1,0 +1,41 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import { render } from 'astro:content';
+import { categoryName } from '../../../../data/categories';
+import { getFatawa, topicSlug, fatwaSlug, formatDate } from '../../../../data/fatawa';
+
+export async function getStaticPaths() {
+  const fatawa = await getFatawa();
+  return fatawa.map((f) => ({
+    params: { category: f.data.category, topic: topicSlug(f), fatwa: fatwaSlug(f) },
+    props: { entry: f },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, category, topic, date, pdf } = entry.data;
+const catName = categoryName(category);
+---
+<Base title={title} description={`${catName} · ${topic}: ${title}`}>
+  <nav class="crumbs">
+    <a href="/fatawa/">Fatāwā</a><span>›</span>
+    <a href={`/fatawa/${category}/`}>{catName}</a><span>›</span>
+    <a href={`/fatawa/${category}/${topicSlug(entry)}/`}>{topic}</a>
+  </nav>
+  <h1>{title}</h1>
+  <p class="meta-line">{formatDate(date)}</p>
+  <hr class="rule" />
+
+  <article class="fatwa"><Content /></article>
+
+  <div class="actions">
+    {pdf && <a class="button" href={pdf} download>Download PDF</a>}
+    <a class="button ghost" href="/ask/">Ask a question</a>
+  </div>
+</Base>
+
+<style>
+  .meta-line { color: var(--muted); margin: 0; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--sand); }
+</style>

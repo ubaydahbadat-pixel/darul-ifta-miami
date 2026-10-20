@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import FatwaList from '../components/FatwaList.astro';
+import { getFatawa } from '../data/fatawa';
+import { nisab } from '../data/site';
+
+const latest = (await getFatawa()).slice(0, 5);
+const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+---
+<Base>
+  <section class="hero center">
+    <img src="/logo.svg" alt="Darul Iftāʾ Miami" class="hero-logo" width="320" height="258" />
+    <h1>Rooted in Scholarship.<br />Serving South Florida.</h1>
+    <hr class="rule" />
+    <p class="lead">Fatāwā and guidance according to the Ḥanafī madhhab.</p>
+    <div class="cta">
+      <a class="button" href="/fatawa/">Browse Fatāwā</a>
+      <a class="button ghost" href="/ask/">Ask a Question</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Latest Fatāwā</h2>
+    {latest.length ? <FatwaList items={latest} showPath /> : <p class="empty">The first fatāwā will be published soon.</p>}
+    {latest.length > 0 && <p><a href="/fatawa/">All fatāwā →</a></p>}
+  </section>
+
+  <section class="split">
+    <a class="panel" href="/nisab/">
+      <span class="label">Today's Zakāh Niṣāb</span>
+      <span class="figure">{usd(nisab.silverNisab)} <small>silver</small></span>
+      <span class="figure">{usd(nisab.goldNisab)} <small>gold</small></span>
+      <span class="more">Niṣāb Calculation →</span>
+    </a>
+    <a class="panel" href="/madhhab/">
+      <span class="label">The Madhhab</span>
+      <span class="body">The scholars, the books, and the chain from Rasūlullāh ﷺ to Imām Abū Ḥanīfah and beyond.</span>
+      <span class="more">Explore →</span>
+    </a>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: 8px 0 40px; }
+  .hero-logo { width: min(280px, 70vw); height: auto; margin: 0 auto 20px; }
+  .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+  section + section { margin-top: 48px; }
+  .split { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .split { grid-template-columns: 1fr 1fr; } }
+  .panel { display: flex; flex-direction: column; gap: 6px; padding: 22px; background: var(--card); border: 1px solid var(--sand); border-top: 3px solid var(--gold); border-radius: 10px; text-decoration: none; color: var(--ink); }
+  .panel:hover { border-color: var(--teal); border-top-color: var(--gold); }
+  .label { font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+  .figure { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; }
+  .figure small { font-family: var(--sans); font-size: .9rem; color: var(--muted); font-weight: 400; }
+  .body { font-family: var(--serif); font-size: 1.2rem; }
+  .more { color: var(--teal); font-weight: 600; margin-top: auto; padding-top: 8px; }
+</style>

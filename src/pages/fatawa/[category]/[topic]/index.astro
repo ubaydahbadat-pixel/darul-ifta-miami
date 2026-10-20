@@ -1,0 +1,29 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import FatwaList from '../../../../components/FatwaList.astro';
+import { categoryName } from '../../../../data/categories';
+import { getFatawa, topicSlug } from '../../../../data/fatawa';
+
+export async function getStaticPaths() {
+  const fatawa = await getFatawa();
+  const seen = new Map();
+  for (const f of fatawa) {
+    const key = `${f.data.category}/${topicSlug(f)}`;
+    if (!seen.has(key)) seen.set(key, { params: { category: f.data.category, topic: topicSlug(f) }, props: { topicName: f.data.topic } });
+  }
+  return [...seen.values()];
+}
+
+const { category, topic } = Astro.params;
+const { topicName } = Astro.props;
+const items = (await getFatawa()).filter((f) => f.data.category === category && topicSlug(f) === topic);
+const catName = categoryName(category!);
+---
+<Base title={`${topicName} | ${catName}`} description={`Fatāwā on ${topicName}.`}>
+  <nav class="crumbs">
+    <a href="/fatawa/">Fatāwā</a><span>›</span><a href={`/fatawa/${category}/`}>{catName}</a>
+  </nav>
+  <h1>{topicName}</h1>
+  <hr class="rule" />
+  <FatwaList items={items} />
+</Base>

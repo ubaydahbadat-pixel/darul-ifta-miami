@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import { nisab, fitr } from '../data/site';
+
+const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+const ratio = (nisab.goldNisab / nisab.goldGrams) / (nisab.silverNisab / nisab.silverGrams);
+const updated = new Date(nisab.updated + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+<Base title="Niṣāb Calculation" description="Today's Zakāh niṣāb in US dollars, and this year's Ṣadaqat al-Fiṭr.">
+  <h1>Niṣāb Calculation</h1>
+  <hr class="rule" />
+
+  <section class="box">
+    <h2>Current Zakāh Niṣāb</h2>
+    <p class="muted">Updated: <strong>{updated}</strong></p>
+    <div class="tiles">
+      <div class="tile gold"><span class="k">Gold Niṣāb ({nisab.goldGrams}g)</span><span class="v">{usd(nisab.goldNisab)}</span></div>
+      <div class="tile"><span class="k">Silver Niṣāb ({nisab.silverGrams}g)</span><span class="v">{usd(nisab.silverNisab)}</span></div>
+    </div>
+
+    <h3>The Gold–Silver Ratio</h3>
+    <dl class="ratio">
+      <dt>Prophetic era</dt><dd>7 : 1</dd>
+      <dt>Today's market</dt><dd>{ratio.toFixed(1)} : 1</dd>
+    </dl>
+    <p class="note">In the Prophetic era, the value of the gold niṣāb and the silver niṣāb were nearly equal. Today, gold's value relative to silver has increased about {Math.round(ratio / 7)}-fold.</p>
+  </section>
+
+  <section class="box">
+    <h2>Ṣadaqat al-Fiṭr <span class="muted small">({fitr.year})</span></h2>
+    {fitr.amountPerPerson
+      ? <p class="v">{usd(fitr.amountPerPerson)} <span class="muted small">per person</span></p>
+      : <p class="muted">This year's amount will be announced before Ramaḍān.</p>}
+    {fitr.note && <p>{fitr.note}</p>}
+  </section>
+</Base>
+
+<style>
+  .box { background: var(--card); border: 1px solid var(--sand); border-radius: 12px; padding: 22px; }
+  .box + .box { margin-top: 20px; }
+  .muted { color: var(--muted); }
+  .small { font-size: .9rem; font-family: var(--sans); font-weight: 400; }
+  .tiles { display: grid; gap: 12px; margin: 16px 0 24px; }
+  @media (min-width: 560px) { .tiles { grid-template-columns: 1fr 1fr; } }
+  .tile { border: 1px solid var(--sand); border-radius: 10px; padding: 16px; text-align: center; background: var(--cream); }
+  .tile.gold { border-color: var(--gold); }
+  .k { display: block; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+  .v { display: block; font-family: var(--serif); font-size: 2rem; font-weight: 600; margin: 0; }
+  .ratio { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; margin: 0 0 12px; }
+  .ratio dd { margin: 0; font-weight: 600; color: var(--teal); }
+  .note { font-size: .92rem; color: var(--muted); border-top: 1px dashed var(--sand); padding-top: 12px; }
+</style>
