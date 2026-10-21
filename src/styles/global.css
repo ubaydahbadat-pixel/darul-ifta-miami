@@ -77,6 +77,37 @@ main { padding: 32px 0 64px; }
 .fatwa h2:first-child { margin-top: 0; }
 .fatwa blockquote { margin: 1em 0; padding: 4px 18px; border-left: 3px solid var(--gold); color: var(--muted); }
 
+/* Short answer: always visible, highlighted */
+.fatwa .short-answer {
+  background: var(--card); border: 1px solid var(--gold); border-radius: 10px;
+  padding: 16px 20px; margin: 28px 0 20px;
+}
+.fatwa .short-answer h2 {
+  margin: 0 0 6px; padding: 0; border: 0; font-size: .82rem; font-family: var(--sans);
+  text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+}
+.fatwa .short-answer p { font-family: var(--serif); font-size: 1.3rem; line-height: 1.45; margin: 0; }
+
+/* Dropdown sections */
+.fatwa details.drop { border-bottom: 1px solid var(--sand); }
+.fatwa details.drop:first-of-type { border-top: 1px solid var(--sand); }
+.fatwa details.drop summary {
+  list-style: none; cursor: pointer; padding: 16px 2px;
+  font-family: var(--serif); font-size: 1.3rem; font-weight: 600;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.fatwa details.drop summary::-webkit-details-marker { display: none; }
+.fatwa details.drop summary::after {
+  content: '+'; font-family: var(--sans); font-weight: 400; font-size: 1.5rem; color: var(--teal); line-height: 1;
+}
+.fatwa details.drop[open] summary::after { content: '−'; }
+.fatwa .drop-body { padding: 0 2px 18px; }
+.fatwa .drop-body h3 { font-size: 1rem; font-family: var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--teal); margin: 8px 0 6px; }
+.fatwa .drop-body h3 ~ h3 { margin-top: 22px; }
+
+/* Arabic paragraphs (detected automatically) */
+.fatwa .ar-text { font-family: var(--arabic); font-size: 1.35rem; line-height: 2; text-align: right; }
+
 /* Forms */
 label { display: block; font-weight: 600; margin: 16px 0 6px; }
 input, select, textarea {
@@ -85,3 +116,5 @@ input, select, textarea {
 }
 input:focus, select:focus, textarea:focus { outline: 2px solid var(--teal); border-color: var(--teal); }
 textarea { min-height: 160px; }
+
+.fatwa hr { border: 0; margin: 22px 0 0; }

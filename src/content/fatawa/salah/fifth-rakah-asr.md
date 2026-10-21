@@ -7,28 +7,38 @@ date: 2026-10-21
 
 ## Question
 
-A person in the fourth rakʿah of ʿAṣr stood up and began a fifth rakʿah. Do they have to repeat the whole ṣalāh?
+An imām was leading ʿAṣr. In the fourth rakʿah, he thought he was in the second rakʿah, so he stood up and prayed two more rakʿahs. No one behind him corrected him. At the end of those two rakʿahs, he made salām and turned around to face the congregation for duʿāʾ.
+
+Is sajdah al-sahw enough in this case, or does the whole ṣalāh have to be repeated?
 
 ## Short Answer
 
-[Write the short answer here — the ruling in one or two lines.]
+[The ruling in one line.]
 
 ## Explanation
 
-[First paragraph: the ruling and its evidence from the primary Ḥanafī sources.]
+### Primary Ḥanafī Sources
 
-[Second paragraph: the conditions, details and practical application, from the primary Ḥanafī sources.]
+[First paragraph from the primary Ḥanafī sources.]
 
-## Supplementary Sources
+[Second paragraph from the primary Ḥanafī sources.]
 
-[One paragraph of supplementary sources supporting the primary references.]
+### Supplementary Sources
+
+[One paragraph of supplementary sources.]
 
 ## Ḥikmah
 
-[The wisdom behind the ruling and a short reminder for the reader.]
+[The wisdom behind the ruling.]
+
+## References
+
+[Arabic reference text goes here, one paragraph per reference.]
+
+— [Book title, volume:page]
 
 ---
 
 *And Allah knows best.*
 
-**Answered by:** Mufti Ubaydah
+**Answered by:** Mufti Ubaydah Badat

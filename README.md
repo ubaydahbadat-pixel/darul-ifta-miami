@@ -27,11 +27,13 @@ date: 2026-10-21
 
 ## Explanation
 
-...
+### Primary Ḥanafī Sources
 
 ...
 
-## Supplementary Sources
+...
+
+### Supplementary Sources
 
 ...
 
@@ -39,12 +41,18 @@ date: 2026-10-21
 
 ...
 
+## References
+
+...
+
 ---
 
 *And Allah knows best.*
 
-**Answered by:** Mufti Ubaydah
+**Answered by:** Mufti Ubaydah Badat
 ```
+
+On the page, the Question and Short Answer always show. **Explanation**, **Ḥikmah** and **References** become tap-to-open dropdowns. Any paragraph that starts in Arabic is set right-to-left automatically.
 
 The site rebuilds itself within a minute or two, and the fatwa appears at:
 `/fatawa/<category>/<topic>/<file name>/`
