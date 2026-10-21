@@ -3,8 +3,9 @@ import Base from '../layouts/Base.astro';
 import { nisab, fitr } from '../data/site';
 
 const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-const ratio = (nisab.goldNisab / nisab.goldGrams) / (nisab.silverNisab / nisab.silverGrams);
-const updated = new Date(nisab.updated + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const ratio = nisab.goldPerOz / nisab.silverPerOz;
+const updated = new Date(nisab.date + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const auto = nisab.source !== 'Entered by hand';
 ---
 <Base title="Niṣāb Calculation" description="Today's Zakāh niṣāb in US dollars, and this year's Ṣadaqat al-Fiṭr.">
   <h1>Niṣāb Calculation</h1>
@@ -12,7 +13,8 @@ const updated = new Date(nisab.updated + 'T12:00:00Z').toLocaleDateString('en-US
 
   <section class="box">
     <h2>Current Zakāh Niṣāb</h2>
-    <p class="muted">Updated: <strong>{updated}</strong></p>
+    <p class="muted">Updated: <strong>{updated}{auto && ', 5:00 pm (Eastern)'}</strong></p>
+    <p class="muted small-note">Based on the spot price of gold and silver in US dollars, updated automatically every day at 5 pm.</p>
     <div class="tiles">
       <div class="tile gold"><span class="k">Gold Niṣāb ({nisab.goldGrams}g)</span><span class="v">{usd(nisab.goldNisab)}</span></div>
       <div class="tile"><span class="k">Silver Niṣāb ({nisab.silverGrams}g)</span><span class="v">{usd(nisab.silverNisab)}</span></div>
@@ -39,6 +41,7 @@ const updated = new Date(nisab.updated + 'T12:00:00Z').toLocaleDateString('en-US
   .box { background: var(--card); border: 1px solid var(--sand); border-radius: 12px; padding: 22px; }
   .box + .box { margin-top: 20px; }
   .muted { color: var(--muted); }
+  .small-note { font-size: .85rem; margin-top: -6px; }
   .small { font-size: .9rem; font-family: var(--sans); font-weight: 400; }
   .tiles { display: grid; gap: 12px; margin: 16px 0 24px; }
   @media (min-width: 560px) { .tiles { grid-template-columns: 1fr 1fr; } }

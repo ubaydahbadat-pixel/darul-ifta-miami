@@ -5,15 +5,10 @@
 // and every submission arrives in your inbox.
 export const FORM_ACCESS_KEY = '8c0d80fc-e0fd-40e1-8bf9-4027549e9b59';
 
-// Niṣāb figures. Update `updated`, `goldNisab` and `silverNisab` by hand for now.
-// (This will update itself automatically once the price feed is connected.)
-export const nisab = {
-  updated: '2026-10-20',
-  goldGrams: 87.48,
-  silverGrams: 612.36,
-  goldNisab: 13191.98,
-  silverNisab: 1445.17,
-};
+// Niṣāb figures are updated automatically every day at 5 pm New York time
+// (scripts/update-nisab.mjs, run by .github/workflows/nisab.yml). Do not edit src/data/nisab.json by hand.
+import nisabData from './nisab.json';
+export const nisab = nisabData;
 
 // Ṣadaqat al-Fiṭr. Set once a year before Ramaḍān.
 export const fitr = {

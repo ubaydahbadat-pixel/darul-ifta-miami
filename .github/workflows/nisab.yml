@@ -1,0 +1,38 @@
+# Updates the Zakāh niṣāb every day at 5 pm New York time.
+# GitHub schedules in UTC, so this runs at 21:00, 22:00 and 23:00 UTC; the script only updates
+# once per day, after 5 pm New York time, which handles summer and winter time automatically.
+name: Daily niṣāb update
+
+on:
+  schedule:
+    - cron: '0 21,22,23 * * *'
+  workflow_dispatch: {}   # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nisab
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch prices and update niṣāb
+        run: node scripts/update-nisab.mjs ${{ github.event_name == 'workflow_dispatch' && '--force' || '' }}
+      - name: Save if changed
+        run: |
+          if git diff --quiet src/data/nisab.json; then
+            echo "No change."
+          else
+            git config user.name "nisab-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/data/nisab.json
+            git commit -m "Daily niṣāb update $(date -u +%Y-%m-%d)"
+            git push
+          fi
