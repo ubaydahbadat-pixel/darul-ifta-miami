@@ -89,7 +89,7 @@ collections:
         required: false
       # 8. Ḥikmah
       - name: hikmah
-        label: Ḥikmah
+        label: "Wisdom of the Ruling (Ḥikmah)"
         widget: text
         required: false
       # 9. References

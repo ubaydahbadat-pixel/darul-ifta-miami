@@ -16,7 +16,7 @@ Use the submission form at **/admin** on the site (for example `https://darul-if
 - **Category**, **Topic** (same spelling as before to join an existing topic), **Title** (also becomes the link).
 - **Question**, **Short Answer**.
 - **Explanation — Primary Ḥanafī Sources** and **Explanation — Supplementary Sources**.
-- **Ḥikmah**.
+- **Wisdom of the Ruling (Ḥikmah)**.
 - **References**: **Add Reference** for each source — the book and page, the language, and the full text.
 - **Draft** is on by default, so a new fatwa stays hidden. Switch it off and save again to publish.
 
