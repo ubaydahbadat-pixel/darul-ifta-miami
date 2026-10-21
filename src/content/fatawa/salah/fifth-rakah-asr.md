@@ -7,9 +7,13 @@ date: 2026-10-21
 
 ## Question
 
-An imām was leading ʿAṣr. In the fourth rakʿah, he thought he was in the second rakʿah, so he stood up and prayed two more rakʿahs. No one behind him corrected him. At the end of those two rakʿahs, he made salām and turned around to face the congregation for duʿāʾ.
+An Imām was leading the ʿAṣr ṣalāh. Upon reaching the fourth rakʿah, he mistakenly believed that he was only in the second rakʿah. Consequently, he stood up and performed two additional rakʿahs, completing a total of six rakʿahs instead of four.
 
-Is sajdah al-sahw enough in this case, or does the whole ṣalāh have to be repeated?
+None of the congregants corrected him during the ṣalāh.
+
+After completing the sixth rakʿah, the Imām made salām, turned around to face the congregation, and began preparing for duʿāʾ.
+
+In this situation, would the Imām still be permitted to perform Sajdat al-Sahw to rectify the mistake, or would the entire ṣalāh need to be repeated?
 
 ## Short Answer
 
