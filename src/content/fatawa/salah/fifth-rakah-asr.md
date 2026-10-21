@@ -33,9 +33,15 @@ Is sajdah al-sahw enough in this case, or does the whole ṣalāh have to be rep
 
 ## References
 
-[Arabic reference text goes here, one paragraph per reference.]
+### 1. [Primary source: book title, volume:page]
 
-— [Book title, volume:page]
+[The full Arabic text of the passage. It can be one sentence or an entire bāb, over as many paragraphs as needed.]
+
+[Next paragraph of the same passage.]
+
+### 2. [Supplementary source: book title, volume:page]
+
+[The full Arabic text of the explanation, in its entirety.]
 
 ---
 

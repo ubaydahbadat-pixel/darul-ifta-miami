@@ -118,3 +118,11 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--teal); bord
 textarea { min-height: 160px; }
 
 .fatwa hr { border: 0; margin: 22px 0 0; }
+
+/* References: one block per source, any length */
+.fatwa details.drop:last-of-type .drop-body h3 {
+  text-transform: none; letter-spacing: 0; font-family: var(--serif); font-size: 1.1rem; color: var(--ink);
+  padding-top: 16px; border-top: 1px solid var(--sand);
+}
+.fatwa details.drop:last-of-type .drop-body h3:first-child { border-top: 0; padding-top: 0; }
+.fatwa .drop-body .ar-text + .ar-text { margin-top: -4px; }
