@@ -17,7 +17,7 @@ In this situation, would the Imām still be permitted to perform Sajdat al-Sahw 
 
 ## Short Answer
 
-[The ruling in one line.]
+If the Imām has not spoken, he should turn back around, perform Sajdat al-Sahw, and the ṣalāh will be valid. If the Imām has spoken or left the masjid, the ṣalāh will be invalid.
 
 ## Explanation
 
