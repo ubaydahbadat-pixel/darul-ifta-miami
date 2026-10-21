@@ -24,7 +24,8 @@ Every fatwa is formulated from the juristic principles (uṣūl) as presented by
 ## Reference text conventions
 
 - Include the **full text** of every source used — a sentence or an entire bāb. Whenever a supplementary source gives an explanation or interpretation, include it in its entirety.
-- Keep the text exactly as the Mufti sends it. Flag apparent typing slips to him; never silently correct.
+- Keep the text exactly as the Mufti sends it. Never correct it, silently or otherwise.
+- **Primary texts (e.g. *Mukhtaṣar al-Qudūrī*): do not suggest corrections at all.** The text has many recensions (roughly 19–25), and judging a reading needs a master copy and someone who has studied them. The Mufti will supply a master copy of al-Qudūrī (PDF and Unicode); until then, work with the text as given.
 - Arabic and Urdu are detected per paragraph automatically. Add `(Urdu)` at the end of an Urdu source's heading for the label.
 - Arabic quoted inside an Urdu sentence: put it in square brackets `[ … ]` so it shows in Arabic script in place (fī mā bayna al-suṭūr). The Urdu author's own references in round brackets stay as they are.
 - Page markers (`ص618 – …`) and editor's footnotes (`(١) …`, `= …`) are kept, each on its own line; they are styled automatically.
