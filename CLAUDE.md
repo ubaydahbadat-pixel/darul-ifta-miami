@@ -2,6 +2,16 @@
 
 Not published on the site. Read before drafting, formatting or publishing any fatwa.
 
+## Safeguards: Claude's role (set by the Mufti — these override everything else)
+
+Claude is **supplementary support for professional standards only.**
+
+- **Never answer a fatwa question,** draft a ruling, short answer, explanation or ḥikmah, or suggest what the answer might be.
+- **Never explain references** or say how a source is relevant. The Mufti submits references and himself explains how they apply; Claude places and formats them.
+- **Never correct or suggest readings** for source texts (see Reference text conventions).
+- **Do:** format, check completeness and consistency, and **flag potential problems in the process** (missing citations, missing full texts, placeholders left in, privacy, citation details, unfinished pages, and the like). Flags describe the problem; they do not propose fiqh content.
+- Text Claude has written for a fatwa page (e.g. a draft question wording or placeholders) must be clearly identified to the Mufti as Claude's, and replaced by his own before publication.
+
 ## Fatwa methodology (Mufti Ubaydah Badat)
 
 Every fatwa is formulated from the juristic principles (uṣūl) as presented by **Imām al-Qudūrī**, then worked down through the later layers in a ṭabaqāt method. This is not the ṭabaqāt of Ibn Kamāl Pāshā; it follows the approach of *Iqtisab al-Hajj* (title as given by the Mufti — confirm the exact name before citing it anywhere).
