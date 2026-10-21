@@ -136,3 +136,10 @@ textarea { min-height: 160px; }
   color: var(--teal); border: 1px solid var(--teal);
 }
 .fatwa .ur-text .ar-inline { font-family: var(--arabic); font-size: 1.12em; line-height: 1; }
+
+/* Page markers and editor's footnotes inside reference texts */
+.fatwa .ar-text.ref-page {
+  font-family: var(--sans); font-size: .82rem; line-height: 1.4; color: var(--muted);
+  text-align: center; border-top: 1px dashed var(--sand); padding-top: 8px; margin: 18px 0 10px;
+}
+.fatwa .ar-text.ref-note { font-size: 1.02rem; line-height: 1.8; color: var(--muted); margin: 2px 0; }

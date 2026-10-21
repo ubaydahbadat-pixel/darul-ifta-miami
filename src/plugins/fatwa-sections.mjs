@@ -46,7 +46,15 @@ function markRtl(node, fallback) {
   if (node.type !== 'element') return;
   if (['p', 'li', 'blockquote'].includes(node.tagName) && RTL_SCRIPT.test(text(node))) {
     // Each paragraph is checked on its own, so Urdu and Arabic paragraphs in one source never mix.
-    const lang = detectLang(text(node)) || fallback;
+    const t = text(node).trim();
+    const lang = detectLang(t) || fallback;
+    // Page markers (e.g. "ص618 – باب السهو") and editor's footnotes ("(١) …" or "= …") get their own quieter style.
+    const extra = /^ص\s*[0-9٠-٩]/.test(t) ? 'ref-page'
+      : /^(\([0-9٠-٩]+\)|=)/.test(t) ? 'ref-note' : null;
+    if (extra) {
+      node.properties = { ...node.properties, dir: 'rtl', lang, className: [lang === 'ur' ? 'ur-text' : 'ar-text', extra] };
+      return;
+    }
     node.properties = { ...node.properties, dir: 'rtl', lang, className: [lang === 'ur' ? 'ur-text' : 'ar-text'] };
     if (lang === 'ur') markInlineArabic(node);
     return;
