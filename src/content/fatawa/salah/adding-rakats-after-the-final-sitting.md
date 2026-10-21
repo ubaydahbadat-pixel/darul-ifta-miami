@@ -1,5 +1,5 @@
 ---
-title: "Standing for a fifth rakʿah in ʿAṣr"
+title: "Adding rakats after the final sitting"
 category: salah
 topic: "Sajdah al-Sahw"
 date: 2026-10-21
