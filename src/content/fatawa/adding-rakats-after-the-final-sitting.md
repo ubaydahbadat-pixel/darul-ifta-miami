@@ -18,7 +18,12 @@ primary: |-
 
   [Second paragraph from the primary Ḥanafī sources.]
 supplementary: '[One paragraph of supplementary sources.]'
-hikmah: '[The wisdom behind the ruling.]'
+hikmah: |-
+  The beauty of this masʾalah is that it shows that forgetfulness is in our very nature as human beings. In the Arabic language, the word for a human being, *insān*, shares its root with *nisyān*, which means to forget. This shows that it is within human nature to make mistakes and to forget.
+
+  However, Allah subḥānahu wa taʿālā always provides a way for the human being to make up for their mistakes. This masʾalah exemplifies that, and it should help a person turn back to their Rabb subḥānahu wa taʿālā whenever they make a mistake, be it big or small. Even when they have done extra, which they were not meant to do, and which could be viewed in many different ways, they can still turn to Allah subḥānahu wa taʿālā in that mistake, and make that mistake into an act of worship.
+
+  Secondly, Rasūlullāh ﷺ himself made mistakes similar to this. This shows that even for the perfect human being, it is possible to make mistakes. True perfection does not lie in never making mistakes. True perfection lies in a person learning from their mistakes, and turning back to Allah subḥānahu wa taʿālā at the time of those mistakes.
 references:
 - source: al-Qudūrī, Mukhtaṣar al-Qudūrī, Bāb Sujūd al-Sahw
   language: Arabic
