@@ -31,14 +31,27 @@ function markInlineArabic(node) {
   node.children = out;
 }
 
-function markRtl(node, lang) {
+// Letters used in Urdu but never in Arabic (ٹ ڈ ڑ ں ے ۓ ہ ۂ ی ک گ چ پ ژ).
+const URDU_ONLY = /[ٹڈڑںےۓہۂیکگچپژ]/g;
+// Letters used in Arabic but not in Urdu spelling (ي ك ة ه).
+const ARABIC_ONLY = /[يكةه]/g;
+function detectLang(s) {
+  const ur = (s.match(URDU_ONLY) || []).length;
+  const ar = (s.match(ARABIC_ONLY) || []).length;
+  if (ur === 0 && ar === 0) return null;
+  return ur >= ar ? 'ur' : 'ar';
+}
+
+function markRtl(node, fallback) {
   if (node.type !== 'element') return;
   if (['p', 'li', 'blockquote'].includes(node.tagName) && RTL_SCRIPT.test(text(node))) {
+    // Each paragraph is checked on its own, so Urdu and Arabic paragraphs in one source never mix.
+    const lang = detectLang(text(node)) || fallback;
     node.properties = { ...node.properties, dir: 'rtl', lang, className: [lang === 'ur' ? 'ur-text' : 'ar-text'] };
     if (lang === 'ur') markInlineArabic(node);
     return;
   }
-  (node.children || []).forEach((c) => markRtl(c, lang));
+  (node.children || []).forEach((c) => markRtl(c, fallback));
 }
 
 // Removes "(Urdu)" / "(Arabic)" from the end of a heading and adds a small language label instead.
