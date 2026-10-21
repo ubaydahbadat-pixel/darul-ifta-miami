@@ -341,7 +341,11 @@ If the Imām has not spoken, he should turn back around, perform Sajdat al-Sahw,
 
 القدوري، أبو الحسين أحمد بن محمد (ت ٤٢٨ هـ)، شرح مختصر الكرخي، كتاب الصلاة، باب السهو، فصل: موقع سجود السهو، ص ٦١٧–٦٢٨، المكتبة الشاملة (النسخة الإلكترونية).
 
-### 3. Fatāwā Dār al-ʿUlūm Zakariyyā, vol. 2, Kitāb al-Ṣalāh, Bāb 12: Sajdah-e Sahw kā Bayān (Urdu)
+### 3. Ṣadr al-Sharīʿah, ʿUmdat al-Fatāwā, p. 99 (Dār al-Fajr)
+
+إذا صلى العصر خمسا وقعد في الرابعة : يضيف إليها ركعة أخرى
+
+### 4. Fatāwā Dār al-ʿUlūm Zakariyyā, vol. 2, Kitāb al-Ṣalāh, Bāb 12: Sajdah-e Sahw kā Bayān (Urdu)
 
 **سینہ قبلہ کی طرف سے پھیر لینے کے بعد سجدۂ سہو کا حکم:**
 
