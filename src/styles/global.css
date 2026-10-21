@@ -135,3 +135,4 @@ textarea { min-height: 160px; }
   font-family: var(--sans); font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
   color: var(--teal); border: 1px solid var(--teal);
 }
+.fatwa .ur-text .ar-inline { font-family: var(--arabic); font-size: 1.12em; line-height: 1; }

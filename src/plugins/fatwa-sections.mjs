@@ -10,10 +10,32 @@ const LANG_TAG = /\s*\((urdu|arabic)\)\s*$/i;
 const text = (node) =>
   node.type === 'text' ? node.value : (node.children || []).map(text).join('');
 
+// Inside Urdu text, Arabic quoted in square brackets [ ... ] is shown in Arabic script, in place (fī mā bayna al-suṭūr).
+const INLINE_AR = /\[([^\[\]]+)\]/g;
+function markInlineArabic(node) {
+  if (!node.children) return;
+  const out = [];
+  for (const c of node.children) {
+    if (c.type !== 'text') { markInlineArabic(c); out.push(c); continue; }
+    let last = 0;
+    for (const m of c.value.matchAll(INLINE_AR)) {
+      if (m.index > last) out.push({ type: 'text', value: c.value.slice(last, m.index) });
+      out.push({
+        type: 'element', tagName: 'span', properties: { lang: 'ar', className: ['ar-inline'] },
+        children: [{ type: 'text', value: `[${m[1]}]` }],
+      });
+      last = m.index + m[0].length;
+    }
+    if (last < c.value.length) out.push({ type: 'text', value: c.value.slice(last) });
+  }
+  node.children = out;
+}
+
 function markRtl(node, lang) {
   if (node.type !== 'element') return;
   if (['p', 'li', 'blockquote'].includes(node.tagName) && RTL_SCRIPT.test(text(node))) {
     node.properties = { ...node.properties, dir: 'rtl', lang, className: [lang === 'ur' ? 'ur-text' : 'ar-text'] };
+    if (lang === 'ur') markInlineArabic(node);
     return;
   }
   (node.children || []).forEach((c) => markRtl(c, lang));

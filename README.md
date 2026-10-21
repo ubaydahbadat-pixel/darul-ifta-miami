@@ -66,7 +66,7 @@ On the page, the Question and Short Answer always show. **Explanation**, **Ḥik
 
 **References standard:** give each source its own numbered `###` heading (book, volume:page), then the Arabic text underneath, as long as it needs to be. Whenever a supplementary source is used for an explanation or interpretation, include its full text.
 
-**Arabic and Urdu:** references are Arabic by default. For an Urdu source, add `(Urdu)` at the end of its heading: the text then shows in Urdu (Nastaliq) script with an **Urdu** label, and Arabic sources get an **Arabic** label only if you add `(Arabic)`. Keep each source in one language; if a book quotes Arabic inside Urdu, split it into two numbered references.
+**Arabic and Urdu:** references are Arabic by default. For an Urdu source, add `(Urdu)` at the end of its heading: the text then shows in Urdu (Nastaliq) script with an **Urdu** label, and Arabic sources get an **Arabic** label only if you add `(Arabic)`. Where an Urdu source quotes Arabic in the same paragraph, keep it in place and put the Arabic in square brackets `[ ... ]`: it shows in Arabic script between the lines. The Urdu author's own references in round brackets `( ... )` stay as Urdu.
 
 The site rebuilds itself within a minute or two, and the fatwa appears at:
 `/fatawa/<category>/<topic>/<file name>/`
