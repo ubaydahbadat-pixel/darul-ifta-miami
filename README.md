@@ -51,6 +51,10 @@ date: 2026-10-21
 
 النص العربي كاملاً...
 
+### 3. Fatāwā Maḥmūdiyyah, 7:120 (Urdu)
+
+مکمل اردو عبارت...
+
 ---
 
 *And Allah knows best.*
@@ -61,6 +65,8 @@ date: 2026-10-21
 On the page, the Question and Short Answer always show. **Explanation**, **Ḥikmah** and **References** become tap-to-open dropdowns. Any paragraph that starts in Arabic is set right-to-left automatically.
 
 **References standard:** give each source its own numbered `###` heading (book, volume:page), then the Arabic text underneath, as long as it needs to be. Whenever a supplementary source is used for an explanation or interpretation, include its full text.
+
+**Arabic and Urdu:** references are Arabic by default. For an Urdu source, add `(Urdu)` at the end of its heading: the text then shows in Urdu (Nastaliq) script with an **Urdu** label, and Arabic sources get an **Arabic** label only if you add `(Arabic)`. Keep each source in one language; if a book quotes Arabic inside Urdu, split it into two numbered references.
 
 The site rebuilds itself within a minute or two, and the fatwa appears at:
 `/fatawa/<category>/<topic>/<file name>/`

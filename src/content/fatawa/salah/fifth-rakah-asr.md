@@ -43,6 +43,10 @@ Is sajdah al-sahw enough in this case, or does the whole ṣalāh have to be rep
 
 [The full Arabic text of the explanation, in its entirety.]
 
+### 3. [Urdu source: book title, volume:page] (Urdu)
+
+[The full Urdu text. Add "(Urdu)" at the end of the heading and it displays in Urdu script.]
+
 ---
 
 *And Allah knows best.*

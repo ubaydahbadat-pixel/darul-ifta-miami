@@ -12,6 +12,7 @@
   --serif: 'EB Garamond', Georgia, serif;
   --sans: 'Source Sans 3', system-ui, sans-serif;
   --arabic: 'Amiri', 'Traditional Arabic', serif;
+  --urdu: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
   --width: 760px;
 }
 
@@ -126,3 +127,11 @@ textarea { min-height: 160px; }
 }
 .fatwa details.drop:last-of-type .drop-body h3:first-child { border-top: 0; padding-top: 0; }
 .fatwa .drop-body .ar-text + .ar-text { margin-top: -4px; }
+
+/* Urdu references: Nastaliq script, kept separate from Arabic */
+.fatwa .ur-text { font-family: var(--urdu); font-size: 1.2rem; line-height: 2.4; text-align: right; }
+.fatwa .lang-label {
+  display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 999px; vertical-align: middle;
+  font-family: var(--sans); font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--teal); border: 1px solid var(--teal);
+}
