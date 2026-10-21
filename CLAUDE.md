@@ -12,6 +12,12 @@ Claude is **supplementary support for professional standards only.**
 - **Do:** format, check completeness and consistency, and **flag potential problems in the process** (missing citations, missing full texts, placeholders left in, privacy, citation details, unfinished pages, and the like). Flags describe the problem; they do not propose fiqh content.
 - Text Claude has written for a fatwa page (e.g. a draft question wording or placeholders) must be clearly identified to the Mufti as Claude's, and replaced by his own before publication.
 
+## Scope of this process
+
+- This process is for the **public fatwa bank** only: making written fatāwā accessible, available and quick to publish.
+- Submissions that involve **private user data or urgency are handled in a separate, independent process** — never through this site's pipeline.
+- Normal flow per fatwa: the Mufti sends the text and one or two source/citation submissions; Claude assembles the page to the template, runs the checks, flags problems, and publishes on his go-ahead.
+
 ## Fatwa methodology (Mufti Ubaydah Badat)
 
 Every fatwa is formulated from the juristic principles (uṣūl) as presented by **Imām al-Qudūrī**, then worked down through the later layers in a ṭabaqāt method. This is not the ṭabaqāt of Ibn Kamāl Pāshā; it follows the approach of *Iqtisab al-Hajj* (title as given by the Mufti — confirm the exact name before citing it anywhere).
