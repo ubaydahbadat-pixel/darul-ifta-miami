@@ -1,8 +1,8 @@
 ---
 import Base from '../../../../layouts/Base.astro';
-import { render } from 'astro:content';
 import { categoryName } from '../../../../data/categories';
 import { getFatawa, topicSlug, fatwaSlug, formatDate } from '../../../../data/fatawa';
+import { md } from '../../../../data/markdown';
 
 export async function getStaticPaths() {
   const fatawa = await getFatawa();
@@ -13,24 +13,77 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
-const { title, category, topic, date, pdf } = entry.data;
-const catName = categoryName(category);
+const d = entry.data;
+const catName = categoryName(d.category);
+
+const question = await md(d.question);
+const shortAnswer = await md(d.short_answer);
+const primary = await md(d.primary);
+const supplementary = await md(d.supplementary);
+const hikmah = await md(d.hikmah);
+const references = await Promise.all(
+  d.references.map(async (r) => ({ ...r, html: await md(r.text, r.language === 'Urdu' ? 'ur' : 'ar') })),
+);
 ---
-<Base title={title} description={`${catName} · ${topic}: ${title}`}>
+<Base title={d.title} description={`${catName} · ${d.topic}: ${d.title}`}>
   <nav class="crumbs">
     <a href="/fatawa/">Fatāwā</a><span>›</span>
-    <a href={`/fatawa/${category}/`}>{catName}</a><span>›</span>
-    <a href={`/fatawa/${category}/${topicSlug(entry)}/`}>{topic}</a>
+    <a href={`/fatawa/${d.category}/`}>{catName}</a><span>›</span>
+    <a href={`/fatawa/${d.category}/${topicSlug(entry)}/`}>{d.topic}</a>
   </nav>
-  <h1>{title}</h1>
-  <p class="meta-line">{formatDate(date)}</p>
+  <h1>{d.title}</h1>
+  <p class="meta-line">{formatDate(d.date)}</p>
   <hr class="rule" />
 
-  <article class="fatwa"><Content /></article>
+  <article class="fatwa">
+    <h2>Question</h2>
+    <Fragment set:html={question} />
+
+    {shortAnswer && (
+      <section class="short-answer">
+        <h2>Short Answer</h2>
+        <Fragment set:html={shortAnswer} />
+      </section>
+    )}
+
+    {(primary || supplementary) && (
+      <details class="drop">
+        <summary>Explanation</summary>
+        <div class="drop-body">
+          {primary && <><h3>Primary Ḥanafī Sources</h3><Fragment set:html={primary} /></>}
+          {supplementary && <><h3>Supplementary Sources</h3><Fragment set:html={supplementary} /></>}
+        </div>
+      </details>
+    )}
+
+    {hikmah && (
+      <details class="drop">
+        <summary>Ḥikmah</summary>
+        <div class="drop-body"><Fragment set:html={hikmah} /></div>
+      </details>
+    )}
+
+    {references.length > 0 && (
+      <details class="drop">
+        <summary>References</summary>
+        <div class="drop-body">
+          {references.map((r, i) => (
+            <>
+              <h3>{i + 1}. {r.source}{r.language === 'Urdu' && <span class="lang-label">Urdu</span>}</h3>
+              <Fragment set:html={r.html} />
+            </>
+          ))}
+        </div>
+      </details>
+    )}
+
+    <hr />
+    <p><em>And Allah knows best.</em></p>
+    <p><strong>Answered by:</strong> Mufti Ubaydah Badat</p>
+  </article>
 
   <div class="actions">
-    {pdf && <a class="button" href={pdf} download>Download PDF</a>}
+    {d.pdf && <a class="button" href={d.pdf} download>Download PDF</a>}
     <a class="button ghost" href="/ask/">Ask a question</a>
   </div>
 </Base>

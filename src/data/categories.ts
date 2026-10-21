@@ -8,8 +8,12 @@ export const categories = [
   { id: 'hajj-umrah', name: 'Ḥajj & ʿUmrah', blurb: 'Iḥrām, rites and travel' },
   { id: 'udhiyah', name: 'Uḍḥiyah & ʿAqīqah', blurb: 'Sacrifice and the newborn' },
   { id: 'muamalat', name: 'Muʿāmalāt', blurb: 'Business, finance and contracts' },
-  { id: 'nikah', name: 'Nikāḥ & Family', blurb: 'Marriage, divorce and inheritance' },
+  { id: 'nikah', name: 'Nikāḥ & Ṭalāq', blurb: 'Marriage and divorce' },
+  { id: 'hazr-ibahah', name: 'al-Ḥaẓr wa al-Ibāḥah', blurb: 'The permitted and the prohibited' },
+  { id: 'inheritance', name: 'Inheritance', blurb: 'Mīrāth and the shares of the heirs' },
+  { id: 'miscellaneous', name: 'Miscellaneous', blurb: 'Aymān, nudhūr and other matters' },
 ] as const;
+// If you change this list, change the same list in public/admin/config.yml (the submission form).
 
 export const categoryIds = categories.map((c) => c.id) as [string, ...string[]];
 

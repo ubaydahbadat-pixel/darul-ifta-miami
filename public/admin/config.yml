@@ -1,0 +1,120 @@
+# Darul Iftāʾ Miami — fatwa submission form (/admin)
+# Sign in with a GitHub personal access token. Saving here commits to GitHub; the site updates in ~2 minutes.
+
+backend:
+  name: github
+  repo: ubaydahbadat-pixel/darul-ifta-miami
+  branch: main
+  auth_methods: [token]
+  commit_messages:
+    create: "New fatwa: {{slug}}"
+    update: "Update fatwa: {{slug}}"
+    delete: "Delete fatwa: {{slug}}"
+
+app_title: Darul Iftāʾ Miami — Submissions
+site_url: https://darul-ifta-miami.ubaydahbadat.workers.dev
+logo_url: /logo.svg
+media_folder: public/uploads
+public_folder: /uploads
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+editor:
+  preview: false
+
+collections:
+  - name: fatawa
+    label: Fatāwā
+    label_singular: Fatwa
+    folder: src/content/fatawa
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{title}}"
+    summary: "{{title}} · {{topic}}"
+    sortable_fields: [date, title, category]
+    fields:
+      # 1. Category — keep this list the same as src/data/categories.ts
+      - name: category
+        label: Category
+        widget: select
+        options:
+          - { value: taharah, label: "Ṭahārah" }
+          - { value: salah, label: "Ṣalāh" }
+          - { value: sawm, label: "Ṣawm" }
+          - { value: zakah, label: "Zakāh" }
+          - { value: hajj-umrah, label: "Ḥajj & ʿUmrah" }
+          - { value: udhiyah, label: "Uḍḥiyah & ʿAqīqah" }
+          - { value: muamalat, label: "Muʿāmalāt" }
+          - { value: nikah, label: "Nikāḥ & Ṭalāq" }
+          - { value: hazr-ibahah, label: "al-Ḥaẓr wa al-Ibāḥah" }
+          - { value: inheritance, label: "Inheritance" }
+          - { value: miscellaneous, label: "Miscellaneous" }
+      # 2. Topic
+      - name: topic
+        label: Topic
+        widget: string
+        hint: "e.g. Sajdah al-Sahw. Use the exact same spelling to file under an existing topic."
+      # 3. Title
+      - name: title
+        label: Title
+        widget: string
+        hint: "Also becomes the web link. Choose carefully: once published, the link should not change."
+      - name: date
+        label: Date
+        widget: datetime
+        time_format: false
+        date_format: YYYY-MM-DD
+        format: YYYY-MM-DD
+      # 4. Question
+      - name: question
+        label: Question
+        widget: text
+        hint: "Separate paragraphs with a blank line."
+      # 5. Short answer
+      - name: short_answer
+        label: Short Answer
+        widget: text
+      # 6–7. Explanation
+      - name: primary
+        label: "Explanation — Primary Ḥanafī Sources"
+        widget: text
+        required: false
+        hint: "al-Qudūrī first, then the next layer. Separate paragraphs with a blank line."
+      - name: supplementary
+        label: "Explanation — Supplementary Sources"
+        widget: text
+        required: false
+      # 8. Ḥikmah
+      - name: hikmah
+        label: Ḥikmah
+        widget: text
+        required: false
+      # 9. References
+      - name: references
+        label: References
+        label_singular: Reference
+        widget: list
+        required: false
+        summary: "{{fields.source}}"
+        fields:
+          - name: source
+            label: Source (book, volume:page, edition)
+            widget: string
+          - name: language
+            label: Language
+            widget: select
+            options: [Arabic, Urdu]
+            default: Arabic
+          - name: text
+            label: Full text
+            widget: text
+            hint: "The full passage. Arabic and Urdu are detected per paragraph. Arabic inside an Urdu sentence: put it in [square brackets]."
+      # 10. Publish switch
+      - name: draft
+        label: "Draft — keep hidden from the website"
+        widget: boolean
+        default: true
+        hint: "Switch off to publish."

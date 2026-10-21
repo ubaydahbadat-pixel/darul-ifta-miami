@@ -35,14 +35,14 @@ Every fatwa is formulated from the juristic principles (uṣūl) as presented by
 
 - **Explanation → Primary Ḥanafī Sources:** al-Qudūrī first, then the next layer.
 - **Explanation → Supplementary Sources:** the later layers / gloss.
-- **References:** ordered the same way, primary first. Each source gets its own numbered `###` heading.
+- **References:** ordered the same way, primary first. Each source is one item in the `references` list; numbering is automatic.
 
 ## Reference text conventions
 
 - Include the **full text** of every source used — a sentence or an entire bāb. Whenever a supplementary source gives an explanation or interpretation, include it in its entirety.
 - Keep the text exactly as the Mufti sends it. Never correct it, silently or otherwise.
 - **Primary texts (e.g. *Mukhtaṣar al-Qudūrī*): do not suggest corrections at all.** The text has many recensions (roughly 19–25), and judging a reading needs a master copy and someone who has studied them. The Mufti will supply a master copy of al-Qudūrī (PDF and Unicode); until then, work with the text as given.
-- Arabic and Urdu are detected per paragraph automatically. Add `(Urdu)` at the end of an Urdu source's heading for the label.
+- Arabic and Urdu are detected per paragraph automatically. Set the reference's `language` to Urdu for the label.
 - Arabic quoted inside an Urdu sentence: put it in square brackets `[ … ]` so it shows in Arabic script in place (fī mā bayna al-suṭūr). The Urdu author's own references in round brackets stay as they are.
 - Page markers (`ص618 – …`) and editor's footnotes (`(١) …`, `= …`) are kept, each on its own line; they are styled automatically.
 - Strip WhatsApp timestamps (`[10/21, 5:44 AM] Name:`) from pasted text.
@@ -50,5 +50,7 @@ Every fatwa is formulated from the juristic principles (uṣūl) as presented by
 
 ## Site
 
-- Astro, deployed by Cloudflare from `main` on push. Fatāwā live in `src/content/fatawa/<category>/`; see `README.md` for the template.
+- Astro, deployed by Cloudflare from `main` on push.
+- Each fatwa is one file in `src/content/fatawa/` (flat, no subfolders), with every section as its own front-matter field: `category, topic, title, date, draft, question, short_answer, primary, supplementary, hikmah, references[{source, language, text}]`. The Mufti fills these in via the **/admin** form (Sveltia CMS, `public/admin/config.yml`); new entries are drafts by default.
+- Categories (11) live in both `src/data/categories.ts` and `public/admin/config.yml` — keep them identical.
 - Honorifics: raḥimahullāh for the imāms on public pages.

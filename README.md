@@ -4,87 +4,35 @@ The website of Darul Iftāʾ Miami, built with Astro and hosted on Cloudflare Pa
 
 ## Posting a new fatwa
 
-1. On GitHub, open `src/content/fatawa/` and then the category folder (for example `salah`).
-2. Select **Add file → Create new file**.
-3. Name the file after the fatwa's short link, ending in `.md`. For example: `fifth-rakah-asr.md`.
-4. Paste in this template, fill it from your Google Doc, and select **Commit changes**.
+Use the submission form at **/admin** on the site (for example `https://darul-ifta-miami.ubaydahbadat.workers.dev/admin/`).
 
-```
----
-title: "Standing for a fifth rakʿah in ʿAṣr"
-category: salah
-topic: "Sajdah al-Sahw"
-date: 2026-10-21
----
+**First time only — make a sign-in token:**
+1. On GitHub: **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**.
+2. Name it "Darul Ifta form", set an expiry, and under **Repository access** choose **Only select repositories → darul-ifta-miami**.
+3. Under **Permissions → Repository permissions**, set **Contents** to **Read and write**.
+4. Generate it and copy it. On /admin choose **Sign In Using Access Token** and paste it. Keep the token private.
 
-## Question
+**Each fatwa:** Fatāwā → **New Fatwa**, fill in the fields in order, then **Save**.
+- **Category**, **Topic** (same spelling as before to join an existing topic), **Title** (also becomes the link).
+- **Question**, **Short Answer**.
+- **Explanation — Primary Ḥanafī Sources** and **Explanation — Supplementary Sources**.
+- **Ḥikmah**.
+- **References**: **Add Reference** for each source — the book and page, the language, and the full text.
+- **Draft** is on by default, so a new fatwa stays hidden. Switch it off and save again to publish.
 
-...
+Saving commits to GitHub and the site updates itself in about two minutes.
 
-## Short Answer
+**Writing in the fields:** separate paragraphs with a blank line. Arabic and Urdu are detected per paragraph and shown right-to-left in the right script. Arabic inside an Urdu sentence goes in `[square brackets]`. Page markers (`ص618 – …`) and editor's footnotes (`(١) …`) on their own lines are styled automatically.
 
-...
+The fatwa appears at `/fatawa/<category>/<topic>/<title-as-link>/`.
 
-## Explanation
-
-### Primary Ḥanafī Sources
-
-...
-
-...
-
-### Supplementary Sources
-
-...
-
-## Ḥikmah
-
-...
-
-## References
-
-### 1. Radd al-Muḥtār, 2:85
-
-النص العربي كاملاً...
-
-### 2. al-Baḥr al-Rāʾiq, 2:104
-
-النص العربي كاملاً...
-
-### 3. Fatāwā Maḥmūdiyyah, 7:120 (Urdu)
-
-مکمل اردو عبارت...
-
----
-
-*And Allah knows best.*
-
-**Answered by:** Mufti Ubaydah Badat
-```
-
-On the page, the Question and Short Answer always show. **Explanation**, **Ḥikmah** and **References** become tap-to-open dropdowns. Any paragraph that starts in Arabic is set right-to-left automatically.
-
-**References standard:** give each source its own numbered `###` heading (book, volume:page), then the Arabic text underneath, as long as it needs to be. Whenever a supplementary source is used for an explanation or interpretation, include its full text.
-
-**Arabic and Urdu:** references are Arabic by default. For an Urdu source, add `(Urdu)` at the end of its heading: the text then shows in Urdu (Nastaliq) script with an **Urdu** label, and Arabic sources get an **Arabic** label only if you add `(Arabic)`. Where an Urdu source quotes Arabic in the same paragraph, keep it in place and put the Arabic in square brackets `[ ... ]`: it shows in Arabic script between the lines. The Urdu author's own references in round brackets `( ... )` stay as Urdu.
-
-The site rebuilds itself within a minute or two, and the fatwa appears at:
-`/fatawa/<category>/<topic>/<file name>/`
-
-**Category** must be one of: `taharah`, `salah`, `sawm`, `zakah`, `hajj-umrah`, `udhiyah`, `muamalat`, `nikah`.
-
-**Topic** is written normally, with diacritics. Writing the same topic again files the fatwa under the existing topic. A new topic creates a new topic page automatically.
-
-To hold a fatwa back without deleting it, add `draft: true` under the date.
-
-To attach a PDF, upload it to `public/pdf/` and add `pdf: "/pdf/file-name.pdf"` under the date. A **Download PDF** button will appear.
+**Categories:** Ṭahārah, Ṣalāh, Ṣawm, Zakāh, Ḥajj & ʿUmrah, Uḍḥiyah & ʿAqīqah, Muʿāmalāt, Nikāḥ & Ṭalāq, al-Ḥaẓr wa al-Ibāḥah, Inheritance, Miscellaneous. To change them, edit both `src/data/categories.ts` and `public/admin/config.yml`.
 
 ## Other things you can edit
 
 - **Niṣāb figures and Ṣadaqat al-Fiṭr:** `src/data/site.ts`
 - **Menu:** `src/layouts/Base.astro`, the `menu` list near the top
 - **Colours:** `src/styles/global.css`, at the top
-- **Categories:** `src/data/categories.ts`
 - **About and Madhhab text:** `src/pages/about.astro`, `src/pages/madhhab/index.astro`
 - **Articles:** add `.md` files to `src/content/articles/` with `title:` and `date:` at the top
 
