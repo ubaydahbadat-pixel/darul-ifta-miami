@@ -39,6 +39,9 @@ const references = await Promise.all(
     <h2>Question</h2>
     <Fragment set:html={question} />
 
+    <!-- Bismillah in the Prophetic style: short bāʾ, long drawn-out sīn, then mīm. -->
+    <p class="basmalah" lang="ar" dir="rtl" aria-label="Bismillāh al-Raḥmān al-Raḥīm">بِسْــــــــــمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+
     {shortAnswer && (
       <section class="short-answer">
         <h2>Short Answer</h2>

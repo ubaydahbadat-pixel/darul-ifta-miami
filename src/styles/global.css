@@ -143,3 +143,10 @@ textarea { min-height: 160px; }
   text-align: center; border-top: 1px dashed var(--sand); padding-top: 8px; margin: 18px 0 10px;
 }
 .fatwa .ar-text.ref-note { font-size: 1.02rem; line-height: 1.8; color: var(--muted); margin: 2px 0; }
+
+/* Bismillah before the answer */
+.fatwa .basmalah {
+  font-family: var(--arabic); font-size: 1.9rem; line-height: 1.6; text-align: center;
+  color: var(--ink); margin: 34px 0 6px;
+}
+.fatwa .basmalah + .short-answer { margin-top: 10px; }
