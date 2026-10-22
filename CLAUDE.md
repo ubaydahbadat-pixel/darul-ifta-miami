@@ -49,6 +49,10 @@ Every fatwa is formulated from the juristic principles (uṣūl) as presented by
 - Strip WhatsApp timestamps (`[10/21, 5:44 AM] Name:`) from pasted text.
 - Before publishing, check every source named in the Explanation has its full text in References.
 
+## Reviews
+
+- Audit checklists for each fatwa live in `reviews/` (not published). Check the relevant file before editing a fatwa, and tick items off as the Mufti resolves them.
+
 ## Site
 
 - Astro, deployed by Cloudflare from `main` on push.
