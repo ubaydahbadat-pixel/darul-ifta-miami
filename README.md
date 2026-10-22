@@ -15,7 +15,7 @@ Use the submission form at **/admin** on the site (for example `https://darul-if
 **Each fatwa:** Fatāwā → **New Fatwa**, fill in the fields in order, then **Save**.
 - **Category**, **Topic** (same spelling as before to join an existing topic), **Title** (also becomes the link).
 - **Question**, **Short Answer**.
-- **Explanation — Primary Ḥanafī Sources** and **Explanation — Supplementary Sources**.
+- **Explanation**: **Add Section** for each part of the answer (a heading and its text), in order. English only; Arabic texts go in References. Give classical scholars' death dates on first mention, e.g. Imām al-Qudūrī (d. 428 AH).
 - **Wisdom of the Ruling (Ḥikmah)**.
 - **References**: **Add Reference** for each source — the book and page, the language, and the full text.
 - **Draft** is on by default, so a new fatwa stays hidden. Switch it off and save again to publish.

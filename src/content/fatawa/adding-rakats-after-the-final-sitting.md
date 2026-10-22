@@ -13,11 +13,26 @@ question: |-
 
   In this situation, would the Imām still be permitted to perform Sajdat al-Sahw to rectify the mistake, or would the entire ṣalāh need to be repeated?
 short_answer: If the Imām has not spoken, he should turn back around, perform Sajdat al-Sahw, and the ṣalāh will be valid. If the Imām has spoken or left the masjid, the ṣalāh will be invalid.
-primary: |-
-  [First paragraph from the primary Ḥanafī sources.]
+explanation:
+- heading: The Basis of Sajdat al-Sahw
+  text: |-
+    Imām al-Qudūrī (d. 428 AH) states in his *Mukhtaṣar*: the prostration of forgetfulness (sajdat al-sahw) is obligatory in cases of addition and omission. Sajdat al-sahw becomes necessary when a person adds to his prayer an action that belongs to the same category as its prescribed actions but is not part of it, or omits a prescribed sunnah (necessary) action, or omits a wājib action such as the recitation of al-Fātiḥah, the Qunūt, the Tashahhud, or the additional takbīrs of the ʿĪd prayers.
 
-  [Second paragraph from the primary Ḥanafī sources.]
-supplementary: '[One paragraph of supplementary sources.]'
+    Imām al-Qudūrī expands on this in his commentary on the *Mukhtaṣar* of Imām al-Karkhī (*Sharḥ Mukhtaṣar al-Karkhī*). He mentions that the original basis for the prostration of forgetfulness is the Prophet ﷺ, as mentioned in the ḥadīth of Thawbān and ʿUmar raḍiya Allāhu ʿanhumā, that Rasūlullāh ﷺ made a mistake in an incident of forgetfulness. In the ḥadīth of Thawbān specifically, it is mentioned that for every instance of forgetfulness there are two prostrations after the salām. Imām al-Qudūrī also mentions that Imām Abū al-Ḥasan al-Karkhī (d. 340 AH) states that the prostration of forgetfulness is obligatory, although it is not a condition for the validity of the prayer.
+
+    Imām Ibn Māzah al-Bukhārī (d. 616 AH), in *al-Muḥīṭ al-Burhānī*, reiterates that the basis of the prostration of forgetfulness is that the Prophet ﷺ forgot during his prayer and consequently performed the prostration, and he builds supporting arguments for Imām al-Karkhī and Imām al-Qudūrī. He outlines that sajdat al-sahw is obligatory for six things: performing a rukn before its time, delaying a rukn, repeating a rukn, altering an obligatory action, omitting an obligatory (wājib) action, and omitting a sunnah action connected to the prayer as a whole.
+- heading: Standing for a Fifth Rakʿah after the Final Sitting
+  text: |-
+    Imām al-Qudūrī states: if he sat in the fourth rakʿah for the duration of the tashahhud and then stood without performing the salām, thinking it was the first sitting, he must return to the sitting position. And if he has completed the prostration of the fifth rakʿah, he must add a rakʿah to it and perform sajdat al-sahw; his obligatory prayer has already been completed, while the additional two rakʿahs constitute a voluntary prayer.
+
+    Imām Ibn Māzah describes the case of one who prays Ẓuhr as five rakʿahs, and explains why such a person should complete a sixth rakʿah rather than stop at five. The main premise for completing six rather than remaining at five is the ḥadīth of ʿUmar raḍiya Allāhu ʿanhu.
+
+    This is also mentioned by Ṣadr al-Sharīʿah in *ʿUmdat al-Fatāwā*.
+- heading: Turning Around While Still in the Masjid
+  text: |-
+    *Al-Durr al-Mukhtār* of al-Ḥaṣkafī (d. 1088 AH) states that a person will perform sajdat al-sahw even if, with his salām, he intended to end the ṣalāh, because an intention to change what the Divine law has mandated is meaningless, as long as he has not turned away from the qiblah or engaged in talk. If he forgot the sajdat al-sahw or the sajdat al-tilāwah, it remains mandated upon him as long as he is in the masjid.
+
+    Imām Ibn ʿĀbidīn (d. 1252 AH) mentions a narration from Mullā Khusraw (d. 885 AH) in *al-Durar*, from *al-Nihāyah* of al-Sighnāqī (d. 714 AH), that this individual will turn around and complete the sajdat al-sahw, since he is still within the masjid. Being within the masjid matters on the basis of istiḥsān (juristic preference): the whole masjid remains in the ruling of one place, so this is permissible even if there is a large space in between. Supporting statements are found in al-Ṭaḥṭāwī's *Ḥāshiyah* on *Marāqī al-Falāḥ*, *al-ʿInāyah* and *Fatḥ al-Qadīr*, *Aḥsan al-Fatāwā* and *Bahishtī Zewar*, as cited by Mufti Raḍāʾ al-Ḥaqq in *Fatāwā Dār al-ʿUlūm Zakariyyā*.
 hikmah: |-
   The beauty of this masʾalah is that it shows that forgetfulness is in our very nature as human beings. In the Arabic language, according to some grammarians, the word for a human being, *insān*, shares its root with *nisyān*, which means to forget. This shows that it is within human nature to make mistakes and to forget.
 

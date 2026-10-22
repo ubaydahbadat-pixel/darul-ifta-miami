@@ -150,3 +150,10 @@ textarea { min-height: 160px; }
   color: var(--ink); margin: 34px 0 6px;
 }
 .fatwa .basmalah + .short-answer { margin-top: 10px; }
+
+/* Explanation sections (nodes) */
+.fatwa .drop-body h3.node {
+  text-transform: none; letter-spacing: 0; font-family: var(--serif); font-size: 1.15rem; color: var(--ink);
+  margin: 26px 0 8px; padding-top: 14px; border-top: 1px solid var(--sand);
+}
+.fatwa .drop-body h3.node:first-child { margin-top: 4px; padding-top: 0; border-top: 0; }

@@ -77,16 +77,22 @@ collections:
       - name: short_answer
         label: Short Answer
         widget: text
-      # 6–7. Explanation
-      - name: primary
-        label: "Explanation — Primary Ḥanafī Sources"
-        widget: text
+      # 6. Explanation — numbered sections (nodes)
+      - name: explanation
+        label: Explanation
+        label_singular: Section
+        widget: list
         required: false
-        hint: "al-Qudūrī first, then the next layer. Separate paragraphs with a blank line."
-      - name: supplementary
-        label: "Explanation — Supplementary Sources"
-        widget: text
-        required: false
+        summary: "{{fields.heading}}"
+        hint: "One section per part of the answer, in order. English only — Arabic texts go in References."
+        fields:
+          - name: heading
+            label: Section heading
+            widget: string
+          - name: text
+            label: Text
+            widget: text
+            hint: "Separate paragraphs with a blank line. Give classical scholars' death dates on first mention, e.g. Imām al-Qudūrī (d. 428 AH)."
       # 8. Ḥikmah
       - name: hikmah
         label: "Wisdom of the Ruling (Ḥikmah)"

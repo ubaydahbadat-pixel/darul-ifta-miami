@@ -18,8 +18,7 @@ const catName = categoryName(d.category);
 
 const question = await md(d.question);
 const shortAnswer = await md(d.short_answer);
-const primary = await md(d.primary);
-const supplementary = await md(d.supplementary);
+const explanation = await Promise.all(d.explanation.map(async (e) => ({ ...e, html: await md(e.text) })));
 const hikmah = await md(d.hikmah);
 const references = await Promise.all(
   d.references.map(async (r) => ({ ...r, html: await md(r.text, r.language === 'Urdu' ? 'ur' : 'ar') })),
@@ -49,12 +48,13 @@ const references = await Promise.all(
       </section>
     )}
 
-    {(primary || supplementary) && (
+    {explanation.length > 0 && (
       <details class="drop">
         <summary>Explanation</summary>
         <div class="drop-body">
-          {primary && <><h3>Primary Ḥanafī Sources</h3><Fragment set:html={primary} /></>}
-          {supplementary && <><h3>Supplementary Sources</h3><Fragment set:html={supplementary} /></>}
+          {explanation.map((e, i) => (
+            <><h3 class="node">{i + 1}. {e.heading}</h3><Fragment set:html={e.html} /></>
+          ))}
         </div>
       </details>
     )}

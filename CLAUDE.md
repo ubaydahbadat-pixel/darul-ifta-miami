@@ -33,8 +33,9 @@ Every fatwa is formulated from the juristic principles (uṣūl) as presented by
 
 ## How this maps onto a fatwa page
 
-- **Explanation → Primary Ḥanafī Sources:** al-Qudūrī first, then the next layer.
-- **Explanation → Supplementary Sources:** the later layers / gloss.
+- **Explanation = numbered sections ("nodes")**, one per part of the question (e.g. 1. the basis of the ruling, 2. the specific case, 3. a further detail of the case). Within each node, sources follow the layers: al-Qudūrī first, then the next layer, then later works as support.
+- **No Arabic text in the Explanation** — it is for the general reader. Name sources in English transliteration; all Arabic/Urdu texts go in References.
+- **Names:** full diacritics; classical scholars get their death date on first mention in a fatwa, e.g. Imām al-Qudūrī (d. 428 AH). Contemporary authors get no date. The Mufti confirms each date.
 - **References:** ordered the same way, primary first. Each source is one item in the `references` list; numbering is automatic.
 
 ## Reference text conventions
@@ -51,7 +52,7 @@ Every fatwa is formulated from the juristic principles (uṣūl) as presented by
 ## Site
 
 - Astro, deployed by Cloudflare from `main` on push.
-- Each fatwa is one file in `src/content/fatawa/` (flat, no subfolders), with every section as its own front-matter field: `category, topic, title, date, draft, question, short_answer, primary, supplementary, hikmah, references[{source, language, text}]`. The Mufti fills these in via the **/admin** form (Sveltia CMS, `public/admin/config.yml`); new entries are drafts by default.
+- Each fatwa is one file in `src/content/fatawa/` (flat, no subfolders), with every section as its own front-matter field: `category, topic, title, date, draft, question, short_answer, explanation[{heading, text}], hikmah, references[{source, language, text}]`. The Mufti fills these in via the **/admin** form (Sveltia CMS, `public/admin/config.yml`); new entries are drafts by default.
 - Categories (11) live in both `src/data/categories.ts` and `public/admin/config.yml` — keep them identical.
 - Niṣāb: `scripts/update-nisab.mjs` runs twice daily via `.github/workflows/nisab.yml` (09–11 and 21–23 UTC; updates once per slot, from 5 am and from 5 pm New York). Spot prices from Swissquote, backup gold-api.com; refuses >25% daily moves. Writes `src/data/nisab.json` — never edit that file by hand.
 - Honorifics: raḥimahullāh for the imāms on public pages.

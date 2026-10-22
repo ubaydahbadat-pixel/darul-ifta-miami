@@ -14,8 +14,10 @@ const fatawa = defineCollection({
     draft: z.boolean().default(false),
     question: z.string().default(''),
     short_answer: z.string().default(''),
-    primary: z.string().default(''),
-    supplementary: z.string().default(''),
+    // The Explanation is a list of numbered sections ("nodes"), each with a heading and text.
+    explanation: z
+      .array(z.object({ heading: z.string(), text: z.string().default('') }))
+      .default([]),
     hikmah: z.string().default(''),
     references: z
       .array(z.object({
