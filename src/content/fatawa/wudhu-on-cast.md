@@ -1,5 +1,5 @@
 ---
-title: Wuḍūʾ with a cast on one finger
+title: Wudhu on cast
 category: taharah
 topic: Wuḍūʾ
 date: '2026-10-22'
