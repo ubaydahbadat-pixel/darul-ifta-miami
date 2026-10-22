@@ -30,7 +30,7 @@ The fatwa appears at `/fatawa/<category>/<topic>/<title-as-link>/`.
 
 ## Other things you can edit
 
-- **Niṣāb:** updated automatically every day at 5 pm New York time by `.github/workflows/nisab.yml` (GitHub → Actions → "Daily niṣāb update" → **Run workflow** to update it immediately). Niṣāb weights (87.48 g gold, 612.36 g silver) are in `src/data/nisab.json`.
+- **Niṣāb:** updated automatically twice a day, at 5 am and 5 pm New York time by `.github/workflows/nisab.yml` (GitHub → Actions → "Daily niṣāb update" → **Run workflow** to update it immediately). Niṣāb weights (87.48 g gold, 612.36 g silver) are in `src/data/nisab.json`.
 - **Ṣadaqat al-Fiṭr:** set once a year in `src/data/site.ts`
 - **Menu:** `src/layouts/Base.astro`, the `menu` list near the top
 - **Colours:** `src/styles/global.css`, at the top

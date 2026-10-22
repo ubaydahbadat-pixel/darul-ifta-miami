@@ -15,7 +15,7 @@ const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'nume
   <section class="box">
     <h2>Current Zakāh Niṣāb</h2>
     <p class="muted">Updated: <strong>{updated}{auto && `, ${time} (Eastern)`}</strong></p>
-    <p class="muted small-note">Based on the spot price of gold and silver in US dollars, updated automatically every day at 5 pm.</p>
+    <p class="muted small-note">Based on the spot price of gold and silver in US dollars, updated automatically every day at 5 am and 5 pm (Eastern).</p>
     <div class="tiles">
       <div class="tile gold"><span class="k">Gold Niṣāb ({nisab.goldGrams}g)</span><span class="v">{usd(nisab.goldNisab)}</span></div>
       <div class="tile"><span class="k">Silver Niṣāb ({nisab.silverGrams}g)</span><span class="v">{usd(nisab.silverNisab)}</span></div>

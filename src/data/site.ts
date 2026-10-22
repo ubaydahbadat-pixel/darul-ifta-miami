@@ -5,7 +5,7 @@
 // and every submission arrives in your inbox.
 export const FORM_ACCESS_KEY = '8c0d80fc-e0fd-40e1-8bf9-4027549e9b59';
 
-// Niṣāb figures are updated automatically every day at 5 pm New York time
+// Niṣāb figures are updated automatically twice a day, at 5 am and 5 pm New York time
 // (scripts/update-nisab.mjs, run by .github/workflows/nisab.yml). Do not edit src/data/nisab.json by hand.
 import nisabData from './nisab.json';
 export const nisab = nisabData;

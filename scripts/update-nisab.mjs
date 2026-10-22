@@ -1,4 +1,4 @@
-// Daily Zakāh niṣāb update. Run by GitHub Actions (see .github/workflows/nisab.yml).
+// Zakāh niṣāb update, twice a day: 5 am and 5 pm New York time. Run by GitHub Actions (see .github/workflows/nisab.yml).
 // Fetches the gold and silver spot price in US dollars, works out the niṣāb, and writes src/data/nisab.json.
 // The site rebuilds itself when that file changes. No accounts or API keys are needed.
 
@@ -6,7 +6,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const FILE = new URL('../src/data/nisab.json', import.meta.url);
 const GRAMS_PER_TROY_OZ = 31.1034768;
-const UPDATE_HOUR_NY = 17; // 5 pm, New York time
+const SLOTS = [{ name: 'am', hour: 5 }, { name: 'pm', hour: 17 }]; // 5 am and 5 pm, New York time
 const force = process.argv.includes('--force');
 
 const nyNow = () => {
@@ -54,9 +54,11 @@ async function prices() {
 const previous = JSON.parse(await readFile(FILE, 'utf8'));
 const now = nyNow();
 
+// The most recent slot that is due: 5 pm today, 5 am today, or (before 5 am) nothing new.
+const due = [...SLOTS].reverse().find((s) => now.hour >= s.hour);
 if (!force) {
-  if (now.hour < UPDATE_HOUR_NY) { console.log(`Not yet 5 pm in New York (${now.hour}:00). Skipping.`); process.exit(0); }
-  if (previous.date === now.date) { console.log(`Already updated today (${now.date}). Skipping.`); process.exit(0); }
+  if (!due) { console.log(`Before 5 am in New York (${now.hour}:00). Skipping.`); process.exit(0); }
+  if (previous.date === now.date && previous.slot === due.name) { console.log(`Already updated for ${now.date} ${due.name}. Skipping.`); process.exit(0); }
 }
 
 const { source, gold, silver } = await prices();
@@ -70,6 +72,7 @@ for (const [label, now_, before] of [['gold', gold, previous.goldPerOz], ['silve
 const round2 = (n) => Math.round(n * 100) / 100;
 const out = {
   date: now.date,
+  slot: due ? due.name : 'manual',
   updatedAt: new Date().toISOString(),
   source,
   goldPerOz: round2(gold),
