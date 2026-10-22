@@ -27,6 +27,14 @@ explanation:
 
     Imām Ibn Māzah describes the case of one who prays Ẓuhr as five rakʿahs, and explains why such a person should complete a sixth rakʿah rather than stop at five. The main premise for completing six rather than remaining at five is the ḥadīth of ʿUmar raḍiya Allāhu ʿanhu.
 
+    Imām Ibn Māzah then discusses the case in ʿAṣr: a person who stands up for a fifth rakʿah of ʿAṣr and has completed its prostration. He mentions the narration of Imām al-Ḥasan ibn Ziyād (d. 204 AH) from Imām Abū Ḥanīfah (d. 150 AH), and of Imām Hishām ibn ʿUbayd Allāh al-Rāzī (d. 221 AH) from Imām Muḥammad (d. 189 AH), may Allah have mercy on them all, that this person should complete the two rakʿahs. One may object that the time after ʿAṣr is a time in which no voluntary ṣalāh should be prayed. However, he reasons that becoming engaged in a voluntary prayer as a consequence of forgetfulness is different.
+
+    Consider a person who has performed ʿAṣr and then finds a congregation performing ʿAṣr in the masjid. He joins them, believing his own prayer was deficient, and then remembers that he had already performed it. He continues the prayer and does not terminate it. The same principle applies here.
+
+    A similar example is given in support: a person who begins a voluntary ṣalāh after the Imām has come out for the khuṭbah. Commencing a voluntary prayer at this point is makrūh (disliked). However, if he had already begun it before the Imām came out, and the Imām comes out after he has completed one rakʿah, he does not terminate it; rather, he completes two or four rakʿahs.
+
+    The primary reason for this is the command of Allah subḥānahu wa taʿālā: "And do not invalidate your deeds" (Sūrah Muḥammad, 47:33).
+
     This is also mentioned by Ṣadr al-Sharīʿah in *ʿUmdat al-Fatāwā*.
 - heading: Turning Around While Still in the Masjid
   text: |-
