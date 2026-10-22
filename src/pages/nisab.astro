@@ -6,6 +6,7 @@ const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', curren
 const ratio = nisab.goldPerOz / nisab.silverPerOz;
 const updated = new Date(nisab.date + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const auto = nisab.source !== 'Entered by hand';
+const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).toLowerCase();
 ---
 <Base title="Niṣāb Calculation" description="Today's Zakāh niṣāb in US dollars, and this year's Ṣadaqat al-Fiṭr.">
   <h1>Niṣāb Calculation</h1>
@@ -13,7 +14,7 @@ const auto = nisab.source !== 'Entered by hand';
 
   <section class="box">
     <h2>Current Zakāh Niṣāb</h2>
-    <p class="muted">Updated: <strong>{updated}{auto && ', 5:00 pm (Eastern)'}</strong></p>
+    <p class="muted">Updated: <strong>{updated}{auto && `, ${time} (Eastern)`}</strong></p>
     <p class="muted small-note">Based on the spot price of gold and silver in US dollars, updated automatically every day at 5 pm.</p>
     <div class="tiles">
       <div class="tile gold"><span class="k">Gold Niṣāb ({nisab.goldGrams}g)</span><span class="v">{usd(nisab.goldNisab)}</span></div>
