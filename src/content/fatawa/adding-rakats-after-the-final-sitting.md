@@ -35,7 +35,7 @@ explanation:
 
     The primary reason for this is the command of Allah subḥānahu wa taʿālā: "And do not invalidate your deeds" (Sūrah Muḥammad, 47:33).
 
-    This is also mentioned by Ṣadr al-Sharīʿah in *ʿUmdat al-Fatāwā*.
+    This is further corroborated from *ʿUmdat al-Fatāwā*.
 - heading: Turning Around While Still in the Masjid
   text: |-
     *Al-Durr al-Mukhtār* of al-Ḥaṣkafī (d. 1088 AH) states that a person will perform sajdat al-sahw even if, with his salām, he intended to end the ṣalāh, because an intention to change what the Divine law has mandated is meaningless, as long as he has not turned away from the qiblah or engaged in talk. If he forgot the sajdat al-sahw or the sajdat al-tilāwah, it remains mandated upon him as long as he is in the masjid.
