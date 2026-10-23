@@ -45,7 +45,7 @@ references:
     قال: وإن خاف من المسح [فوق ذلك] لم يكن عليه أن يمسحه؛ لأن المسح عبادة، فيسقط حكمها بالمشقة كالأصل، وذكر بعد هذا مسألة الجِراح إذا كان في البدن، وقد بيّنا (٥) [وهذا] آخر كتاب الطهارات (٦).
 
     [تمّ كتاب الطهارة بحمد الله وحسن توفيقه، وصلى الله على محمد النبي الأمي وآله وصحبه وسلم]، وهذا كتاب الصلاة.
-- source: Mullā Khusraw, Durar al-Ḥukkām Sharḥ Ghurar al-Aḥkām, with Ḥāshiyat al-Shurunbulālī, al-Masḥ ʿalā al-Jabīrah wa al-ʿIṣābah, pp. 38–39
+- source: Mullā Khusraw, Durar al-Ḥukkām Sharḥ Ghurar al-Aḥkām, with Ḥāshiyat al-Shurunbulālī, Bāb al-Masḥ ʿalā al-Khuffayn (al-Masḥ ʿalā al-Jabīrah wa al-ʿIṣābah), pp. 38–39
   language: Arabic
   text: |-
     **[الْمَسْحُ عَلَى الْجَبِيرَةِ وَالْعِصَابَةِ]**
