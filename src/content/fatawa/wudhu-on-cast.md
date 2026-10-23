@@ -9,7 +9,7 @@ short_answer: ''
 explanation: []
 hikmah: ''
 references:
-- source: al-Qudūrī, Mukhtaṣar al-Qudūrī, p. 18 (al-Maktabah al-Shāmilah)
+- source: al-Qudūrī, Mukhtaṣar al-Qudūrī, Bāb al-Masḥ ʿalā al-Khuffayn, p. 18 (al-Maktabah al-Shāmilah)
   language: Arabic
   text: |-
     ويجوز المسح على الجبائر وإن شدها على غير وضوء فإن سقطت عن غير برء لم يبطل المسح وإن سقطت عن برء بطل المسح
