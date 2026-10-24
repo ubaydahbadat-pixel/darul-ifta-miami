@@ -3,7 +3,7 @@ title: Wudhu on cast
 category: taharah
 topic: Wuḍūʾ
 date: '2026-10-22'
-draft: true
+draft: false
 question: A person cut one of their fingers, and the finger has been completely covered with a cast. The doctor has said this first cast will stay on for two days, after which it will be replaced with a second bandage. The person has been told that the first cast must not get wet at all, but that some water on the second bandage will be fine. How should this person perform wuḍūʾ?
 short_answer: When making wuḍūʾ, the person should avoid wiping over the cast until the doctor changes the bandage.
 explanation: []
