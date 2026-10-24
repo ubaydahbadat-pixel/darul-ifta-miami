@@ -29,7 +29,7 @@ Audit date: 22 October 2026. Each item describes where the page differs from, or
 ## D. Citations
 
 - [ ] **D15. Page numbers.** *Mukhtaṣar al-Qudūrī* (citation says p. 32; a page marker shows p. 35); *al-Muḥīṭ al-Burhānī* (markers run 500–512); Fatāwā Dār al-ʿUlūm Zakariyyā (vol. 2, no page).
-- [ ] **D16. Authors and editions.** *al-Muḥīṭ* heading needs author and edition. Which Ṣadr al-Sharīʿah wrote *ʿUmdat al-Fatāwā*, and his date?
+- [ ] **D16. Authors and editions.** *al-Muḥīṭ* heading needs author and edition. ~~Which Ṣadr al-Sharīʿah wrote *ʿUmdat al-Fatāwā*?~~ Resolved 24 Oct: the author is al-Ṣadr al-Shahīd (d. 536 AH, per the Mufti); reference heading corrected.
 - [ ] **D17. To confirm.**
   - Stray Latin "I" after «والركعة لا تحتمل الرفض.» and the lone line «المحيط البرهانى» in the *al-Muḥīṭ* text — keep or remove?
   - Names heard through voice-typing: Ibn Māzah, Mufti Raḍāʾ al-Ḥaqq, Mullā Khusraw, al-Sighnāqī; al-Ḥasan = al-Ḥasan ibn Ziyād; Hishām = Hishām ibn ʿUbayd Allāh al-Rāzī.
