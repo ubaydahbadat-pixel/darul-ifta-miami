@@ -1,0 +1,75 @@
+---
+import Base from '../layouts/Base.astro';
+import { donate } from '../data/site';
+
+const options = [
+  {
+    name: 'Card or Apple Pay / Google Pay',
+    via: 'Stripe',
+    text: 'Give securely by debit or credit card. You can choose a one-off or monthly donation.',
+    href: donate.stripeUrl,
+    action: 'Donate with Stripe',
+  },
+  {
+    name: 'Online donation form',
+    via: 'Zeffy',
+    text: 'Give through Zeffy. The full amount reaches Darul Iftāʾ Miami.',
+    href: donate.zeffyUrl,
+    action: 'Donate with Zeffy',
+  },
+];
+const zelleReady = Boolean(donate.zelle.recipient);
+---
+<Base title="Donate" description="Support the work of Darul Iftāʾ Miami.">
+  <h1>Support Darul Iftāʾ Miami</h1>
+  <hr class="rule" />
+
+  <!-- Placeholder wording: replace with your own. -->
+  <p class="lead">Darul Iftāʾ Miami is a local service providing religious and spiritual guidance for Muslims in South Florida. Your donation helps keep answering questions, publishing fatāwā, and keeping this site running.</p>
+
+  <section class="ways">
+    {options.map((o) => (
+      <div class="way">
+        <span class="via">{o.via}</span>
+        <h2>{o.name}</h2>
+        <p>{o.text}</p>
+        {o.href
+          ? <a class="button" href={o.href} target="_blank" rel="noopener">{o.action}</a>
+          : <span class="button disabled" aria-disabled="true">Coming soon</span>}
+      </div>
+    ))}
+
+    <div class="way">
+      <span class="via">Zelle</span>
+      <h2>Bank transfer by Zelle</h2>
+      <p>Send directly from your bank's app using Zelle.</p>
+      {zelleReady ? (
+        <dl class="zelle">
+          <dt>Send to</dt><dd>{donate.zelle.recipient}</dd>
+          {donate.zelle.name && <><dt>Name</dt><dd>{donate.zelle.name}</dd></>}
+        </dl>
+      ) : <span class="button disabled" aria-disabled="true">Coming soon</span>}
+    </div>
+  </section>
+
+  <p class="note">Darul Iftāʾ Miami is not yet a registered charity, so donations are not tax-deductible.</p>
+
+  <p class="dua">May Allah subḥānahu wa taʿālā accept your giving and place barakah in your wealth. <span class="ar">آمين</span></p>
+</Base>
+
+<style>
+  .ways { display: grid; gap: 14px; margin-top: 28px; }
+  @media (min-width: 700px) { .ways { grid-template-columns: repeat(3, 1fr); } }
+  .way { display: flex; flex-direction: column; gap: 8px; padding: 20px; background: var(--card); border: 1px solid var(--sand); border-top: 3px solid var(--gold); border-radius: 10px; }
+  .way h2 { font-size: 1.2rem; margin: 0; }
+  .way p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .way .button { margin-top: auto; text-align: center; }
+  .via { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); font-weight: 600; }
+  .button.disabled { background: var(--sand); color: var(--muted); cursor: default; }
+  .zelle { margin: auto 0 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: .95rem; }
+  .zelle dt { color: var(--muted); }
+  .zelle dd { margin: 0; font-weight: 600; word-break: break-all; }
+  .note { font-size: .85rem; color: var(--muted); margin-top: 22px; }
+  .dua { font-family: var(--serif); font-size: 1.2rem; text-align: center; margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--sand); }
+  .dua .ar { font-family: var(--arabic); }
+</style>

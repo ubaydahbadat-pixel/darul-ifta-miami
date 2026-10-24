@@ -55,6 +55,7 @@ const path = Astro.url.pathname;
   <footer class="site-footer">
     <div class="wrap">
       <p class="tag">Rooted in Scholarship. Serving South Florida.</p>
+      <p><a class="donate-link" href="/donate/">Support Darul Iftāʾ Miami</a></p>
       <p>© {new Date().getFullYear()} <span class="ar">دار الإفتاء ميامي</span> · Darul Iftāʾ Miami · All rights reserved.</p>
     </div>
   </footer>
@@ -91,5 +92,6 @@ const path = Astro.url.pathname;
   }
 
   .site-footer { border-top: 1px solid var(--sand); padding: 28px 0; font-size: .9rem; color: var(--muted); text-align: center; }
+  .donate-link { font-weight: 600; }
   .site-footer .tag { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); margin-bottom: 4px; }
 </style>

@@ -16,3 +16,13 @@ export const fitr = {
   amountPerPerson: null as number | null, // e.g. 12.00
   note: '',
 };
+
+// Donations page (/donate). Paste each link or detail in when ready; empty ones show "Coming soon".
+export const donate = {
+  stripeUrl: '',   // Stripe Payment Link, e.g. https://donate.stripe.com/...
+  zeffyUrl: '',    // Zeffy donation form link, e.g. https://www.zeffy.com/en-US/donation-form/...
+  zelle: {
+    recipient: '', // the email or US phone number registered with Zelle
+    name: '',      // the name donors will see, e.g. Darul Ifta Miami
+  },
+};
