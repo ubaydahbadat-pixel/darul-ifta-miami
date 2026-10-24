@@ -41,22 +41,22 @@ collections:
         label: Category
         widget: select
         options:
-          - { value: taharah, label: "Ṭahārah" }
-          - { value: salah, label: "Ṣalāh" }
-          - { value: sawm, label: "Ṣawm" }
-          - { value: zakah, label: "Zakāh" }
-          - { value: hajj-umrah, label: "Ḥajj & ʿUmrah" }
-          - { value: udhiyah, label: "Uḍḥiyah & ʿAqīqah" }
-          - { value: muamalat, label: "Muʿāmalāt" }
-          - { value: nikah, label: "Nikāḥ & Ṭalāq" }
-          - { value: hazr-ibahah, label: "al-Ḥaẓr wa al-Ibāḥah" }
-          - { value: inheritance, label: "Inheritance" }
+          - { value: taharah, label: "Purification (Ṭahārah)" }
+          - { value: salah, label: "Prayer (Ṣalāh)" }
+          - { value: sawm, label: "Fasting (Ṣawm)" }
+          - { value: zakah, label: "Obligatory Charity (Zakāh)" }
+          - { value: hajj-umrah, label: "Pilgrimage (Ḥajj & ʿUmrah)" }
+          - { value: udhiyah, label: "Sacrifice (Uḍḥiyah & ʿAqīqah)" }
+          - { value: muamalat, label: "Business & Finance (Muʿāmalāt)" }
+          - { value: nikah, label: "Marriage & Divorce (Nikāḥ & Ṭalāq)" }
+          - { value: hazr-ibahah, label: "Permitted & Prohibited (al-Ḥaẓr wa al-Ibāḥah)" }
+          - { value: inheritance, label: "Inheritance (Mīrāth)" }
           - { value: miscellaneous, label: "Miscellaneous" }
       # 2. Topic
       - name: topic
         label: Topic
         widget: string
-        hint: "e.g. Sajdah al-Sahw. Use the exact same spelling to file under an existing topic."
+        hint: "Plain English first, the Arabic term in brackets, e.g. Prostration of Forgetfulness (Sajdah al-Sahw). The bracketed term makes the link. Use the exact same wording to file under an existing topic."
       # 3. Title
       - name: title
         label: Title

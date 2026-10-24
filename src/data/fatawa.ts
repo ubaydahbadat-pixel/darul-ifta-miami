@@ -12,8 +12,10 @@ export function fatwaSlug(f: Fatwa) {
   return f.id.split('/').pop()!;
 }
 
+// The link uses the Arabic term in brackets if there is one: "Ablution (Wuḍūʾ)" → "wudu".
 export function topicSlug(f: Fatwa) {
-  return slugify(f.data.topic);
+  const bracket = f.data.topic.match(/\(([^)]+)\)\s*$/);
+  return slugify(bracket ? bracket[1] : f.data.topic);
 }
 
 export function fatwaUrl(f: Fatwa) {

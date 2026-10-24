@@ -57,6 +57,7 @@ Every fatwa is formulated from the juristic principles (uṣūl) as presented by
 
 - Astro, deployed by Cloudflare from `main` on push.
 - Each fatwa is one file in `src/content/fatawa/` (flat, no subfolders), with every section as its own front-matter field: `category, topic, title, date, draft, question, short_answer, explanation[{heading, text}], hikmah, references[{source, language, text}]`. The Mufti fills these in via the **/admin** form (Sveltia CMS, `public/admin/config.yml`); new entries are drafts by default.
+- **User-friendly names:** categories and topics are written plain English first, Arabic term in brackets — e.g. Fasting (Ṣawm), Making Up Missed Fasts (Qaḍāʾ). The menu item "Fatāwā" stays as is. Topic links use the bracketed term.
 - Categories (11) live in both `src/data/categories.ts` and `public/admin/config.yml` — keep them identical.
 - Niṣāb: `scripts/update-nisab.mjs` runs twice daily via `.github/workflows/nisab.yml` (09–11 and 21–23 UTC; updates once per slot, from 5 am and from 5 pm New York). Spot prices from Swissquote, backup gold-api.com; refuses >25% daily moves. Writes `src/data/nisab.json` — never edit that file by hand.
 - Honorifics: raḥimahullāh for the imāms on public pages.

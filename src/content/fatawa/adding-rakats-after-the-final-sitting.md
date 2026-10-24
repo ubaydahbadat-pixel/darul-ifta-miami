@@ -1,7 +1,7 @@
 ---
 title: Adding rakats after the final sitting
 category: salah
-topic: Sajdah al-Sahw
+topic: Prostration of Forgetfulness (Sajdah al-Sahw)
 date: '2026-10-21'
 draft: false
 question: |-
