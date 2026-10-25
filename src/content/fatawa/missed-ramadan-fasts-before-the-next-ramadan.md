@@ -5,7 +5,7 @@ topic: Making Up Missed Fasts (Qaḍāʾ)
 date: '2026-10-23'
 question: A person missed two days of fasting in Ramaḍān because they were travelling. Would they be sinful if they did not make them up before the next Ramaḍān?
 draft: false
-short_answer: ''
+short_answer: The person would not be sinful for delaying the make-up fasts, as they can be made up at any point in their lifetime. However, the optimum is to make them up as soon as possible.
 explanation: []
 hikmah: ''
 references:

@@ -5,7 +5,7 @@ topic: Calculating Zakāh
 date: '2026-10-24'
 question: A person's annual zakāh date is the 15th of Ramaḍān, but they forgot to pay on that date. Today is the 15th of Rabīʿ al-Thānī. How should they calculate the zakāh they owe, and which assets do they need to pay it on?
 draft: false
-short_answer: ''
+short_answer: The person should calculate their annual net assets on the 15th of Ramaḍān, and pay the zakāh owed on that basis. They would be sinful for the delay if it was done on purpose.
 explanation: []
 hikmah: ''
 references:

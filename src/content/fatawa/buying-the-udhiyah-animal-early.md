@@ -5,7 +5,15 @@ topic: The Sacrificial Animal (Uḍḥiyah)
 date: '2026-10-26'
 draft: true
 question: I plan to buy my uḍḥiyah animal months before Eid al-Adha, because I've heard that keeping it from early on brings more reward. Is that correct? What kind of animal should I look for, and how should I look after it until the sacrifice?
-short_answer: ''
+short_answer: |-
+  It is more beneficial to have an animal with which a person has a deep emotional attachment. They should aim to have an animal in the appropriate age bracket:
+
+  - Sheep: [age to be confirmed by the Mufti]
+  - Goat: [age to be confirmed by the Mufti]
+  - Cow: [age to be confirmed by the Mufti]
+  - Camel: [age to be confirmed by the Mufti]
+
+  Until the sacrifice, the animal should be treated with the utmost care and fed the best kind of feed.
 explanation: []
 hikmah: ''
 references:
