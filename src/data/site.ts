@@ -26,3 +26,6 @@ export const donate = {
     name: '',      // the name donors will see, e.g. Darul Ifta Miami
   },
 };
+
+// WhatsApp channel
+export const WHATSAPP_CHANNEL = 'https://whatsapp.com/channel/0029VbDxkeYDDmFLpJCAgG3N';

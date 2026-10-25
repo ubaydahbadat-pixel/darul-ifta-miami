@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import FatwaList from '../components/FatwaList.astro';
 import { getFatawa } from '../data/fatawa';
-import { nisab } from '../data/site';
+import { nisab, WHATSAPP_CHANNEL } from '../data/site';
 
 const latest = (await getFatawa()).slice(0, 5);
 const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
@@ -23,6 +23,7 @@ const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', curren
     <h2>Latest Fatāwā</h2>
     {latest.length ? <FatwaList items={latest} showPath /> : <p class="empty">The first fatāwā will be published soon.</p>}
     {latest.length > 0 && <p><a href="/fatawa/">All fatāwā →</a></p>}
+    <p class="wa">New fatāwā are shared on our <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener">WhatsApp channel</a>.</p>
   </section>
 
   <section class="split">

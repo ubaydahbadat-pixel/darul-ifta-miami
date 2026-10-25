@@ -3,6 +3,7 @@ import Base from '../../../../layouts/Base.astro';
 import { categoryName } from '../../../../data/categories';
 import { getFatawa, topicSlug, fatwaSlug, formatDate } from '../../../../data/fatawa';
 import { md } from '../../../../data/markdown';
+import { WHATSAPP_CHANNEL } from '../../../../data/site';
 
 export async function getStaticPaths() {
   const fatawa = await getFatawa();
@@ -88,6 +89,7 @@ const references = await Promise.all(
   <div class="actions">
     {d.pdf && <a class="button" href={d.pdf} download>Download PDF</a>}
     <a class="button ghost" href="/ask/">Ask a question</a>
+    <a class="button ghost" href={WHATSAPP_CHANNEL} target="_blank" rel="noopener">Follow on WhatsApp</a>
   </div>
 </Base>
 

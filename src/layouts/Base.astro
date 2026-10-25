@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { WHATSAPP_CHANNEL } from '../data/site';
 
 interface Props { title?: string; description?: string; }
 const { title, description = 'Fatāwā and guidance according to the Ḥanafī madhhab. Rooted in Scholarship. Serving South Florida.' } = Astro.props;
@@ -56,7 +57,7 @@ const path = Astro.url.pathname;
   <footer class="site-footer">
     <div class="wrap">
       <p class="tag">Rooted in Scholarship. Serving South Florida.</p>
-      <p><a class="donate-link" href="/donate/">Support Darul Iftāʾ Miami</a></p>
+      <p class="footer-links"><a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener">Follow on WhatsApp</a><span aria-hidden="true">·</span><a class="donate-link" href="/donate/">Support Darul Iftāʾ Miami</a></p>
       <p>© {new Date().getFullYear()} <span class="ar">دار الإفتاء ميامي</span> · Darul Iftāʾ Miami · All rights reserved.</p>
     </div>
   </footer>
@@ -94,5 +95,7 @@ const path = Astro.url.pathname;
 
   .site-footer { border-top: 1px solid var(--sand); padding: 28px 0; font-size: .9rem; color: var(--muted); text-align: center; }
   .donate-link { font-weight: 600; }
+  .footer-links a { font-weight: 600; }
+  .footer-links span { margin: 0 10px; }
   .site-footer .tag { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); margin-bottom: 4px; }
 </style>
