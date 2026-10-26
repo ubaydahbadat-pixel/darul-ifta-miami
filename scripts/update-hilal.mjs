@@ -19,8 +19,8 @@ async function get(url) {
 // Month names as the committee may spell them → month number.
 const MONTHS = [
   [1, /^muh?arr?am/], [2, /^saf[ae]r/], [3, /^rabi.?\s*al.?\s*awwal|^rabi.?\s*ul.?\s*awwal|^rabi.?\s*(?:al.?)?\s*ula?$/], [4, /^rabi.?\s*al.?\s*th?ani|^rabi.?\s*ul.?\s*th?ani|^rabi.?\s*al.?\s*akhir/],
-  [5, /^juma?d[ai].?\s*(?:al.?|ul.?)?\s*(?:ula|awwal|oola)/], [6, /^juma?d[ai].?\s*(?:al.?|ul.?|ath.?)?\s*(?:akhirah?|akhir|th?ani)/], [7, /^rajab/], [8, /^sh.?ab[ae]n/],
-  [9, /^rama[dz]h?[ae]n/], [10, /^shaww?al/], [11, /^dh?u.?\s*(?:al.?|l.?)?\s*q.?[ae]?d/], [12, /^dh?u.?\s*(?:al.?|l.?)?\s*h.?ij/],
+  [5, /^juma?d[ai].?\s*(?:al.?|ul.?)?\s*(?:ula|awwal|oola)/], [6, /^juma?d[ai].?\s*(?:al.?|ul.?|ath.?)?\s*(?:akhirah?|akhir|th?ani|ukhra)/], [7, /^rajab/], [8, /^sh.?ab[ae]n/],
+  [9, /^rama[dz]h?[ae]n/], [10, /^shaww?al/], [11, /^(?:dh?|z)u.?\s*(?:al.?|l.?)?\s*q.?[ae]?d/], [12, /^(?:dh?|z)u.?\s*(?:al.?|l.?)?\s*h.?ij/],
 ];
 const monthNo = (name) => {
   const n = name.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s*[ʿʾ'’`]\s*/g, '').replace(/-/g, ' ').replace(/\s+/g, ' ').trim();
@@ -109,9 +109,24 @@ let existing = [];
 try { existing = JSON.parse(await readFile(OUT, 'utf8')); } catch {}
 const byMonth = new Map(existing.map((e) => [e.hijri, e]));
 const unread = [];
+// Older months: the main page may be the appeal to sight the moon, with the decision posted at a related address.
+const DECISION = ['-announcement', '-declaration', '-decision', '-update', '-result', '-results', '-final', '-1', '-2', '-moon-sighting', '-moonsighting'];
+async function readMonth(url) {
+  const r = parse(await get(url), url);
+  if (r) return r;
+  for (const extra of DECISION) {
+    try {
+      const html = await get(url + extra);
+      if (/<title>\s*404/i.test(html)) continue;
+      const r2 = parse(html, url + extra);
+      if (r2) return r2;
+    } catch { /* not this address */ }
+  }
+  return null;
+}
 for (const url of urls) {
   try {
-    const r = parse(await get(url), url);
+    const r = await readMonth(url);
     if (!r) { unread.push(url); continue; }
     const [y, m] = r.hijri.split('-').map(Number);
     if (y < FROM.y || (y === FROM.y && m < FROM.m)) continue;
