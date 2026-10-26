@@ -6,7 +6,51 @@ date: '2026-10-27'
 draft: false
 question: I drive a taxi for a ride-share app, and I live in West Hammocks. Sometimes I get jobs up in West Palm Beach, and I drive back from West Palm Beach to Miami. If I pray ʿAṣr by myself in North Miami, would I pray qaṣr or in full?
 short_answer: ''
-explanation: []
+explanation:
+- heading: The Fiqh of the Answer
+  text: |-
+    Faqīh Abū al-Layth as-Samarqandī (d. 375 AH) states that residents of a city become musāfir (travelers according to Islamic law) when they have left the last houses of their city. However, he further notes that if the city has now engulfed the surrounding areas to the extent that they are connected to surrounding towns, the individual from the town will become musāfir when they leave the town, and the city resident will become musāfir when they leave the city.
+
+    Muftī Riḍāʾu al-Ḥaqq (may Allah preserve him) further corroborates the above by stating that even though the second settlement is contiguous, both settlements have separate names and their boundaries are distinct. Therefore, both will be considered as independent settlements, and the Sharʿī journey will be considered to commence when one crosses the boundary of their own settlement. However, if the connection has become such that the government has merged them into one, and the second settlement is used as a neighborhood for the first, then it is part of the city. Thus, the rulings of a Sharʿī journey will apply upon crossing it.
+
+    Historically, the City of London was the original settlement, dating back to Roman times. Over centuries, what is now known as Greater London expanded significantly, absorbing numerous surrounding towns and villages. These areas eventually evolved into distinct boroughs in the 19th and 20th centuries, with the formation of Greater London in 1965. Each borough, including Ilford, maintains its own local government and distinct identity, separate from the City of London.
+
+    It can be argued that for the purposes of determining the status of a musāfir, each London borough should be treated as an independent entity. Therefore, a resident of Ilford would become a musāfir upon leaving the boundaries of Ilford, even though they have not left the wider area of Greater London. This is because, as per Muftī Riḍāʾu al-Ḥaqq's explanation, each borough, including Ilford, has distinct boundaries and a separate name, thereby qualifying it as an independent settlement. The fact that these boroughs are part of the larger entity of Greater London does not diminish their individuality in this regard. Thus, for a resident of Ilford, the commencement of a Sharʿī journey would be marked not by leaving Greater London, but rather by crossing out of the boundaries of Ilford itself.
 hikmah: ''
-references: []
+references:
+- source: Abū al-Layth al-Samarqandī, Kitāb al-Nawāzil, p. 111
+  language: Arabic
+  text: |-
+    حكم السفر يتعلق بمجاوزة عمرانات المصر من عند جانبه الذي خرج منه، وكذا حكم الإقامة يتعلق بدخولها، وفناء المصر من المصر ، إذا كان أقل من غلوة (٢)، ولم يكن بينهما مزرعة يعتبر مجاوزة، وإن غلوة أو كانت بينهما مزرعة، لا يعتبر مجاوزة ) ، وإنما يعتبر بيوت المصر، أما القرى إذا كانت متصلة بريض المصر فالمعتبر مجاوزة القرى هو الصحيح، وإن كانت غير متصلة، يعتبر مجاوزة الفناء، وإن كان للمقصد طريقان: أحدهما: مدة السفر والآخر: أقل منه يجوز أن يختار الأطول نية الإقامة تصح في البيوت والعمرانات دون الخيام والأخبية
+
+    (كتاب النوازل ص ١١١ ط دكع )
+- source: Fatāwā Dār al-ʿUlūm Zakariyyā, vol. 2, p. 599
+  language: Urdu
+  text: |-
+    **آبادی بڑھنے کی وجہ سے دو بستیاں متصل ہو جانے پر سفر شرعی کی ابتداء کا حکم :**
+
+    سوال: آج کل بعض جگہوں پر آبادی کے بڑھنے کی وجہ سے دو بستیاں متصل ہو جاتی ہیں تو اس
+    حالت میں سفر کا اعتبار کہاں سے ہوگا ؟ کیا اپنی بستی سے یا دوسری متصل بستی سے؟
+
+    الجواب : صورت مسئولہ میں دوسری بستی اگر چہ متصل ہے لیکن دونوں کے نام علیحدہ ہیں اور دونوں
+    کی حدود بھی الگ الگ مقرر ہیں تو دونوں مستقل آبادیاں شمار ہوں گی اور سفر شرعی کا اعتبار اس وقت ہوگا جب کہ اپنی آبادی سے تجاوز کرے، اور اگر اس طور پر اتصال ہو چکا ہے کہ حکومت کی جانب سے ایک کر دیا ہو اور دوسری بستی پہلی کے لئے بطور محلہ استعمال ہوتی ہو تو یہ شہر کا جز ہے لہذا اب اس سے تجاوز کرنے پر سفر شرعی کے احکام
+    جاری ہوں گے۔ ملاحظہ ہو در مختار میں ہے:
+
+    من خرج من عمارة موضع إقامته من جانب خروجه وإن لم يجاوز من الجانب الآخر.
+
+    وفي الشامي ويشترط مفارقة ما كان من توابع موضع الإقامة كربض المصر وهو ماحول المدينة من بيوت ومساكن فإنه في حكم المصر و كذا القرى المتصلة بالربض في الصحيح بخلاف البساتين ولو متصلة بالبناء لأنها ليست من البلدة ولوسكنها أهل البلدة في جميع
+    السنة. (الدر المختار مع الشامي: ۱۲۱/۲، باب صلاة المسافر، سعيد)
+
+    وكذافي الهداية: ١٦٦/١. والبحر الرائق: ۱۲۸/۲ . وحاشية الطحطاوي على مراقي
+    الفلاح: ص ۴۲۳، باب صلاة المسافر ، قديمي والفتاوى الهندية : ١٣٩/١ . وشرح منية
+    المصلى : ص ۵۳۶ والفقه الاسلامی وادلته: ۳۲۴، دار الفکر)
+
+    فتاوی رحیمیہ میں ہے:
+
+    وطن اصلی یا وطن اقامت کی آبادی سے باہر ہو جانے پر شرعی مسافر کا اطلاق ہوگا، دوسری آبادی اگر چه متصل
+    ہو مگر دوسری آبادی ہے ، دونوں کے نام الگ ہیں حکومت اور کارپوریشن یعنی ( میونسپلٹی نگر پالیکا ) نے دونوں
+    آبادیوں کے حدود الگ الگ مقرر کئے ہیں ، اس لئے وہ دونوں دو مستقل آبادیاں (یعنی شہر ) شمار ہوں گی ، اور
+    شرعی مسافر کا اطلاق اس وقت ہوگا جب کہ اپنی آبادی یعنی شہر کے حدود تجاوز کرے، اور اگر متصل ہونے کی وجہ
+    سے کارپوریشن نے دونوں کو ایک کر دیا ہو تو اب وہ آبادی شہر کا محلہ ہے اور وہ محلہ شہر کا جز ہے لہذا اب اس سے
+    تجاوز ہونے پر مسافرت کے احکام جاری ہوں گے ۔ (فتاوی رحیمیہ: ۳۶۴/۶ -- واحسن الفتاوی : ۷۴/۴ -- (
 ---
