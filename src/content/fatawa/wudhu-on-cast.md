@@ -7,7 +7,7 @@ draft: false
 question: A person cut one of their fingers, and the finger has been completely covered with a cast. The doctor has said this first cast will stay on for two days, after which it will be replaced with a second bandage. The person has been told that the first cast must not get wet at all, but that some water on the second bandage will be fine. How should this person perform wuḍūʾ?
 short_answer: When making wuḍūʾ, the person should avoid wiping over the cast until the doctor changes the bandage.
 explanation: []
-hikmah: ''
+hikmah: Allah subḥānahu wa taʿālā has found every avenue to make both the daily living and the worship of the human being relatively easy. In this manner, Allah subḥānahu wa taʿālā, being as merciful and as divine as He is, still allows the human being to pursue their full purpose of worship in a manner in which the human being does not harm himself, and in a manner which inculcates the human being's weaknesses and faults and overlooks them, in order to give that weak and feeble human being a higher aspirational goal.
 references:
 - source: al-Qudūrī, Mukhtaṣar al-Qudūrī, Bāb al-Masḥ ʿalā al-Khuffayn, p. 18 (al-Maktabah al-Shāmilah)
   language: Arabic
