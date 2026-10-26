@@ -1,7 +1,117 @@
 [
   {
+    "hijri": "1446-01",
+    "start": "2024-07-07",
+    "url": "https://hilalcommittee.org/news/muharram-1446-ah"
+  },
+  {
+    "hijri": "1446-02",
+    "start": "2024-08-06",
+    "url": "https://hilalcommittee.org/news/safar-1446-ah"
+  },
+  {
+    "hijri": "1446-03",
+    "start": "2024-09-05",
+    "url": "https://hilalcommittee.org/news/rabi-al-awwal-1446-ah"
+  },
+  {
+    "hijri": "1446-05",
+    "start": "2024-11-03",
+    "url": "https://hilalcommittee.org/news/jumada-al-ula-1446-ah"
+  },
+  {
+    "hijri": "1446-07",
+    "start": "2025-01-02",
+    "url": "https://hilalcommittee.org/news/rajab-1446-ah"
+  },
+  {
+    "hijri": "1446-09",
+    "start": "2025-03-01",
+    "url": "https://hilalcommittee.org/news/ramadan-1446-ah"
+  },
+  {
+    "hijri": "1446-10",
+    "start": "2025-03-31",
+    "url": "https://hilalcommittee.org/news/shawwal-1446-ah"
+  },
+  {
+    "hijri": "1446-12",
+    "start": "2025-05-28",
+    "url": "https://hilalcommittee.org/news/dhul-hijjah-1446-ah"
+  },
+  {
+    "hijri": "1447-02",
+    "start": "2025-07-26",
+    "url": "https://hilalcommittee.org/news/safar-1447-ah"
+  },
+  {
+    "hijri": "1447-03",
+    "start": "2025-08-25",
+    "url": "https://hilalcommittee.org/news/rabi-al-awwal-1447-ah"
+  },
+  {
+    "hijri": "1447-04",
+    "start": "2025-09-24",
+    "url": "https://hilalcommittee.org/news/rabi-al-thani-1447-ah"
+  },
+  {
+    "hijri": "1447-05",
+    "start": "2025-10-24",
+    "url": "https://hilalcommittee.org/news/jumada-al-ula-1447-ah"
+  },
+  {
+    "hijri": "1447-06",
+    "start": "2025-11-22",
+    "url": "https://hilalcommittee.org/news/jumada-al-akhirah-1447-ah"
+  },
+  {
+    "hijri": "1447-07",
+    "start": "2025-12-22",
+    "url": "https://hilalcommittee.org/news/rajab-1447-ah"
+  },
+  {
+    "hijri": "1447-08",
+    "start": "2026-01-20",
+    "url": "https://hilalcommittee.org/news/shaban-1447-ah"
+  },
+  {
+    "hijri": "1447-09",
+    "start": "2026-02-19",
+    "url": "https://hilalcommittee.org/news/ramadan-1447-ah"
+  },
+  {
+    "hijri": "1447-10",
+    "start": "2026-03-20",
+    "url": "https://hilalcommittee.org/news/shawwal-1447-ah"
+  },
+  {
+    "hijri": "1447-12",
+    "start": "2026-05-18",
+    "url": "https://hilalcommittee.org/news/dhul-hijjah-1447-ah"
+  },
+  {
     "hijri": "1448-01",
     "start": "2026-06-16",
     "url": "https://hilalcommittee.org/news/muharram-1448-ah"
+  },
+  {
+    "hijri": "1448-02",
+    "start": "2026-07-16",
+    "url": "https://hilalcommittee.org/news/safar-1448-ah"
+  },
+  {
+    "hijri": "1448-03",
+    "start": "2026-08-14",
+    "url": "https://hilalcommittee.org/news/rabi-al-awwal-1448-ah"
+  },
+  {
+    "hijri": "1448-04",
+    "start": "2026-09-13",
+    "url": "https://hilalcommittee.org/news/rabi-al-thani-1448-ah"
+  },
+  {
+    "hijri": "1448-05",
+    "start": "2026-10-12",
+    "url": "https://hilalcommittee.org/news/jumada-al-ula-1448-ah"
   }
 ]
