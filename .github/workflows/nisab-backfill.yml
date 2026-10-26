@@ -1,0 +1,39 @@
+# One-off: fills the niṣāb price history back to March 2024 (scripts/backfill-nisab.mjs).
+# Runs when that script changes, or by hand from the Actions tab.
+name: Niṣāb history backfill
+
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/backfill-nisab.mjs']
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nisab
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch historical prices
+        run: node scripts/backfill-nisab.mjs
+      - name: Save if changed
+        run: |
+          if git diff --quiet src/data/nisab-history.json; then
+            echo "No change."
+          else
+            git config user.name "nisab-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/data/nisab-history.json
+            git commit -m "Niṣāb history backfill"
+            git pull --rebase
+            git push
+          fi
