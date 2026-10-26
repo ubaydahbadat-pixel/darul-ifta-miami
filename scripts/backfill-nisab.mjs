@@ -4,7 +4,7 @@
 // Source: the LBMA benchmark prices, the official daily London prices for gold and silver in US dollars.
 //   Gold: the LBMA Gold Price AM, set at 10:30 London time (about 5:30–6:30 am New York time).
 //   Silver: the LBMA Silver Price, set once a day at 12:00 London time (about 7–8 am New York time).
-// (re-run 3)
+// (re-run 4)
 // Backup source: Stooq daily spot closing prices (XAUUSD, XAGUSD).
 // Days with no price (weekends and London holidays) are left out; the Niṣāb page uses the last earlier price.
 // Entries already in the log from our own 5 am updates are never overwritten.
@@ -56,8 +56,27 @@ async function stooq() {
   return { name: 'Stooq (daily close)', gold, silver };
 }
 
+// Yahoo Finance chart data: COMEX gold (GC=F) and silver (SI=F) futures, daily close. Used only if the two above fail.
+async function yahoo() {
+  const p1 = Math.floor(new Date(FROM + 'T00:00:00Z').getTime() / 1000), p2 = Math.floor(Date.now() / 1000);
+  const parse = (text) => {
+    const r = JSON.parse(text)?.chart?.result?.[0];
+    if (!r?.timestamp) throw new Error('unexpected Yahoo format');
+    const close = r.indicators.quote[0].close, map = new Map();
+    r.timestamp.forEach((t, i) => {
+      const date = new Date(t * 1000).toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+      if (date >= FROM && close[i] > 0) map.set(date, close[i]);
+    });
+    return map;
+  };
+  const url = (sym) => `https://query1.finance.yahoo.com/v8/finance/chart/${sym}?period1=${p1}&period2=${p2}&interval=1d`;
+  const gold = parse(await get(url('GC%3DF')));
+  const silver = parse(await get(url('SI%3DF')));
+  return { name: 'COMEX futures (daily close)', gold, silver };
+}
+
 let src;
-for (const fn of [lbma, stooq]) {
+for (const fn of [lbma, stooq, yahoo]) {
   try {
     src = await fn();
     if (src.gold.size < 300 || src.silver.size < 300) throw new Error(`too few days (gold ${src.gold.size}, silver ${src.silver.size})`);
