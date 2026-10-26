@@ -7,7 +7,10 @@ draft: false
 question: I'm flying from Miami Airport to Madīnah for ʿUmrah, with a stopover in Qatar. At what point should I put on the iḥrām and make the niyyah?
 short_answer: You should make the intention for iḥrām from Madīnah, at the masjid on the outskirts of Madīnah, Dhū al-Ḥulayfah.
 explanation: []
-hikmah: ''
+hikmah: |-
+  A person does not know what may occur, or what obstacles may arise, between them and their goal of performing ʿUmrah. Flights may be delayed or missed, a person's visa may be cancelled, and there may be multiple obstacles in a person's way before they are even allowed to set foot on the soil of the Ḥaramayn Sharīfayn. For this reason, rather than entering iḥrām from home or at the Doha stopover, the wisest decision is to wait until they land in Madīnah and have adequately prepared for the ʿUmrah, and then make their way to Dhū al-Ḥulayfah, to the Masjid of Dhū al-Ḥulayfah.
+
+  Secondly, this is the best manner because it is the manner of the Prophet ﷺ. The Prophet ﷺ himself would enter iḥrām from that point, and the Ṣaḥābah raḍiyallāhu ʿanhum followed him in this same practice after him. By fulfilling this obligation in that manner, a person does it with the Prophetic practice in mind, and it is as if they are taking the footsteps of the Prophet ﷺ in front of them in their practice.
 references:
 - source: al-Qudūrī, Mukhtaṣar al-Qudūrī, Kitāb al-Ḥajj, p. 66 (al-Maktabah al-Shāmilah)
   language: Arabic
