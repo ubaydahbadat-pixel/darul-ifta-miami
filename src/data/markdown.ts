@@ -18,3 +18,16 @@ export async function md(source: string | undefined, fallback: 'ar' | 'ur' = 'ar
   const { code } = await (await processor(fallback)).render(source);
   return code;
 }
+
+/**
+ * Prepares a pasted reference text: each line becomes its own paragraph (no blank lines needed),
+ * and WhatsApp timestamps such as "[10/21, 5:44 AM] Name:" are removed.
+ */
+export function refText(source: string | undefined) {
+  if (!source) return '';
+  return source
+    .split(/\r?\n/)
+    .map((l) => l.replace(/^\s*\[\d{1,2}\/\d{1,2}(\/\d{2,4})?,\s*\d{1,2}:\d{2}[\s  ]*([AaPp][Mm])?\]\s*[^:]{1,60}:\s*/, '').trim())
+    .filter(Boolean)
+    .join('\n\n');
+}

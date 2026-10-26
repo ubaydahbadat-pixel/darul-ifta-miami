@@ -2,7 +2,7 @@
 import Base from '../../../../layouts/Base.astro';
 import { categoryName } from '../../../../data/categories';
 import { getFatawa, topicSlug, fatwaSlug, formatDate } from '../../../../data/fatawa';
-import { md } from '../../../../data/markdown';
+import { md, refText } from '../../../../data/markdown';
 import { WHATSAPP_CHANNEL } from '../../../../data/site';
 
 export async function getStaticPaths() {
@@ -22,7 +22,7 @@ const shortAnswer = await md(d.short_answer);
 const explanation = await Promise.all(d.explanation.map(async (e) => ({ ...e, html: await md(e.text) })));
 const hikmah = await md(d.hikmah);
 const references = await Promise.all(
-  d.references.map(async (r) => ({ ...r, html: await md(r.text, r.language === 'Urdu' ? 'ur' : 'ar') })),
+  d.references.map(async (r) => ({ ...r, html: await md(refText(r.text), r.language === 'Urdu' ? 'ur' : 'ar') })),
 );
 ---
 <Base title={d.title} description={`${catName} · ${d.topic}: ${d.title}`}>

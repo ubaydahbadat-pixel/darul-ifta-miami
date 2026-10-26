@@ -117,7 +117,7 @@ collections:
           - name: text
             label: Full text
             widget: text
-            hint: "The full passage. Arabic and Urdu are detected per paragraph. Arabic inside an Urdu sentence: put it in [square brackets]."
+            hint: "Paste the full passage. Each line shows as its own paragraph; WhatsApp timestamps are removed automatically. Arabic inside an Urdu sentence: put it in [square brackets]. To make a heading bold, put ** on both sides."
       # 10. Publish switch
       - name: draft
         label: "Draft — keep hidden from the website"
