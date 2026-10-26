@@ -1,10 +1,12 @@
 // Zakāh niṣāb update, twice a day: 5 am and 5 pm New York time. Run by GitHub Actions (see .github/workflows/nisab.yml).
 // Fetches the gold and silver spot price in US dollars, works out the niṣāb, and writes src/data/nisab.json.
+// The 5 am figures are also logged in src/data/nisab-history.json.
 // The site rebuilds itself when that file changes. No accounts or API keys are needed.
 
 import { readFile, writeFile } from 'node:fs/promises';
 
 const FILE = new URL('../src/data/nisab.json', import.meta.url);
+const HISTORY = new URL('../src/data/nisab-history.json', import.meta.url);
 const GRAMS_PER_TROY_OZ = 31.1034768;
 const SLOTS = [{ name: 'am', hour: 5 }, { name: 'pm', hour: 17 }]; // 5 am and 5 pm, New York time
 const force = process.argv.includes('--force');
@@ -84,3 +86,14 @@ const out = {
 };
 await writeFile(FILE, JSON.stringify(out, null, 2) + '\n');
 console.log('Updated:', out);
+
+// Price log: the 5 am figures are added to src/data/nisab-history.json, one entry per day,
+// for the price-history chart. A second 5 am run on the same day replaces that day's entry.
+if (out.slot === 'am') {
+  let history = [];
+  try { history = JSON.parse(await readFile(HISTORY, 'utf8')); } catch { /* first run: start a new log */ }
+  const entry = { date: out.date, goldPerOz: out.goldPerOz, silverPerOz: out.silverPerOz, goldNisab: out.goldNisab, silverNisab: out.silverNisab, source: out.source };
+  history = history.filter((h) => h.date !== out.date).concat(entry).sort((a, b) => a.date.localeCompare(b.date));
+  await writeFile(HISTORY, JSON.stringify(history, null, 2) + '\n');
+  console.log(`Logged ${out.date} in the price history (${history.length} days).`);
+}

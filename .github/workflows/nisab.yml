@@ -27,12 +27,12 @@ jobs:
         run: node scripts/update-nisab.mjs ${{ github.event_name == 'workflow_dispatch' && '--force' || '' }}
       - name: Save if changed
         run: |
-          if git diff --quiet src/data/nisab.json; then
+          if git diff --quiet src/data/nisab.json src/data/nisab-history.json; then
             echo "No change."
           else
             git config user.name "nisab-bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/data/nisab.json
+            git add src/data/nisab.json src/data/nisab-history.json
             git commit -m "Daily niṣāb update $(date -u +%Y-%m-%d)"
             git push
           fi

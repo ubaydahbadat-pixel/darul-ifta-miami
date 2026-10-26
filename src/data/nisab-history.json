@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-10-22",
+    "goldPerOz": 4086.92,
+    "silverPerOz": 55.93,
+    "goldNisab": 11494.64,
+    "silverNisab": 1101.17,
+    "source": "Swissquote"
+  },
+  {
+    "date": "2026-10-23",
+    "goldPerOz": 4029.72,
+    "silverPerOz": 54.03,
+    "goldNisab": 11333.78,
+    "silverNisab": 1063.71,
+    "source": "Swissquote"
+  },
+  {
+    "date": "2026-10-24",
+    "goldPerOz": 3997.89,
+    "silverPerOz": 53.94,
+    "goldNisab": 11244.25,
+    "silverNisab": 1061.89,
+    "source": "Swissquote"
+  },
+  {
+    "date": "2026-10-25",
+    "goldPerOz": 3997.89,
+    "silverPerOz": 53.94,
+    "goldNisab": 11244.25,
+    "silverNisab": 1061.89,
+    "source": "Swissquote"
+  },
+  {
+    "date": "2026-10-26",
+    "goldPerOz": 4017.08,
+    "silverPerOz": 54.05,
+    "goldNisab": 11298.23,
+    "silverNisab": 1064.15,
+    "source": "Swissquote"
+  }
+]
