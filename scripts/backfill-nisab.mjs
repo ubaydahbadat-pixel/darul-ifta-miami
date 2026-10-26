@@ -4,11 +4,15 @@
 // Source: the LBMA benchmark prices, the official daily London prices for gold and silver in US dollars.
 //   Gold: the LBMA Gold Price AM, set at 10:30 London time (about 5:30–6:30 am New York time).
 //   Silver: the LBMA Silver Price, set once a day at 12:00 London time (about 7–8 am New York time).
+// (re-run 2)
 // Backup source: Stooq daily spot closing prices (XAUUSD, XAGUSD).
 // Days with no price (weekends and London holidays) are left out; the Niṣāb page uses the last earlier price.
 // Entries already in the log from our own 5 am updates are never overwritten.
 
 import { readFile, writeFile } from 'node:fs/promises';
+
+// Messages are also shown as GitHub annotations on the run, so they can be read without the full log.
+const note = (msg) => console.log(`::warning title=backfill::${String(msg).replace(/\r?\n/g, ' ')}`);
 
 const HISTORY = new URL('../src/data/nisab-history.json', import.meta.url);
 const NISAB = new URL('../src/data/nisab.json', import.meta.url);
@@ -18,7 +22,7 @@ const GRAMS_PER_TROY_OZ = 31.1034768;
 async function get(url) {
   const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (darul-ifta-miami niṣāb history)' }, signal: AbortSignal.timeout(30000) });
   const text = await res.text();
-  console.log(`${url} → HTTP ${res.status}, ${text.length} bytes. Starts: ${text.slice(0, 160).replace(/\s+/g, ' ')}`);
+  note(`${url} → HTTP ${res.status}, ${text.length} bytes. Starts: ${text.slice(0, 160).replace(/\s+/g, ' ')}`);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return text;
 }
@@ -58,7 +62,7 @@ for (const fn of [lbma, stooq]) {
     src = await fn();
     if (src.gold.size < 300 || src.silver.size < 300) throw new Error(`too few days (gold ${src.gold.size}, silver ${src.silver.size})`);
     break;
-  } catch (e) { console.warn(`${fn.name} failed: ${e.message}`); src = null; }
+  } catch (e) { note(`${fn.name} failed: ${e.message}`); src = null; }
 }
 if (!src) throw new Error('No historical source worked. Nothing was changed.');
 
@@ -82,4 +86,4 @@ for (const [date, g] of [...src.gold].sort()) {
 }
 const out = [...added, ...own].sort((a, b) => a.date.localeCompare(b.date));
 await writeFile(HISTORY, JSON.stringify(out, null, 2) + '\n');
-console.log(`Backfilled ${added.length} days from ${src.name} (${added[0]?.date} – ${added.at(-1)?.date}); kept ${own.length} days from our own 5 am log. Total ${out.length}.`);
+note(`Backfilled ${added.length} days from ${src.name} (${added[0]?.date} – ${added.at(-1)?.date}); kept ${own.length} days from our own 5 am log. Total ${out.length}.`);
