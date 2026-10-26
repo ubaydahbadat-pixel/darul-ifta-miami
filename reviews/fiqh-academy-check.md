@@ -21,5 +21,5 @@ Resolutions on the site: 14 (nos. 1–14). Fatāwā checked: 7.
 
 **For the Mufti:** decide for nos. 11 and 4 whether to quote them, cite them, or neither.
 
-- [ ] No. 11 and the zakāh fatwa
-- [ ] No. 4 and the Niṣāb page
+- [x] No. 11 and the zakāh fatwa — Mufti (26 Oct 2026): not quoted or cited for now; keep in mind.
+- [x] No. 4 and the Niṣāb page — Mufti (26 Oct 2026): not quoted or cited for now; keep in mind.
