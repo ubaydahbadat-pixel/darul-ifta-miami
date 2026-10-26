@@ -1,0 +1,42 @@
+# Hijri month start dates from the Central Hilal Committee of North America (scripts/update-hilal.mjs).
+# Runs every day at about 1–2 pm New York time (the committee announces after sunset the evening before),
+# whenever that script changes, or by hand from the Actions tab.
+name: Hijri calendar update
+
+on:
+  schedule:
+    - cron: '17 17 * * *'
+  push:
+    branches: [main]
+    paths: ['scripts/update-hilal.mjs']
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nisab
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Read the committee's announcements
+        run: node scripts/update-hilal.mjs
+      - name: Save if changed
+        run: |
+          if [ -z "$(git status --porcelain src/data/hijri-months.json)" ]; then
+            echo "No change."
+          else
+            git config user.name "hilal-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/data/hijri-months.json
+            git commit -m "Hijri calendar update (Central Hilal Committee)"
+            git pull --rebase
+            git push
+          fi
