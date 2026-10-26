@@ -36,9 +36,12 @@ function parse(html, url) {
   const text = html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&#160;/g, ' ').replace(/&#39;|&rsquo;/g, "'").replace(/\s+/g, ' ');
   const m = text.match(RE);
   if (!m) {
-    const i = text.search(/declared|first day|1\s*st day|will be the|begins|began/i);
-    const title = (html.match(/<title>([^<]*)<\/title>/i) || [])[1] || '';
-    note(`Unread: ${url} [title: ${title.trim()}] ${i >= 0 ? text.slice(Math.max(0, i - 220), i + 160) : text.slice(0, 200)}`);
+    const title = ((html.match(/<title>([^<]*)<\/title>/i) || [])[1] || '').trim();
+    if (/^404/.test(title)) return null;
+    // Report the page's own text (it starts where the title is repeated as the heading), not the sidebar.
+    const t1 = text.indexOf(title), t2 = t1 >= 0 ? text.indexOf(title, t1 + title.length) : -1;
+    const at = t2 >= 0 ? t2 : Math.max(t1, 0);
+    note(`Unread: ${url} [title: ${title}] ${text.slice(at, at + 700)}`);
     return null;
   }
   const [, gMonth, gDay, gYear, hName, hYear] = m;
@@ -71,10 +74,13 @@ for (let page = 1; page <= 8 && urls.size < 40; page++) {
 
 // The news list only shows the latest ten, so also try each month's address directly, e.g. /news/jumada-al-ula-1448-ah.
 const SLUGS = {
-  1: ['muharram'], 2: ['safar'], 3: ['rabi-al-awwal', 'rabi-ul-awwal'], 4: ['rabi-al-thani', 'rabi-al-akhir', 'rabi-ul-thani'],
-  5: ['jumada-al-ula', 'jumadal-ula', 'jumada-al-awwal'], 6: ['jumada-al-akhirah', 'jumada-al-akhira', 'jumadal-akhirah', 'jumada-al-thani'],
-  7: ['rajab'], 8: ['shaban', 'sha-ban'], 9: ['ramadan', 'ramadhan'], 10: ['shawwal'],
-  11: ['dhul-qadah', 'dhul-qidah', 'dhu-al-qadah', 'dhul-qadah', 'dhu-al-qidah'], 12: ['dhul-hijjah', 'dhu-al-hijjah'],
+  1: ['muharram', 'muharram-ul-haram'], 2: ['safar', 'safar-ul-muzaffar'], 3: ['rabi-al-awwal', 'rabi-ul-awwal', 'rabi-al-awal'],
+  4: ['rabi-al-thani', 'rabi-al-akhir', 'rabi-ul-thani', 'rabi-ul-akhir', 'rabi-al-thaani', 'rabi-al-sani'],
+  5: ['jumada-al-ula', 'jumadal-ula', 'jumada-al-awwal', 'jumada-al-oola', 'jumada-ul-ula', 'jumada-al-uula'],
+  6: ['jumada-al-akhirah', 'jumada-al-akhira', 'jumadal-akhirah', 'jumada-al-thani', 'jumada-al-akhir', 'jumada-al-ukhra', 'jumada-ul-akhirah', 'jumada-al-thaniyah'],
+  7: ['rajab', 'rajab-ul-murajjab'], 8: ['shaban', 'sha-ban', 'shaaban', 'shabaan', 'sha-aban'], 9: ['ramadan', 'ramadhan', 'ramazan', 'ramadan-ul-mubarak'],
+  10: ['shawwal', 'shawal'], 11: ['dhul-qadah', 'dhul-qidah', 'dhu-al-qadah', 'dhu-al-qidah', 'dhul-qada', 'dhul-qaadah', 'zul-qadah', 'dhul-qa-dah'],
+  12: ['dhul-hijjah', 'dhu-al-hijjah', 'dhul-hijja', 'zul-hijjah'],
 };
 const known = new Set([...urls].map((u) => u.replace(/\/$/, '')));
 const lastY = 1448;
@@ -83,10 +89,14 @@ for (let y = FROM.y; y <= lastY; y++) {
     if (y === FROM.y && m < FROM.m) continue;
     for (const slug of SLUGS[m]) {
       let hit = false;
-      for (const suffix of ['ah', 'h']) {
-        const u = `${SITE}/news/${slug}-${y}-${suffix}`;
+      for (const suffix of ['-ah', '-h', '']) {
+        const u = `${SITE}/news/${slug}-${y}${suffix}`;
         if (known.has(u)) { hit = true; break; }
-        try { await get(u); urls.add(u); known.add(u); hit = true; break; } catch { /* not this address */ }
+        try {
+          const html = await get(u);
+          if (/<title>\s*404/i.test(html)) continue; // the site answers missing pages with a normal page titled "404"
+          urls.add(u); known.add(u); hit = true; break;
+        } catch { /* not this address */ }
       }
       if (hit) break;
     }
