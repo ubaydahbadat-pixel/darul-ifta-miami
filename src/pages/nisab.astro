@@ -151,21 +151,29 @@ for (let g = firstDay; g <= lastDay; g = isoAdd(g, 1)) {
 
   <section class="box" id="calculator">
     <h2>Zakāh Calculator</h2>
-    <p class="muted">Add up what you own on your zakāh date, subtract what you owe, and compare the result with the niṣāb on that date. For a missed year, choose that year's zakāh date above and work it out one year at a time.</p>
+    <p class="muted">Add up what you own on your zakāh date, subtract what you owe, and compare the result with the gold niṣāb on that date. To use a past zakāh date, choose it above.</p>
 
     <form class="calc" id="calc" onsubmit="return false">
       <p class="calc-date" id="calc-date"></p>
       <fieldset>
         <legend>What you own</legend>
         <label><span>Cash in hand and in bank accounts</span><input inputmode="decimal" data-asset placeholder="0" /></label>
-        <label><span>Gold (value on your zakāh date)</span><input inputmode="decimal" data-asset placeholder="0" /></label>
-        <label><span>Silver (value on your zakāh date)</span><input inputmode="decimal" data-asset placeholder="0" /></label>
+        <div class="metal-row">
+          <label for="m-gold"><span>Gold</span></label>
+          <div class="metal-in"><input id="m-gold" inputmode="decimal" data-metal="gold" placeholder="0" /><select data-unit="gold" aria-label="Gold: grams or dollars"><option value="g">grams</option><option value="usd">US$</option></select></div>
+          <small class="metal-val" data-val="gold"></small>
+        </div>
+        <div class="metal-row">
+          <label for="m-silver"><span>Silver</span></label>
+          <div class="metal-in"><input id="m-silver" inputmode="decimal" data-metal="silver" placeholder="0" /><select data-unit="silver" aria-label="Silver: grams or dollars"><option value="g">grams</option><option value="usd">US$</option></select></div>
+          <small class="metal-val" data-val="silver"></small>
+        </div>
         <label><span>Trade goods: stock held for sale</span><input inputmode="decimal" data-asset placeholder="0" /></label>
-        <label><span>Other zakatable assets</span><input inputmode="decimal" data-asset placeholder="0" /></label>
+        <label><span>Shares and investments you can access<small>Leave out investments that are locked in and cannot be accessed until they mature.</small></span><input inputmode="decimal" data-asset placeholder="0" /></label>
       </fieldset>
       <fieldset>
         <legend>What you owe</legend>
-        <label><span>Debts and liabilities due</span><input inputmode="decimal" data-liab placeholder="0" /></label>
+        <label><span>Liabilities and debts</span><input inputmode="decimal" data-liab placeholder="0" /></label>
       </fieldset>
       <div class="totals">
         <div><span class="k">Total owned</span><span class="sv" id="c-assets">$0.00</span></div>
@@ -175,7 +183,7 @@ for (let g = firstDay; g <= lastDay; g = isoAdd(g, 1)) {
       <div class="verdicts" id="verdicts" aria-live="polite"></div>
       <button type="button" class="button ghost" id="calc-clear">Clear</button>
     </form>
-    <p class="muted small-note">This calculator is a guide to the arithmetic. If you are unsure what to include, <a href="/ask/">ask a question</a>.</p>
+    <p class="muted small-note">For anything not listed here, such as other business assets, cryptocurrency or missed years, or if you have further questions, please <a href="/ask/">ask a question</a>.</p>
   </section>
 
   <section class="box" id="fitr">
@@ -378,20 +386,34 @@ for (let g = firstDay; g <= lastDay; g = isoAdd(g, 1)) {
   const num = (i: HTMLInputElement) => { const v = parseFloat(i.value.replace(/[$,\s]/g, '')); return isFinite(v) && v > 0 ? v : 0; };
   const assets = [...document.querySelectorAll<HTMLInputElement>('[data-asset]')];
   const liabs = [...document.querySelectorAll<HTMLInputElement>('[data-liab]')];
+  const metals = [...document.querySelectorAll<HTMLInputElement>('[data-metal]')];
+  // Gold and silver: in grams (valued at that date's price) or in dollars.
+  const metalValue = (i: HTMLInputElement, r: Row | null) => {
+    const metal = i.dataset.metal as 'gold' | 'silver';
+    const unit = (document.querySelector(`[data-unit="${metal}"]`) as HTMLSelectElement).value;
+    const out = document.querySelector(`[data-val="${metal}"]`) as HTMLElement;
+    const n = num(i);
+    if (unit === 'usd' || !r) { out.textContent = ''; return n; }
+    const perOz = metal === 'gold' ? r[1] : r[2];
+    const v = (n / 31.1034768) * perOz;
+    out.textContent = `${usd(perOz)} per oz on ${shortG(r[0])}${n ? ` → ${usd(v)}` : ''}`;
+    return v;
+  };
   function updateCalc() {
     const r = recordFor(selected);
-    const A = assets.reduce((s, i) => s + num(i), 0), L = liabs.reduce((s, i) => s + num(i), 0), N = A - L;
+    const A = assets.reduce((s, i) => s + num(i), 0) + metals.reduce((s, i) => s + metalValue(i, r), 0), L = liabs.reduce((s, i) => s + num(i), 0), N = A - L;
     $('calc-date').innerHTML = `Niṣāb date: <strong>${longG(selected)}</strong>${hijriText(selected) ? ` · ${hijriText(selected)}` : ''} <a href="#history">change</a>`;
     $('c-assets').textContent = usd(A); $('c-liab').textContent = usd(L); $('c-net').textContent = usd(N);
     const v = $('verdicts');
     if (!r || A === 0) { v.innerHTML = ''; return; }
-    const line = (name: string, n: number) => N >= n
-      ? `<div class="verdict yes"><span class="k">${name} niṣāb · ${usd(n)}</span><p>Net wealth is <strong>above</strong> the ${name.toLowerCase()} niṣāb.</p><p>Zakāh at 2.5%: <strong class="due">${usd(N * 0.025)}</strong></p></div>`
-      : `<div class="verdict no"><span class="k">${name} niṣāb · ${usd(n)}</span><p>Net wealth is <strong>below</strong> the ${name.toLowerCase()} niṣāb.</p><p>No zakāh is due against this niṣāb.</p></div>`;
-    v.innerHTML = line('Gold', gN(r)) + line('Silver', sN(r));
+    const n = gN(r);
+    v.innerHTML = N >= n
+      ? `<div class="verdict yes"><span class="k">Gold niṣāb · ${usd(n)}</span><p>Net wealth is <strong>above</strong> the gold niṣāb.</p><p>Zakāh at 2.5%: <strong class="due">${usd(N * 0.025)}</strong></p></div>`
+      : `<div class="verdict no"><span class="k">Gold niṣāb · ${usd(n)}</span><p>Net wealth is <strong>below</strong> the gold niṣāb.</p><p>No zakāh is due.</p></div>`;
   }
-  [...assets, ...liabs].forEach((i) => i.addEventListener('input', updateCalc));
-  $('calc-clear').addEventListener('click', () => { [...assets, ...liabs].forEach((i) => (i.value = '')); updateCalc(); });
+  [...assets, ...liabs, ...metals].forEach((i) => i.addEventListener('input', updateCalc));
+  document.querySelectorAll('[data-unit]').forEach((sel) => sel.addEventListener('change', updateCalc));
+  $('calc-clear').addEventListener('click', () => { [...assets, ...liabs, ...metals].forEach((i) => (i.value = '')); updateCalc(); });
 
   // ---------- Start ----------
   syncPickers();
@@ -449,7 +471,7 @@ for (let g = firstDay; g <= lastDay; g = isoAdd(g, 1)) {
   .tip span { color: #CBD5E1; }
   .sources { margin-top: 10px; }
 
-  .calc fieldset { border: 0; padding: 0; margin: 14px 0 0; }
+  .calc fieldset { border: 0; padding: 0; margin: 14px 0 0; min-width: 0; }
   .calc legend { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; margin-bottom: 6px; }
   .calc label { display: grid; grid-template-columns: 1fr; gap: 4px; margin-bottom: 10px; }
   @media (min-width: 560px) { .calc label { grid-template-columns: 1fr 200px; align-items: center; } }
@@ -460,7 +482,15 @@ for (let g = firstDay; g <= lastDay; g = isoAdd(g, 1)) {
   @media (min-width: 560px) { .totals { grid-template-columns: 1fr 1fr 1fr; } }
   .totals .net { border-color: var(--teal); }
   .verdicts { display: grid; gap: 12px; margin-bottom: 14px; }
-  @media (min-width: 560px) { .verdicts { grid-template-columns: 1fr 1fr; } }
+  .calc label span small { display: block; font-size: .82rem; color: var(--muted); font-weight: 400; margin-top: 2px; }
+  .metal-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; margin-bottom: 10px; }
+  .metal-row > * { min-width: 0; }
+  @media (min-width: 560px) { .metal-row { grid-template-columns: 1fr 200px; align-items: center; } .metal-val { grid-column: 2; text-align: right; } }
+  .metal-row label { margin: 0; }
+  .metal-in { display: flex; gap: 6px; }
+  .calc .metal-in input { flex: 1 1 0; width: auto; min-width: 0; }
+  .metal-in select { flex: 0 0 86px; font: inherit; font-size: .9rem; border: 1px solid var(--sand); border-radius: 8px; background: #fff; padding: 0 6px; }
+  .metal-val { font-size: .82rem; color: var(--muted); min-height: 1em; }
   .verdicts .verdict { border-radius: 10px; padding: 12px 14px; border: 1px solid var(--sand); background: #fff; }
   .verdicts .verdict p { margin: 4px 0 0; font-size: .95rem; }
   .verdicts .yes { border-left: 4px solid var(--teal); }
