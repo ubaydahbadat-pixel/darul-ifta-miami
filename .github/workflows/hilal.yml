@@ -28,6 +28,8 @@ jobs:
           node-version: 22
       - name: Read the committee's announcements
         run: node scripts/update-hilal.mjs
+        env:
+          HILAL_DEBUG: '1'
       - name: Save if changed
         run: |
           if [ -z "$(git status --porcelain src/data/hijri-months.json)" ]; then

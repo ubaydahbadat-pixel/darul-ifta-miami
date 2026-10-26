@@ -30,7 +30,7 @@ const GMONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 
 // "Monday, October 12, 2026 will be the 1st day of Jumada al-Ula 1448 AH"
 // "has declared Tuesday, June 16, 2026 as the first day of Muharram 1448"
-const RE = /(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),?\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:st|nd|rd|th)?,?\s+(\d{4})?[^.]{0,80}?\b(?:1st|first)\s+day\s+of\s+(?:the\s+(?:month\s+of\s+)?)?([A-Za-zʿʾ'’\- ]{3,30}?)\s*,?\s*(14\d\d)/i;
+const RE = /(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),?\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:st|nd|rd|th)?,?\s+(\d{4})?[^.]{0,80}?\b(?:1\s*st|first)\s+day\s+of\s+(?:the\s+(?:month\s+of\s+)?)?([A-Za-zʿʾ'’\- ]{3,30}?)\s*,?\s*(14\d\d)/i;
 
 function parse(html, url) {
   const text = html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&#160;/g, ' ').replace(/&#39;|&rsquo;/g, "'").replace(/\s+/g, ' ');
@@ -44,6 +44,22 @@ function parse(html, url) {
   if (!year) return null;
   const start = `${year}-${String(GMONTHS.indexOf(gMonth) + 1).padStart(2, '0')}-${String(gDay).padStart(2, '0')}`;
   return { hijri: `${hYear}-${String(hm).padStart(2, '0')}`, start, url, statement: m[0].slice(0, 160) };
+}
+
+
+// Diagnostics (temporary): what the news page and one announcement look like.
+if (process.env.HILAL_DEBUG) {
+  try {
+    const html = await get(`${SITE}/news`);
+    const i = html.search(/load\s*more/i);
+    note(`news: load-more context: ${html.slice(Math.max(0, i - 600), i + 300).replace(/\s+/g, ' ')}`);
+    const api = [...new Set([...html.matchAll(/["'](\/[a-z0-9_\-\/]*(?:api|ajax|json|load|page|news)[a-z0-9_\-\/?=&.]*)["']/gi)].map((m) => m[1]))].slice(0, 30);
+    note(`news: candidate endpoints: ${api.join(' , ')}`);
+    const a = await get(`${SITE}/news/jumada-al-ula-1448-ah`);
+    const t = a.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+    const j = t.search(/day of/i);
+    note(`announcement text: ${t.slice(Math.max(0, j - 200), j + 120)}`);
+  } catch (e) { note(`debug failed: ${e.message}`); }
 }
 
 // 1. Find the announcement pages: the sitemap first, then the news pages.
