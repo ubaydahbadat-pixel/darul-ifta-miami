@@ -15,7 +15,10 @@ short_answer: |-
 
   Until the sacrifice, the animal should be treated with the utmost care and fed the best kind of feed.
 explanation: []
-hikmah: ''
+hikmah: |-
+  The uḍḥiyah animal serves a number of realms. The first is spiritual: a person is fulfilling the command of Allah subḥānahu wa taʿālā. The second is financial: a person has to go and buy the animal. The third is emotional: when a person carries out the uḍḥiyah themselves, they have to sever the emotional attachment they have created with the animal. Ultimately, the person is following in the footsteps of our forefather Ibrāhīm ʿalayhi al-ṣalātu wa al-salām, showing Allah subḥānahu wa taʿālā that they are willing to sacrifice what they love for the pleasure of Allah subḥānahu wa taʿālā.
+
+  The main reason a person should buy the animal early, if they can provide for it, feed it and nourish it, is that the emotional attachment becomes so much greater. When the emotional attachment becomes so much greater, then when the person is ready to sever it for the sake of Allah subḥānahu wa taʿālā, the sincerity of the heart and the sincerity of the hand become manifest, and this ideal of ultimate sacrifice comes to the forefront for them. With each droplet that comes out, a tear may come, but the pleasure of Allah subḥānahu wa taʿālā will build up.
 references:
 - source: al-Qudūrī, Mukhtaṣar al-Qudūrī, Kitāb al-Uḍḥiyah
   language: Arabic
