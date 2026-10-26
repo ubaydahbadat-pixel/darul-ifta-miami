@@ -12,6 +12,12 @@ Claude is **supplementary support for professional standards only.**
 - **Do:** format, check completeness and consistency, and **flag potential problems in the process** (missing citations, missing full texts, placeholders left in, privacy, citation details, unfinished pages, and the like). Flags describe the problem; they do not propose fiqh content.
 - Text Claude has written for a fatwa page (e.g. a draft question wording or placeholders) must be clearly identified to the Mufti as Claude's, and replaced by his own before publication.
 
+## Monthly check: American Fiqh Academy
+
+- The Mufti wants our fatāwā in line with the resolutions of the American Fiqh Academy (https://www.fiqhacademy.com/resolutions), quoting them where needed.
+- On the 1st of each month (and for any new fatwa on a subject they cover), check every fatwa — and the Niṣāb page — against the full resolutions list. Record the results in `reviews/fiqh-academy-check.md`.
+- Claude lists which resolution touches which fatwa, quoting the resolution's own words, date and link. Claude does not judge agreement or draft wording; the Mufti decides whether to quote, cite or revise.
+
 ## Scope of this process
 
 - This process is for the **public fatwa bank** only: making written fatāwā accessible, available and quick to publish.
