@@ -4,7 +4,7 @@
 // Source: the LBMA benchmark prices, the official daily London prices for gold and silver in US dollars.
 //   Gold: the LBMA Gold Price AM, set at 10:30 London time (about 5:30–6:30 am New York time).
 //   Silver: the LBMA Silver Price, set once a day at 12:00 London time (about 7–8 am New York time).
-// (re-run 2)
+// (re-run 3)
 // Backup source: Stooq daily spot closing prices (XAUUSD, XAGUSD).
 // Days with no price (weekends and London holidays) are left out; the Niṣāb page uses the last earlier price.
 // Entries already in the log from our own 5 am updates are never overwritten.
@@ -20,7 +20,7 @@ const FROM = '2024-03-01';
 const GRAMS_PER_TROY_OZ = 31.1034768;
 
 async function get(url) {
-  const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (darul-ifta-miami niṣāb history)' }, signal: AbortSignal.timeout(30000) });
+  const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (darul-ifta-miami nisab history)' }, signal: AbortSignal.timeout(30000) });
   const text = await res.text();
   note(`${url} → HTTP ${res.status}, ${text.length} bytes. Starts: ${text.slice(0, 160).replace(/\s+/g, ' ')}`);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
