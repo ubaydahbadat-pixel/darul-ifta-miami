@@ -5,7 +5,7 @@ topic: Entering the State of Iḥrām (Iḥrām)
 date: '2026-10-25'
 draft: true
 question: I'm flying from Miami Airport to Madīnah for ʿUmrah, with a stopover in Qatar. At what point should I put on the iḥrām and make the niyyah?
-short_answer: The person should make the intention for iḥrām from Madīnah, at the masjid on the outskirts of Madīnah, Yalamlam.
+short_answer: You should make the intention for iḥrām from Madīnah, at the masjid on the outskirts of Madīnah, Dhū al-Ḥulayfah.
 explanation: []
 hikmah: ''
 references:
