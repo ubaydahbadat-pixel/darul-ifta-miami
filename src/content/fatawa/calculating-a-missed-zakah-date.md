@@ -42,4 +42,24 @@ references:
     لنا: أنّها صدقةٌ، فلا تسقط بالتأخير، كالزكاة.
 
     وجه قول الحسن: أنّه حقٌّ يتعلق بيوم عيدٍ، فيسقط بالتأخير كالأضحية
+- source: al-Fatāwā al-Hindiyyah, vol. 1, Kitāb al-Zakāh, Bāb Zakāt al-Dhahab wa al-Fiḍḍah, p. 198 (al-ʿIlmiyyah)
+  language: Arabic
+  text: |-
+    وإن أدى القيمة تعتبر قيمتها يوم الوجوب
+    (الفتاوى الهندية، كتاب الزكاة، باب زكاة الذهب والفضة: ١/١٩٨؛ العلمية)
+- source: Ibn ʿĀbidīn, Radd al-Muḥtār, vol. 2, Kitāb al-Zakāh, Bāb Zakāt al-Māl, p. 299 (Saʿīd)
+  language: Arabic
+  text: |-
+    وقدم الشارح عند قوله وجاز دفع القيمة أنها تعتير يوم الوجوب
+    (رد المحتار، كتاب الزكاة، باب زكاة المال: ٢/٢٩٩؛ سعيد)
+- source: Ibn Nujaym, al-Baḥr al-Rāʾiq, vol. 2, Kitāb al-Zakāh, Faṣl fī al-Ghanam, p. 386 (al-ʿIlmiyyah)
+  language: Arabic
+  text: |-
+    وإن أدى قيمتها فعنده تعتبر القيمة يوم الوجوب في الزيادة والنقصان
+    (البحر الرائق، كتاب الزكاة، فصل في الغنم: ٢/٣٨٦؛ العلمية)
+- source: al-Maydānī, al-Lubāb fī Sharḥ al-Kitāb, vol. 2, Kitāb al-Zakāh, Bāb Zakāt al-Khayl, p. 334 (al-Bashāʾir al-Islāmiyyah)
+  language: Arabic
+  text: |-
+    [ويجوز دفع القيمة في الزكاة] ... وتعتبر القيمة يوم الوجوب عند الإمام
+    (اللباب في شرح الكتاب، كتاب الزكاة، باب زكاة الخيل: ٢/٣٣٤؛ البشائر الإسلامية)
 ---
