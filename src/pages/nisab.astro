@@ -1,18 +1,37 @@
 ---
 import Base from '../layouts/Base.astro';
 import { nisab, fitr } from '../data/site';
+import history from '../data/nisab-history.json';
 
 const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 const ratio = nisab.goldPerOz / nisab.silverPerOz;
 const updated = new Date(nisab.date + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const auto = nisab.source !== 'Entered by hand';
 const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).toLowerCase();
+const fmtLong = (d: string) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+// Only the fields the page needs: date, gold $/oz, silver $/oz, gold niṣāb, silver niṣāb, earlier-source flag.
+const rows = history.map((h: any) => [h.date, h.goldPerOz, h.silverPerOz, h.goldNisab, h.silverNisab, h.backfill ? 1 : 0]);
+const ownStart = history.find((h: any) => !h.backfill)?.date ?? history[history.length - 1].date;
+const hasBackfill = history.some((h: any) => h.backfill);
+// How the earlier (backfilled) prices are described on the page.
+const EARLIER_SOURCES: Record<string, string> = {
+  'LBMA (gold AM, silver)': 'the LBMA daily benchmark prices for gold (morning price, about 5:30–6:30 am Eastern) and silver (about 7–8 am Eastern)',
+  'Stooq (daily close)': 'the daily closing spot prices of gold and silver',
+  'COMEX futures (daily close)': 'the daily closing prices of COMEX gold and silver futures, which track the spot price closely',
+};
+const earlierSource = EARLIER_SOURCES[(history.find((h: any) => h.backfill) as any)?.source] ?? 'daily market prices';
+const today = nisab.date;
 ---
-<Base title="Niṣāb Calculation" description="Today's Zakāh niṣāb in US dollars, and this year's Ṣadaqat al-Fiṭr.">
+<Base title="Niṣāb Calculation" description="Today's Zakāh niṣāb in US dollars, the niṣāb on any past date, a zakāh calculator, and this year's Ṣadaqat al-Fiṭr.">
   <h1>Niṣāb Calculation</h1>
   <hr class="rule" />
 
-  <section class="box">
+  <nav class="jump" aria-label="On this page">
+    <a href="#current">Today's niṣāb</a><a href="#history">Niṣāb on a past date</a><a href="#calculator">Zakāh calculator</a><a href="#fitr">Ṣadaqat al-Fiṭr</a>
+  </nav>
+
+  <section class="box" id="current">
     <h2>Current Zakāh Niṣāb</h2>
     <p class="muted">Updated: <strong>{updated}{auto && `, ${time} (Eastern)`}</strong></p>
     <p class="muted small-note">Based on the spot price of gold and silver in US dollars, updated automatically every day at 5 am and 5 pm (Eastern).</p>
@@ -29,17 +48,321 @@ const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'nume
     <p class="note">In the Prophetic era, the value of the gold niṣāb and the silver niṣāb were nearly equal. Today, gold's value relative to silver has increased about {Math.round(ratio / 7)}-fold.</p>
   </section>
 
-  <section class="box">
+  <section class="box" id="history">
+    <h2>The Niṣāb on a Past Date</h2>
+    <p class="muted">For a missed zakāh date, look up the niṣāb as it stood on that day. Records go back to {fmtLong(history[0].date)}.</p>
+
+    <div class="lookup">
+      <div class="seg" role="group" aria-label="Calendar">
+        <button type="button" data-cal="hijri" aria-pressed="true">Hijri date</button>
+        <button type="button" data-cal="greg" aria-pressed="false">Gregorian date</button>
+      </div>
+      <div class="pick" id="pick-hijri">
+        <label>Day <select id="h-day"></select></label>
+        <label>Month <select id="h-month"></select></label>
+        <label>Year <select id="h-year"></select></label>
+      </div>
+      <div class="pick" id="pick-greg" hidden>
+        <label>Date <input type="date" id="g-date" min={history[0].date} max={today} value={today} /></label>
+      </div>
+    </div>
+
+    <div class="result" id="lookup-result" aria-live="polite"></div>
+
+    <h3 class="chart-head">Niṣāb over time</h3>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Metal">
+        <button type="button" data-metal="gold" aria-pressed="true">Gold</button>
+        <button type="button" data-metal="silver" aria-pressed="false">Silver</button>
+      </div>
+      <div class="seg" role="group" aria-label="Time range">
+        <button type="button" data-range="7" aria-pressed="false">1W</button>
+        <button type="button" data-range="31" aria-pressed="false">1M</button>
+        <button type="button" data-range="183" aria-pressed="false">6M</button>
+        <button type="button" data-range="366" aria-pressed="true">1Y</button>
+        <button type="button" data-range="0" aria-pressed="false">All</button>
+      </div>
+    </div>
+    <div class="stats">
+      <div><span class="k">Latest</span><span class="sv" id="s-latest"></span></div>
+      <div><span class="k">Change</span><span class="sv" id="s-change"></span></div>
+      <div><span class="k">High</span><span class="sv" id="s-high"></span></div>
+      <div><span class="k">Low</span><span class="sv" id="s-low"></span></div>
+    </div>
+    <p class="muted small" id="chart-title"></p>
+    <div class="chart" id="chart">
+      <svg id="svg" role="img" aria-labelledby="chart-title"></svg>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <p class="muted small-note sources">
+      From {fmtLong(ownStart)}: our own 5 am (Eastern) spot-price readings.{' '}
+      {hasBackfill && <>Before that: {earlierSource}.{' '}</>}
+      Weekends and market holidays use the last earlier price. Hijri dates follow the Umm al-Qurā calendar and may differ by a day from local moon-sighting.
+    </p>
+  </section>
+
+  <section class="box" id="calculator">
+    <h2>Zakāh Calculator</h2>
+    <p class="muted">Add up what you own on your zakāh date, subtract what you owe, and compare the result with the niṣāb on that date. For a missed year, choose that year's zakāh date above and work it out one year at a time.</p>
+
+    <form class="calc" id="calc" onsubmit="return false">
+      <p class="calc-date" id="calc-date"></p>
+      <fieldset>
+        <legend>What you own</legend>
+        <label><span>Cash in hand and in bank accounts</span><input inputmode="decimal" data-asset placeholder="0" /></label>
+        <label><span>Gold (value on your zakāh date)</span><input inputmode="decimal" data-asset placeholder="0" /></label>
+        <label><span>Silver (value on your zakāh date)</span><input inputmode="decimal" data-asset placeholder="0" /></label>
+        <label><span>Trade goods: stock held for sale</span><input inputmode="decimal" data-asset placeholder="0" /></label>
+        <label><span>Other zakatable assets</span><input inputmode="decimal" data-asset placeholder="0" /></label>
+      </fieldset>
+      <fieldset>
+        <legend>What you owe</legend>
+        <label><span>Debts and liabilities due</span><input inputmode="decimal" data-liab placeholder="0" /></label>
+      </fieldset>
+      <div class="totals">
+        <div><span class="k">Total owned</span><span class="sv" id="c-assets">$0.00</span></div>
+        <div><span class="k">Total owed</span><span class="sv" id="c-liab">$0.00</span></div>
+        <div class="net"><span class="k">Net zakatable wealth</span><span class="sv" id="c-net">$0.00</span></div>
+      </div>
+      <div class="verdicts" id="verdicts" aria-live="polite"></div>
+      <button type="button" class="button ghost" id="calc-clear">Clear</button>
+    </form>
+    <p class="muted small-note">This calculator is a guide to the arithmetic. If you are unsure what to include, <a href="/ask/">ask a question</a>.</p>
+  </section>
+
+  <section class="box" id="fitr">
     <h2>Ṣadaqat al-Fiṭr <span class="muted small">({fitr.year})</span></h2>
     {fitr.amountPerPerson
       ? <p class="v">{usd(fitr.amountPerPerson)} <span class="muted small">per person</span></p>
       : <p class="muted">This year's amount will be announced before Ramaḍān.</p>}
     {fitr.note && <p>{fitr.note}</p>}
   </section>
+
+  <script type="application/json" id="nisab-data" set:html={JSON.stringify({ rows, goldGrams: nisab.goldGrams, silverGrams: nisab.silverGrams, earlier: earlierSource })}></script>
 </Base>
 
-<style>
-  .box { background: var(--card); border: 1px solid var(--sand); border-radius: 12px; padding: 22px; }
+<script>
+  type Row = [string, number, number, number, number, number];
+  const { rows, goldGrams, silverGrams, earlier } = JSON.parse(document.getElementById('nisab-data')!.textContent || '{}') as { rows: Row[]; goldGrams: number; silverGrams: number; earlier: string };
+  const EARLIER = earlier.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase());
+  const gN = (r: Row) => r[3];
+  const sN = (r: Row) => r[4];
+  const $ = (id: string) => document.getElementById(id)!;
+  const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+  const usd0 = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  const day = (s: string) => new Date(s + 'T12:00:00Z');
+  const iso = (d: Date) => d.toISOString().slice(0, 10);
+  const fmt = (s: string, opts: Intl.DateTimeFormatOptions) => day(s).toLocaleDateString('en-US', { ...opts, timeZone: 'UTC' });
+  const longG = (s: string) => fmt(s, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  const shortG = (s: string) => fmt(s, { day: 'numeric', month: 'short', year: 'numeric' });
+
+  // ---------- Hijri (Umm al-Qurā) ----------
+  const MONTHS = ['Muḥarram', 'Ṣafar', 'Rabīʿ al-Awwal', 'Rabīʿ al-Thānī', 'Jumādā al-Ūlā', 'Jumādā al-Ākhirah', 'Rajab', 'Shaʿbān', 'Ramaḍān', 'Shawwāl', 'Dhū al-Qaʿdah', 'Dhū al-Ḥijjah'];
+  let hijriFmt: Intl.DateTimeFormat | null = null;
+  try { hijriFmt = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura-nu-latn', { day: 'numeric', month: 'numeric', year: 'numeric', timeZone: 'UTC' }); } catch { hijriFmt = null; }
+  const toHijri = (s: string) => {
+    if (!hijriFmt) return null;
+    const p = Object.fromEntries(hijriFmt.formatToParts(day(s)).map((x) => [x.type, x.value]));
+    const y = parseInt(p.year), m = parseInt(p.month), d = parseInt(p.day);
+    return isNaN(y) || isNaN(m) || isNaN(d) ? null : { y, m, d };
+  };
+  const hijriText = (s: string) => { const h = toHijri(s); return h ? `${h.d} ${MONTHS[h.m - 1]} ${h.y} AH` : ''; };
+
+  // Every calendar day from the first record to the last, with its Hijri date.
+  const first = rows[0][0], last = rows[rows.length - 1][0];
+  const days: { g: string; h: ReturnType<typeof toHijri> }[] = [];
+  for (let d = day(first); iso(d) <= last; d = new Date(d.getTime() + 864e5)) days.push({ g: iso(d), h: toHijri(iso(d)) });
+  const hijriIndex = new Map(days.filter((x) => x.h).map((x) => [`${x.h!.y}-${x.h!.m}-${x.h!.d}`, x.g]));
+
+  // The record for a date, or the last earlier one (weekends and holidays).
+  const recordFor = (s: string) => {
+    let lo = 0, hi = rows.length - 1, best = -1;
+    while (lo <= hi) { const mid = (lo + hi) >> 1; if (rows[mid][0] <= s) { best = mid; lo = mid + 1; } else hi = mid - 1; }
+    return best >= 0 ? rows[best] : null;
+  };
+
+  // ---------- Date lookup ----------
+  let selected = last;
+  const hDay = $('h-day') as HTMLSelectElement, hMonth = $('h-month') as HTMLSelectElement, hYear = $('h-year') as HTMLSelectElement;
+  const gDate = $('g-date') as HTMLInputElement;
+  const years = [...new Set(days.filter((x) => x.h).map((x) => x.h!.y))];
+  for (let d = 1; d <= 30; d++) hDay.add(new Option(String(d), String(d)));
+  MONTHS.forEach((m, i) => hMonth.add(new Option(m, String(i + 1))));
+  years.forEach((y) => hYear.add(new Option(`${y} AH`, String(y))));
+
+  function syncPickers() {
+    gDate.value = selected;
+    const h = toHijri(selected);
+    if (h) { hDay.value = String(h.d); hMonth.value = String(h.m); hYear.value = String(h.y); }
+  }
+
+  function showLookup(note = '') {
+    const r = recordFor(selected);
+    const box = $('lookup-result');
+    if (!r) { box.innerHTML = `<p>No record for that date.</p>`; return; }
+    const carried = r[0] !== selected ? `<p class="muted small">No market price that day; using ${longG(r[0])}.</p>` : '';
+    const src = r[5] ? EARLIER : '5 am (Eastern) spot price';
+    box.innerHTML = `
+      ${note ? `<p class="warn">${note}</p>` : ''}
+      <p class="when"><strong>${longG(selected)}</strong>${hijriText(selected) ? ` · ${hijriText(selected)}` : ''}</p>
+      <div class="tiles">
+        <div class="tile gold"><span class="k">Gold Niṣāb (${goldGrams}g)</span><span class="v">${usd(gN(r))}</span><span class="per">${usd(r[1])} per oz</span></div>
+        <div class="tile"><span class="k">Silver Niṣāb (${silverGrams}g)</span><span class="v">${usd(sN(r))}</span><span class="per">${usd(r[2])} per oz</span></div>
+      </div>
+      ${carried}<p class="muted small">Source: ${src}.</p>`;
+    updateCalc();
+  }
+
+  function setDate(s: string, note = '') {
+    selected = s < first ? first : s > last ? last : s;
+    syncPickers();
+    showLookup(note || (s < first ? `Records start on ${longG(first)}.` : s > last ? 'That date is in the future; showing the latest record.' : ''));
+  }
+
+  function fromHijri() {
+    const key = `${hYear.value}-${hMonth.value}-${hDay.value}`;
+    const g = hijriIndex.get(key);
+    if (g) return setDate(g);
+    // Day 30 may not exist in a 29-day month, or the date may be outside the records.
+    const alt = hijriIndex.get(`${hYear.value}-${hMonth.value}-29`);
+    if (hDay.value === '30' && alt) return setDate(alt, `${MONTHS[+hMonth.value - 1]} ${hYear.value} AH had 29 days; showing the 29th.`);
+    showLookup(`${hDay.value} ${MONTHS[+hMonth.value - 1]} ${hYear.value} AH is outside the records (${hijriText(first)} to ${hijriText(last)}).`);
+  }
+
+  [hDay, hMonth, hYear].forEach((s) => s.addEventListener('change', fromHijri));
+  gDate.addEventListener('change', () => gDate.value && setDate(gDate.value));
+  document.querySelectorAll<HTMLButtonElement>('[data-cal]').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('[data-cal]').forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
+    $('pick-hijri').hidden = b.dataset.cal !== 'hijri';
+    $('pick-greg').hidden = b.dataset.cal !== 'greg';
+  }));
+  if (!hijriFmt) { ($('pick-hijri') as HTMLElement).hidden = true; ($('pick-greg') as HTMLElement).hidden = false; (document.querySelector('[data-cal="hijri"]') as HTMLElement).hidden = true; }
+
+  // ---------- Chart ----------
+  const svg = document.getElementById('svg') as unknown as SVGSVGElement;
+  const chart = $('chart'), tip = $('tip');
+  const COLORS = { gold: '#A47A10', silver: '#5B6B80' };
+  let metal: 'gold' | 'silver' = 'gold';
+  let range = 366;
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (tag: string, attrs: Record<string, string | number>, text?: string) => {
+    const e = document.createElementNS(NS, tag);
+    for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, String(v));
+    if (text !== undefined) e.textContent = text;
+    return e;
+  };
+  function niceTicks(min: number, max: number, count = 4) {
+    if (min === max) { min -= 1; max += 1; }
+    const raw = (max - min) / count, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+    const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= raw)!;
+    const lo = Math.floor(min / step) * step, hi = Math.ceil(max / step) * step, out: number[] = [];
+    for (let v = lo; v <= hi + step / 2; v += step) out.push(Math.round(v * 100) / 100);
+    return out;
+  }
+
+  function renderChart() {
+    const lastT = day(last).getTime();
+    const vis = range ? rows.filter((r) => lastT - day(r[0]).getTime() < range * 864e5) : rows;
+    const val = metal === 'gold' ? gN : sN;
+    const vals = vis.map(val);
+    const a = vals[0], b = vals[vals.length - 1], ch = b - a, pct = a ? (ch / a) * 100 : 0;
+    $('s-latest').textContent = usd(b);
+    $('s-change').innerHTML = `${ch >= 0 ? '+' : '−'}${usd(Math.abs(ch))} <small>${ch >= 0 ? '+' : '−'}${Math.abs(pct).toFixed(1)}%</small>`;
+    $('s-high').textContent = usd(Math.max(...vals));
+    $('s-low').textContent = usd(Math.min(...vals));
+    $('chart-title').textContent = `${metal === 'gold' ? 'Gold' : 'Silver'} niṣāb in US dollars, ${shortG(vis[0][0])} – ${shortG(vis[vis.length - 1][0])}. Tap or hover the line to see a day; tap to look it up above.`;
+
+    const W = chart.clientWidth; if (W < 120) return;
+    const H = Math.max(220, Math.min(320, W * 0.48));
+    const m = { t: 12, r: 14, b: 28, l: 64 };
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('width', String(W)); svg.setAttribute('height', String(H));
+    svg.replaceChildren();
+    const ticks = niceTicks(Math.min(...vals), Math.max(...vals));
+    const y0 = ticks[0], y1 = ticks[ticks.length - 1];
+    const t0 = day(vis[0][0]).getTime(), t1 = day(vis[vis.length - 1][0]).getTime();
+    const x = (s: string) => m.l + (t1 === t0 ? (W - m.l - m.r) / 2 : ((day(s).getTime() - t0) / (t1 - t0)) * (W - m.l - m.r));
+    const y = (v: number) => m.t + (1 - (v - y0) / (y1 - y0)) * (H - m.t - m.b);
+    for (const t of ticks) {
+      svg.append(el('line', { x1: m.l, x2: W - m.r, y1: y(t), y2: y(t), class: 'grid' }));
+      svg.append(el('text', { x: m.l - 8, y: y(t) + 4, 'text-anchor': 'end', class: 'axis' }, usd0(t)));
+    }
+    const nX = Math.min(vis.length, Math.max(2, Math.floor((W - m.l - m.r) / 95)));
+    const idx = [...new Set(Array.from({ length: nX }, (_, i) => Math.round((i * (vis.length - 1)) / Math.max(1, nX - 1))))];
+    const long = t1 - t0 > 200 * 864e5;
+    for (const i of idx) svg.append(el('text', { x: x(vis[i][0]), y: H - 8, 'text-anchor': i === 0 ? 'start' : i === vis.length - 1 ? 'end' : 'middle', class: 'axis' }, fmt(vis[i][0], long ? { month: 'short', year: 'numeric' } : { day: 'numeric', month: 'short' })));
+    const d = vis.map((r, i) => `${i ? 'L' : 'M'}${x(r[0]).toFixed(1)},${y(val(r)).toFixed(1)}`).join('');
+    svg.append(el('path', { d, fill: 'none', stroke: COLORS[metal], 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }));
+    const sel = recordFor(selected);
+    if (sel && sel[0] >= vis[0][0]) svg.append(el('circle', { cx: x(sel[0]), cy: y(val(sel)), r: 5, fill: '#fff', stroke: COLORS[metal], 'stroke-width': 2.5 }));
+    const cross = el('line', { y1: m.t, y2: H - m.b, class: 'cross', visibility: 'hidden' });
+    const dot = el('circle', { r: 5, fill: COLORS[metal], stroke: '#FFFDF6', 'stroke-width': 2, visibility: 'hidden' });
+    const hit = el('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent', style: 'cursor:pointer' });
+    svg.append(cross, dot, hit);
+    const nearest = (clientX: number) => {
+      const px = clientX - svg.getBoundingClientRect().left;
+      let lo = 0, hi = vis.length - 1;
+      while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (x(vis[mid][0]) < px) lo = mid; else hi = mid; }
+      return Math.abs(x(vis[lo][0]) - px) <= Math.abs(x(vis[hi][0]) - px) ? vis[lo] : vis[hi];
+    };
+    const show = (clientX: number) => {
+      const r = nearest(clientX), cx = x(r[0]), cy = y(val(r));
+      cross.setAttribute('x1', String(cx)); cross.setAttribute('x2', String(cx)); cross.setAttribute('visibility', 'visible');
+      dot.setAttribute('cx', String(cx)); dot.setAttribute('cy', String(cy)); dot.setAttribute('visibility', 'visible');
+      const h = hijriText(r[0]);
+      tip.innerHTML = `<strong>${shortG(r[0])}</strong>${h ? `<br><span>${h}</span>` : ''}<br>${metal === 'gold' ? 'Gold' : 'Silver'} niṣāb: ${usd(val(r))}`;
+      tip.hidden = false;
+      const tw = tip.offsetWidth;
+      tip.style.left = `${Math.min(Math.max(cx - tw / 2, 0), W - tw)}px`;
+      tip.style.top = `${Math.max(cy - tip.offsetHeight - 12, 0)}px`;
+      return r;
+    };
+    const hide = () => { tip.hidden = true; cross.setAttribute('visibility', 'hidden'); dot.setAttribute('visibility', 'hidden'); };
+    hit.addEventListener('pointermove', (e) => show((e as PointerEvent).clientX));
+    hit.addEventListener('pointerleave', hide);
+    hit.addEventListener('click', (e) => { const r = show((e as MouseEvent).clientX); setDate(r[0]); });
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('[data-metal]').forEach((b) => b.addEventListener('click', () => {
+    metal = b.dataset.metal as 'gold' | 'silver';
+    document.querySelectorAll('[data-metal]').forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
+    renderChart();
+  }));
+  document.querySelectorAll<HTMLButtonElement>('[data-range]').forEach((b) => b.addEventListener('click', () => {
+    range = Number(b.dataset.range);
+    document.querySelectorAll('[data-range]').forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
+    renderChart();
+  }));
+  window.addEventListener('resize', renderChart);
+
+  // ---------- Calculator ----------
+  const num = (i: HTMLInputElement) => { const v = parseFloat(i.value.replace(/[$,\s]/g, '')); return isFinite(v) && v > 0 ? v : 0; };
+  const assets = [...document.querySelectorAll<HTMLInputElement>('[data-asset]')];
+  const liabs = [...document.querySelectorAll<HTMLInputElement>('[data-liab]')];
+  function updateCalc() {
+    const r = recordFor(selected);
+    const A = assets.reduce((s, i) => s + num(i), 0), L = liabs.reduce((s, i) => s + num(i), 0), N = A - L;
+    $('calc-date').innerHTML = `Niṣāb date: <strong>${longG(selected)}</strong>${hijriText(selected) ? ` · ${hijriText(selected)}` : ''} <a href="#history">change</a>`;
+    $('c-assets').textContent = usd(A); $('c-liab').textContent = usd(L); $('c-net').textContent = usd(N);
+    const v = $('verdicts');
+    if (!r || A === 0) { v.innerHTML = ''; return; }
+    const line = (name: string, n: number) => N >= n
+      ? `<div class="verdict yes"><span class="k">${name} niṣāb · ${usd(n)}</span><p>Net wealth is <strong>above</strong> the ${name.toLowerCase()} niṣāb.</p><p>Zakāh at 2.5%: <strong class="due">${usd(N * 0.025)}</strong></p></div>`
+      : `<div class="verdict no"><span class="k">${name} niṣāb · ${usd(n)}</span><p>Net wealth is <strong>below</strong> the ${name.toLowerCase()} niṣāb.</p><p>No zakāh is due against this niṣāb.</p></div>`;
+    v.innerHTML = line('Gold', gN(r)) + line('Silver', sN(r));
+  }
+  [...assets, ...liabs].forEach((i) => i.addEventListener('input', updateCalc));
+  $('calc-clear').addEventListener('click', () => { [...assets, ...liabs].forEach((i) => (i.value = '')); updateCalc(); });
+
+  // ---------- Start ----------
+  syncPickers();
+  showLookup();
+  renderChart();
+</script>
+
+<style is:global>
+  /* Global so the boxes the page draws on the fly (date lookup, calculator results, chart) are styled too. Only loaded on this page. */
+  .jump { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: -4px 0 20px; font-size: .95rem; font-weight: 600; }
+  .box { background: var(--card); border: 1px solid var(--sand); border-radius: 12px; padding: 22px; scroll-margin-top: 96px; }
   .box + .box { margin-top: 20px; }
   .muted { color: var(--muted); }
   .small-note { font-size: .85rem; margin-top: -6px; }
@@ -48,9 +371,60 @@ const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'nume
   @media (min-width: 560px) { .tiles { grid-template-columns: 1fr 1fr; } }
   .tile { border: 1px solid var(--sand); border-radius: 10px; padding: 16px; text-align: center; background: var(--cream); }
   .tile.gold { border-color: var(--gold); }
-  .k { display: block; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+  .k { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
   .v { display: block; font-family: var(--serif); font-size: 2rem; font-weight: 600; margin: 0; }
   .ratio { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; margin: 0 0 12px; }
   .ratio dd { margin: 0; font-weight: 600; color: var(--teal); }
   .note { font-size: .92rem; color: var(--muted); border-top: 1px dashed var(--sand); padding-top: 12px; }
+
+  .seg { display: inline-flex; border: 1px solid var(--sand); border-radius: 8px; overflow: hidden; background: var(--cream); }
+  .seg button { font: inherit; font-size: .9rem; font-weight: 600; padding: 7px 14px; border: 0; background: none; color: var(--muted); cursor: pointer; min-height: 38px; }
+  .seg button + button { border-left: 1px solid var(--sand); }
+  .seg button[aria-pressed='true'] { background: var(--teal); color: #fff; }
+  .seg button[hidden] { display: none; }
+  .lookup { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 14px 0 6px; }
+  .pick { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pick[hidden] { display: none; }
+  .pick label { display: flex; flex-direction: column; font-size: .8rem; font-weight: 600; color: var(--muted); gap: 3px; }
+  .pick select, .pick input, .calc input { font: inherit; font-size: 1rem; color: var(--ink); background: #fff; border: 1px solid var(--sand); border-radius: 8px; padding: 7px 10px; min-height: 40px; }
+  .result .when { margin: 14px 0 0; }
+  .result .tiles { margin: 10px 0 8px; }
+  .result .per { display: block; font-size: .85rem; color: var(--muted); }
+  .result .warn { background: #FEF3C7; border: 1px solid #F3D88A; border-radius: 8px; padding: 8px 12px; font-size: .92rem; margin: 12px 0 0; }
+  .result p { margin: 4px 0; }
+
+  .chart-head { margin: 22px 0 10px; padding-top: 16px; border-top: 1px dashed var(--sand); }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; margin-bottom: 14px; }
+  .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 12px; }
+  @media (min-width: 620px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+  .stats div, .totals div { border: 1px solid var(--sand); border-radius: 10px; padding: 10px 12px; background: var(--cream); }
+  .sv { display: block; font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); }
+  .sv small { display: block; font-family: var(--sans); font-size: .8rem; color: var(--muted); }
+  .chart { position: relative; width: 100%; }
+  .chart svg { display: block; width: 100%; touch-action: pan-y; }
+  .chart .grid { stroke: var(--sand); stroke-width: 1; }
+  .chart .axis { fill: var(--muted); font-size: 11px; font-family: var(--sans); }
+  .chart .cross { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
+  .tip { position: absolute; pointer-events: none; background: var(--ink); color: #fff; font-size: .82rem; line-height: 1.45; padding: 7px 10px; border-radius: 6px; white-space: nowrap; }
+  .tip span { color: #CBD5E1; }
+  .sources { margin-top: 10px; }
+
+  .calc fieldset { border: 0; padding: 0; margin: 14px 0 0; }
+  .calc legend { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; margin-bottom: 6px; }
+  .calc label { display: grid; grid-template-columns: 1fr; gap: 4px; margin-bottom: 10px; }
+  @media (min-width: 560px) { .calc label { grid-template-columns: 1fr 200px; align-items: center; } }
+  .calc label span { font-size: .95rem; }
+  .calc input { text-align: right; width: 100%; }
+  .calc-date { background: var(--cream); border: 1px solid var(--sand); border-radius: 8px; padding: 8px 12px; font-size: .95rem; margin: 12px 0 0; }
+  .totals { display: grid; gap: 10px; margin: 16px 0; }
+  @media (min-width: 560px) { .totals { grid-template-columns: 1fr 1fr 1fr; } }
+  .totals .net { border-color: var(--teal); }
+  .verdicts { display: grid; gap: 12px; margin-bottom: 14px; }
+  @media (min-width: 560px) { .verdicts { grid-template-columns: 1fr 1fr; } }
+  .verdicts .verdict { border-radius: 10px; padding: 12px 14px; border: 1px solid var(--sand); background: #fff; }
+  .verdicts .verdict p { margin: 4px 0 0; font-size: .95rem; }
+  .verdicts .yes { border-left: 4px solid var(--teal); }
+  .verdicts .no { border-left: 4px solid var(--sand); }
+  .calc + .small-note { margin-top: 14px; }
+  .verdicts .due { font-family: var(--serif); font-size: 1.3rem; color: var(--teal); }
 </style>
