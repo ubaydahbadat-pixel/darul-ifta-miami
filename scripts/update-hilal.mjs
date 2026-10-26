@@ -23,7 +23,7 @@ const MONTHS = [
   [9, /^rama[dz]h?[ae]n/], [10, /^shaww?al/], [11, /^dh?u.?\s*(?:al.?|l.?)?\s*q.?[ae]?d/], [12, /^dh?u.?\s*(?:al.?|l.?)?\s*h.?ij/],
 ];
 const monthNo = (name) => {
-  const n = name.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[ʿʾ'’`]/g, '').replace(/-/g, ' ').trim();
+  const n = name.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s*[ʿʾ'’`]\s*/g, '').replace(/-/g, ' ').replace(/\s+/g, ' ').trim();
   return MONTHS.find(([, re]) => re.test(n))?.[0];
 };
 const GMONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -35,7 +35,12 @@ const RE = /(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s*,?\s*
 function parse(html, url) {
   const text = html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&#160;/g, ' ').replace(/&#39;|&rsquo;/g, "'").replace(/\s+/g, ' ');
   const m = text.match(RE);
-  if (!m) return null;
+  if (!m) {
+    const i = text.search(/declared|first day|1\s*st day|will be the|begins|began/i);
+    const title = (html.match(/<title>([^<]*)<\/title>/i) || [])[1] || '';
+    note(`Unread: ${url} [title: ${title.trim()}] ${i >= 0 ? text.slice(Math.max(0, i - 220), i + 160) : text.slice(0, 200)}`);
+    return null;
+  }
   const [, gMonth, gDay, gYear, hName, hYear] = m;
   const hm = monthNo(hName);
   if (!hm) { note(`Unknown month name "${hName}" in ${url}`); return null; }
