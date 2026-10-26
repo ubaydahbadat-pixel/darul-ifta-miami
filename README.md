@@ -26,7 +26,7 @@ Saving commits to GitHub and the site updates itself in about two minutes.
 
 The fatwa appears at `/fatawa/<category>/<topic>/<title-as-link>/`.
 
-**Categories:** Ṭahārah, Ṣalāh, Ṣawm, Zakāh, Ḥajj & ʿUmrah, Uḍḥiyah & ʿAqīqah, Muʿāmalāt, Nikāḥ & Ṭalāq, al-Ḥaẓr wa al-Ibāḥah, Inheritance, Miscellaneous. To change them, edit both `src/data/categories.ts` and `public/admin/config.yml`.
+**Categories:** Ṭahārah, Ṣalāh, Ṣawm, Zakāh, Ḥajj & ʿUmrah, Uḍḥiyah/Qurbānī, Muʿāmalāt, Nikāḥ & Ṭalāq, al-Ḥaẓr wa al-Ibāḥah, Inheritance, Miscellaneous. To change them, edit both `src/data/categories.ts` and `public/admin/config.yml`.
 
 ## Other things you can edit
 

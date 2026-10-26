@@ -6,7 +6,7 @@ export const categories = [
   { id: 'sawm', name: 'Fasting (Ṣawm)', blurb: 'Ramaḍān, qaḍāʾ and voluntary fasts' },
   { id: 'zakah', name: 'Obligatory Charity (Zakāh)', blurb: 'Zakāh, Ṣadaqat al-Fiṭr and charity' },
   { id: 'hajj-umrah', name: 'Pilgrimage (Ḥajj & ʿUmrah)', blurb: 'Iḥrām, rites and travel' },
-  { id: 'udhiyah', name: 'Sacrifice (Uḍḥiyah & ʿAqīqah)', blurb: 'Sacrifice and the newborn' },
+  { id: 'udhiyah', name: 'Uḍḥiyah/Qurbānī', blurb: 'Sacrifice' },
   { id: 'muamalat', name: 'Business & Finance (Muʿāmalāt)', blurb: 'Business, finance and contracts' },
   { id: 'nikah', name: 'Marriage & Divorce (Nikāḥ & Ṭalāq)', blurb: 'Marriage and divorce' },
   { id: 'hazr-ibahah', name: 'Permitted & Prohibited (al-Ḥaẓr wa al-Ibāḥah)', blurb: 'The permitted and the prohibited' },

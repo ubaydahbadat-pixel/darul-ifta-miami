@@ -46,7 +46,7 @@ collections:
           - { value: sawm, label: "Fasting (Ṣawm)" }
           - { value: zakah, label: "Obligatory Charity (Zakāh)" }
           - { value: hajj-umrah, label: "Pilgrimage (Ḥajj & ʿUmrah)" }
-          - { value: udhiyah, label: "Sacrifice (Uḍḥiyah & ʿAqīqah)" }
+          - { value: udhiyah, label: "Uḍḥiyah/Qurbānī" }
           - { value: muamalat, label: "Business & Finance (Muʿāmalāt)" }
           - { value: nikah, label: "Marriage & Divorce (Nikāḥ & Ṭalāq)" }
           - { value: hazr-ibahah, label: "Permitted & Prohibited (al-Ḥaẓr wa al-Ibāḥah)" }
