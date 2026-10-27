@@ -39,13 +39,14 @@ function markInlineArabic(node) {
   node.children = out;
 }
 
-function markRtl(node, fallback) {
+function markRtl(node, fallback, force) {
   if (node.type !== 'element' && node.type !== 'root') return;
   if (node.type === 'element' && ['p', 'li', 'blockquote'].includes(node.tagName) && RTL_SCRIPT.test(text(node))) {
     const t = text(node).trim();
     // Each paragraph is checked on its own, so Urdu and Arabic paragraphs in one source never mix.
-    const lang = detectLang(t) || fallback;
-    const classes = [lang === 'ur' ? 'ur-text' : 'ar-text'];
+    // A Persian reference is set as Persian throughout; otherwise each paragraph is checked for Urdu or Arabic.
+    const lang = force || detectLang(t) || fallback;
+    const classes = [lang === 'ur' ? 'ur-text' : lang === 'fa' ? 'fa-text' : 'ar-text'];
     // Page markers (e.g. "ص618 – باب السهو") and editor's footnotes ("(١) …" or "= …") get a quieter style.
     if (/^ص\s*[0-9٠-٩]/.test(t)) classes.push('ref-page');
     else if (/^(\([0-9٠-٩]+\)|=)/.test(t)) classes.push('ref-note');
@@ -53,11 +54,13 @@ function markRtl(node, fallback) {
     if (lang === 'ur') markInlineArabic(node);
     return;
   }
-  (node.children || []).forEach((c) => markRtl(c, fallback));
+  (node.children || []).forEach((c) => markRtl(c, fallback, force));
 }
 
-/** Rehype plugin. Option `fallback`: 'ar' or 'ur', used when a paragraph has no telltale letters. */
+/** Rehype plugin. Option `fallback`: 'ar' or 'ur', used when a paragraph has no telltale letters.
+ *  Option `force`: e.g. 'fa' — every right-to-left paragraph is set in that language. */
 export default function rehypeRtl(options = {}) {
   const fallback = options.fallback || 'ar';
-  return (tree) => markRtl(tree, fallback);
+  const force = options.force || null;
+  return (tree) => markRtl(tree, fallback, force);
 }

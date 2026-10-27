@@ -21,8 +21,10 @@ const question = await md(d.question);
 const shortAnswer = await md(d.short_answer);
 const explanation = await Promise.all(d.explanation.map(async (e) => ({ ...e, html: await md(e.text) })));
 const hikmah = await md(d.hikmah);
+// Reference languages: the code marks the text for browsers and screen readers.
+const LANG: Record<string, string> = { Arabic: 'ar', Urdu: 'ur', Persian: 'fa', English: 'en', German: 'de', French: 'fr' };
 const references = await Promise.all(
-  d.references.map(async (r) => ({ ...r, html: await md(refText(r.text), r.language === 'Urdu' ? 'ur' : 'ar') })),
+  d.references.map(async (r) => ({ ...r, code: LANG[r.language], html: await md(refText(r.text), r.language === 'Urdu' ? 'ur' : r.language === 'Persian' ? 'fa' : 'ar') })),
 );
 ---
 <Base title={d.title} description={`${catName} · ${d.topic}: ${d.title}`}>
@@ -73,8 +75,8 @@ const references = await Promise.all(
         <div class="drop-body">
           {references.map((r, i) => (
             <>
-              <h3>{i + 1}. {r.source}{r.language === 'Urdu' && <span class="lang-label">Urdu</span>}</h3>
-              <Fragment set:html={r.html} />
+              <h3>{i + 1}. {r.source}{r.language !== 'Arabic' && <span class="lang-label">{r.language}</span>}</h3>
+              <div class="ref-body" lang={r.code}><Fragment set:html={r.html} /></div>
             </>
           ))}
         </div>

@@ -22,7 +22,7 @@ const fatawa = defineCollection({
     references: z
       .array(z.object({
         source: z.string(),
-        language: z.enum(['Arabic', 'Urdu', 'English']).default('Arabic'),
+        language: z.enum(['Arabic', 'Urdu', 'Persian', 'English', 'German', 'French']).default('Arabic'),
         text: z.string().default(''),
       }))
       .default([]),

@@ -129,6 +129,8 @@ textarea { min-height: 160px; }
 .fatwa .drop-body .ar-text + .ar-text { margin-top: -4px; }
 
 /* Urdu references: Nastaliq script, kept separate from Arabic */
+.fatwa .fa-text { font-family: var(--arabic); font-size: 1.3rem; line-height: 2.1; text-align: right; }
+.fatwa .fa-text.ref-page, .fatwa .fa-text.ref-note { font-size: 1.02rem; line-height: 1.8; color: var(--muted); margin: 2px 0; }
 .fatwa .ur-text { font-family: var(--urdu); font-size: 1.2rem; line-height: 2.4; text-align: right; }
 .fatwa .lang-label {
   display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 999px; vertical-align: middle;

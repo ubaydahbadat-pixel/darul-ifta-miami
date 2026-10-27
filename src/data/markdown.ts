@@ -4,16 +4,16 @@ import rehypeRtl from '../plugins/fatwa-sections.mjs';
 // One renderer per fallback language, created once and reused.
 const processors: Record<string, ReturnType<typeof createMarkdownProcessor>> = {};
 
-function processor(fallback: 'ar' | 'ur') {
+function processor(fallback: 'ar' | 'ur' | 'fa') {
   processors[fallback] ??= createMarkdownProcessor({
     syntaxHighlight: false,
-    rehypePlugins: [[rehypeRtl, { fallback }]],
+    rehypePlugins: [[rehypeRtl, fallback === 'fa' ? { fallback: 'ar', force: 'fa' } : { fallback }]],
   });
   return processors[fallback];
 }
 
 /** Renders a fatwa field (Markdown text) to HTML, with Arabic/Urdu handling. */
-export async function md(source: string | undefined, fallback: 'ar' | 'ur' = 'ar') {
+export async function md(source: string | undefined, fallback: 'ar' | 'ur' | 'fa' = 'ar') {
   if (!source || !source.trim()) return '';
   const { code } = await (await processor(fallback)).render(source);
   return code;
