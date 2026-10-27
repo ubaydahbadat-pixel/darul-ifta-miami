@@ -1,12 +1,12 @@
 {
   "date": "2026-10-27",
-  "slot": "am",
-  "updatedAt": "2026-10-27T09:27:47.589Z",
+  "slot": "pm",
+  "updatedAt": "2026-10-27T21:23:07.220Z",
   "source": "Swissquote",
-  "goldPerOz": 3996.89,
-  "silverPerOz": 53.15,
+  "goldPerOz": 4060.84,
+  "silverPerOz": 54.45,
   "goldGrams": 87.48,
   "silverGrams": 612.36,
-  "goldNisab": 11241.44,
-  "silverNisab": 1046.45
+  "goldNisab": 11421.3,
+  "silverNisab": 1071.91
 }
