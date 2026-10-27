@@ -3,7 +3,7 @@ title: Alcohol-based perfume
 category: hazr-ibahah
 topic: Perfume (ʿIṭr)
 date: '2026-10-30'
-draft: true
+draft: false
 question: Assalāmu ʿalaykum, is it okay to use designer perfumes from the high street?
 short_answer: It is permissible to wear designer perfumes. The ethanol element found in perfumes is not impure or prohibited to use.
 explanation:
