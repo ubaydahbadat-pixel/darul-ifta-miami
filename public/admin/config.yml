@@ -112,7 +112,7 @@ collections:
           - name: language
             label: Language
             widget: select
-            options: [Arabic, Urdu]
+            options: [Arabic, Urdu, English]
             default: Arabic
           - name: text
             label: Full text
