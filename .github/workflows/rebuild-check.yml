@@ -1,0 +1,44 @@
+# After every change to the site, check that Cloudflare rebuilt it. If Cloudflare's build failed,
+# ask for one more rebuild. A rebuild that itself fails is not retried again; it shows as a red cross here.
+name: Website rebuild check
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  checks: read
+
+concurrency:
+  group: rebuild-check
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for Cloudflare's build and retry once if it failed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          SHA=${{ github.sha }}
+          for i in $(seq 1 40); do
+            R=$(gh api repos/${{ github.repository }}/commits/$SHA/check-runs --jq '[.check_runs[] | select(.name | startswith("Workers Builds")) | (.status + ":" + (.conclusion // ""))] | join(",")')
+            case "$R" in *completed*) break;; esac
+            sleep 15
+          done
+          echo "Cloudflare build: ${R:-not found}"
+          if echo "$R" | grep -q "failure"; then
+            if git log -1 --format=%s "$SHA" | grep -q "^Rebuild the site"; then
+              echo "::error::Cloudflare's build failed again after a retry. Check the build log in Cloudflare."
+              exit 1
+            fi
+            git config user.name "rebuild-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git pull -q
+            git commit --allow-empty -m "Rebuild the site (Cloudflare's build failed)"
+            git push
+            echo "::warning::Cloudflare's build failed; a rebuild was requested."
+          fi

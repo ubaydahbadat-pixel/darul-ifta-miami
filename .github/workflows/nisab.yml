@@ -10,7 +10,6 @@ on:
 
 permissions:
   contents: write
-  checks: read
 
 concurrency:
   group: nisab
@@ -36,23 +35,4 @@ jobs:
             git add src/data/nisab.json src/data/nisab-history.json
             git commit -m "Daily niṣāb update $(date -u +%Y-%m-%d)"
             git push
-          fi
-
-      - name: Make sure the website rebuilt (retry once if Cloudflare's build failed)
-        if: success()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          SHA=$(git rev-parse HEAD)
-          if ! git log -1 --format=%s | grep -q "Daily niṣāb update"; then echo "Nothing new was saved."; exit 0; fi
-          for i in $(seq 1 30); do
-            R=$(gh api repos/${{ github.repository }}/commits/$SHA/check-runs --jq '[.check_runs[] | select(.name | startswith("Workers Builds")) | (.status + ":" + (.conclusion // ""))] | join(",")')
-            case "$R" in *completed*) break;; esac
-            sleep 20
-          done
-          echo "Cloudflare build: $R"
-          if echo "$R" | grep -q "failure"; then
-            git commit --allow-empty -m "Rebuild the site (the niṣāb build failed on Cloudflare)"
-            git push
-            echo "::warning::Cloudflare's build failed; a rebuild was requested."
           fi
