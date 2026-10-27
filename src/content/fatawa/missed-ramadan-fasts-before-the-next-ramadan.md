@@ -8,7 +8,11 @@ draft: false
 short_answer: The person would not be sinful for delaying the make-up fasts, as they can be made up at any point in their lifetime. However, the optimum is to make them up as soon as possible.
 explanation: []
 hikmah: |-
+  **An allowance from Allah**
+
   Allah subḥānahu wa taʿālā has provided an avenue of alleviation from excessive hardship during the month of Ramaḍān, if a person is unable to carry out the actions of Ramaḍān in the best manner or would face extreme difficulty in doing so. For this reason, Allah subḥānahu wa taʿālā has given the individual this allowance.
+
+  **Making them up as soon as possible**
 
   As for why a person should do what is optimum and try to make up the fasts as soon as possible: just as a person has assets, debts and liabilities that are incurred in this world, a person similarly has assets and liabilities that are incurred in the Ākhirah. A person can think of these as their good deeds, their sins, and their missed opportunities or missed aʿmāl. In that regard, if a person were to imagine that on the Day of Judgment, due to laziness or inattentiveness, they had been unable to complete one of those prescribed aʿmāl, it would be a big loss for them. In order to prevent that loss, it would be best practice to complete the action as soon as one is able to.
 references:
