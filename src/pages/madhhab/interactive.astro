@@ -3,13 +3,14 @@ import Base from '../../layouts/Base.astro';
 import { loadMadhhab, deathLabel } from '../../data/madhhab';
 
 // Everything here is drawn from the Scholars, Books and Places entries in /admin.
-const { places, scholarList, bookList, scholars, bookPlace } = await loadMadhhab();
+const { places, scholarList, bookList, scholars, bookPlace, chains } = await loadMadhhab();
 
 const data = {
   scholars: scholarList.map((s) => ({
     id: s.id, name: s.name, short: s.short, death: deathLabel(s), deathAh: s.deathAh,
-    place: s.places[0] ?? null, places: s.places, students: s.students,
+    place: s.places[0] ?? null, places: s.places, students: s.students, chains: s.chains,
   })),
+  chains: [...chains.values()].map((c) => ({ id: c.id, name: c.name, colour: c.colour })),
   books: bookList.map((b) => {
     const a = b.author ? scholars.get(b.author)! : null;
     return { id: b.id, title: b.title, author: b.author, recensionBy: b.recensionBy, authorName: a?.short ?? '', death: a ? deathLabel(a) : '',
@@ -27,6 +28,14 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
     <p class="empty">A map of the madhhab and historical cross-referencing will appear here once the scholars and books are compiled.</p>
   ) : (
     <>
+      {data.chains.length > 0 && (
+        <label class="chain-pick">Chain
+          <select id="chain">
+            <option value="">All chains</option>
+            {data.chains.map((c) => <option value={c.id}>{c.name}</option>)}
+          </select>
+        </label>
+      )}
       <div class="tabs" role="tablist">
         <button role="tab" id="tab-map" aria-selected="true" aria-controls="panel-map">Map</button>
         <button role="tab" id="tab-net" aria-selected="false" aria-controls="panel-net">Connections</button>
@@ -70,13 +79,22 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
   const el = document.getElementById('madhhab-data');
   if (el) {
     type D = {
-      scholars: { id: string; name: string; short: string; death: string; deathAh: number | null; place: string | null; places: string[]; students: string[] }[];
+      scholars: { id: string; name: string; short: string; death: string; deathAh: number | null; place: string | null; places: string[]; students: string[]; chains: string[] }[];
+      chains: { id: string; name: string; colour: string }[];
       books: { id: string; title: string; author: string | null; recensionBy: string[]; authorName: string; death: string; place: string | null; influencedBy: string[]; type: string | null; basedOn: string[]; derived: string[] }[];
       places: Record<string, { name: string; lat: number; lng: number }>;
     };
     const d: D = JSON.parse(el.textContent!);
     const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!));
     const TEAL = '#0F766E', GOLD = '#D4A329', MUTED = '#64748B';
+    // Chains: each scholar takes the colour of his first chain; the menu shows one chain at a time.
+    const chainById = new Map(d.chains.map((c) => [c.id, c]));
+    const colourOf = (s: D['scholars'][number]) => (s.chains[0] && chainById.get(s.chains[0])?.colour) || TEAL;
+    const chainSel = document.getElementById('chain') as HTMLSelectElement | null;
+    const qChain = new URLSearchParams(location.search).get('chain');
+    if (chainSel && qChain && chainById.has(qChain)) chainSel.value = qChain;
+    const current = () => chainSel?.value || '';
+    const inChain = (s: D['scholars'][number], c = current()) => !c || s.chains.includes(c);
 
     // ── Tabs ──
     const tabs = [['tab-map', 'panel-map'], ['tab-net', 'panel-net']] as const;
@@ -97,40 +115,57 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
       maxZoom: 12, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map);
 
-    const byPlace = new Map<string, { scholars: D['scholars']; books: D['books'] }>();
-    const at = (p: string) => { if (!byPlace.has(p)) byPlace.set(p, { scholars: [], books: [] }); return byPlace.get(p)!; };
-    d.scholars.forEach((s) => s.places.forEach((p) => d.places[p] && at(p).scholars.push(s)));
-    d.books.forEach((b) => b.place && d.places[b.place] && at(b.place).books.push(b));
-
-    const bounds: [number, number][] = [];
-    byPlace.forEach((v, id) => {
-      const p = d.places[id];
-      bounds.push([p.lat, p.lng]);
-      const n = v.scholars.length + v.books.length;
-      const html = `<strong>${esc(p.name)}</strong>` +
-        (v.scholars.length ? `<p class="pop-h">Scholars</p><ul>${v.scholars.map((s) => `<li><a href="/madhhab/scholars/${s.id}/">${esc(s.short)}</a>${s.death ? ` <span>${esc(s.death)}</span>` : ''}</li>`).join('')}</ul>` : '') +
-        (v.books.length ? `<p class="pop-h">Books</p><ul>${v.books.map((b) => `<li><a href="/madhhab/books/${b.id}/">${esc(b.title)}</a></li>`).join('')}</ul>` : '');
-      L.circleMarker([p.lat, p.lng], { radius: 6 + Math.min(n, 10), color: TEAL, weight: 2, fillColor: TEAL, fillOpacity: 0.35 })
-        .bindPopup(html, { maxWidth: 260 }).bindTooltip(p.name).addTo(map);
-    });
-
-    // Teacher–student lines between each pair's main places.
+    const markers = L.layerGroup().addTo(map);
     const lines = L.layerGroup();
     const sById = new Map(d.scholars.map((s) => [s.id, s]));
-    d.scholars.forEach((t) => t.students.forEach((sid) => {
-      const s = sById.get(sid);
-      if (!t.place || !s?.place || t.place === s.place) return;
-      const a = d.places[t.place], b = d.places[s.place];
-      L.polyline([[a.lat, a.lng], [b.lat, b.lng]], { color: GOLD, weight: 2, opacity: 0.7, dashArray: '4 6' })
-        .bindTooltip(`${t.short} → ${s.short}`).addTo(lines);
-    }));
-    lines.addTo(map);
-    (document.getElementById('show-lines') as HTMLInputElement).addEventListener('change', (e) =>
-      (e.target as HTMLInputElement).checked ? lines.addTo(map) : lines.remove());
+    const showLines = document.getElementById('show-lines') as HTMLInputElement;
+    function drawMap(fit: boolean) {
+      markers.clearLayers(); lines.clearLayers();
+      const c = current();
+      const scholarsHere = d.scholars.filter((s) => inChain(s));
+      const ids = new Set(scholarsHere.map((s) => s.id));
+      const booksHere = d.books.filter((b) => !c || (b.author && ids.has(b.author)));
+      const byPlace = new Map<string, { scholars: D['scholars']; books: D['books'] }>();
+      const at = (p: string) => { if (!byPlace.has(p)) byPlace.set(p, { scholars: [], books: [] }); return byPlace.get(p)!; };
+      scholarsHere.forEach((s) => s.places.forEach((p) => d.places[p] && at(p).scholars.push(s)));
+      booksHere.forEach((b) => b.place && d.places[b.place] && at(b.place).books.push(b));
 
-    if (bounds.length > 1) map.fitBounds(bounds, { padding: [30, 30], maxZoom: 6 });
-    else if (bounds.length === 1) map.setView(bounds[0], 5);
-    else map.setView([32, 50], 3);
+      const bounds: [number, number][] = [];
+      const colour = c ? chainById.get(c)!.colour : TEAL;
+      byPlace.forEach((v, id) => {
+        const p = d.places[id];
+        bounds.push([p.lat, p.lng]);
+        const n = v.scholars.length + v.books.length;
+        const html = `<strong>${esc(p.name)}</strong>` +
+          (v.scholars.length ? `<p class="pop-h">Scholars</p><ul>${v.scholars.map((s) => `<li><a href="/madhhab/scholars/${s.id}/">${esc(s.short)}</a>${s.death ? ` <span>${esc(s.death)}</span>` : ''}</li>`).join('')}</ul>` : '') +
+          (v.books.length ? `<p class="pop-h">Books</p><ul>${v.books.map((b) => `<li><a href="/madhhab/books/${b.id}/">${esc(b.title)}</a></li>`).join('')}</ul>` : '');
+        L.circleMarker([p.lat, p.lng], { radius: 6 + Math.min(n, 10), color: colour, weight: 2, fillColor: colour, fillOpacity: 0.35 })
+          .bindPopup(html, { maxWidth: 260 }).bindTooltip(p.name).addTo(markers);
+      });
+      // Teacher–student lines between each pair's main places.
+      scholarsHere.forEach((t) => t.students.forEach((sid) => {
+        const s = sById.get(sid);
+        if (!s || !ids.has(sid) || !t.place || !s.place || t.place === s.place) return;
+        const a = d.places[t.place], b = d.places[s.place];
+        L.polyline([[a.lat, a.lng], [b.lat, b.lng]], { color: c ? colour : GOLD, weight: 2, opacity: 0.8, dashArray: '4 6' })
+          .bindTooltip(`${t.short} → ${s.short}`).addTo(lines);
+      }));
+      if (showLines.checked) lines.addTo(map);
+      if (!fit) return;
+      if (bounds.length > 1) map.fitBounds(bounds, { padding: [30, 30], maxZoom: 6 });
+      else if (bounds.length === 1) map.setView(bounds[0], 5);
+      else map.setView([32, 50], 3);
+    }
+    drawMap(true);
+    showLines.addEventListener('change', () => (showLines.checked ? lines.addTo(map) : lines.remove()));
+    let applyNetChain: (() => void) | null = null;
+    chainSel?.addEventListener('change', () => {
+      drawMap(true);
+      applyNetChain?.();
+      const u = new URL(location.href);
+      if (current()) u.searchParams.set('chain', current()); else u.searchParams.delete('chain');
+      history.replaceState(null, '', u);
+    });
 
     // ── Connections network ──
     function startNetwork() {
@@ -187,7 +222,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
       };
       const plural = (t: string) => ({ 'Commentary (Sharḥ)': 'Commentaries', 'Abridgement (Mukhtaṣar)': 'Abridgements', 'Gloss (Ḥāshiyah)': 'Glosses' } as Record<string, string>)[t] ?? 'Works';
       const nodes = new DataSet<any>([
-        ...d.scholars.map((s) => ({ id: 's:' + s.id, label: s.short + (s.death ? `\n${s.death}` : ''), group: 'scholar', kind: 's', ref: s, level: rowOfScholar(s) })),
+        ...d.scholars.map((s) => ({ id: 's:' + s.id, label: s.short + (s.death ? `\n${s.death}` : ''), group: s.chains[0] && chainById.has(s.chains[0]) ? 'chain:' + s.chains[0] : 'scholar', kind: 's', ref: s, level: rowOfScholar(s) })),
         ...d.books.filter((b) => !collapsed.has(b.id)).map((b) => ({ id: 'b:' + b.id, label: wrap(b.title), group: 'book', kind: 'b', ref: b, level: bookLevel(b) })),
         ...summaries.map((g) => ({ id: g.id, label: `${plural(g.type)} (${g.count})`, group: 'summary', kind: 'g', ref: g, level: bookLevel(bById.get(g.base)!) + 1 })),
       ]);
@@ -200,8 +235,14 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
         ...summaries.map((g) => ({ from: 'b:' + g.base, to: g.id, width: 2.5, color: { color: '#B45309' }, kind: 'based' })),
       ].map((e, i) => ({ id: i, arrows: 'to', width: 1.5, ...e })));
 
+      // Each chain gets its own style group (same shape as a scholar, in the chain's colour).
+      const scholarStyle = (bg: string, border: string) => ({ shape: 'box', margin: 8, shapeProperties: { borderRadius: 14 },
+        color: { background: bg, border, highlight: { background: bg, border: '#0F172A' }, hover: { background: bg, border: '#0F172A' } },
+        font: { size: 14, face: 'Source Sans 3, system-ui', color: '#FFFFFF', multi: false } });
+      const chainGroups = Object.fromEntries(d.chains.map((c) => ['chain:' + c.id, scholarStyle(c.colour, c.colour)]));
       const net = new Network(document.getElementById('net')!, { nodes, edges }, {
         groups: {
+          ...chainGroups,
           scholar: { shape: 'box', margin: 8, shapeProperties: { borderRadius: 14 }, color: { background: TEAL, border: '#0B5A54', highlight: { background: '#14A396', border: '#0B5A54' }, hover: { background: '#14A396', border: '#0B5A54' } }, font: { size: 14, face: 'Source Sans 3, system-ui', color: '#FFFFFF', multi: false } },
           summary: { shape: 'box', margin: 8, borderWidth: 2, shapeProperties: { borderDashes: [4, 3] }, color: { background: '#FFF7E6', border: '#B45309', highlight: { background: '#FDE7C0', border: '#B45309' } }, font: { size: 13, face: 'Source Sans 3, system-ui', color: '#7C2D12' } },
           book: { shape: 'box', margin: 8, color: { background: '#FBEFC9', border: GOLD, highlight: { background: '#F6DE91', border: GOLD } }, font: { size: 13, face: 'Source Sans 3, system-ui', color: '#0F172A' } },
@@ -230,11 +271,21 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
       net.on('click', (p: any) => select(p.nodes[0]));
 
       // Show/hide scholars or books.
+      // With a chain chosen, only its scholars and their books (and works on those books) stay visible.
       const filter = () => {
         const sOn = (document.getElementById('show-scholars') as HTMLInputElement).checked;
         const bOn = (document.getElementById('show-books') as HTMLInputElement).checked;
-        nodes.update(nodes.get().map((n: any) => ({ id: n.id, hidden: n.kind === 's' ? !sOn : !bOn })));
+        const c = current();
+        const ids = new Set(d.scholars.filter((s) => inChain(s, c)).map((s) => s.id));
+        const bookIn = (b: D['books'][number]): boolean => !c || (!!b.author && ids.has(b.author)) || b.recensionBy.some((x) => ids.has(x));
+        nodes.update(nodes.get().map((n: any) => ({ id: n.id, hidden:
+          n.kind === 's' ? !sOn || !ids.has(n.ref.id)
+          : n.kind === 'b' ? !bOn || !bookIn(n.ref)
+          : !bOn || !bookIn(bById.get(n.ref.base)!) })));
+        if (c) setTimeout(() => net.fit({ animation: true }), 30);
       };
+      applyNetChain = filter;
+      filter();
       ['show-scholars', 'show-books'].forEach((id) => document.getElementById(id)!.addEventListener('change', filter));
 
       // ?focus=s:<id> or b:<id> opens straight onto that scholar or book.
@@ -254,6 +305,8 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
 </script>
 
 <style>
+  .chain-pick { display: flex; align-items: center; gap: 10px; font-weight: 600; margin: 0 0 14px; }
+  .chain-pick select { width: auto; margin: 0; }
   .tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--sand); margin-bottom: 16px; }
   .tabs button { font: inherit; font-weight: 600; background: none; border: 0; border-bottom: 3px solid transparent; padding: 10px 14px; cursor: pointer; color: var(--muted); }
   .tabs button[aria-selected='true'] { color: var(--teal); border-bottom-color: var(--gold); }

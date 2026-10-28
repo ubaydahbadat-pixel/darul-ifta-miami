@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 
 export type Scholar = {
   id: string; name: string; short: string; tabaqah: string | null; order: number | null; deathAh: number | null; approx: boolean;
-  places: string[]; teachers: string[]; students: string[]; books: string[]; recensions: string[];
+  places: string[]; chains: string[]; teachers: string[]; students: string[]; books: string[]; recensions: string[];
 };
 export type Book = {
   id: string; title: string; author: string | null; recensionBy: string[];
@@ -13,6 +13,7 @@ export type Book = {
   fiqhPoints: string[]; influencedBy: string[]; influenced: string[];
 };
 export type Place = { id: string; name: string; lat: number; lng: number };
+export type Chain = { id: string; name: string; colour: string; order: number | null };
 
 const uniq = (a: string[]) => [...new Set(a)];
 
@@ -39,6 +40,11 @@ export function deathLabel(s: { deathAh: number | null; approx: boolean }) {
 export async function loadMadhhab() {
   const visible = (e: { data: { draft?: boolean } }) => import.meta.env.DEV || !e.data.draft;
   const placeEntries = await getCollection('places');
+  const chainEntries = await getCollection('chains');
+  const chains = new Map<string, Chain>(chainEntries
+    .map((c) => ({ id: c.id, name: c.data.name, colour: c.data.colour, order: c.data.order ?? null }))
+    .sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9) || a.name.localeCompare(b.name))
+    .map((c) => [c.id, c]));
   const scholarEntries = (await getCollection('scholars')).filter(visible);
   const bookEntries = (await getCollection('books')).filter(visible);
 
@@ -46,7 +52,7 @@ export async function loadMadhhab() {
   const scholars = new Map<string, Scholar>(scholarEntries.map((e) => [e.id, {
     id: e.id, name: e.data.name, short: e.data.short_name?.trim() || e.data.name, tabaqah: e.data.tabaqah?.trim() || null, order: e.data.order ?? null,
     deathAh: e.data.death_ah ?? null, approx: e.data.death_approximate,
-    places: e.data.places.filter((p) => places.has(p)), teachers: [...e.data.teachers], students: [...e.data.students], books: [], recensions: [],
+    places: e.data.places.filter((p) => places.has(p)), chains: e.data.chains.filter((c) => chains.has(c)), teachers: [...e.data.teachers], students: [...e.data.students], books: [], recensions: [],
   }]));
   const books = new Map<string, Book>(bookEntries.map((e) => [e.id, {
     id: e.id, title: e.data.title, author: e.data.author ?? null, recensionBy: [...e.data.recension_by],
@@ -90,5 +96,5 @@ export async function loadMadhhab() {
   // A book with no place of its own is shown at its author's main place.
   const bookPlace = (b: Book) => b.place ?? (b.author ? scholars.get(b.author)!.places[0] ?? null : null);
 
-  return { places, scholars, books, scholarList, bookList, bookPlace };
+  return { chains, places, scholars, books, scholarList, bookList, bookPlace };
 }

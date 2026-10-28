@@ -16,7 +16,7 @@ everything else is overwritten on each run, so do not edit those files here: edi
 | `content/fatawa-readable/<id>.md` | The same fatwa as one readable document. |
 | `content/categories.json` | The 11 categories, in order, with names and blurbs. |
 | `content/articles.json` | Articles (Markdown body). |
-| `content/madhhab/` | Scholars, books and places (with coordinates) for the Madhhab section and its two maps. Links between entries use each entry's `id`. |
+| `content/madhhab/` | Scholars, books, chains (with colours) and places (with coordinates) for the Madhhab section and its two maps. Links between entries use each entry's `id`. |
 | `data/nisab.json` | The latest gold and silver prices and niṣāb figures. |
 | `data/nisab-history.json` / `.csv` | The 5 am New York niṣāb figures, daily from 1 March 2024. Rows marked `backfill` came from COMEX futures daily closes. |
 | `data/hijri-months.json` | Start dates of the Hijri months, per the Central Hilal Committee of North America. |

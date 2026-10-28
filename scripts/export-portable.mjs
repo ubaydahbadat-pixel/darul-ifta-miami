@@ -75,6 +75,7 @@ write(`${OUT}/content/articles.json`, json(articles));
 const fm = (dir) => listDir(dir, '.md').map((f) => ({ id: id(f), ...frontMatter(path.join(dir, f)).data }));
 write(`${OUT}/content/madhhab/scholars.json`, json(fm('src/content/scholars')));
 write(`${OUT}/content/madhhab/books.json`, json(fm('src/content/books')));
+write(`${OUT}/content/madhhab/chains.json`, json(listDir('src/content/chains', '.json').map((f) => ({ id: id(f), ...JSON.parse(fs.readFileSync(path.join('src/content/chains', f), 'utf8')) }))));
 write(`${OUT}/content/madhhab/places.json`, json(listDir('src/content/places', '.json').map((f) => ({ id: id(f), ...JSON.parse(fs.readFileSync(path.join('src/content/places', f), 'utf8')) }))));
 
 // ── Data: niṣāb, history, Hijri calendar, settings ──

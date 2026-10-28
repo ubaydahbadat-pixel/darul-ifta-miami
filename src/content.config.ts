@@ -47,6 +47,12 @@ const places = defineCollection({
   schema: z.object({ name: z.string(), latitude: z.number(), longitude: z.number() }),
 });
 
+// Chains (regional strands of the madhhab), each with a colour for the maps.
+const chains = defineCollection({
+  loader: glob({ pattern: '*.json', base: './src/content/chains' }),
+  schema: z.object({ name: z.string(), colour: z.string().default('#0F766E'), order: z.number().nullish() }),
+});
+
 const ids = z.array(z.string()).nullish().transform((v) => (v ?? []).filter(Boolean));
 
 // Scholars. Teachers/students are links to other scholar entries; each link shows on both pages.
@@ -61,6 +67,7 @@ const scholars = defineCollection({
     death_ah: z.number().nullish(),
     death_approximate: z.boolean().default(false),
     places: ids,
+    chains: ids,
     teachers: ids,
     students: ids,
     draft: z.boolean().default(true),
@@ -85,4 +92,4 @@ const books = defineCollection({
   }),
 });
 
-export const collections = { fatawa, articles, places, scholars, books };
+export const collections = { fatawa, articles, places, chains, scholars, books };

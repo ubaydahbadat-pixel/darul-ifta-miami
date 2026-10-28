@@ -5,7 +5,7 @@ export async function getStaticPaths() {
   const { scholarList } = await loadMadhhab();
   return scholarList.map((s) => ({ params: { scholar: s.id } }));
 }
-const { scholars, books, places } = await loadMadhhab();
+const { scholars, books, places, chains } = await loadMadhhab();
 const s = scholars.get(Astro.params.scholar!)!;
 const link = (id: string) => scholars.get(id)!;
 const rows = [
@@ -22,6 +22,7 @@ const rows = [
   <dl class="facts">
     {s.name !== s.short && <><dt>Full name</dt><dd>{s.name}</dd></>}
     {deathLabel(s) && <><dt>Death</dt><dd>{deathLabel(s).replace('d. ', '').replace('c. ', 'c. ')}{s.approx && ' (approximate)'}</dd></>}
+    {s.chains.length > 0 && <><dt>Chain</dt><dd>{s.chains.map((c, i) => <>{i > 0 && ', '}<a class="chain" href={`/madhhab/interactive/?chain=${c}`}><span class="swatch" style={`background:${chains.get(c)!.colour}`}></span>{chains.get(c)!.name}</a></>)}</dd></>}
     {s.places.length > 0 && <><dt>Location</dt><dd>{s.places.map((p) => places.get(p)!.name).join(', ')}</dd></>}
   </dl>
   {rows.map((r) => r.items.length > 0 && (
@@ -36,6 +37,8 @@ const rows = [
   .facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0 0 28px; }
   .facts dt { font-weight: 600; color: var(--muted); }
   .facts dd { margin: 0; }
+  .chain { white-space: nowrap; }
+  .swatch { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: 0; }
   section { margin: 28px 0; }
   .more { margin-top: 28px; }
 </style>

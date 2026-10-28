@@ -193,6 +193,16 @@ collections:
         multiple: true
         required: false
         hint: "Where they lived or taught. Put the main place first: it is the one used for the teacher–student lines on the map. Missing place? Add it under Madhhab: Places first."
+      - name: chains
+        label: Chain
+        widget: relation
+        collection: chains
+        value_field: "{{slug}}"
+        search_fields: [name]
+        display_fields: [name]
+        multiple: true
+        required: false
+        hint: "The regional chain(s) the scholar belongs to, e.g. Balkh. A scholar can be in more than one. Missing chain? Add it under Madhhab: Chains first."
       - name: teachers
         label: Teachers
         widget: relation
@@ -318,6 +328,31 @@ collections:
         label: "Draft — keep hidden from the website"
         widget: boolean
         default: true
+
+  - name: chains
+    label: "Madhhab: Chains"
+    label_singular: Chain
+    folder: src/content/chains
+    extension: json
+    format: json
+    create: true
+    slug: "{{name}}"
+    identifier_field: name
+    summary: "{{name}}"
+    fields:
+      - name: name
+        label: Chain name
+        widget: string
+        hint: "e.g. Kufa, Baghdad, Egypt, Bukhārā, Samarqand, Balkh, Subcontinent."
+      - name: colour
+        label: Colour on the maps
+        widget: color
+      - name: order
+        label: Position in the list
+        widget: number
+        value_type: int
+        required: false
+        hint: "Optional. Lower numbers come first in the chain menu."
 
   - name: places
     label: "Madhhab: Places"
