@@ -8,5 +8,5 @@ places:
 teachers:
   - abd-allah-ibn-masud
 students: []
-draft: true
+draft: false
 ---
