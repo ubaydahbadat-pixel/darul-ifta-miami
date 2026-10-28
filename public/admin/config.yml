@@ -237,6 +237,26 @@ collections:
         display_fields: [short_name]
         required: false
         hint: "Enter the author under Madhhab: Scholars first. The author's date of death is taken from there."
+      - name: work_type
+        label: Type of work
+        widget: select
+        required: false
+        options:
+          - "Original work"
+          - "Commentary (Sharḥ)"
+          - "Abridgement (Mukhtaṣar)"
+          - "Gloss (Ḥāshiyah)"
+          - "Other"
+      - name: based_on
+        label: Based on
+        widget: relation
+        collection: books
+        value_field: "{{slug}}"
+        search_fields: [title]
+        display_fields: [title]
+        multiple: true
+        required: false
+        hint: "For a commentary, abridgement or gloss: the book it is written on. It will be listed on that book's page, grouped by type. Enter the base book first."
       - name: recension_by
         label: Recension (riwāyah) of
         widget: relation

@@ -1,7 +1,9 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import { loadMadhhab, deathLabel } from '../../../data/madhhab';
-const { bookList, scholars } = await loadMadhhab();
+import { loadMadhhab, deathLabel, shortType } from '../../../data/madhhab';
+const { bookList, scholars, books } = await loadMadhhab();
+const on = (b: (typeof bookList)[number]) => b.type && b.type !== 'Original work' && b.basedOn.length
+  ? `${shortType(b.type)} on ${b.basedOn.map((id) => books.get(id)!.title).join(', ')}` : '';
 ---
 <Base title="Books | Madhhab">
   <nav class="crumbs"><a href="/madhhab/">Madhhab</a></nav>
@@ -13,7 +15,7 @@ const { bookList, scholars } = await loadMadhhab();
       <p class="lead">The texts of the madhhab, in order of their authors' deaths.</p>
       <ul class="cards">
         {bookList.map((b) => { const a = b.author ? scholars.get(b.author)! : null; return (
-          <li><a href={`/madhhab/books/${b.id}/`}><span class="name">{b.title}</span>{a && <span class="meta">{[a.short, deathLabel(a)].filter(Boolean).join(' · ')}</span>}</a></li>
+          <li><a href={`/madhhab/books/${b.id}/`}><span class="name">{b.title}</span>{(a || on(b)) && <span class="meta">{[on(b), a?.short, a && deathLabel(a)].filter(Boolean).join(' · ')}</span>}</a></li>
         ); })}
       </ul>
       <p class="more"><a href="/madhhab/interactive/">See the books on the map and how they connect →</a></p>

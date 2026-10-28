@@ -1,6 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import { loadMadhhab, deathLabel } from '../../../data/madhhab';
+import { loadMadhhab, deathLabel, WORK_TYPES, shortType } from '../../../data/madhhab';
 import { md } from '../../../data/markdown';
 export async function getStaticPaths() {
   const { bookList } = await loadMadhhab();
@@ -12,6 +12,12 @@ const author = b.author ? scholars.get(b.author)! : null;
 const place = bookPlace(b);
 const bookLinks = (ids: string[]) => ids.map((id) => { const x = books.get(id)!; const a = x.author ? scholars.get(x.author)! : null;
   return { href: `/madhhab/books/${id}/`, text: x.title, meta: a ? [a.short, deathLabel(a)].filter(Boolean).join(' · ') : '' }; });
+const authorDeath = (id: string) => { const x = books.get(id)!; return x.author ? scholars.get(x.author)!.deathAh ?? 1e9 : 1e9; };
+const derivedGroups = WORK_TYPES.filter((t) => t.plural).map((t) => ({
+  label: t.plural, anchor: shortType(t.name).toLowerCase(),
+  items: bookLinks(b.derived.filter((id) => (books.get(id)!.type ?? 'Other') === t.name || (t.name === 'Other' && !WORK_TYPES.some((w) => w.name === books.get(id)!.type && w.plural)))
+    .sort((x, y) => authorDeath(x) - authorDeath(y))),
+})).filter((g) => g.items.length > 0);
 const rows = [
   { label: 'Influenced by', items: bookLinks(b.influencedBy) },
   { label: 'Influenced', items: bookLinks(b.influenced) },
@@ -23,6 +29,8 @@ const contentHtml = b.content ? await md(b.content) : '';
   <h1>{b.title}</h1>
   <hr class="rule" />
   <dl class="facts">
+    {b.type && b.type !== 'Original work' && <><dt>Type</dt><dd>{b.type}{b.basedOn.length > 0 && <> on {b.basedOn.map((id, i) => <>{i > 0 && ', '}<a href={`/madhhab/books/${id}/`}>{books.get(id)!.title}</a></>)}</>}</dd></>}
+    {(!b.type || b.type === 'Original work') && b.basedOn.length > 0 && <><dt>Based on</dt><dd>{b.basedOn.map((id, i) => <>{i > 0 && ', '}<a href={`/madhhab/books/${id}/`}>{books.get(id)!.title}</a></>)}</dd></>}
     {author && <><dt>Author</dt><dd><a href={`/madhhab/scholars/${author.id}/`}>{author.name}</a></dd></>}
     {author && deathLabel(author) && <><dt>Author's death</dt><dd>{deathLabel(author).replace('d. ', '')}{author.approx && ' (approximate)'}</dd></>}
     {b.recensionBy.length > 0 && <><dt>Recension</dt><dd>{b.recensionBy.map((id, i) => <>{i > 0 && ', '}<a href={`/madhhab/scholars/${id}/`}>{scholars.get(id)!.short}</a></>)}</dd></>}
@@ -30,6 +38,12 @@ const contentHtml = b.content ? await md(b.content) : '';
   </dl>
   {contentHtml && <section><h2>Content</h2><div set:html={contentHtml} /></section>}
   {b.fiqhPoints.length > 0 && <section><h2>Points of Fiqh</h2><ul class="points">{b.fiqhPoints.map((p) => <li>{p}</li>)}</ul></section>}
+  {derivedGroups.map((g) => (
+    <section id={g.anchor}>
+      <h2>{g.label} <span class="count">{g.items.length}</span></h2>
+      <ul class="cards">{g.items.map((i) => <li><a href={i.href}><span class="name">{i.text}</span>{i.meta && <span class="meta">{i.meta}</span>}</a></li>)}</ul>
+    </section>
+  ))}
   {rows.map((r) => r.items.length > 0 && (
     <section>
       <h2>{r.label}</h2>
@@ -44,5 +58,6 @@ const contentHtml = b.content ? await md(b.content) : '';
   .facts dd { margin: 0; }
   section { margin: 28px 0; }
   .points li { margin: 8px 0; }
+  .count { font-family: var(--sans); font-size: .9rem; font-weight: 600; color: var(--muted); background: var(--card); border: 1px solid var(--sand); border-radius: 999px; padding: 2px 10px; vertical-align: middle; }
   .more { margin-top: 28px; }
 </style>

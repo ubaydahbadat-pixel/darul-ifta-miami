@@ -75,6 +75,8 @@ const books = defineCollection({
     place: z.string().nullish(),
     content: z.string().default(''),
     fiqh_points: z.array(z.string()).nullish().transform((v) => (v ?? []).filter((x) => x && x.trim())),
+    work_type: z.string().nullish(),
+    based_on: ids,
     recension_by: ids,
     influenced_by: ids,
     influenced: ids,

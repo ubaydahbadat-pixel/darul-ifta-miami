@@ -34,7 +34,7 @@ everything else is overwritten on each run, so do not edit those files here: edi
 - **Zakāh calculator** (`logic/calculator.astro.txt`): zakāh-date lookup on the Hilal Committee calendar, calculator on the gold niṣāb only, and the niṣāb-over-time chart.
 - **Hijri calendar** (`logic/update-hilal.mjs.txt`): reads the Central Hilal Committee's monthly announcements; months it cannot find are shown as "estimated".
 - **Mahr** on the Niṣāb page: minimum mahr, Mahr Fāṭimī and Mahr al-Azwāj from their weights in silver (1 dirham = 3.0618 g), with footnote citations.
-- **Madhhab** (`logic/madhhab.ts.txt`): scholar and book pages, a map of places, and a connections network (teacher → student, author → book, recension → book, book → book). Each link counts in both directions.
+- **Madhhab** (`logic/madhhab.ts.txt`): scholar and book pages, a map of places, and a connections network (teacher → student, author → book, recension → book, base book → commentary/abridgement/gloss, book → book). A base book lists the works written on it, grouped by type; on the network, more than 6 of one type are shown as one summary box. Each link counts in both directions.
 - **Ask and Contact forms** (Web3Forms). On Ask, email is optional.
 - **Colours and fonts** are in `logic/global.css.txt`.
 

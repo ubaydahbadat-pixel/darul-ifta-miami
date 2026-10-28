@@ -8,7 +8,8 @@ export type Scholar = {
   places: string[]; teachers: string[]; students: string[]; books: string[]; recensions: string[];
 };
 export type Book = {
-  id: string; title: string; author: string | null; recensionBy: string[]; place: string | null; content: string;
+  id: string; title: string; author: string | null; recensionBy: string[];
+  type: string | null; basedOn: string[]; derived: string[]; place: string | null; content: string;
   fiqhPoints: string[]; influencedBy: string[]; influenced: string[];
 };
 export type Place = { id: string; name: string; lat: number; lng: number };
@@ -18,6 +19,17 @@ const uniq = (a: string[]) => [...new Set(a)];
 // The groups on the Scholars page, in order. Keep the same list in public/admin/config.yml (Ṭabaqah field).
 export const TABAQAT = ['Ṣaḥābah', 'Tābiʿūn', 'Atbāʿ al-Tābiʿīn',
   ...Array.from({ length: 10 }, (_, i) => `Ṭabaqah ${i + 1}`)];
+
+// Kinds of work, as offered in /admin (Books → Type of work). Keep the two lists the same.
+// `plural` is the heading on the base book's page.
+export const WORK_TYPES = [
+  { name: 'Original work', plural: '' },
+  { name: 'Commentary (Sharḥ)', plural: 'Commentaries (Shurūḥ)' },
+  { name: 'Abridgement (Mukhtaṣar)', plural: 'Abridgements (Mukhtaṣarāt)' },
+  { name: 'Gloss (Ḥāshiyah)', plural: 'Glosses (Ḥawāshī)' },
+  { name: 'Other', plural: 'Other works based on it' },
+];
+export const shortType = (t: string | null) => (t ? t.replace(/\s*\(.*\)$/, '') : '');
 
 export function deathLabel(s: { deathAh: number | null; approx: boolean }) {
   if (s.deathAh == null) return '';
@@ -37,7 +49,8 @@ export async function loadMadhhab() {
     places: e.data.places.filter((p) => places.has(p)), teachers: [...e.data.teachers], students: [...e.data.students], books: [], recensions: [],
   }]));
   const books = new Map<string, Book>(bookEntries.map((e) => [e.id, {
-    id: e.id, title: e.data.title, author: e.data.author ?? null, recensionBy: [...e.data.recension_by], place: e.data.place ?? null,
+    id: e.id, title: e.data.title, author: e.data.author ?? null, recensionBy: [...e.data.recension_by],
+    type: e.data.work_type?.trim() || null, basedOn: [...e.data.based_on], derived: [], place: e.data.place ?? null,
     content: e.data.content, fiqhPoints: e.data.fiqh_points,
     influencedBy: [...e.data.influenced_by], influenced: [...e.data.influenced],
   }]));
@@ -59,6 +72,11 @@ export async function loadMadhhab() {
     if (b.author) scholars.get(b.author)!.books.push(b.id);
     b.recensionBy = uniq(b.recensionBy).filter((x) => scholars.has(x));
     for (const x of b.recensionBy) scholars.get(x)!.recensions.push(b.id);
+  }
+  // Works based on another book (commentaries, abridgements, glosses) are listed on the base book.
+  for (const b of books.values()) {
+    b.basedOn = uniq(b.basedOn).filter((x) => books.has(x) && x !== b.id);
+    for (const x of b.basedOn) books.get(x)!.derived.push(b.id);
   }
   for (const b of books.values()) {
     b.influencedBy = uniq(b.influencedBy).filter((x) => books.has(x) && x !== b.id);

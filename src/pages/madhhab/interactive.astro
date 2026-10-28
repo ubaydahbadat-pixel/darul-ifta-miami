@@ -13,7 +13,7 @@ const data = {
   books: bookList.map((b) => {
     const a = b.author ? scholars.get(b.author)! : null;
     return { id: b.id, title: b.title, author: b.author, recensionBy: b.recensionBy, authorName: a?.short ?? '', death: a ? deathLabel(a) : '',
-      place: bookPlace(b), influencedBy: b.influencedBy };
+      place: bookPlace(b), influencedBy: b.influencedBy, type: b.type, basedOn: b.basedOn, derived: b.derived };
   }),
   places: Object.fromEntries([...places.values()].map((p) => [p.id, { name: p.name, lat: p.lat, lng: p.lng }])),
 };
@@ -51,6 +51,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
           <li><span class="line teach"></span>Teacher → student</li>
           <li><span class="line wrote"></span>Author → book</li>
           <li><span class="line rec"></span>Recension → book</li>
+          <li><span class="line based"></span>Book → commentary, abridgement or gloss</li>
           <li><span class="line infl"></span>Book → book it influenced</li>
         </ul>
         <div id="detail" class="detail" hidden></div>
@@ -70,7 +71,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
   if (el) {
     type D = {
       scholars: { id: string; name: string; short: string; death: string; deathAh: number | null; place: string | null; places: string[]; students: string[] }[];
-      books: { id: string; title: string; author: string | null; recensionBy: string[]; authorName: string; death: string; place: string | null; influencedBy: string[] }[];
+      books: { id: string; title: string; author: string | null; recensionBy: string[]; authorName: string; death: string; place: string | null; influencedBy: string[]; type: string | null; basedOn: string[]; derived: string[] }[];
       places: Record<string, { name: string; lat: number; lng: number }>;
     };
     const d: D = JSON.parse(el.textContent!);
@@ -160,21 +161,49 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
       });
       const maxGen = Math.max(0, ...d.scholars.filter(linked).map((s) => gen.get(s.id)!));
       const rowOfScholar = (s: D['scholars'][number]) => (linked(s) ? gen.get(s.id)! * 2 : (maxGen + 1) * 2);
+      // A book with many works written on it (e.g. 25 commentaries) would crowd the map, so when a book has
+      // more than COLLAPSE works of one type, those that have no other links are shown as one box
+      // ("Commentaries (25)") that opens the list on the base book's page.
+      const COLLAPSE = 6;
+      const bById = new Map(d.books.map((b) => [b.id, b]));
+      const hasOtherLinks = (b: D['books'][number]) => b.derived.length > 0 || b.influencedBy.length > 0 || b.recensionBy.length > 0
+        || d.books.some((x) => x.influencedBy.includes(b.id));
+      const collapsed = new Set<string>();
+      const summaries: { id: string; base: string; type: string; count: number }[] = [];
+      d.books.forEach((base) => {
+        const byType = new Map<string, string[]>();
+        base.derived.forEach((x) => { const t = bById.get(x)!.type ?? 'Other'; byType.set(t, [...(byType.get(t) ?? []), x]); });
+        byType.forEach((ids, type) => {
+          const leaves = ids.filter((x) => !hasOtherLinks(bById.get(x)!));
+          if (ids.length <= COLLAPSE || leaves.length < 2) return;
+          leaves.forEach((x) => collapsed.add(x));
+          summaries.push({ id: `g:${base.id}:${type}`, base: base.id, type, count: leaves.length });
+        });
+      });
+      const bookLevel = (b: D['books'][number]): number => {
+        const own = (b.author && sById2.get(b.author) ? rowOfScholar(sById2.get(b.author)!) : (maxGen + 1) * 2) + 1;
+        const below = b.basedOn.filter((x) => bById.has(x)).map((x) => bookLevel(bById.get(x)!) + 1);
+        return Math.max(own, ...below);
+      };
+      const plural = (t: string) => ({ 'Commentary (Sharḥ)': 'Commentaries', 'Abridgement (Mukhtaṣar)': 'Abridgements', 'Gloss (Ḥāshiyah)': 'Glosses' } as Record<string, string>)[t] ?? 'Works';
       const nodes = new DataSet<any>([
         ...d.scholars.map((s) => ({ id: 's:' + s.id, label: s.short + (s.death ? `\n${s.death}` : ''), group: 'scholar', kind: 's', ref: s, level: rowOfScholar(s) })),
-        ...d.books.map((b) => ({ id: 'b:' + b.id, label: wrap(b.title), group: 'book', kind: 'b', ref: b,
-          level: (b.author && sById2.get(b.author) ? rowOfScholar(sById2.get(b.author)!) : (maxGen + 1) * 2) + 1 })),
+        ...d.books.filter((b) => !collapsed.has(b.id)).map((b) => ({ id: 'b:' + b.id, label: wrap(b.title), group: 'book', kind: 'b', ref: b, level: bookLevel(b) })),
+        ...summaries.map((g) => ({ id: g.id, label: `${plural(g.type)} (${g.count})`, group: 'summary', kind: 'g', ref: g, level: bookLevel(bById.get(g.base)!) + 1 })),
       ]);
       const edges = new DataSet<any>([
         ...d.scholars.flatMap((t) => t.students.map((s) => ({ from: 's:' + t.id, to: 's:' + s, color: { color: TEAL }, kind: 'teach' }))),
-        ...d.books.filter((b) => b.author).map((b) => ({ from: 's:' + b.author, to: 'b:' + b.id, dashes: true, color: { color: MUTED }, kind: 'wrote' })),
+        ...d.books.filter((b) => b.author && !collapsed.has(b.id)).map((b) => ({ from: 's:' + b.author, to: 'b:' + b.id, dashes: true, color: { color: MUTED }, kind: 'wrote' })),
         ...d.books.flatMap((b) => b.recensionBy.map((x) => ({ from: 's:' + x, to: 'b:' + b.id, dashes: [2, 4], color: { color: '#7C3AED' }, kind: 'rec' }))),
         ...d.books.flatMap((b) => b.influencedBy.map((x) => ({ from: 'b:' + x, to: 'b:' + b.id, color: { color: GOLD }, kind: 'infl' }))),
+        ...d.books.filter((b) => !collapsed.has(b.id)).flatMap((b) => b.basedOn.map((x) => ({ from: 'b:' + x, to: 'b:' + b.id, width: 2.5, color: { color: '#B45309' }, kind: 'based' }))),
+        ...summaries.map((g) => ({ from: 'b:' + g.base, to: g.id, width: 2.5, color: { color: '#B45309' }, kind: 'based' })),
       ].map((e, i) => ({ id: i, arrows: 'to', width: 1.5, ...e })));
 
       const net = new Network(document.getElementById('net')!, { nodes, edges }, {
         groups: {
           scholar: { shape: 'box', margin: 8, shapeProperties: { borderRadius: 14 }, color: { background: TEAL, border: '#0B5A54', highlight: { background: '#14A396', border: '#0B5A54' }, hover: { background: '#14A396', border: '#0B5A54' } }, font: { size: 14, face: 'Source Sans 3, system-ui', color: '#FFFFFF', multi: false } },
+          summary: { shape: 'box', margin: 8, borderWidth: 2, shapeProperties: { borderDashes: [4, 3] }, color: { background: '#FFF7E6', border: '#B45309', highlight: { background: '#FDE7C0', border: '#B45309' } }, font: { size: 13, face: 'Source Sans 3, system-ui', color: '#7C2D12' } },
           book: { shape: 'box', margin: 8, color: { background: '#FBEFC9', border: GOLD, highlight: { background: '#F6DE91', border: GOLD } }, font: { size: 13, face: 'Source Sans 3, system-ui', color: '#0F172A' } },
         },
         edges: { smooth: { enabled: true, type: 'cubicBezier', forceDirection: 'vertical', roundness: 0.4 }, arrows: { to: { scaleFactor: 0.6 } } },
@@ -189,6 +218,11 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
         const n: any = nodes.get(id);
         if (!n) return;
         detail.hidden = false;
+        if (n.kind === 'g') {
+          const base = bById.get(n.ref.base)!;
+          detail.innerHTML = `<strong>${esc(plural(n.ref.type))} on ${esc(base.title)}</strong><span>${n.ref.count} works</span><a class="button" href="/madhhab/books/${base.id}/#${esc(n.ref.type.replace(/\s*\(.*\)$/, '').toLowerCase())}">See the list</a>`;
+          return;
+        }
         detail.innerHTML = n.kind === 's'
           ? `<strong>${esc(n.ref.name)}</strong>${n.ref.death ? `<span>${esc(n.ref.death)}</span>` : ''}<a class="button" href="/madhhab/scholars/${n.ref.id}/">Open scholar</a>`
           : `<strong>${esc(n.ref.title)}</strong>${n.ref.authorName ? `<span>${esc(n.ref.authorName)}${n.ref.death ? ' · ' + esc(n.ref.death) : ''}</span>` : ''}<a class="button" href="/madhhab/books/${n.ref.id}/">Open book</a>`;
@@ -239,6 +273,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
   .line.wrote { border-color: #64748B; border-top-style: dashed; }
   .line.rec { border-color: #7C3AED; border-top-style: dotted; }
   .line.infl { border-color: #D4A329; }
+  .line.based { border-color: #B45309; border-top-width: 3px; }
   .detail { margin-top: 14px; padding: 14px 16px; border: 1px solid var(--sand); border-radius: 10px; background: var(--card); display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
   .detail :global(strong) { font-family: var(--serif); font-size: 1.2rem; }
   .detail :global(span) { color: var(--muted); font-size: .92rem; }
