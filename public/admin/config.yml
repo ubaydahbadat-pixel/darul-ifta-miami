@@ -7,9 +7,9 @@ backend:
   branch: main
   auth_methods: [token]
   commit_messages:
-    create: "New fatwa: {{slug}}"
-    update: "Update fatwa: {{slug}}"
-    delete: "Delete fatwa: {{slug}}"
+    create: "New {{collection}} entry: {{slug}}"
+    update: "Update {{collection}} entry: {{slug}}"
+    delete: "Delete {{collection}} entry: {{slug}}"
 
 app_title: Darul Iftāʾ Miami — Submissions
 site_url: https://darul-ifta-miami.ubaydahbadat.workers.dev

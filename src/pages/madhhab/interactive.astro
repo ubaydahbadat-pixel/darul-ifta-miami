@@ -39,7 +39,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
       </section>
 
       <section id="panel-net" role="tabpanel" aria-labelledby="tab-net" hidden>
-        <p class="hint">How the scholars and books connect. Drag to move, pinch or scroll to zoom, tap a circle or box for details.</p>
+        <p class="hint">How the scholars and books connect. Drag to move, pinch or scroll to zoom, tap a name or book for details.</p>
         <div class="controls">
           <label class="toggle"><input type="checkbox" id="show-scholars" checked /> Scholars</label>
           <label class="toggle"><input type="checkbox" id="show-books" checked /> Books</label>
@@ -132,9 +132,15 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
 
     // ── Connections network ──
     function startNetwork() {
+      // Fixed, chronological layout: one row per date of death, earliest at the top.
+      // Each book sits on the row just below its author. Undated entries go at the bottom.
+      const years = [...new Set(d.scholars.map((s) => s.deathAh).filter((y): y is number => y != null))].sort((a, b) => a - b);
+      const rowOf = (y: number | null) => (y == null ? years.length * 2 : years.indexOf(y) * 2);
+      const sById2 = new Map(d.scholars.map((s) => [s.id, s]));
       const nodes = new DataSet<any>([
-        ...d.scholars.map((s) => ({ id: 's:' + s.id, label: s.short + (s.death ? `\n${s.death}` : ''), group: 'scholar', kind: 's', ref: s })),
-        ...d.books.map((b) => ({ id: 'b:' + b.id, label: wrap(b.title), group: 'book', kind: 'b', ref: b })),
+        ...d.scholars.map((s) => ({ id: 's:' + s.id, label: s.short + (s.death ? `\n${s.death}` : ''), group: 'scholar', kind: 's', ref: s, level: rowOf(s.deathAh) })),
+        ...d.books.map((b) => ({ id: 'b:' + b.id, label: wrap(b.title), group: 'book', kind: 'b', ref: b,
+          level: rowOf(b.author ? sById2.get(b.author)?.deathAh ?? null : null) + 1 })),
       ]);
       const edges = new DataSet<any>([
         ...d.scholars.flatMap((t) => t.students.map((s) => ({ from: 's:' + t.id, to: 's:' + s, color: { color: TEAL }, kind: 'teach' }))),
@@ -144,11 +150,12 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
 
       const net = new Network(document.getElementById('net')!, { nodes, edges }, {
         groups: {
-          scholar: { shape: 'dot', size: 12, color: { background: TEAL, border: '#0B5A54', highlight: { background: '#14A396', border: '#0B5A54' } }, font: { size: 14, face: 'Source Sans 3, system-ui', color: '#0F172A' } },
+          scholar: { shape: 'box', margin: 8, shapeProperties: { borderRadius: 14 }, color: { background: TEAL, border: '#0B5A54', highlight: { background: '#14A396', border: '#0B5A54' }, hover: { background: '#14A396', border: '#0B5A54' } }, font: { size: 14, face: 'Source Sans 3, system-ui', color: '#FFFFFF', multi: false } },
           book: { shape: 'box', margin: 8, color: { background: '#FBEFC9', border: GOLD, highlight: { background: '#F6DE91', border: GOLD } }, font: { size: 13, face: 'Source Sans 3, system-ui', color: '#0F172A' } },
         },
-        edges: { smooth: { enabled: true, type: 'continuous', roundness: 0.4 }, arrows: { to: { scaleFactor: 0.6 } } },
-        physics: { solver: 'forceAtlas2Based', forceAtlas2Based: { gravitationalConstant: -60, springLength: 120 }, stabilization: { iterations: 300 } },
+        edges: { smooth: { enabled: true, type: 'cubicBezier', forceDirection: 'vertical', roundness: 0.4 }, arrows: { to: { scaleFactor: 0.6 } } },
+        layout: { hierarchical: { enabled: true, direction: 'UD', levelSeparation: 90, nodeSpacing: 170, treeSpacing: 170, blockShifting: true, edgeMinimization: true, parentCentralization: true } },
+        physics: false,
         interaction: { hover: true, tooltipDelay: 150 },
       });
 
@@ -175,7 +182,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
       // ?focus=s:<id> or b:<id> opens straight onto that scholar or book.
       const focus = new URLSearchParams(location.search).get('focus');
       if (focus && nodes.get(focus)) {
-        net.once('stabilizationIterationsDone', () => { net.selectNodes([focus]); net.focus(focus, { scale: 1.2, animation: true }); select(focus); });
+        setTimeout(() => { net.selectNodes([focus]); net.focus(focus, { scale: 1.2, animation: true }); select(focus); }, 50);
       }
     }
     function wrap(t: string) {
@@ -201,7 +208,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
   .legend { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .88rem; color: var(--muted); }
   .legend li { display: inline-flex; align-items: center; gap: 6px; }
   .dot { width: 12px; height: 12px; display: inline-block; }
-  .dot.scholar { background: #0F766E; border-radius: 50%; }
+  .dot.scholar { background: #0F766E; border-radius: 6px; width: 16px; }
   .dot.book { background: #FBEFC9; border: 1px solid #D4A329; border-radius: 2px; }
   .line { width: 22px; height: 0; display: inline-block; border-top: 2px solid; }
   .line.teach { border-color: #0F766E; }
