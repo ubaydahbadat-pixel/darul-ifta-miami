@@ -124,3 +124,18 @@ collections:
         widget: boolean
         default: true
         hint: "Switch off to publish."
+
+  # Ask page settings (one small file, not a fatwa)
+  - name: settings
+    label: Ask Page Settings
+    files:
+      - name: ask
+        label: Ask page
+        file: src/data/ask-settings.json
+        format: json
+        fields:
+          - name: askTurnaround
+            label: Turnaround time
+            widget: string
+            required: false
+            hint: 'Shown on the Ask page as "Most questions are answered within …". Write e.g. "7 working days". Leave empty to hide the line.'

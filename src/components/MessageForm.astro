@@ -13,8 +13,14 @@ const subject = kind === 'ask' ? 'New question — Darul Iftāʾ Miami' : 'New m
   <label for="name">Name</label>
   <input id="name" name="name" autocomplete="name" />
 
-  <label for="email">Email <span aria-hidden="true">*</span></label>
-  <input id="email" name="email" type="email" required autocomplete="email" />
+  {kind === 'ask' ? <>
+    <label for="email">Email <span class="optional">(optional)</span></label>
+    <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-note" />
+    <p id="email-note" class="field-note">You may ask without giving your name or email. Without an email we cannot reply to you privately: if your question is answered, the answer will appear in the <a href="/fatawa/">Fatāwā</a> without any identifying details.</p>
+  </> : <>
+    <label for="email">Email <span aria-hidden="true">*</span></label>
+    <input id="email" name="email" type="email" required autocomplete="email" />
+  </>}
 
   {kind === 'ask' && <>
     <label for="category">Topic</label>
@@ -33,4 +39,6 @@ const subject = kind === 'ask' ? 'New question — Darul Iftāʾ Miami' : 'New m
 
 <style>
   .setup { font-size: .85rem; color: #9a3412; }
+  .optional { font-weight: normal; color: var(--muted); }
+  .field-note { font-size: .9rem; color: var(--muted); margin: 6px 0 0; }
 </style>
