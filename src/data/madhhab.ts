@@ -17,7 +17,7 @@ export type Place = { id: string; name: string; lat: number; lng: number };
 const uniq = (a: string[]) => [...new Set(a)];
 
 // The groups on the Scholars page, in order. Keep the same list in public/admin/config.yml (Ṭabaqah field).
-export const TABAQAT = ['Ṣaḥābah', 'Tābiʿūn', 'Atbāʿ al-Tābiʿīn',
+export const TABAQAT = ['Ṣaḥābah', 'Tābiʿūn',
   ...Array.from({ length: 10 }, (_, i) => `Ṭabaqah ${i + 1}`)];
 
 // Kinds of work, as offered in /admin (Books → Type of work). Keep the two lists the same.

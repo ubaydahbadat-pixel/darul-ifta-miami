@@ -3,7 +3,7 @@ import Base from '../../../layouts/Base.astro';
 import { loadMadhhab, deathLabel, TABAQAT } from '../../../data/madhhab';
 const { scholarList, places } = await loadMadhhab();
 // Rasūlullāh ﷺ stands on his own. Everyone else is grouped by the Ṭabaqah field in /admin
-// (Ṣaḥābah, Tābiʿūn, Atbāʿ al-Tābiʿīn, Ṭabaqah 1, 2, …), and by date of death within each group.
+// (Ṣaḥābah, Tābiʿūn, Ṭabaqah 1, 2, …), and by date of death within each group.
 const card = (s: (typeof scholarList)[number]) => ({
   href: `/madhhab/scholars/${s.id}/`, name: s.name,
   meta: [deathLabel(s), s.places.map((p) => places.get(p)!.name).join(', ')].filter(Boolean).join(' · '),
