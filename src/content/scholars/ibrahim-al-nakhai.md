@@ -8,5 +8,5 @@ places:
 teachers:
   - alqamah
 students: []
-draft: true
+draft: false
 ---
