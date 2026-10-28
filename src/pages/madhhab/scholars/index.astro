@@ -5,7 +5,7 @@ const { scholarList, places } = await loadMadhhab();
 // Rasūlullāh ﷺ stands on his own. Everyone else is grouped by the Ṭabaqah field in /admin
 // (Ṣaḥābah, Tābiʿūn, Ṭabaqah 1, 2, …), and by date of death within each group.
 const card = (s: (typeof scholarList)[number]) => ({
-  href: `/madhhab/scholars/${s.id}/`, name: s.name,
+  href: `/madhhab/scholars/${s.id}/`, name: s.short,
   meta: [deathLabel(s), s.places.map((p) => places.get(p)!.name).join(', ')].filter(Boolean).join(' · '),
 });
 const groups = [

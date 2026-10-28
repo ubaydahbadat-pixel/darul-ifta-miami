@@ -224,7 +224,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
           return;
         }
         detail.innerHTML = n.kind === 's'
-          ? `<strong>${esc(n.ref.name)}</strong>${n.ref.death ? `<span>${esc(n.ref.death)}</span>` : ''}<a class="button" href="/madhhab/scholars/${n.ref.id}/">Open scholar</a>`
+          ? `<strong>${esc(n.ref.short)}</strong>${n.ref.death ? `<span>${esc(n.ref.death)}</span>` : ''}<a class="button" href="/madhhab/scholars/${n.ref.id}/">Open scholar</a>`
           : `<strong>${esc(n.ref.title)}</strong>${n.ref.authorName ? `<span>${esc(n.ref.authorName)}${n.ref.death ? ' · ' + esc(n.ref.death) : ''}</span>` : ''}<a class="button" href="/madhhab/books/${n.ref.id}/">Open book</a>`;
       }
       net.on('click', (p: any) => select(p.nodes[0]));
