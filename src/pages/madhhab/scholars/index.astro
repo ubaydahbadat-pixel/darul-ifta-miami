@@ -1,8 +1,14 @@
 ---
 import Base from '../../../layouts/Base.astro';
-// Add each new scholar here as their page is written, in chronological order.
+import { loadMadhhab, deathLabel } from '../../../data/madhhab';
+const { scholarList, places } = await loadMadhhab();
+// Rasūlullāh ﷺ has his own hand-written page; the rest come from the Scholars form in /admin, by date of death.
 const scholars = [
   { href: '/madhhab/scholars/rasulullah/', name: 'Rasūlullāh ﷺ', meta: 'The source of the madhhab · d. 11 AH, Madīnah' },
+  ...scholarList.map((s) => ({
+    href: `/madhhab/scholars/${s.id}/`, name: s.name,
+    meta: [deathLabel(s), s.places.map((p) => places.get(p)!.name).join(', ')].filter(Boolean).join(' · '),
+  })),
 ];
 ---
 <Base title="Scholars | Madhhab">
@@ -11,6 +17,8 @@ const scholars = [
   <hr class="rule" />
   <p class="lead">The chain of the Ḥanafī madhhab, from its source to the scholars who carried it.</p>
   <ul class="cards">
-    {scholars.map((s) => <li><a href={s.href}><span class="name">{s.name}</span><span class="meta">{s.meta}</span></a></li>)}
+    {scholars.map((s) => <li><a href={s.href}><span class="name">{s.name}</span>{s.meta && <span class="meta">{s.meta}</span>}</a></li>)}
   </ul>
+  <p class="more"><a href="/madhhab/interactive/">See the scholars on the map and how they connect →</a></p>
 </Base>
+<style>.more { margin-top: 24px; }</style>

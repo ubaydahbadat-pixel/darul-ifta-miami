@@ -125,6 +125,171 @@ collections:
         default: true
         hint: "Switch off to publish."
 
+  # ── Madhhab section ────────────────────────────────────────────
+  # Scholars, Books and Places feed the Madhhab pages and both interactive maps.
+  - name: scholars
+    label: "Madhhab: Scholars"
+    label_singular: Scholar
+    folder: src/content/scholars
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{short_name}}"
+    identifier_field: name
+    summary: "{{name}} · d. {{death_ah}}"
+    sortable_fields: [name, death_ah]
+    fields:
+      - name: name
+        label: Name
+        widget: string
+        hint: "Full name, including lineage, with diacritics."
+      - name: short_name
+        label: Short name
+        widget: string
+        hint: "How the scholar is usually known, e.g. al-Qudūrī. Used on the maps and in the web link, so choose carefully: once published, the link should not change."
+      - name: death_ah
+        label: Date of death (AH)
+        widget: number
+        value_type: int
+        required: false
+        hint: "Year only, e.g. 428. Leave empty if unknown."
+      - name: death_approximate
+        label: Date of death is approximate
+        widget: boolean
+        default: false
+        hint: "Shows as \"c. 428 AH\"."
+      - name: places
+        label: Location
+        widget: relation
+        collection: places
+        value_field: "{{slug}}"
+        search_fields: [name]
+        display_fields: [name]
+        multiple: true
+        required: false
+        hint: "Where they lived or taught. Put the main place first: it is the one used for the teacher–student lines on the map. Missing place? Add it under Madhhab: Places first."
+      - name: teachers
+        label: Teachers
+        widget: relation
+        collection: scholars
+        value_field: "{{slug}}"
+        search_fields: [name, short_name]
+        display_fields: [short_name]
+        multiple: true
+        required: false
+        hint: "Only scholars already entered appear here. A link entered on either side shows on both pages, so you only need to enter it once."
+      - name: students
+        label: Students
+        widget: relation
+        collection: scholars
+        value_field: "{{slug}}"
+        search_fields: [name, short_name]
+        display_fields: [short_name]
+        multiple: true
+        required: false
+      - name: draft
+        label: "Draft — keep hidden from the website"
+        widget: boolean
+        default: true
+        hint: "Books written are listed automatically from the Books entries."
+
+  - name: books
+    label: "Madhhab: Books"
+    label_singular: Book
+    folder: src/content/books
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{title}}"
+    identifier_field: title
+    summary: "{{title}}"
+    sortable_fields: [title]
+    fields:
+      - name: title
+        label: Book title
+        widget: string
+        hint: "Also becomes the web link. Choose carefully: once published, the link should not change."
+      - name: author
+        label: Author
+        widget: relation
+        collection: scholars
+        value_field: "{{slug}}"
+        search_fields: [name, short_name]
+        display_fields: [short_name]
+        required: false
+        hint: "Enter the author under Madhhab: Scholars first. The author's date of death is taken from there."
+      - name: place
+        label: Location
+        widget: relation
+        collection: places
+        value_field: "{{slug}}"
+        search_fields: [name]
+        display_fields: [name]
+        required: false
+        hint: "Where the book is from. Leave empty to use the author's main place."
+      - name: content
+        label: Book's content
+        widget: text
+        required: false
+        hint: "What the book covers. Separate paragraphs with a blank line."
+      - name: fiqh_points
+        label: Points of fiqh from the book
+        label_singular: Point
+        widget: list
+        required: false
+        field: { name: point, label: Point, widget: text }
+        hint: "One or two points."
+      - name: influenced_by
+        label: Influenced by
+        widget: relation
+        collection: books
+        value_field: "{{slug}}"
+        search_fields: [title]
+        display_fields: [title]
+        multiple: true
+        required: false
+        hint: "Earlier books this book draws on, e.g. the matn a sharḥ comments on. A link entered on either side shows on both pages."
+      - name: influenced
+        label: Influenced
+        widget: relation
+        collection: books
+        value_field: "{{slug}}"
+        search_fields: [title]
+        display_fields: [title]
+        multiple: true
+        required: false
+        hint: "Later books influenced by this one."
+      - name: draft
+        label: "Draft — keep hidden from the website"
+        widget: boolean
+        default: true
+
+  - name: places
+    label: "Madhhab: Places"
+    label_singular: Place
+    folder: src/content/places
+    extension: json
+    format: json
+    create: true
+    slug: "{{name}}"
+    identifier_field: name
+    summary: "{{name}}"
+    sortable_fields: [name]
+    fields:
+      - name: name
+        label: Place name
+        widget: string
+      - name: latitude
+        label: Latitude
+        widget: number
+        value_type: float
+        hint: "In Google Maps, right-click the place and click the numbers at the top to copy them, e.g. 32.0257, 44.4026. The first number is the latitude."
+      - name: longitude
+        label: Longitude
+        widget: number
+        value_type: float
+        hint: "The second number."
+
   # Ask page settings (one small file, not a fatwa)
   - name: settings
     label: Ask Page Settings

@@ -1,0 +1,47 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { loadMadhhab, deathLabel } from '../../../data/madhhab';
+import { md } from '../../../data/markdown';
+export async function getStaticPaths() {
+  const { bookList } = await loadMadhhab();
+  return bookList.map((b) => ({ params: { book: b.id } }));
+}
+const { scholars, books, places, bookPlace } = await loadMadhhab();
+const b = books.get(Astro.params.book!)!;
+const author = b.author ? scholars.get(b.author)! : null;
+const place = bookPlace(b);
+const bookLinks = (ids: string[]) => ids.map((id) => { const x = books.get(id)!; const a = x.author ? scholars.get(x.author)! : null;
+  return { href: `/madhhab/books/${id}/`, text: x.title, meta: a ? [a.short, deathLabel(a)].filter(Boolean).join(' · ') : '' }; });
+const rows = [
+  { label: 'Influenced by', items: bookLinks(b.influencedBy) },
+  { label: 'Influenced', items: bookLinks(b.influenced) },
+];
+const contentHtml = b.content ? await md(b.content) : '';
+---
+<Base title={`${b.title} | Books`}>
+  <nav class="crumbs"><a href="/madhhab/">Madhhab</a><span>›</span><a href="/madhhab/books/">Books</a></nav>
+  <h1>{b.title}</h1>
+  <hr class="rule" />
+  <dl class="facts">
+    {author && <><dt>Author</dt><dd><a href={`/madhhab/scholars/${author.id}/`}>{author.name}</a></dd></>}
+    {author && deathLabel(author) && <><dt>Author's death</dt><dd>{deathLabel(author).replace('d. ', '')}{author.approx && ' (approximate)'}</dd></>}
+    {place && <><dt>Location</dt><dd>{places.get(place)!.name}</dd></>}
+  </dl>
+  {contentHtml && <section><h2>Content</h2><div set:html={contentHtml} /></section>}
+  {b.fiqhPoints.length > 0 && <section><h2>Points of Fiqh</h2><ul class="points">{b.fiqhPoints.map((p) => <li>{p}</li>)}</ul></section>}
+  {rows.map((r) => r.items.length > 0 && (
+    <section>
+      <h2>{r.label}</h2>
+      <ul class="cards">{r.items.map((i) => <li><a href={i.href}><span class="name">{i.text}</span>{i.meta && <span class="meta">{i.meta}</span>}</a></li>)}</ul>
+    </section>
+  ))}
+  <p class="more"><a href={`/madhhab/interactive/?focus=b:${b.id}`}>See on the connections map →</a></p>
+</Base>
+<style>
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0 0 28px; }
+  .facts dt { font-weight: 600; color: var(--muted); }
+  .facts dd { margin: 0; }
+  section { margin: 28px 0; }
+  .points li { margin: 8px 0; }
+  .more { margin-top: 28px; }
+</style>

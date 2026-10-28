@@ -1,0 +1,22 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { loadMadhhab, deathLabel } from '../../../data/madhhab';
+const { bookList, scholars } = await loadMadhhab();
+---
+<Base title="Books | Madhhab">
+  <nav class="crumbs"><a href="/madhhab/">Madhhab</a></nav>
+  <h1>Books</h1>
+  <hr class="rule" />
+  {bookList.length === 0
+    ? <p class="empty">The books of the madhhab are being compiled.</p>
+    : <>
+      <p class="lead">The texts of the madhhab, in order of their authors' deaths.</p>
+      <ul class="cards">
+        {bookList.map((b) => { const a = b.author ? scholars.get(b.author)! : null; return (
+          <li><a href={`/madhhab/books/${b.id}/`}><span class="name">{b.title}</span>{a && <span class="meta">{[a.short, deathLabel(a)].filter(Boolean).join(' · ')}</span>}</a></li>
+        ); })}
+      </ul>
+      <p class="more"><a href="/madhhab/interactive/">See the books on the map and how they connect →</a></p>
+    </>}
+</Base>
+<style>.more { margin-top: 24px; }</style>

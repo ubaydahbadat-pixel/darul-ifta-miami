@@ -1,9 +1,217 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { loadMadhhab, deathLabel } from '../../data/madhhab';
+
+// Everything here is drawn from the Scholars, Books and Places entries in /admin.
+const { places, scholarList, bookList, scholars, bookPlace } = await loadMadhhab();
+
+const data = {
+  scholars: scholarList.map((s) => ({
+    id: s.id, name: s.name, short: s.short, death: deathLabel(s), deathAh: s.deathAh,
+    place: s.places[0] ?? null, places: s.places, students: s.students,
+  })),
+  books: bookList.map((b) => {
+    const a = b.author ? scholars.get(b.author)! : null;
+    return { id: b.id, title: b.title, author: b.author, authorName: a?.short ?? '', death: a ? deathLabel(a) : '',
+      place: bookPlace(b), influencedBy: b.influencedBy };
+  }),
+  places: Object.fromEntries([...places.values()].map((p) => [p.id, { name: p.name, lat: p.lat, lng: p.lng }])),
+};
+const empty = data.scholars.length === 0 && data.books.length === 0;
 ---
-<Base title="Interactive | Madhhab">
+<Base title="Interactive | Madhhab" description="The scholars and books of the Ḥanafī madhhab on a map, and how they connect.">
   <nav class="crumbs"><a href="/madhhab/">Madhhab</a></nav>
   <h1>Interactive</h1>
   <hr class="rule" />
-  <p class="empty">A map of the madhhab and historical cross-referencing will appear here once the scholars and books are compiled.</p>
+  {empty ? (
+    <p class="empty">A map of the madhhab and historical cross-referencing will appear here once the scholars and books are compiled.</p>
+  ) : (
+    <>
+      <div class="tabs" role="tablist">
+        <button role="tab" id="tab-map" aria-selected="true" aria-controls="panel-map">Map</button>
+        <button role="tab" id="tab-net" aria-selected="false" aria-controls="panel-net">Connections</button>
+      </div>
+
+      <section id="panel-map" role="tabpanel" aria-labelledby="tab-map">
+        <p class="hint">Where the scholars lived and where the books are from. Tap a place to see who and what is there.</p>
+        <label class="toggle"><input type="checkbox" id="show-lines" checked /> Show teacher–student lines</label>
+        <div id="map" class="canvas"></div>
+      </section>
+
+      <section id="panel-net" role="tabpanel" aria-labelledby="tab-net" hidden>
+        <p class="hint">How the scholars and books connect. Drag to move, pinch or scroll to zoom, tap a circle or box for details.</p>
+        <div class="controls">
+          <label class="toggle"><input type="checkbox" id="show-scholars" checked /> Scholars</label>
+          <label class="toggle"><input type="checkbox" id="show-books" checked /> Books</label>
+        </div>
+        <div id="net" class="canvas"></div>
+        <ul class="legend">
+          <li><span class="dot scholar"></span>Scholar</li>
+          <li><span class="dot book"></span>Book</li>
+          <li><span class="line teach"></span>Teacher → student</li>
+          <li><span class="line wrote"></span>Author → book</li>
+          <li><span class="line infl"></span>Book → book it influenced</li>
+        </ul>
+        <div id="detail" class="detail" hidden></div>
+      </section>
+
+      <script type="application/json" id="madhhab-data" set:html={JSON.stringify(data)} />
+    </>
+  )}
 </Base>
+
+<script>
+  import L from 'leaflet';
+  import 'leaflet/dist/leaflet.css';
+  import { Network, DataSet } from 'vis-network/standalone';
+
+  const el = document.getElementById('madhhab-data');
+  if (el) {
+    type D = {
+      scholars: { id: string; name: string; short: string; death: string; deathAh: number | null; place: string | null; places: string[]; students: string[] }[];
+      books: { id: string; title: string; author: string | null; authorName: string; death: string; place: string | null; influencedBy: string[] }[];
+      places: Record<string, { name: string; lat: number; lng: number }>;
+    };
+    const d: D = JSON.parse(el.textContent!);
+    const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!));
+    const TEAL = '#0F766E', GOLD = '#D4A329', MUTED = '#64748B';
+
+    // ── Tabs ──
+    const tabs = [['tab-map', 'panel-map'], ['tab-net', 'panel-net']] as const;
+    let netStarted = false;
+    function show(which: number) {
+      tabs.forEach(([t, p], i) => {
+        document.getElementById(t)!.setAttribute('aria-selected', String(i === which));
+        document.getElementById(p)!.hidden = i !== which;
+      });
+      if (which === 0) map.invalidateSize();
+      if (which === 1 && !netStarted) { netStarted = true; startNetwork(); }
+    }
+    tabs.forEach(([t], i) => document.getElementById(t)!.addEventListener('click', () => show(i)));
+
+    // ── Geographic map ──
+    const map = L.map('map', { scrollWheelZoom: false, worldCopyJump: true });
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 12, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+
+    const byPlace = new Map<string, { scholars: D['scholars']; books: D['books'] }>();
+    const at = (p: string) => { if (!byPlace.has(p)) byPlace.set(p, { scholars: [], books: [] }); return byPlace.get(p)!; };
+    d.scholars.forEach((s) => s.places.forEach((p) => d.places[p] && at(p).scholars.push(s)));
+    d.books.forEach((b) => b.place && d.places[b.place] && at(b.place).books.push(b));
+
+    const bounds: [number, number][] = [];
+    byPlace.forEach((v, id) => {
+      const p = d.places[id];
+      bounds.push([p.lat, p.lng]);
+      const n = v.scholars.length + v.books.length;
+      const html = `<strong>${esc(p.name)}</strong>` +
+        (v.scholars.length ? `<p class="pop-h">Scholars</p><ul>${v.scholars.map((s) => `<li><a href="/madhhab/scholars/${s.id}/">${esc(s.short)}</a>${s.death ? ` <span>${esc(s.death)}</span>` : ''}</li>`).join('')}</ul>` : '') +
+        (v.books.length ? `<p class="pop-h">Books</p><ul>${v.books.map((b) => `<li><a href="/madhhab/books/${b.id}/">${esc(b.title)}</a></li>`).join('')}</ul>` : '');
+      L.circleMarker([p.lat, p.lng], { radius: 6 + Math.min(n, 10), color: TEAL, weight: 2, fillColor: TEAL, fillOpacity: 0.35 })
+        .bindPopup(html, { maxWidth: 260 }).bindTooltip(p.name).addTo(map);
+    });
+
+    // Teacher–student lines between each pair's main places.
+    const lines = L.layerGroup();
+    const sById = new Map(d.scholars.map((s) => [s.id, s]));
+    d.scholars.forEach((t) => t.students.forEach((sid) => {
+      const s = sById.get(sid);
+      if (!t.place || !s?.place || t.place === s.place) return;
+      const a = d.places[t.place], b = d.places[s.place];
+      L.polyline([[a.lat, a.lng], [b.lat, b.lng]], { color: GOLD, weight: 2, opacity: 0.7, dashArray: '4 6' })
+        .bindTooltip(`${t.short} → ${s.short}`).addTo(lines);
+    }));
+    lines.addTo(map);
+    (document.getElementById('show-lines') as HTMLInputElement).addEventListener('change', (e) =>
+      (e.target as HTMLInputElement).checked ? lines.addTo(map) : lines.remove());
+
+    if (bounds.length > 1) map.fitBounds(bounds, { padding: [30, 30], maxZoom: 6 });
+    else if (bounds.length === 1) map.setView(bounds[0], 5);
+    else map.setView([32, 50], 3);
+
+    // ── Connections network ──
+    function startNetwork() {
+      const nodes = new DataSet<any>([
+        ...d.scholars.map((s) => ({ id: 's:' + s.id, label: s.short + (s.death ? `\n${s.death}` : ''), group: 'scholar', kind: 's', ref: s })),
+        ...d.books.map((b) => ({ id: 'b:' + b.id, label: wrap(b.title), group: 'book', kind: 'b', ref: b })),
+      ]);
+      const edges = new DataSet<any>([
+        ...d.scholars.flatMap((t) => t.students.map((s) => ({ from: 's:' + t.id, to: 's:' + s, color: { color: TEAL }, kind: 'teach' }))),
+        ...d.books.filter((b) => b.author).map((b) => ({ from: 's:' + b.author, to: 'b:' + b.id, dashes: true, color: { color: MUTED }, kind: 'wrote' })),
+        ...d.books.flatMap((b) => b.influencedBy.map((x) => ({ from: 'b:' + x, to: 'b:' + b.id, color: { color: GOLD }, kind: 'infl' }))),
+      ].map((e, i) => ({ id: i, arrows: 'to', width: 1.5, ...e })));
+
+      const net = new Network(document.getElementById('net')!, { nodes, edges }, {
+        groups: {
+          scholar: { shape: 'dot', size: 12, color: { background: TEAL, border: '#0B5A54', highlight: { background: '#14A396', border: '#0B5A54' } }, font: { size: 14, face: 'Source Sans 3, system-ui', color: '#0F172A' } },
+          book: { shape: 'box', margin: 8, color: { background: '#FBEFC9', border: GOLD, highlight: { background: '#F6DE91', border: GOLD } }, font: { size: 13, face: 'Source Sans 3, system-ui', color: '#0F172A' } },
+        },
+        edges: { smooth: { enabled: true, type: 'continuous', roundness: 0.4 }, arrows: { to: { scaleFactor: 0.6 } } },
+        physics: { solver: 'forceAtlas2Based', forceAtlas2Based: { gravitationalConstant: -60, springLength: 120 }, stabilization: { iterations: 300 } },
+        interaction: { hover: true, tooltipDelay: 150 },
+      });
+
+      const detail = document.getElementById('detail')!;
+      function select(id: string | undefined) {
+        if (!id) { detail.hidden = true; return; }
+        const n: any = nodes.get(id);
+        if (!n) return;
+        detail.hidden = false;
+        detail.innerHTML = n.kind === 's'
+          ? `<strong>${esc(n.ref.name)}</strong>${n.ref.death ? `<span>${esc(n.ref.death)}</span>` : ''}<a class="button" href="/madhhab/scholars/${n.ref.id}/">Open scholar</a>`
+          : `<strong>${esc(n.ref.title)}</strong>${n.ref.authorName ? `<span>${esc(n.ref.authorName)}${n.ref.death ? ' · ' + esc(n.ref.death) : ''}</span>` : ''}<a class="button" href="/madhhab/books/${n.ref.id}/">Open book</a>`;
+      }
+      net.on('click', (p: any) => select(p.nodes[0]));
+
+      // Show/hide scholars or books.
+      const filter = () => {
+        const sOn = (document.getElementById('show-scholars') as HTMLInputElement).checked;
+        const bOn = (document.getElementById('show-books') as HTMLInputElement).checked;
+        nodes.update(nodes.get().map((n: any) => ({ id: n.id, hidden: n.kind === 's' ? !sOn : !bOn })));
+      };
+      ['show-scholars', 'show-books'].forEach((id) => document.getElementById(id)!.addEventListener('change', filter));
+
+      // ?focus=s:<id> or b:<id> opens straight onto that scholar or book.
+      const focus = new URLSearchParams(location.search).get('focus');
+      if (focus && nodes.get(focus)) {
+        net.once('stabilizationIterationsDone', () => { net.selectNodes([focus]); net.focus(focus, { scale: 1.2, animation: true }); select(focus); });
+      }
+    }
+    function wrap(t: string) {
+      const words = t.split(' '); const out: string[] = []; let line = '';
+      words.forEach((w) => { if ((line + ' ' + w).trim().length > 22 && line) { out.push(line); line = w; } else line = (line + ' ' + w).trim(); });
+      out.push(line); return out.join('\n');
+    }
+
+    if (new URLSearchParams(location.search).get('focus')) show(1);
+  }
+</script>
+
+<style>
+  .tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--sand); margin-bottom: 16px; }
+  .tabs button { font: inherit; font-weight: 600; background: none; border: 0; border-bottom: 3px solid transparent; padding: 10px 14px; cursor: pointer; color: var(--muted); }
+  .tabs button[aria-selected='true'] { color: var(--teal); border-bottom-color: var(--gold); }
+  .hint { color: var(--muted); font-size: .95rem; margin: 0 0 10px; }
+  .controls { display: flex; gap: 18px; flex-wrap: wrap; }
+  .tabs + section .toggle, .controls .toggle { width: auto; }
+  label.toggle { display: inline-flex; width: auto; font-weight: 600; margin-top: 0; align-items: center; gap: 6px; font-size: .95rem; margin-bottom: 10px; cursor: pointer; }
+  .toggle input { width: auto; margin: 0; padding: 0; }
+  .canvas { height: min(70vh, 560px); border: 1px solid var(--sand); border-radius: 10px; background: var(--card); overflow: hidden; }
+  .legend { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .88rem; color: var(--muted); }
+  .legend li { display: inline-flex; align-items: center; gap: 6px; }
+  .dot { width: 12px; height: 12px; display: inline-block; }
+  .dot.scholar { background: #0F766E; border-radius: 50%; }
+  .dot.book { background: #FBEFC9; border: 1px solid #D4A329; border-radius: 2px; }
+  .line { width: 22px; height: 0; display: inline-block; border-top: 2px solid; }
+  .line.teach { border-color: #0F766E; }
+  .line.wrote { border-color: #64748B; border-top-style: dashed; }
+  .line.infl { border-color: #D4A329; }
+  .detail { margin-top: 14px; padding: 14px 16px; border: 1px solid var(--sand); border-radius: 10px; background: var(--card); display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+  .detail :global(strong) { font-family: var(--serif); font-size: 1.2rem; }
+  .detail :global(span) { color: var(--muted); font-size: .92rem; }
+  .detail :global(.button) { margin-left: auto; }
+  #map :global(.pop-h) { margin: 8px 0 2px; font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: #64748B; }
+  #map :global(ul) { margin: 0; padding-left: 16px; }
+  #map :global(li span) { color: #64748B; font-size: .85em; }
+</style>

@@ -12,7 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.3",
-    "astro": "^7.4.1"
+    "astro": "^7.4.1",
+    "leaflet": "^1.9.4",
+    "vis-data": "^7.1.9",
+    "vis-network": "^9.1.9"
   },
   "type": "module"
 }
