@@ -4,7 +4,7 @@
 import { getCollection } from 'astro:content';
 
 export type Scholar = {
-  id: string; name: string; short: string; deathAh: number | null; approx: boolean;
+  id: string; name: string; short: string; tabaqah: string | null; deathAh: number | null; approx: boolean;
   places: string[]; teachers: string[]; students: string[]; books: string[]; recensions: string[];
 };
 export type Book = {
@@ -14,6 +14,10 @@ export type Book = {
 export type Place = { id: string; name: string; lat: number; lng: number };
 
 const uniq = (a: string[]) => [...new Set(a)];
+
+// The groups on the Scholars page, in order. Keep the same list in public/admin/config.yml (Ṭabaqah field).
+export const TABAQAT = ['Ṣaḥābah', 'Tābiʿūn', 'Atbāʿ al-Tābiʿīn',
+  ...Array.from({ length: 10 }, (_, i) => `Ṭabaqah ${i + 1}`)];
 
 export function deathLabel(s: { deathAh: number | null; approx: boolean }) {
   if (s.deathAh == null) return '';
@@ -28,7 +32,7 @@ export async function loadMadhhab() {
 
   const places = new Map<string, Place>(placeEntries.map((p) => [p.id, { id: p.id, name: p.data.name, lat: p.data.latitude, lng: p.data.longitude }]));
   const scholars = new Map<string, Scholar>(scholarEntries.map((e) => [e.id, {
-    id: e.id, name: e.data.name, short: e.data.short_name?.trim() || e.data.name,
+    id: e.id, name: e.data.name, short: e.data.short_name?.trim() || e.data.name, tabaqah: e.data.tabaqah?.trim() || null,
     deathAh: e.data.death_ah ?? null, approx: e.data.death_approximate,
     places: e.data.places.filter((p) => places.has(p)), teachers: [...e.data.teachers], students: [...e.data.students], books: [], recensions: [],
   }]));

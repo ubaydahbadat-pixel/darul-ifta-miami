@@ -147,6 +147,25 @@ collections:
         label: Short name
         widget: string
         hint: "How the scholar is usually known, e.g. al-Qudūrī. Used on the maps and in the web link, so choose carefully: once published, the link should not change."
+      - name: tabaqah
+        label: Ṭabaqah
+        widget: select
+        required: false
+        options:
+          - Ṣaḥābah
+          - Tābiʿūn
+          - Atbāʿ al-Tābiʿīn
+          - Ṭabaqah 1
+          - Ṭabaqah 2
+          - Ṭabaqah 3
+          - Ṭabaqah 4
+          - Ṭabaqah 5
+          - Ṭabaqah 6
+          - Ṭabaqah 7
+          - Ṭabaqah 8
+          - Ṭabaqah 9
+          - Ṭabaqah 10
+        hint: "The group the scholar is listed under on the Scholars page. Leave empty and they show under \"Not yet placed\"."
       - name: death_ah
         label: Date of death (AH)
         widget: number
