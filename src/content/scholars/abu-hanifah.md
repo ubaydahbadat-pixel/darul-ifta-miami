@@ -9,5 +9,5 @@ places:
 teachers:
   - hammad
 students: []
-draft: true
+draft: false
 ---
