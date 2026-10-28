@@ -1,12 +1,13 @@
 ---
 name: Ḥammād ibn Abī Sulaymān
 short_name: Ḥammād
+tabaqah: Tābiʿūn
 death_ah: 120
 death_approximate: false
 places:
-  - kufa
+- kufa
 teachers:
-  - ibrahim-al-nakhai
+- ibrahim-al-nakhai
 students: []
 draft: false
 ---

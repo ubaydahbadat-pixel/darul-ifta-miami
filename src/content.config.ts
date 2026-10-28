@@ -57,6 +57,7 @@ const scholars = defineCollection({
     name: z.string(),
     short_name: z.string().nullish(),
     tabaqah: z.string().nullish(),
+    order: z.number().nullish(),
     death_ah: z.number().nullish(),
     death_approximate: z.boolean().default(false),
     places: ids,

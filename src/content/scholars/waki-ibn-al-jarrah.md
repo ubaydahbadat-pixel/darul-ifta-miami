@@ -2,11 +2,12 @@
 name: Wakīʿ ibn al-Jarrāḥ
 short_name: Wakīʿ ibn al-Jarrāḥ
 tabaqah: Imāms of Fiqh
-death_ah:
+order: 80
+death_ah: null
 death_approximate: false
 places: []
 teachers:
-  - abu-hanifah
+- abu-hanifah
 students: []
 draft: false
 ---

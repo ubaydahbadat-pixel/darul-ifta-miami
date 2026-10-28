@@ -3,6 +3,7 @@ name: Abū Yūsuf Yaʿqūb ibn Ibrāhīm ibn Ḥabīb ibn Khunays ibn Saʿd al-A
   al-Baghdādī
 short_name: Qāḍī Abū Yūsuf
 tabaqah: Imāms of Fiqh
+order: 30
 death_ah: 182
 death_approximate: false
 places:

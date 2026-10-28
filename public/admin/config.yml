@@ -166,6 +166,12 @@ collections:
           - Ṭabaqah 9
           - Ṭabaqah 10
         hint: "The group the scholar is listed under on the Scholars page. Leave empty and they show under \"Not yet placed\"."
+      - name: order
+        label: Position in group
+        widget: number
+        value_type: int
+        required: false
+        hint: "Optional. Lower numbers come first within the group (e.g. 10, 20, 30, leaving gaps to insert others later). Without a number, scholars follow in order of death."
       - name: death_ah
         label: Date of death (AH)
         widget: number

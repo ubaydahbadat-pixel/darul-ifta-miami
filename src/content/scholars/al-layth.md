@@ -1,7 +1,9 @@
 ---
 name: al-Layth ibn Saʿd
 short_name: al-Layth
-death_ah:
+tabaqah: Imāms of Fiqh
+order: 110
+death_ah: null
 death_approximate: false
 places: []
 teachers: []
