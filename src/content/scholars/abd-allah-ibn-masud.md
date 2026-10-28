@@ -9,5 +9,5 @@ places:
   - kufa
 teachers: []
 students: []
-draft: true
+draft: false
 ---
