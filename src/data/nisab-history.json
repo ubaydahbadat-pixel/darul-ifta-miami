@@ -6031,5 +6031,13 @@
     "goldNisab": 11241.44,
     "silverNisab": 1046.45,
     "source": "Swissquote"
+  },
+  {
+    "date": "2026-10-28",
+    "goldPerOz": 4050.91,
+    "silverPerOz": 53.92,
+    "goldNisab": 11393.36,
+    "silverNisab": 1061.51,
+    "source": "Swissquote"
   }
 ]
