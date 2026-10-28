@@ -2,10 +2,23 @@
 import Base from '../layouts/Base.astro';
 import FatwaList from '../components/FatwaList.astro';
 import { getFatawa } from '../data/fatawa';
+import { categories } from '../data/categories';
+import { loadMadhhab } from '../data/madhhab';
+import { getCollection } from 'astro:content';
 import { nisab, WHATSAPP_CHANNEL } from '../data/site';
+import askSettings from '../data/ask-settings.json';
 
-const latest = (await getFatawa()).slice(0, 5);
+// The home page: an overview of every part of the site, each linking through.
+const fatawa = await getFatawa();
+const latest = fatawa.slice(0, 5);
+const byCategory = categories
+  .map((c) => ({ ...c, count: fatawa.filter((f) => f.data.category === c.id).length }))
+  .filter((c) => c.count > 0);
+const { scholarList, bookList, chains } = await loadMadhhab();
+const articles = (await getCollection('articles', ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const turnaround = (askSettings.askTurnaround || '').trim();
 const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
 ---
 <Base>
   <section class="hero center">
@@ -19,25 +32,73 @@ const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', curren
     </div>
   </section>
 
+  <!-- Overview of every section -->
+  <section>
+    <h2>Explore the Site</h2>
+    <div class="grid">
+      <div class="panel">
+        <a class="head" href="/fatawa/"><span class="label">Fatāwā</span><span class="title">{plural(fatawa.length, 'fatwa', 'fatāwā')} published</span></a>
+        <ul class="links">
+          {byCategory.map((c) => <li><a href={`/fatawa/${c.id}/`}>{c.name}</a> <span>{c.count}</span></li>)}
+        </ul>
+        <a class="more" href="/fatawa/">All fatāwā →</a>
+      </div>
+
+      <div class="panel">
+        <a class="head" href="/madhhab/"><span class="label">The Madhhab</span><span class="title">The scholars and books of the Ḥanafī madhhab</span></a>
+        <ul class="links">
+          <li><a href="/madhhab/">What is a madhhab?</a></li>
+          <li><a href="/madhhab/scholars/rasulullah/">Rasūlullāh ﷺ</a></li>
+          <li><a href="/madhhab/scholars/">Scholars</a> <span>{scholarList.length}</span></li>
+          <li><a href="/madhhab/books/">Books</a> <span>{bookList.length}</span></li>
+          <li><a href="/madhhab/interactive/">Map and connections</a>{chains.size > 0 && <span>{plural(chains.size, 'chain', 'chains')}</span>}</li>
+        </ul>
+        <a class="more" href="/madhhab/">Explore →</a>
+      </div>
+
+      <div class="panel">
+        <a class="head" href="/nisab/"><span class="label">Today's Zakāh Niṣāb</span>
+          <span class="figure">{usd(nisab.goldNisab)} <small>gold</small></span>
+          <span class="figure">{usd(nisab.silverNisab)} <small>silver</small></span>
+        </a>
+        <ul class="links">
+          <li><a href="/nisab/">Niṣāb of gold and silver</a></li>
+          <li><a href="/nisab/calculator/">Zakāh calculator and zakāh date</a></li>
+          <li><a href="/nisab/#mahr">Mahr</a></li>
+          <li><a href="/nisab/#fitr">Ṣadaqat al-Fiṭr</a></li>
+        </ul>
+        <a class="more" href="/nisab/">Niṣāb Calculation →</a>
+      </div>
+
+      <div class="panel">
+        <a class="head" href="/ask/"><span class="label">Ask a Question</span><span class="title">Ask about worship and daily life</span></a>
+        <p class="note">Answered according to the Ḥanafī madhhab.{turnaround && <> Most questions are answered within {turnaround}.</>} You may ask without giving your name or email.</p>
+        <a class="more" href="/ask/">Ask →</a>
+      </div>
+
+      <div class="panel">
+        <a class="head" href="/articles/"><span class="label">Articles</span><span class="title">{articles.length ? plural(articles.length, 'article', 'articles') : 'Coming soon'}</span></a>
+        {articles.length > 0 && <ul class="links">{articles.slice(0, 3).map((a) => <li><a href={`/articles/${a.id}/`}>{a.data.title}</a></li>)}</ul>}
+        <a class="more" href="/articles/">Articles →</a>
+      </div>
+
+      <div class="panel">
+        <a class="head" href="/about/"><span class="label">About Us</span><span class="title">Darul Iftāʾ Miami</span></a>
+        <ul class="links">
+          <li><a href="/about/">Our purpose and the Mufti</a></li>
+          <li><a href="/donate/">Support Darul Iftāʾ Miami</a></li>
+          <li><a href="/contact/">Contact us</a></li>
+          <li><a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener">WhatsApp channel</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section>
     <h2>Latest Fatāwā</h2>
     {latest.length ? <FatwaList items={latest} showPath /> : <p class="empty">The first fatāwā will be published soon.</p>}
     {latest.length > 0 && <p><a href="/fatawa/">All fatāwā →</a></p>}
     <p class="wa">New fatāwā are shared on our <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener">WhatsApp channel</a>.</p>
-  </section>
-
-  <section class="split">
-    <a class="panel" href="/nisab/">
-      <span class="label">Today's Zakāh Niṣāb</span>
-      <span class="figure">{usd(nisab.silverNisab)} <small>silver</small></span>
-      <span class="figure">{usd(nisab.goldNisab)} <small>gold</small></span>
-      <span class="more">Niṣāb Calculation →</span>
-    </a>
-    <a class="panel" href="/madhhab/">
-      <span class="label">The Madhhab</span>
-      <span class="body">The scholars, the books, and the chain from Rasūlullāh ﷺ to Imām Abū Ḥanīfah and beyond.</span>
-      <span class="more">Explore →</span>
-    </a>
   </section>
 </Base>
 
@@ -46,13 +107,19 @@ const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', curren
   .hero-logo { width: min(280px, 70vw); height: auto; margin: 0 auto 20px; }
   .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
   section + section { margin-top: 48px; }
-  .split { display: grid; gap: 14px; grid-template-columns: 1fr; }
-  @media (min-width: 640px) { .split { grid-template-columns: 1fr 1fr; } }
-  .panel { display: flex; flex-direction: column; gap: 6px; padding: 22px; background: var(--card); border: 1px solid var(--sand); border-top: 3px solid var(--gold); border-radius: 10px; text-decoration: none; color: var(--ink); }
-  .panel:hover { border-color: var(--teal); border-top-color: var(--gold); }
-  .label { font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
-  .figure { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; }
+  .grid { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .panel { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px; background: var(--card); border: 1px solid var(--sand); border-top: 3px solid var(--gold); border-radius: 10px; }
+  .head { display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: var(--ink); }
+  .head:hover .title { color: var(--teal); }
+  .label { font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+  .title { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; line-height: 1.25; }
+  .figure { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; line-height: 1.2; }
   .figure small { font-family: var(--sans); font-size: .9rem; color: var(--muted); font-weight: 400; }
-  .body { font-family: var(--serif); font-size: 1.2rem; }
-  .more { color: var(--teal); font-weight: 600; margin-top: auto; padding-top: 8px; }
+  .links { list-style: none; margin: 0; padding: 0; font-size: .97rem; }
+  .links li { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; border-top: 1px solid var(--sand); }
+  .links li span { color: var(--muted); font-size: .88rem; white-space: nowrap; }
+  .note { margin: 0; color: var(--muted); font-size: .97rem; }
+  .more { color: var(--teal); font-weight: 600; margin-top: auto; padding-top: 4px; text-decoration: none; }
+  .more:hover { text-decoration: underline; }
 </style>

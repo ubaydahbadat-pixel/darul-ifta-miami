@@ -8,6 +8,7 @@ const fullTitle = title ? `${title} | Darul Iftāʾ Miami` : 'Darul Iftāʾ Miam
 
 // The main menu. Reorder or rename items here.
 const menu = [
+  { href: '/', label: 'Home' },
   { href: '/fatawa/', label: 'Fatāwā' },
   { href: '/madhhab/', label: 'Madhhab' },
   { href: '/articles/', label: 'Articles' },
@@ -43,7 +44,7 @@ const path = Astro.url.pathname;
       <nav id="site-nav">
         <ul>
           {menu.map((m) => (
-            <li><a href={m.href} aria-current={path.startsWith(m.href) ? 'page' : undefined}>{m.label}</a></li>
+            <li><a href={m.href} aria-current={(m.href === '/' ? path === '/' : path.startsWith(m.href)) ? 'page' : undefined}>{m.label}</a></li>
           ))}
         </ul>
       </nav>
