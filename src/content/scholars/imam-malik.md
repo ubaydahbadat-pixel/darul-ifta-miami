@@ -1,9 +1,10 @@
 ---
-name: Imām Mālik ibn Anas
+name: Abū ʿAbd Allāh Mālik ibn Anas ibn Mālik ibn Abī ʿĀmir al-Aṣbaḥī al-Ḥimyarī al-Madanī
 short_name: Imām Mālik
-death_ah:
+death_ah: 179
 death_approximate: false
-places: []
+places:
+- madinah
 teachers: []
 students: []
 draft: false

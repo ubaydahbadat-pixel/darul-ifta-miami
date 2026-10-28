@@ -133,15 +133,37 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
 
     // ── Connections network ──
     function startNetwork() {
-      // Fixed, chronological layout: one row per date of death, earliest at the top.
-      // Each book sits on the row just below its author. Undated entries go at the bottom.
-      const years = [...new Set(d.scholars.map((s) => s.deathAh).filter((y): y is number => y != null))].sort((a, b) => a - b);
-      const rowOf = (y: number | null) => (y == null ? years.length * 2 : years.indexOf(y) * 2);
+      // Fixed layout by generation: each student sits at least one row below every teacher
+      // (earliest generation at the top), and each book sits just below its author.
+      // Scholars with no teacher or student links yet go on the bottom row.
       const sById2 = new Map(d.scholars.map((s) => [s.id, s]));
+      const teachersOf = new Map<string, string[]>(d.scholars.map((s) => [s.id, []]));
+      d.scholars.forEach((t) => t.students.forEach((st) => teachersOf.get(st)?.push(t.id)));
+      const gen = new Map<string, number>();
+      const genOf = (id: string, seen = new Set<string>()): number => {
+        if (gen.has(id)) return gen.get(id)!;
+        if (seen.has(id)) return 0; seen.add(id);
+        const g = Math.max(-1, ...teachersOf.get(id)!.map((t) => genOf(t, seen))) + 1;
+        gen.set(id, g); return g;
+      };
+      const linked = (s: D['scholars'][number]) => s.students.length > 0 || teachersOf.get(s.id)!.length > 0
+        || d.books.some((b) => b.author === s.id || b.recensionBy.includes(s.id));
+      d.scholars.forEach((s) => genOf(s.id));
+      // A scholar with students but no teachers entered yet (e.g. Imām Mālik) is placed by date of death:
+      // on the row of the latest linked scholar who died before him, but still above his own students.
+      d.scholars.forEach((s) => {
+        if (teachersOf.get(s.id)!.length || s.deathAh == null || !s.students.length) return;
+        const earlier = d.scholars.filter((x) => x.id !== s.id && teachersOf.get(x.id)!.length && x.deathAh != null && x.deathAh < s.deathAh!);
+        const byDate = Math.max(0, ...earlier.map((x) => gen.get(x.id)!));
+        const cap = Math.min(...s.students.map((x) => gen.get(x) ?? Infinity)) - 1;
+        gen.set(s.id, Math.max(0, Math.min(byDate, cap)));
+      });
+      const maxGen = Math.max(0, ...d.scholars.filter(linked).map((s) => gen.get(s.id)!));
+      const rowOfScholar = (s: D['scholars'][number]) => (linked(s) ? gen.get(s.id)! * 2 : (maxGen + 1) * 2);
       const nodes = new DataSet<any>([
-        ...d.scholars.map((s) => ({ id: 's:' + s.id, label: s.short + (s.death ? `\n${s.death}` : ''), group: 'scholar', kind: 's', ref: s, level: rowOf(s.deathAh) })),
+        ...d.scholars.map((s) => ({ id: 's:' + s.id, label: s.short + (s.death ? `\n${s.death}` : ''), group: 'scholar', kind: 's', ref: s, level: rowOfScholar(s) })),
         ...d.books.map((b) => ({ id: 'b:' + b.id, label: wrap(b.title), group: 'book', kind: 'b', ref: b,
-          level: rowOf(b.author ? sById2.get(b.author)?.deathAh ?? null : null) + 1 })),
+          level: (b.author && sById2.get(b.author) ? rowOfScholar(sById2.get(b.author)!) : (maxGen + 1) * 2) + 1 })),
       ]);
       const edges = new DataSet<any>([
         ...d.scholars.flatMap((t) => t.students.map((s) => ({ from: 's:' + t.id, to: 's:' + s, color: { color: TEAL }, kind: 'teach' }))),
@@ -156,7 +178,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
           book: { shape: 'box', margin: 8, color: { background: '#FBEFC9', border: GOLD, highlight: { background: '#F6DE91', border: GOLD } }, font: { size: 13, face: 'Source Sans 3, system-ui', color: '#0F172A' } },
         },
         edges: { smooth: { enabled: true, type: 'cubicBezier', forceDirection: 'vertical', roundness: 0.4 }, arrows: { to: { scaleFactor: 0.6 } } },
-        layout: { hierarchical: { enabled: true, direction: 'UD', levelSeparation: 90, nodeSpacing: 170, treeSpacing: 170, blockShifting: true, edgeMinimization: true, parentCentralization: true } },
+        layout: { hierarchical: { enabled: true, direction: 'UD', levelSeparation: 70, nodeSpacing: 150, treeSpacing: 150, blockShifting: true, edgeMinimization: true, parentCentralization: true } },
         physics: false,
         interaction: { hover: true, tooltipDelay: 150 },
       });
@@ -206,7 +228,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
   .tabs + section .toggle, .controls .toggle { width: auto; }
   label.toggle { display: inline-flex; width: auto; font-weight: 600; margin-top: 0; align-items: center; gap: 6px; font-size: .95rem; margin-bottom: 10px; cursor: pointer; }
   .toggle input { width: auto; margin: 0; padding: 0; }
-  .canvas { height: min(70vh, 560px); border: 1px solid var(--sand); border-radius: 10px; background: var(--card); overflow: hidden; }
+  .canvas { height: min(80vh, 720px); border: 1px solid var(--sand); border-radius: 10px; background: var(--card); overflow: hidden; }
   .legend { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .88rem; color: var(--muted); }
   .legend li { display: inline-flex; align-items: center; gap: 6px; }
   .dot { width: 12px; height: 12px; display: inline-block; }

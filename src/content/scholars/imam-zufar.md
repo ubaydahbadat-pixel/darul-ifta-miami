@@ -1,12 +1,14 @@
 ---
-name: Imām Zufar ibn al-Hudhayl
+name: Zufar ibn al-Hudhayl al-ʿAnbarī al-Tamīmī al-Baṣrī
 short_name: Imām Zufar
-death_ah:
+death_ah: 158
 death_approximate: false
-places: []
+places:
+- kufa
+- basra
 teachers:
-  - abu-hanifah
-  - hammad
+- abu-hanifah
+- hammad
 students: []
 draft: false
 ---

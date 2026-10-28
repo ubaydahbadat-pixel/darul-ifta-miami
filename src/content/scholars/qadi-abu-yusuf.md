@@ -1,12 +1,15 @@
 ---
-name: Abū Yūsuf al-Qāḍī
+name: Abū Yūsuf Yaʿqūb ibn Ibrāhīm ibn Ḥabīb ibn Khunays ibn Saʿd al-Anṣārī al-Kūfī
+  al-Baghdādī
 short_name: Qāḍī Abū Yūsuf
-death_ah:
+death_ah: 182
 death_approximate: false
-places: []
+places:
+- kufa
+- baghdad
 teachers:
-  - hammad
-  - abu-hanifah
+- hammad
+- abu-hanifah
 students: []
 draft: false
 ---

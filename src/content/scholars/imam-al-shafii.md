@@ -1,7 +1,7 @@
 ---
-name: Imām Muḥammad ibn Idrīs al-Shāfiʿī
+name: Abū ʿAbd Allāh Muḥammad ibn Idrīs al-Shāfiʿī al-Muṭṭalibī al-Qurashī
 short_name: Imām al-Shāfiʿī
-death_ah:
+death_ah: 204
 death_approximate: false
 places: []
 teachers: []
