@@ -1,6 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import { nisab, fitr } from '../data/site';
+import { md, refText } from '../data/markdown';
+import mahrWeights from '../data/mahr/weights.txt?raw';
+import mahrTahqiq from '../data/mahr/tahqiq.txt?raw';
 
 const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 const ratio = nisab.goldPerOz / nisab.silverPerOz;
@@ -15,6 +18,14 @@ const mahr = [
   const grams = m.dirhams * DIRHAM_G;
   return { ...m, grams, value: (grams / 31.1034768) * nisab.silverPerOz };
 });
+// The full texts of the two fatāwā behind the mahr figures, shown when the reader opens the source.
+// The weights fatwa sets its figures out as a table (نقشۂ ذیل): lines 6–21 are its cells, four per row.
+const wl = mahrWeights.split(/\r?\n/).map((l: string) => l.trim()).filter(Boolean);
+const wIntro = await md(refText(wl.slice(0, 5).join('\n')), 'ur');
+const wHead = wl.slice(5, 9);
+const wRows = [wl.slice(9, 13), wl.slice(13, 17), wl.slice(17, 21)];
+const wEnd = await md(refText(wl.slice(21).join('\n')), 'ur');
+const mahrTahqiqHtml = await md(refText(mahrTahqiq), 'ur');
 const grams = (g: number) => g.toLocaleString('en-US', { minimumFractionDigits: 3, maximumFractionDigits: 3 });
 const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).toLowerCase();
 ---
@@ -52,12 +63,30 @@ const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'nume
     <table class="mahr-table">
       <thead><tr><th></th><th>Silver</th><th>Value today</th></tr></thead>
       <tbody>
-        {mahr.map((m) => (
-          <tr><td>{m.name}</td><td>{m.dirhams} dirhams<span class="g">{grams(m.grams)} g</span></td><td class="v2">{usd(m.value)}</td></tr>
+        {mahr.map((m, i) => (
+          <tr><td>{m.name}<sup class="fn"><a href={`#mahr-note-${i + 1}`} data-open-sources>{i + 1}</a></sup></td><td>{m.dirhams} dirhams<span class="g">{grams(m.grams)} g</span></td><td class="v2">{usd(m.value)}</td></tr>
         ))}
       </tbody>
     </table>
     <p class="muted small-note">Based on today's silver price, updated automatically every day at 5 am and 5 pm (Eastern).</p>
+    <ol class="mahr-notes">
+      <li id="mahr-note-1">
+        <details id="mahr-source">
+          <summary>Fatāwā Dār al-ʿUlūm Zakariyyā, vol. 3, Kitāb al-Nikāḥ, Bāb 4: Mahr kā Bayān</summary>
+          <div class="fatwa mahr-texts">
+            <Fragment set:html={wIntro} />
+            <table class="mahr-ur" dir="rtl" lang="ur">
+              <thead><tr>{wHead.map((c: string) => <th>{c}</th>)}</tr></thead>
+              <tbody>{wRows.map((r: string[]) => <tr>{r.map((c) => <td>{c}</td>)}</tr>)}</tbody>
+            </table>
+            <Fragment set:html={wEnd} />
+            <hr />
+            <Fragment set:html={mahrTahqiqHtml} />
+          </div>
+        </details>
+      </li>
+      <li id="mahr-note-2"><a href="#mahr-note-1" data-open-sources>Ibid.</a></li>
+    </ol>
   </section>
 
   <section class="box">
@@ -92,4 +121,22 @@ const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'nume
   .mahr-table .g { display: block; font-size: .85rem; color: var(--muted); }
   .mahr-table .v2 { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; text-align: right; white-space: nowrap; }
   .mahr-table th:last-child { text-align: right; }
+  .fn { font-size: .7em; margin-left: 2px; }
+  .fn a { text-decoration: none; font-weight: 700; }
+  .mahr-notes { margin: 10px 0 0; padding-left: 20px; font-size: .9rem; color: var(--muted); }
+  .mahr-notes li { margin: 4px 0; }
+  .mahr-notes li:target, .mahr-notes li.flash { background: #FEF3C7; border-radius: 4px; }
+  .mahr-notes summary { cursor: pointer; color: var(--teal); font-weight: 600; }
+  .mahr-texts { margin-top: 10px; padding: 12px 14px; background: var(--cream); border: 1px solid var(--sand); border-radius: 8px; color: var(--ink); max-height: 70vh; overflow: auto; }
+  .mahr-ur { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-family: var(--urdu); font-size: 1.05rem; }
+  .mahr-ur th, .mahr-ur td { border: 1px solid var(--sand); padding: 6px 8px; text-align: right; line-height: 2; }
+  .mahr-ur th { background: #F4EFE3; font-weight: 600; }
+  .mahr-texts hr { border: 0; border-top: 1px dashed var(--sand); margin: 14px 0; }
 </style>
+<script>
+  // A footnote number or "Ibid." opens the source and shows the fatāwā.
+  document.querySelectorAll('[data-open-sources]').forEach((a) => a.addEventListener('click', () => {
+    const d = document.getElementById('mahr-source') as HTMLDetailsElement | null;
+    if (d) d.open = true;
+  }));
+</script>
