@@ -6,6 +6,16 @@ const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', curren
 const ratio = nisab.goldPerOz / nisab.silverPerOz;
 const updated = new Date(nisab.date + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const auto = nisab.source !== 'Entered by hand';
+// Mahr (Fatāwā Dār al-ʿUlūm Zakariyyā, vol. 3, Kitāb al-Nikāḥ, Bāb 4): dirhams of silver, at 3.0618 g per dirham.
+const DIRHAM_G = 3.0618;
+const mahr = [
+  { name: 'Mahr Fāṭimī', dirhams: 480 },
+  { name: 'Mahr al-Azwāj', dirhams: 500 },
+].map((m) => {
+  const grams = m.dirhams * DIRHAM_G;
+  return { ...m, grams, value: (grams / 31.1034768) * nisab.silverPerOz };
+});
+const grams = (g: number) => g.toLocaleString('en-US', { minimumFractionDigits: 3, maximumFractionDigits: 3 });
 const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).toLowerCase();
 ---
 <Base title="Niṣāb Calculation" description="Today's Zakāh niṣāb of gold and silver in US dollars, the zakāh calculator, and this year's Ṣadaqat al-Fiṭr.">
@@ -35,6 +45,21 @@ const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'nume
     <p><a class="button" href="/nisab/calculator/">Open the Zakāh Calculator →</a></p>
   </section>
 
+  <section class="box mahr">
+    <h2>Mahr</h2>
+    <h3 class="q">What is mahr?</h3>
+    <p>Mahr is the marital gift a husband gives to his wife on marriage. It is her right and belongs to her alone.</p>
+    <table class="mahr-table">
+      <thead><tr><th></th><th>Silver</th><th>Value today</th></tr></thead>
+      <tbody>
+        {mahr.map((m) => (
+          <tr><td>{m.name}</td><td>{m.dirhams} dirhams<span class="g">{grams(m.grams)} g</span></td><td class="v2">{usd(m.value)}</td></tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="muted small-note">Based on today's silver price, updated automatically every day at 5 am and 5 pm (Eastern).</p>
+  </section>
+
   <section class="box">
     <h2>Niṣāb of Ṣadaqat al-Fiṭr <span class="muted small">({fitr.year})</span></h2>
     {fitr.amountPerPerson
@@ -59,4 +84,12 @@ const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'nume
   .ratio { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; margin: 0 0 12px; }
   .ratio dd { margin: 0; font-weight: 600; color: var(--teal); }
   .note { font-size: .92rem; color: var(--muted); border-top: 1px dashed var(--sand); padding-top: 12px; }
+  .mahr .q { font-size: 1.1rem; margin: 4px 0 4px; }
+  .mahr-table { width: 100%; border-collapse: collapse; margin: 14px 0 12px; }
+  .mahr-table th { text-align: left; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; padding: 0 8px 6px; border-bottom: 1px solid var(--sand); }
+  .mahr-table td { padding: 10px 8px; border-bottom: 1px solid var(--sand); vertical-align: top; }
+  .mahr-table td:first-child { font-weight: 600; }
+  .mahr-table .g { display: block; font-size: .85rem; color: var(--muted); }
+  .mahr-table .v2 { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; text-align: right; white-space: nowrap; }
+  .mahr-table th:last-child { text-align: right; }
 </style>
