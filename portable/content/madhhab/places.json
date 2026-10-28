@@ -1,0 +1,194 @@
+[
+  {
+    "id": "aleppo",
+    "name": "Aleppo",
+    "latitude": 36.2021,
+    "longitude": 37.1343
+  },
+  {
+    "id": "baghdad",
+    "name": "Baghdad",
+    "latitude": 33.3152,
+    "longitude": 44.3661
+  },
+  {
+    "id": "balkh",
+    "name": "Balkh",
+    "latitude": 36.7581,
+    "longitude": 66.897
+  },
+  {
+    "id": "basra",
+    "name": "Basra",
+    "latitude": 30.5085,
+    "longitude": 47.7804
+  },
+  {
+    "id": "bukhara",
+    "name": "Bukhārā",
+    "latitude": 39.7747,
+    "longitude": 64.4286
+  },
+  {
+    "id": "cairo",
+    "name": "Cairo",
+    "latitude": 30.0444,
+    "longitude": 31.2357
+  },
+  {
+    "id": "damascus",
+    "name": "Damascus",
+    "latitude": 33.5138,
+    "longitude": 36.2765
+  },
+  {
+    "id": "delhi",
+    "name": "Delhi",
+    "latitude": 28.6562,
+    "longitude": 77.241
+  },
+  {
+    "id": "deoband",
+    "name": "Deoband",
+    "latitude": 29.695,
+    "longitude": 77.678
+  },
+  {
+    "id": "dhabhel",
+    "name": "Dhabhel",
+    "latitude": 20.929,
+    "longitude": 72.922
+  },
+  {
+    "id": "herat",
+    "name": "Herat",
+    "latitude": 34.3529,
+    "longitude": 62.204
+  },
+  {
+    "id": "istanbul",
+    "name": "Istanbul",
+    "latitude": 41.0082,
+    "longitude": 28.9784
+  },
+  {
+    "id": "jerusalem",
+    "name": "Jerusalem",
+    "latitude": 31.778,
+    "longitude": 35.2354
+  },
+  {
+    "id": "karachi",
+    "name": "Karachi",
+    "latitude": 24.8607,
+    "longitude": 67.0011
+  },
+  {
+    "id": "kasan",
+    "name": "Kāsān",
+    "latitude": 41.234,
+    "longitude": 71.548
+  },
+  {
+    "id": "kashghar",
+    "name": "Kāshghar",
+    "latitude": 39.4704,
+    "longitude": 75.9898
+  },
+  {
+    "id": "kufa",
+    "name": "Kufa",
+    "latitude": 32.0257,
+    "longitude": 44.4026
+  },
+  {
+    "id": "lahore",
+    "name": "Lahore",
+    "latitude": 31.5204,
+    "longitude": 74.3587
+  },
+  {
+    "id": "leicester",
+    "name": "Leicester",
+    "latitude": 52.6369,
+    "longitude": -1.1398
+  },
+  {
+    "id": "lucknow",
+    "name": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462
+  },
+  {
+    "id": "madinah",
+    "name": "Madīnah",
+    "latitude": 24.4672,
+    "longitude": 39.6111
+  },
+  {
+    "id": "makkah",
+    "name": "Makkah",
+    "latitude": 21.4225,
+    "longitude": 39.8262
+  },
+  {
+    "id": "marghinan",
+    "name": "Marghinān",
+    "latitude": 40.472,
+    "longitude": 71.7246
+  },
+  {
+    "id": "marw",
+    "name": "Marw",
+    "latitude": 37.664,
+    "longitude": 62.192
+  },
+  {
+    "id": "miami",
+    "name": "Miami",
+    "latitude": 25.7617,
+    "longitude": -80.1918
+  },
+  {
+    "id": "nishapur",
+    "name": "Nīshāpūr",
+    "latitude": 36.2133,
+    "longitude": 58.7958
+  },
+  {
+    "id": "rayy",
+    "name": "Rayy",
+    "latitude": 35.588,
+    "longitude": 51.435
+  },
+  {
+    "id": "saharanpur",
+    "name": "Saharanpur",
+    "latitude": 29.968,
+    "longitude": 77.546
+  },
+  {
+    "id": "samarqand",
+    "name": "Samarqand",
+    "latitude": 39.627,
+    "longitude": 66.975
+  },
+  {
+    "id": "sarakhs",
+    "name": "Sarakhs",
+    "latitude": 36.5449,
+    "longitude": 61.1577
+  },
+  {
+    "id": "tirmidh",
+    "name": "Tirmidh",
+    "latitude": 37.2242,
+    "longitude": 67.2783
+  },
+  {
+    "id": "wasit",
+    "name": "Wāsiṭ",
+    "latitude": 32.184,
+    "longitude": 46.297
+  }
+]

@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import { nisab, fitr } from '../data/site';
+
+const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+const ratio = nisab.goldPerOz / nisab.silverPerOz;
+const updated = new Date(nisab.date + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const auto = nisab.source !== 'Entered by hand';
+// Mahr (Fatāwā Dār al-ʿUlūm Zakariyyā, vol. 3, Kitāb al-Nikāḥ, Bāb 4): dirhams of silver, at 3.0618 g per dirham
+// (10 dirhams = 30.618 g; 480 = 1,469.664 g; 500 = 1,530.900 g, as given there).
+const DIRHAM_G = 3.0618;
+const mahr = [
+  { name: 'Minimum mahr', dirhams: 10 },
+  { name: 'Mahr Fāṭimī', dirhams: 480 },
+  { name: 'Mahr al-Azwāj', dirhams: 500 },
+].map((m) => {
+  const grams = m.dirhams * DIRHAM_G;
+  return { ...m, grams, value: (grams / 31.1034768) * nisab.silverPerOz };
+});
+// The full texts of the two fatāwā behind the mahr figures, shown when the reader opens the source.
+const grams = (g: number) => g.toLocaleString('en-US', { minimumFractionDigits: 3, maximumFractionDigits: 3 });
+const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).toLowerCase();
+---
+<Base title="Niṣāb Calculation" description="Today's Zakāh niṣāb of gold and silver in US dollars, the zakāh calculator, and this year's Ṣadaqat al-Fiṭr.">
+  <h1>Niṣāb Calculation</h1>
+  <hr class="rule" />
+
+  <section class="box">
+    <h2>Niṣāb of Gold and Silver</h2>
+    <p class="muted">Updated: <strong>{updated}{auto && `, ${time} (Eastern)`}</strong></p>
+    <p class="muted small-note">Based on the spot price of gold and silver in US dollars, updated automatically every day at 5 am and 5 pm (Eastern).</p>
+    <div class="tiles">
+      <div class="tile gold"><span class="k">Gold Niṣāb ({nisab.goldGrams}g)</span><span class="v">{usd(nisab.goldNisab)}</span></div>
+      <div class="tile"><span class="k">Silver Niṣāb ({nisab.silverGrams}g)</span><span class="v">{usd(nisab.silverNisab)}</span></div>
+    </div>
+
+    <h3>The Gold–Silver Ratio</h3>
+    <dl class="ratio">
+      <dt>Prophetic era</dt><dd>7 : 1</dd>
+      <dt>Today's market</dt><dd>{ratio.toFixed(1)} : 1</dd>
+    </dl>
+    <p class="note">In the Prophetic era, the value of the gold niṣāb and the silver niṣāb were nearly equal. Today, gold's value relative to silver has increased about {Math.round(ratio / 7)}-fold.</p>
+  </section>
+
+  <section class="box">
+    <h2>Zakāh Calculator</h2>
+    <p>Work out your zakāh against the gold niṣāb on your zakāh date, including a past date going back to March 2024.</p>
+    <p><a class="button" href="/nisab/calculator/">Open the Zakāh Calculator →</a></p>
+  </section>
+
+  <section class="box mahr">
+    <h2>Mahr</h2>
+    <h3 class="q">What is mahr?</h3>
+    <p>Mahr is the marital gift a husband gives to his wife on marriage. It is her right and belongs to her alone.</p>
+    <table class="mahr-table">
+      <thead><tr><th></th><th>Silver</th><th>Value today</th></tr></thead>
+      <tbody>
+        {mahr.map((m, i) => (
+          <tr><td>{m.name}<sup class="fn"><a href={`#mahr-note-${i + 1}`}>{i + 1}</a></sup></td><td>{m.dirhams} dirhams<span class="g">{grams(m.grams)} g</span></td><td class="v2">{usd(m.value)}</td></tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="muted small-note">Based on today's silver price, updated automatically every day at 5 am and 5 pm (Eastern).</p>
+    <ol class="mahr-notes">
+      {mahr.map((_, i) => (
+        <li id={`mahr-note-${i + 1}`}>{i === 0 ? 'Fatāwā Dār al-ʿUlūm Zakariyyā, vol. 3, Kitāb al-Nikāḥ, Bāb 4: Mahr kā Bayān.' : 'Ibid.'}</li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="box">
+    <h2>Niṣāb of Ṣadaqat al-Fiṭr <span class="muted small">({fitr.year})</span></h2>
+    {fitr.amountPerPerson
+      ? <p class="v">{usd(fitr.amountPerPerson)} <span class="muted small">per person</span></p>
+      : <p class="muted">This year's amount will be announced before Ramaḍān.</p>}
+    {fitr.note && <p>{fitr.note}</p>}
+  </section>
+</Base>
+
+<style>
+  .box { background: var(--card); border: 1px solid var(--sand); border-radius: 12px; padding: 22px; }
+  .box + .box { margin-top: 20px; }
+  .muted { color: var(--muted); }
+  .small-note { font-size: .85rem; margin-top: -6px; }
+  .small { font-size: .9rem; font-family: var(--sans); font-weight: 400; }
+  .tiles { display: grid; gap: 12px; margin: 16px 0 24px; }
+  @media (min-width: 560px) { .tiles { grid-template-columns: 1fr 1fr; } }
+  .tile { border: 1px solid var(--sand); border-radius: 10px; padding: 16px; text-align: center; background: var(--cream); }
+  .tile.gold { border-color: var(--gold); }
+  .k { display: block; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+  .v { display: block; font-family: var(--serif); font-size: 2rem; font-weight: 600; margin: 0; }
+  .ratio { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; margin: 0 0 12px; }
+  .ratio dd { margin: 0; font-weight: 600; color: var(--teal); }
+  .note { font-size: .92rem; color: var(--muted); border-top: 1px dashed var(--sand); padding-top: 12px; }
+  .mahr .q { font-size: 1.1rem; margin: 4px 0 4px; }
+  .mahr-table { width: 100%; border-collapse: collapse; margin: 14px 0 12px; }
+  .mahr-table th { text-align: left; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; padding: 0 8px 6px; border-bottom: 1px solid var(--sand); }
+  .mahr-table td { padding: 10px 8px; border-bottom: 1px solid var(--sand); vertical-align: top; }
+  .mahr-table td:first-child { font-weight: 600; }
+  .mahr-table .g { display: block; font-size: .85rem; color: var(--muted); }
+  .mahr-table .v2 { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; text-align: right; white-space: nowrap; }
+  .mahr-table th:last-child { text-align: right; }
+  .fn { font-size: .7em; margin-left: 2px; }
+  .fn a { text-decoration: none; font-weight: 700; }
+  .mahr-notes { margin: 10px 0 0; padding-left: 20px; font-size: .9rem; color: var(--muted); }
+  .mahr-notes li { margin: 4px 0; }
+  .mahr-notes li:target, .mahr-notes li.flash { background: #FEF3C7; border-radius: 4px; }
+</style>

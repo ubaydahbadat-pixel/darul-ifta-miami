@@ -1,0 +1,59 @@
+# Botox injections
+
+Category: Permitted & Prohibited (al-Ḥaẓr wa al-Ibāḥah)  
+Topic: Medical Treatment (Tadāwī)  
+Date: 2026-10-31
+
+## Question
+
+Is it permissible to use Botox to remove wrinkles?
+
+## Short Answer
+
+The use of botulinum toxin injections for purely cosmetic purposes, lacking any medical benefit, is not permissible. However, we recommend consulting a Muslim physician for guidance on individual cases.
+
+## Explanation
+
+### 1. What Botox contains
+
+Botulinum toxin is a neurotoxic protein used to reduce facial wrinkles and treat conditions like chronic migraines and excessive sweating. It works by blocking neurotransmitters, leading to muscle relaxation. Each vial of Botox contains 100 Units (U) of Clostridium botulinum type A neurotoxin complex, 0.5 milligrams of albumin (human), and 0.9 milligrams of sodium chloride in a sterile, vacuum-dried form without preservatives. Therefore, within Botox, there are two concerning components: the actual Clostridium botulinum, as it is a neurotoxin, and secondly the albumin (a chemical derived from humans).
+
+The use of botulinum toxin can lead to side effects such as pain at the injection site, flu-like symptoms, and facial weakness. Rare but serious complications include muscle weakness, difficulty swallowing, and breathing problems if the toxin spreads.
+
+### 2. Seeking a cure through what is forbidden
+
+Imām al-Marghīnānī (d. 593 AH) states that seeking healing through what is forbidden (ḥarām) is itself ḥarām. Imām Akmal al-Dīn al-Bābartī (d. 786 AH) expands on this concept by explaining that, however, if one knows there is a cure in it and no other medicine is available, then it is permissible for him to seek healing through it. Echoing Ibn Masʿūd's statement (may Allah be pleased with him), "Indeed, Allah has not placed your cure in what He has forbidden upon you." It is possible that ʿAbdullāh mentioned this in the context of a disease for which a non-forbidden cure exists, suggesting one can avoid the forbidden by using what is lawful. The prohibition is lifted in cases of necessity, so the healing comes not through the forbidden but through the lawful.
+
+### 3. Necessity
+
+Similarly, Faqīh Abū al-Layth al-Samarqandī states that it is permissible to sell poisonous snakes to make antivenoms. The above shows that in cases of necessity, it would be permissible to use an item that would ordinarily cause harm to create a greater benefit. Therefore, it would be permissible to use botulinum toxin for medication; however, the caveat of necessity, as noted by Abū al-Layth al-Samarqandī among others, is essential, and in this case, there is no such necessity.
+
+A similar case can be made for albumin when used as part of medication. Although this particular ingredient is derived from humans, the overall benefit that can be obtained is much greater, which is why it could be argued that its use would be permissible. However, in the case of using Botox purely for cosmetic purposes, no such necessity is met; therefore, it would not be permissible to use.
+
+## References
+
+### 1. al-Bābartī, al-ʿInāyah Sharḥ al-Hidāyah, Kitāb al-Karāhiyah, Faṣl fī al-Bayʿ, Masāʾil Mutafarriqah, vol. 10, p. 67 (Dār al-Fikr)
+
+Language: Arabic
+
+"وقوله: (إلا أنه لا ينبغي أن يستعمل المحرم كالخمر ونحوها لأن الاستشفاء بالمحرم حرام) قيل إذا لم يعلم أن فيه شفاء، فإن علم أن فيه شفاء وليس له دواء آخر غيره يجوز له الاستشفاء به. ومع قول ابن مسعود -- رضي الله عنه -: إن الله لم يجعل شفاءكم فيما حرم عليكم. يحتمل أن عبد الله قال ذلك في داء عرف له دواء غير المحرم، لأنه يستغنى بالحلال عن الحرام. ويجوز أن يقال: تنكشف الحرمة عند الحاجة فلا يكون الشفاء بالحرام وإنما يكون بالحلال."
+
+( كتاب الكراهية، فصل في البيع، مسائل متفرقة، ١٠ / ٦٧، ط: دار الفكر
+
+### 2. Mashāyikh Balkh min al-Ḥanafiyyah, p. 431
+
+Language: Arabic
+
+أما أبو الليث السمرقندي، فقد ذهب إلى: جواز بيع الحيات إذا انتفع بها بالأدوية، وإلا فلا.
+
+قلت: الظاهر مما ذهب إليه أبو الليث من جواز بيع الحيات لأجل الدواء، أنه يذهب إلى جواز الاستشفاء بالمحرم، وإن كنت لم أجد لهذه المسألة ذكراً في كتبه. هذا وقد اختار بعض أصحاب المتون والفتاوى، ما ذهب إليه أبو نصر وأبو الليث، واشترطوا لذلك علمه أن فيه الشفاء، ولم يجد دواء غيره.
+
+ولأجل هذا: جوزوا للعليل شرب البول، والدم، وأكل الميتة للتداوي، وذلك إذا أخبره طبيب مسلم أن فيه شفاءه، ولم يجد من المباح ما يقوم مقامه.
+
+(مشايخ البلخ من الحنفية ص ٤31 طددكع
+
+### 3. Satriyasa, Bagus Komang, "Botulinum toxin (Botox) A for reducing the appearance of facial wrinkles", Clinical, Cosmetic and Investigational Dermatology (2019): 223–228
+
+Language: English
+
+Satriyasa, Bagus Komang. "Botulinum toxin (Botox) A for reducing the appearance of facial wrinkles: a literature review of clinical use and pharmacological aspect." Clinical, cosmetic and investigational dermatology (2019): 223-228.

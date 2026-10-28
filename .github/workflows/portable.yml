@@ -1,0 +1,43 @@
+# Portable content archive (portable/): a framework-free copy of all site content, for a future rebuild.
+# The live site does not use it. Runs every Sunday at about 3 am New York time, or by hand from the Actions tab.
+name: Portable content archive
+
+on:
+  schedule:
+    - cron: '23 7 * * 0'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nisab
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Build the site (to read its pages)
+        run: npx astro build
+        env:
+          ASTRO_TELEMETRY_DISABLED: 1
+      - name: Write the archive
+        run: node scripts/export-portable.mjs
+      - name: Save if changed
+        run: |
+          if [ -z "$(git status --porcelain portable)" ]; then
+            echo "No change."
+          else
+            git config user.name "archive-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add portable
+            git commit -m "Update the portable content archive"
+            git pull --rebase
+            git push
+          fi

@@ -1,0 +1,104 @@
+# Buying the uḍḥiyah animal early
+
+Category: Uḍḥiyah/Qurbānī  
+Topic: The Offering Animal (Uḍḥiyah)  
+Date: 2026-10-26
+
+## Question
+
+I plan to buy my uḍḥiyah animal months before Eid al-Adha, because I've heard that keeping it from early on brings more reward. Is that correct? What kind of animal should I look for, and how should I look after it until the sacrifice?
+
+## Short Answer
+
+It is more beneficial to have an animal with which a person has a deep emotional attachment. They should aim to have an animal in the appropriate age bracket:
+
+- Sheep: at least one year old, or six months old if large in size
+- Goat: at least one year old, entering the second year
+- Cow: at least two years old
+- Camel: at least five years old
+
+Until the sacrifice, the animal should be treated with the utmost care and fed the best kind of feed.
+
+## Wisdom of the Ruling (Ḥikmah)
+
+The uḍḥiyah animal serves a number of realms. The first is spiritual: a person is fulfilling the command of Allah subḥānahu wa taʿālā. The second is financial: a person has to go and buy the animal. The third is emotional: when a person carries out the uḍḥiyah themselves, they have to sever the emotional attachment they have created with the animal. Ultimately, the person is following in the footsteps of our forefather Ibrāhīm ʿalayhi al-ṣalātu wa al-salām, showing Allah subḥānahu wa taʿālā that they are willing to sacrifice what they love for the pleasure of Allah subḥānahu wa taʿālā.
+
+The main reason a person should buy the animal early, if they can provide for it, feed it and nourish it, is that the emotional attachment becomes so much greater. When the emotional attachment becomes so much greater, then when the person is ready to sever it for the sake of Allah subḥānahu wa taʿālā, the sincerity of the heart and the sincerity of the hand become manifest, and this ideal of ultimate sacrifice comes to the forefront for them. With each droplet that comes out, a tear may come, but the pleasure of Allah subḥānahu wa taʿālā will build up.
+
+## References
+
+### 1. al-Qudūrī, Mukhtaṣar al-Qudūrī, Kitāb al-Uḍḥiyah
+
+Language: Arabic
+
+**[٤٥ - كتاب الأضحية]**
+
+الأضحية واجبة على كل حر مسلم مقيم موسر في يوم الأضحى عن نفسه وولده الصغار يذبح عن كل واحد منهم شاة أو يذبح بدنة أو بقرة عن سبعة وليس على الفقير والمسافر أضحية ووقت الأضحية يدخل بطلوع الفجر من يوم النحر إلا أنه لا يجوز لأهل الأمصار الذبح حتى يصلي الإمام صلاة العيد فأما أهل السواد فيذبحون بعد الفجر
+
+وهي جائزة في ثلاثة أيام: يوم النحر ويومان بعده
+
+ولا يضحي بالعمياء والعوراء والعرجاء التي لا تمشي إلى المنسك ولا العجفاء ولا تجزئ مقطوعة الأذن والذنب ولا التي ذهب أكثر أذنها فإن بقي الأكثر من الأذن والذنب جاز
+
+ويجوز أن يضحى بالجماء والخصي والجرباء والثولاء
+
+والأضحية من الإبل والبقر والغنم يجزئ من ذلك كله الثني فصاعدا إلا الضمان فإن الجذع منه يجزئ
+
+ويأكل من لحم الأضحية ويطعم الأغنياء والفقراء ويدخر
+
+ويستحب أن لا ينقص الصدقة من الثلث ويتصدق بجلدها أو يعمل منه آلة تستعمل في البيت
+
+والأفضل أن يذبح أضحيته بيده إن كان يحسن الذبح
+
+ويكره أن يذبحها الكتابي
+
+وإذا غلط رجلان فذبح كل واحد منهما أضحية الآخر أجزأ عنهما ولا ضمان عليهما
+
+### 2. al-Qudūrī, Sharḥ Mukhtaṣar al-Karkhī, Kitāb al-Uḍḥiyah
+
+Language: Arabic
+
+**[٦٠] كتابُ الأضحيةِ**
+
+قال أيده الله: الأضحية من حقوق الأموال، وحقوق الأموال على ضربين: منها ما يجب فيه التمليك كالزكاة، ومنها ما يجب فيه الإتلاف كالعتق (١).
+
+والأضحية من [جنس] (٢) العتق؛ لأن الواجب فيها إراقة الدم، وهو إتلاف، فليست الصدقة بها واجبة.
+
+ويجوز أن يقال: إنها أخذت الشَّبَه من أصلين: من العتق؛ لأن الواجب فيها الإتلاف، ومن الزكاة؛ لأن المستحب أن يتصدق بلحمها، وهي عندنا واجبة في قول أبي حنيفة، ومحمد، وزفر، والحسن بن زياد، وإحدى الروايتين عن أبي يوسف، رواها عنه محمد والحسن بن زياد وهشام.
+
+### 3. al-Qudūrī, Sharḥ Mukhtaṣar al-Karkhī, vol. 6, Kitāb al-Uḍḥiyah, pp. 371–372 (Asfār)
+
+Language: Arabic
+
+قال أبو الحسن رحمه الله تعالى: لا يجوز أن يضحي عند أصحابنا جميعاً إلا بالثني من كل شيء: الإبل ، والبقر والغنم ، إلا الجذع من الضأن خاصةً إذا كان عظيما على ما جاء به الخبر عن رسول الله ﷺ ، وذلك لما أنه قال : ضحوا بالثنايا إلا أن يعسر على أحدكم فليذبح الجذع من الضأن (۱).
+
+وروي أن النبي خرج إلى المصلى ، فشم قبارا فقال: «ما هذا؟» فقالوا : أضحية أبي بردة، فقال: «تلك شاة لحم ، فجاء أبو بردة فقال: يا رسول الله ، عناق خير من شاتي لحم ، فقال : يجزئ عنك ولا يجزئ عن أحد عندي بعدك ) .
+
+وروي عن البراء قال: خطب رسول الله يوم عيد فقال: «إن أول نسك يومكم هذا الصلاة ثم الذبح»، فقام إليه خالي أبو بردة بن نيار، فقال: يا رسول الله، إنه كان يوما نشتهي فيه اللحم، وإنا عجلنا فذبحنا ، فقال رسول الله ﷺ : «فأبدلها» ، فقال: يا رسول الله ، عندنا ماعز جَذَع، قال: «فهي لك وليست لأحد بعدك )وروي عن النبي أنه قال: «نعم ) الأضحية الجدع من الضأن ) . وروي أن رجلاً قدم المدينة بغنم جذاع ، فلم ينفق منها شيء، فذكر ذلك لأبي هريرة، فقال أبو هريرة: سمعت النبي ﷺ يقول: «نعمت الأضحية الجذع من الضأن، فلما سمع الناس هذا الخبر ، انتهبوها ، يعني : تبادروا إلى شرائها (٢) .
+
+وتخصيص العبادات بسن دون سن (۳) ، لا يعلم إلا من طريق التوقيف .
+
+وقال الفقهاء: إن الجَذَع من الغنم ابن ستة أشهر، والتني: ابن سنة ، والجذع من البقر: ابن سنة، والثني : ابن سنتين، والجذع من الإبل: ابن أربع سنين ، والثني : ابن خمسة) (a) [١/٣٠٨] قال : ويجوز ز (٦) البعير والبقرة عن سبعة وأقل من ذلك ، ولا يجوز عن أكثر من ذلك .
+
+(شرح القدوري على الكرخي ج ٦ ص ٣٧٢-٣٧١ ط أسفار)
+
+### 4. al-Jaṣṣāṣ, Sharḥ Mukhtaṣar al-Ṭaḥāwī, vol. 7, pp. 323–324 (Dār al-Rayāḥīn)
+
+Language: Arabic
+
+قال أبو جعفر : ولا يجزئ في الهدي والضحايا إلا الجذع من الضأن، أو الثني (۳) من المعز والبقر والإبل، فصاعداً)فأما جواز الجذع من الضأن، فالأصل فيه ما رويا أنَّ عُقبة بن . بن عامر قال للنبي عليه الصلاة والسلام أضحي بالجذع من الضأن؟ فقال: نعم
+
+وحديث أم بلال امرأةِ من أسلم، أنَّ النبي صلى الله عليه وسلم قال: ضحوا بالجذع من الضأن (٢). وروى بقية بن الوليد عن أبي عبد الرحمن التيمي عن يونس بن يزيد الأيلي أن رجلاً حدثه عن أبي هريرة قال: قال رسول الله صلى الله عليه وسلم: «ضحوا بالجذع من الضأن"، إذا فرط له ستة أشهر.
+
+فإن قيل: يحتمل أن يكون جوازها مقصوراً على حال العدم والإعسار، لما روى أبو الزبير عن جابر أن النبي صلى الله عليه وسلم قال: لا تذبحوا إلا مُسنة إلا أن يعسر عليكم، فتذبحوا جذعة . الضان (0) من
+
+قيل له: لا يجوز ذلك، لأن في حديث عقبة بن عامر أنه سأل النبي صلى الله عليه وسلم سؤالاً مطلقاً، فأجازه، ولم يفصل فيه بين حال الإعسار واليسار، فيحمل حينئذ خبر جابر على الاستحباب، دون الإيجاب
+
+)شرح الطحاوي لجصاص ج ٧ ص ٣٢٤-٣٢٣ ط دار الرياحين(
+
+### 5. Mullā Miskīn, Sharḥ Mullā Miskīn ʿalā Kanz al-Daqāʾiq, vol. 2, pp. 199–200 (Dār al-Kutub al-ʿIlmiyyah)
+
+Language: Arabic
+
+والأضحية من الإبل والبقر والغنم وجاز الثني من الكل والجذع من الضأن) الأربعة ولا يتجاوز عنها، ولم يجز منها ما دون الثني إلا أي الأضحية منحصرة في الجذع من الضأن فإنه يجوز إذا كان عظيماً بحيث لو اختلط بالثنيات لا يمكن التمييز من بعيد الغنم اسم جنس يطلق على الذكر والأنثى من الضأن والمعز، والضأنخلاف المعز، والجذع من الضأن الذي أتى عليه أكثر الحول عند الأكثر. وفي مذهب الفقهاء ما تمت له ستة أشهر. وذكر في المبسوط : إذا تم له سبعة أشهر فهو جذع بعد ذلك. والثني ما تم له سنة وطعن في الثانية، وكذا ثني المعز، ومن البقر الذي طعن في الحول الثالث عند جمهور الفقهاء ويدخل فيه الجاموس. ومن الإبل الذي طعن في السادسة وفي الطلبة ما تمت عليها أربعة أحوال والمتولد بين الوحشي والأهلي إذا كانت أمة وحشية لا يجوز وإن كانت أهلية يجوز، ولو نزا كلب على شاة فولدت قال عامة العلماء لا يجوز، وقال الإمام الخيز اخري : إن كانت تشبه الأم تجوز والأ لا ولو نزا شاة على ظبي قال الإمام الخير اخزي : العبرة للمشابهة، كذا في الخلاصة
+
+(شرح منلا مسكين على كنز الدقائق ج٢ ص ١٩٩-٢٠٠ ط دار الكتب العلمية)

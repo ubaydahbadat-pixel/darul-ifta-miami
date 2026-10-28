@@ -1,0 +1,6043 @@
+[
+  {
+    "date": "2024-03-01",
+    "goldPerOz": 2095.7,
+    "silverPerOz": 23.15,
+    "goldNisab": 5894.26,
+    "silverNisab": 455.77,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-04",
+    "goldPerOz": 2126.3,
+    "silverPerOz": 23.78,
+    "goldNisab": 5980.32,
+    "silverNisab": 468.16,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-05",
+    "goldPerOz": 2141.9,
+    "silverPerOz": 23.76,
+    "goldNisab": 6024.19,
+    "silverNisab": 467.84,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-06",
+    "goldPerOz": 2158.2,
+    "silverPerOz": 24.27,
+    "goldNisab": 6070.04,
+    "silverNisab": 477.86,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-07",
+    "goldPerOz": 2165.2,
+    "silverPerOz": 24.37,
+    "goldNisab": 6089.73,
+    "silverNisab": 479.79,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-08",
+    "goldPerOz": 2185.5,
+    "silverPerOz": 24.34,
+    "goldNisab": 6146.82,
+    "silverNisab": 479.18,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-11",
+    "goldPerOz": 2188.6,
+    "silverPerOz": 24.51,
+    "goldNisab": 6155.54,
+    "silverNisab": 482.59,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-12",
+    "goldPerOz": 2166.1,
+    "silverPerOz": 24.19,
+    "goldNisab": 6092.26,
+    "silverNisab": 476.33,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-13",
+    "goldPerOz": 2180.8,
+    "silverPerOz": 24.96,
+    "goldNisab": 6133.6,
+    "silverNisab": 491.39,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-14",
+    "goldPerOz": 2167.5,
+    "silverPerOz": 24.87,
+    "goldNisab": 6096.2,
+    "silverNisab": 489.72,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-15",
+    "goldPerOz": 2161.5,
+    "silverPerOz": 25.2,
+    "goldNisab": 6079.32,
+    "silverNisab": 496.13,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-18",
+    "goldPerOz": 2164.3,
+    "silverPerOz": 25.09,
+    "goldNisab": 6087.2,
+    "silverNisab": 493.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-19",
+    "goldPerOz": 2159.7,
+    "silverPerOz": 24.96,
+    "goldNisab": 6074.26,
+    "silverNisab": 491.49,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-20",
+    "goldPerOz": 2161,
+    "silverPerOz": 24.93,
+    "goldNisab": 6077.91,
+    "silverNisab": 490.88,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-21",
+    "goldPerOz": 2184.7,
+    "silverPerOz": 24.85,
+    "goldNisab": 6144.57,
+    "silverNisab": 489.22,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-22",
+    "goldPerOz": 2160,
+    "silverPerOz": 24.69,
+    "goldNisab": 6075.1,
+    "silverNisab": 486.13,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-25",
+    "goldPerOz": 2176.4,
+    "silverPerOz": 24.75,
+    "goldNisab": 6121.23,
+    "silverNisab": 487.18,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-26",
+    "goldPerOz": 2177.2,
+    "silverPerOz": 24.48,
+    "goldNisab": 6123.48,
+    "silverNisab": 482.02,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-27",
+    "goldPerOz": 2190.6,
+    "silverPerOz": 24.63,
+    "goldNisab": 6161.17,
+    "silverNisab": 484.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-03-28",
+    "goldPerOz": 2217.4,
+    "silverPerOz": 24.8,
+    "goldNisab": 6236.54,
+    "silverNisab": 488.2,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-01",
+    "goldPerOz": 2257.1,
+    "silverPerOz": 24.95,
+    "goldNisab": 6348.2,
+    "silverNisab": 491.29,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-02",
+    "goldPerOz": 2281.8,
+    "silverPerOz": 25.8,
+    "goldNisab": 6417.67,
+    "silverNisab": 508.02,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-03",
+    "goldPerOz": 2315,
+    "silverPerOz": 26.94,
+    "goldNisab": 6511.05,
+    "silverNisab": 530.49,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-04",
+    "goldPerOz": 2308.5,
+    "silverPerOz": 27.14,
+    "goldNisab": 6492.77,
+    "silverNisab": 534.33,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-05",
+    "goldPerOz": 2345.4,
+    "silverPerOz": 27.4,
+    "goldNisab": 6596.55,
+    "silverNisab": 539.45,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-08",
+    "goldPerOz": 2351,
+    "silverPerOz": 27.71,
+    "goldNisab": 6612.3,
+    "silverNisab": 545.59,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-09",
+    "goldPerOz": 2362.4,
+    "silverPerOz": 27.89,
+    "goldNisab": 6644.36,
+    "silverNisab": 549.11,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-10",
+    "goldPerOz": 2348.4,
+    "silverPerOz": 27.96,
+    "goldNisab": 6604.99,
+    "silverNisab": 550.49,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-11",
+    "goldPerOz": 2372.7,
+    "silverPerOz": 28.18,
+    "goldNisab": 6673.33,
+    "silverNisab": 554.72,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-12",
+    "goldPerOz": 2374.1,
+    "silverPerOz": 28.25,
+    "goldNisab": 6677.27,
+    "silverNisab": 556.28,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-15",
+    "goldPerOz": 2383,
+    "silverPerOz": 28.65,
+    "goldNisab": 6702.3,
+    "silverNisab": 564.08,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-16",
+    "goldPerOz": 2407.8,
+    "silverPerOz": 28.32,
+    "goldNisab": 6772.05,
+    "silverNisab": 557.52,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-17",
+    "goldPerOz": 2388.4,
+    "silverPerOz": 28.35,
+    "goldNisab": 6717.49,
+    "silverNisab": 558.07,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-18",
+    "goldPerOz": 2398,
+    "silverPerOz": 28.33,
+    "goldNisab": 6744.49,
+    "silverNisab": 557.74,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-19",
+    "goldPerOz": 2413.8,
+    "silverPerOz": 28.81,
+    "goldNisab": 6788.93,
+    "silverNisab": 567.17,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-22",
+    "goldPerOz": 2346.4,
+    "silverPerOz": 27.21,
+    "goldNisab": 6599.36,
+    "silverNisab": 535.76,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-23",
+    "goldPerOz": 2342.1,
+    "silverPerOz": 27.33,
+    "goldNisab": 6587.27,
+    "silverNisab": 538.09,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-24",
+    "goldPerOz": 2338.4,
+    "silverPerOz": 27.32,
+    "goldNisab": 6576.86,
+    "silverNisab": 537.95,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-25",
+    "goldPerOz": 2342.5,
+    "silverPerOz": 27.34,
+    "goldNisab": 6588.39,
+    "silverNisab": 538.3,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-26",
+    "goldPerOz": 2347.2,
+    "silverPerOz": 27.24,
+    "goldNisab": 6601.61,
+    "silverNisab": 536.32,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-29",
+    "goldPerOz": 2357.7,
+    "silverPerOz": 27.37,
+    "goldNisab": 6631.14,
+    "silverNisab": 538.91,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-04-30",
+    "goldPerOz": 2302.9,
+    "silverPerOz": 26.39,
+    "goldNisab": 6477.01,
+    "silverNisab": 519.58,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-01",
+    "goldPerOz": 2311,
+    "silverPerOz": 26.49,
+    "goldNisab": 6499.8,
+    "silverNisab": 521.51,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-02",
+    "goldPerOz": 2309.6,
+    "silverPerOz": 26.58,
+    "goldNisab": 6495.86,
+    "silverNisab": 523.36,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-03",
+    "goldPerOz": 2308.6,
+    "silverPerOz": 26.44,
+    "goldNisab": 6493.05,
+    "silverNisab": 520.64,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-06",
+    "goldPerOz": 2331.2,
+    "silverPerOz": 27.37,
+    "goldNisab": 6556.61,
+    "silverNisab": 538.84,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-07",
+    "goldPerOz": 2324.2,
+    "silverPerOz": 27.3,
+    "goldNisab": 6536.92,
+    "silverNisab": 537.54,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-08",
+    "goldPerOz": 2322.3,
+    "silverPerOz": 27.36,
+    "goldNisab": 6531.58,
+    "silverNisab": 538.68,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-09",
+    "goldPerOz": 2340.3,
+    "silverPerOz": 28.13,
+    "goldNisab": 6582.2,
+    "silverNisab": 553.86,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-10",
+    "goldPerOz": 2375,
+    "silverPerOz": 28.27,
+    "goldNisab": 6679.8,
+    "silverNisab": 556.67,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-13",
+    "goldPerOz": 2343,
+    "silverPerOz": 28.22,
+    "goldNisab": 6589.8,
+    "silverNisab": 555.61,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-14",
+    "goldPerOz": 2359.9,
+    "silverPerOz": 28.49,
+    "goldNisab": 6637.33,
+    "silverNisab": 560.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-15",
+    "goldPerOz": 2394.9,
+    "silverPerOz": 29.51,
+    "goldNisab": 6735.77,
+    "silverNisab": 581.07,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-16",
+    "goldPerOz": 2385.5,
+    "silverPerOz": 29.67,
+    "goldNisab": 6709.33,
+    "silverNisab": 584.04,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-17",
+    "goldPerOz": 2417.4,
+    "silverPerOz": 31.05,
+    "goldNisab": 6799.05,
+    "silverNisab": 611.25,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-20",
+    "goldPerOz": 2438.5,
+    "silverPerOz": 32.21,
+    "goldNisab": 6858.4,
+    "silverNisab": 634.05,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-21",
+    "goldPerOz": 2425.9,
+    "silverPerOz": 31.87,
+    "goldNisab": 6822.96,
+    "silverNisab": 627.41,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-22",
+    "goldPerOz": 2392.9,
+    "silverPerOz": 31.3,
+    "goldNisab": 6730.14,
+    "silverNisab": 616.13,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-23",
+    "goldPerOz": 2337.2,
+    "silverPerOz": 30.28,
+    "goldNisab": 6573.49,
+    "silverNisab": 596.23,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-24",
+    "goldPerOz": 2334.5,
+    "silverPerOz": 30.33,
+    "goldNisab": 6565.89,
+    "silverNisab": 597.13,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-28",
+    "goldPerOz": 2356.5,
+    "silverPerOz": 31.97,
+    "goldNisab": 6627.77,
+    "silverNisab": 629.44,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-29",
+    "goldPerOz": 2341.2,
+    "silverPerOz": 32.2,
+    "goldNisab": 6584.74,
+    "silverNisab": 634.01,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-30",
+    "goldPerOz": 2342.9,
+    "silverPerOz": 31.39,
+    "goldNisab": 6589.52,
+    "silverNisab": 617.96,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-05-31",
+    "goldPerOz": 2322.9,
+    "silverPerOz": 30.3,
+    "goldNisab": 6533.27,
+    "silverNisab": 596.48,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-03",
+    "goldPerOz": 2369.3,
+    "silverPerOz": 30.64,
+    "goldNisab": 6663.77,
+    "silverNisab": 603.25,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-04",
+    "goldPerOz": 2347.4,
+    "silverPerOz": 29.49,
+    "goldNisab": 6602.17,
+    "silverNisab": 580.55,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-05",
+    "goldPerOz": 2375.5,
+    "silverPerOz": 29.95,
+    "goldNisab": 6681.21,
+    "silverNisab": 589.61,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-06",
+    "goldPerOz": 2390.9,
+    "silverPerOz": 31.25,
+    "goldNisab": 6724.52,
+    "silverNisab": 615.19,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-07",
+    "goldPerOz": 2325,
+    "silverPerOz": 29.33,
+    "goldNisab": 6539.17,
+    "silverNisab": 577.54,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-10",
+    "goldPerOz": 2327,
+    "silverPerOz": 29.77,
+    "goldNisab": 6544.8,
+    "silverNisab": 586.09,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-11",
+    "goldPerOz": 2326.6,
+    "silverPerOz": 29.13,
+    "goldNisab": 6543.67,
+    "silverNisab": 573.57,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-12",
+    "goldPerOz": 2354.8,
+    "silverPerOz": 30.18,
+    "goldNisab": 6622.99,
+    "silverNisab": 594.1,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-13",
+    "goldPerOz": 2318,
+    "silverPerOz": 28.99,
+    "goldNisab": 6519.48,
+    "silverNisab": 570.75,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-14",
+    "goldPerOz": 2349.1,
+    "silverPerOz": 29.4,
+    "goldNisab": 6606.96,
+    "silverNisab": 578.86,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-17",
+    "goldPerOz": 2329,
+    "silverPerOz": 29.33,
+    "goldNisab": 6550.42,
+    "silverNisab": 577.35,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-18",
+    "goldPerOz": 2346.9,
+    "silverPerOz": 29.5,
+    "goldNisab": 6600.77,
+    "silverNisab": 580.89,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-20",
+    "goldPerOz": 2369,
+    "silverPerOz": 30.78,
+    "goldNisab": 6662.92,
+    "silverNisab": 605.91,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-21",
+    "goldPerOz": 2331.2,
+    "silverPerOz": 29.57,
+    "goldNisab": 6556.61,
+    "silverNisab": 582.23,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-24",
+    "goldPerOz": 2344.4,
+    "silverPerOz": 29.49,
+    "goldNisab": 6593.74,
+    "silverNisab": 580.57,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-25",
+    "goldPerOz": 2330.8,
+    "silverPerOz": 28.84,
+    "goldNisab": 6555.49,
+    "silverNisab": 567.74,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-26",
+    "goldPerOz": 2313.2,
+    "silverPerOz": 28.91,
+    "goldNisab": 6505.98,
+    "silverNisab": 569.16,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-27",
+    "goldPerOz": 2336.6,
+    "silverPerOz": 28.92,
+    "goldNisab": 6571.8,
+    "silverNisab": 569.33,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-06-28",
+    "goldPerOz": 2339.6,
+    "silverPerOz": 29.24,
+    "goldNisab": 6580.24,
+    "silverNisab": 575.61,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-01",
+    "goldPerOz": 2338.9,
+    "silverPerOz": 29.3,
+    "goldNisab": 6578.27,
+    "silverNisab": 576.85,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-02",
+    "goldPerOz": 2333.4,
+    "silverPerOz": 29.35,
+    "goldNisab": 6562.8,
+    "silverNisab": 577.9,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-03",
+    "goldPerOz": 2369.4,
+    "silverPerOz": 30.55,
+    "goldNisab": 6664.05,
+    "silverNisab": 601.42,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-05",
+    "goldPerOz": 2397.7,
+    "silverPerOz": 31.39,
+    "goldNisab": 6743.64,
+    "silverNisab": 617.96,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-08",
+    "goldPerOz": 2363.5,
+    "silverPerOz": 30.62,
+    "goldNisab": 6647.46,
+    "silverNisab": 602.8,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-09",
+    "goldPerOz": 2367.9,
+    "silverPerOz": 30.77,
+    "goldNisab": 6659.83,
+    "silverNisab": 605.83,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-10",
+    "goldPerOz": 2379.7,
+    "silverPerOz": 30.73,
+    "goldNisab": 6693.02,
+    "silverNisab": 604.95,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-11",
+    "goldPerOz": 2421.9,
+    "silverPerOz": 31.39,
+    "goldNisab": 6811.71,
+    "silverNisab": 618.08,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-12",
+    "goldPerOz": 2420.7,
+    "silverPerOz": 30.89,
+    "goldNisab": 6808.33,
+    "silverNisab": 608.08,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-15",
+    "goldPerOz": 2428.9,
+    "silverPerOz": 30.67,
+    "goldNisab": 6831.4,
+    "silverNisab": 603.87,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-16",
+    "goldPerOz": 2467.8,
+    "silverPerOz": 31.19,
+    "goldNisab": 6940.8,
+    "silverNisab": 614.16,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-17",
+    "goldPerOz": 2459.9,
+    "silverPerOz": 30.14,
+    "goldNisab": 6918.58,
+    "silverNisab": 593.33,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-18",
+    "goldPerOz": 2456.4,
+    "silverPerOz": 30,
+    "goldNisab": 6908.74,
+    "silverNisab": 590.54,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-19",
+    "goldPerOz": 2399.1,
+    "silverPerOz": 29.09,
+    "goldNisab": 6747.58,
+    "silverNisab": 572.68,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-22",
+    "goldPerOz": 2394.7,
+    "silverPerOz": 29.12,
+    "goldNisab": 6735.21,
+    "silverNisab": 573.39,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-23",
+    "goldPerOz": 2407.3,
+    "silverPerOz": 29.13,
+    "goldNisab": 6770.65,
+    "silverNisab": 573.55,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-24",
+    "goldPerOz": 2415.7,
+    "silverPerOz": 29.12,
+    "goldNisab": 6794.27,
+    "silverNisab": 573.23,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-25",
+    "goldPerOz": 2353.5,
+    "silverPerOz": 27.81,
+    "goldNisab": 6619.33,
+    "silverNisab": 547.46,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-26",
+    "goldPerOz": 2381,
+    "silverPerOz": 27.86,
+    "goldNisab": 6696.68,
+    "silverNisab": 548.5,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-29",
+    "goldPerOz": 2377.8,
+    "silverPerOz": 27.7,
+    "goldNisab": 6687.68,
+    "silverNisab": 545.41,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-30",
+    "goldPerOz": 2405,
+    "silverPerOz": 28.36,
+    "goldNisab": 6764.18,
+    "silverNisab": 558.45,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-07-31",
+    "goldPerOz": 2426.5,
+    "silverPerOz": 28.78,
+    "goldNisab": 6824.65,
+    "silverNisab": 566.58,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-01",
+    "goldPerOz": 2480.8,
+    "silverPerOz": 28.33,
+    "goldNisab": 6977.37,
+    "silverNisab": 557.78,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-02",
+    "goldPerOz": 2469.8,
+    "silverPerOz": 28.25,
+    "goldNisab": 6946.43,
+    "silverNisab": 556.1,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-05",
+    "goldPerOz": 2444.4,
+    "silverPerOz": 27.08,
+    "goldNisab": 6874.99,
+    "silverNisab": 533.07,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-06",
+    "goldPerOz": 2431.6,
+    "silverPerOz": 27.1,
+    "goldNisab": 6838.99,
+    "silverNisab": 533.46,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-07",
+    "goldPerOz": 2432.4,
+    "silverPerOz": 26.83,
+    "goldNisab": 6841.24,
+    "silverNisab": 528.22,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-08",
+    "goldPerOz": 2463.3,
+    "silverPerOz": 27.5,
+    "goldNisab": 6928.15,
+    "silverNisab": 541.42,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-09",
+    "goldPerOz": 2473.4,
+    "silverPerOz": 27.49,
+    "goldNisab": 6956.55,
+    "silverNisab": 541.16,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-12",
+    "goldPerOz": 2504,
+    "silverPerOz": 27.92,
+    "goldNisab": 7042.62,
+    "silverNisab": 549.63,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-13",
+    "goldPerOz": 2507.8,
+    "silverPerOz": 27.69,
+    "goldNisab": 7053.31,
+    "silverNisab": 545.25,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-14",
+    "goldPerOz": 2479.7,
+    "silverPerOz": 27.25,
+    "goldNisab": 6974.27,
+    "silverNisab": 536.57,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-15",
+    "goldPerOz": 2492.4,
+    "silverPerOz": 28.34,
+    "goldNisab": 7009.99,
+    "silverNisab": 557.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-16",
+    "goldPerOz": 2537.8,
+    "silverPerOz": 28.78,
+    "goldNisab": 7137.68,
+    "silverNisab": 566.58,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-19",
+    "goldPerOz": 2541.3,
+    "silverPerOz": 29.24,
+    "goldNisab": 7147.53,
+    "silverNisab": 575.67,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-20",
+    "goldPerOz": 2550.6,
+    "silverPerOz": 29.45,
+    "goldNisab": 7173.68,
+    "silverNisab": 579.91,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-21",
+    "goldPerOz": 2547.5,
+    "silverPerOz": 29.48,
+    "goldNisab": 7164.96,
+    "silverNisab": 580.32,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-22",
+    "goldPerOz": 2516.7,
+    "silverPerOz": 29.01,
+    "goldNisab": 7078.34,
+    "silverNisab": 571.07,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-23",
+    "goldPerOz": 2546.3,
+    "silverPerOz": 29.79,
+    "goldNisab": 7161.59,
+    "silverNisab": 586.42,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-26",
+    "goldPerOz": 2555.2,
+    "silverPerOz": 29.98,
+    "goldNisab": 7186.62,
+    "silverNisab": 590.18,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-27",
+    "goldPerOz": 2552.9,
+    "silverPerOz": 29.95,
+    "goldNisab": 7180.15,
+    "silverNisab": 589.67,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-28",
+    "goldPerOz": 2537.8,
+    "silverPerOz": 29.18,
+    "goldNisab": 7137.68,
+    "silverNisab": 574.41,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-29",
+    "goldPerOz": 2560.3,
+    "silverPerOz": 29.56,
+    "goldNisab": 7200.97,
+    "silverNisab": 581.91,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-08-30",
+    "goldPerOz": 2527.6,
+    "silverPerOz": 28.73,
+    "goldNisab": 7108.99,
+    "silverNisab": 565.65,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-03",
+    "goldPerOz": 2523,
+    "silverPerOz": 27.95,
+    "goldNisab": 7096.06,
+    "silverNisab": 550.29,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-04",
+    "goldPerOz": 2526,
+    "silverPerOz": 28.17,
+    "goldNisab": 7104.49,
+    "silverNisab": 554.55,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-05",
+    "goldPerOz": 2543.1,
+    "silverPerOz": 28.72,
+    "goldNisab": 7152.59,
+    "silverNisab": 565.43,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-06",
+    "goldPerOz": 2524.6,
+    "silverPerOz": 27.81,
+    "goldNisab": 7100.56,
+    "silverNisab": 547.48,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-09",
+    "goldPerOz": 2532.7,
+    "silverPerOz": 28.29,
+    "goldNisab": 7123.34,
+    "silverNisab": 556.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-10",
+    "goldPerOz": 2543.1,
+    "silverPerOz": 28.26,
+    "goldNisab": 7152.59,
+    "silverNisab": 556.32,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-11",
+    "goldPerOz": 2542.4,
+    "silverPerOz": 28.56,
+    "goldNisab": 7150.62,
+    "silverNisab": 562.34,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-12",
+    "goldPerOz": 2580.6,
+    "silverPerOz": 29.74,
+    "goldNisab": 7258.06,
+    "silverNisab": 585.58,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-13",
+    "goldPerOz": 2610.7,
+    "silverPerOz": 30.7,
+    "goldNisab": 7342.72,
+    "silverNisab": 604.4,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-16",
+    "goldPerOz": 2608.9,
+    "silverPerOz": 30.77,
+    "goldNisab": 7337.65,
+    "silverNisab": 605.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-17",
+    "goldPerOz": 2592.4,
+    "silverPerOz": 30.62,
+    "goldNisab": 7291.25,
+    "silverNisab": 602.82,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-18",
+    "goldPerOz": 2598.6,
+    "silverPerOz": 30.34,
+    "goldNisab": 7308.69,
+    "silverNisab": 597.35,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-19",
+    "goldPerOz": 2614.6,
+    "silverPerOz": 31.09,
+    "goldNisab": 7353.69,
+    "silverNisab": 612.17,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-20",
+    "goldPerOz": 2646.2,
+    "silverPerOz": 31.18,
+    "goldNisab": 7442.56,
+    "silverNisab": 613.79,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-23",
+    "goldPerOz": 2652.5,
+    "silverPerOz": 30.77,
+    "goldNisab": 7460.28,
+    "silverNisab": 605.74,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-24",
+    "goldPerOz": 2677,
+    "silverPerOz": 32.11,
+    "goldNisab": 7529.19,
+    "silverNisab": 632.2,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-25",
+    "goldPerOz": 2684.7,
+    "silverPerOz": 31.7,
+    "goldNisab": 7550.85,
+    "silverNisab": 624.06,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-26",
+    "goldPerOz": 2694.9,
+    "silverPerOz": 32.03,
+    "goldNisab": 7579.53,
+    "silverNisab": 630.5,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-27",
+    "goldPerOz": 2668.1,
+    "silverPerOz": 31.52,
+    "goldNisab": 7504.16,
+    "silverNisab": 620.54,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-09-30",
+    "goldPerOz": 2659.4,
+    "silverPerOz": 31.16,
+    "goldNisab": 7479.69,
+    "silverNisab": 613.55,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-01",
+    "goldPerOz": 2690.3,
+    "silverPerOz": 31.44,
+    "goldNisab": 7566.6,
+    "silverNisab": 619.08,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-02",
+    "goldPerOz": 2669.7,
+    "silverPerOz": 31.63,
+    "goldNisab": 7508.66,
+    "silverNisab": 622.69,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-03",
+    "goldPerOz": 2679.2,
+    "silverPerOz": 32.19,
+    "goldNisab": 7535.38,
+    "silverNisab": 633.73,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-04",
+    "goldPerOz": 2667.8,
+    "silverPerOz": 32.13,
+    "goldNisab": 7503.31,
+    "silverNisab": 632.53,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-07",
+    "goldPerOz": 2666,
+    "silverPerOz": 31.75,
+    "goldNisab": 7498.25,
+    "silverNisab": 624.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-08",
+    "goldPerOz": 2635.4,
+    "silverPerOz": 30.35,
+    "goldNisab": 7412.19,
+    "silverNisab": 597.62,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-09",
+    "goldPerOz": 2626,
+    "silverPerOz": 30.42,
+    "goldNisab": 7385.75,
+    "silverNisab": 599,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-10",
+    "goldPerOz": 2639.3,
+    "silverPerOz": 31,
+    "goldNisab": 7423.16,
+    "silverNisab": 610.42,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-11",
+    "goldPerOz": 2676.3,
+    "silverPerOz": 31.52,
+    "goldNisab": 7527.22,
+    "silverNisab": 620.56,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-14",
+    "goldPerOz": 2665.6,
+    "silverPerOz": 31.08,
+    "goldNisab": 7497.13,
+    "silverNisab": 611.96,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-15",
+    "goldPerOz": 2678.9,
+    "silverPerOz": 31.53,
+    "goldNisab": 7534.53,
+    "silverNisab": 620.7,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-16",
+    "goldPerOz": 2691.3,
+    "silverPerOz": 31.76,
+    "goldNisab": 7569.41,
+    "silverNisab": 625.29,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-17",
+    "goldPerOz": 2707.5,
+    "silverPerOz": 31.57,
+    "goldNisab": 7614.97,
+    "silverNisab": 621.6,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-18",
+    "goldPerOz": 2730,
+    "silverPerOz": 33.03,
+    "goldNisab": 7678.25,
+    "silverNisab": 650.33,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-21",
+    "goldPerOz": 2738.9,
+    "silverPerOz": 33.87,
+    "goldNisab": 7703.29,
+    "silverNisab": 666.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-22",
+    "goldPerOz": 2759.8,
+    "silverPerOz": 34.83,
+    "goldNisab": 7762.07,
+    "silverNisab": 685.75,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-23",
+    "goldPerOz": 2729.4,
+    "silverPerOz": 33.64,
+    "goldNisab": 7676.57,
+    "silverNisab": 662.3,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-24",
+    "goldPerOz": 2748.9,
+    "silverPerOz": 33.61,
+    "goldNisab": 7731.41,
+    "silverNisab": 661.73,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-25",
+    "goldPerOz": 2754.6,
+    "silverPerOz": 33.6,
+    "goldNisab": 7747.44,
+    "silverNisab": 661.57,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-28",
+    "goldPerOz": 2755.9,
+    "silverPerOz": 33.83,
+    "goldNisab": 7751.1,
+    "silverNisab": 666.04,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-29",
+    "goldPerOz": 2781.1,
+    "silverPerOz": 34.27,
+    "goldNisab": 7821.98,
+    "silverNisab": 674.68,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-30",
+    "goldPerOz": 2800.8,
+    "silverPerOz": 33.91,
+    "goldNisab": 7877.38,
+    "silverNisab": 667.69,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-10-31",
+    "goldPerOz": 2749.3,
+    "silverPerOz": 32.65,
+    "goldNisab": 7732.54,
+    "silverNisab": 642.87,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-01",
+    "goldPerOz": 2749.2,
+    "silverPerOz": 32.54,
+    "goldNisab": 7732.25,
+    "silverNisab": 640.68,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-04",
+    "goldPerOz": 2746.2,
+    "silverPerOz": 32.48,
+    "goldNisab": 7723.82,
+    "silverNisab": 639.46,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-05",
+    "goldPerOz": 2749.7,
+    "silverPerOz": 32.65,
+    "goldNisab": 7733.66,
+    "silverNisab": 642.91,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-06",
+    "goldPerOz": 2676.3,
+    "silverPerOz": 31.22,
+    "goldNisab": 7527.22,
+    "silverNisab": 614.67,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-07",
+    "goldPerOz": 2705.8,
+    "silverPerOz": 31.76,
+    "goldNisab": 7610.19,
+    "silverNisab": 625.38,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-08",
+    "goldPerOz": 2694.8,
+    "silverPerOz": 31.36,
+    "goldNisab": 7579.25,
+    "silverNisab": 617.39,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-11",
+    "goldPerOz": 2617.7,
+    "silverPerOz": 30.54,
+    "goldNisab": 7362.4,
+    "silverNisab": 601.27,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-12",
+    "goldPerOz": 2606.3,
+    "silverPerOz": 30.69,
+    "goldNisab": 7330.34,
+    "silverNisab": 604.14,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-13",
+    "goldPerOz": 2586.5,
+    "silverPerOz": 30.59,
+    "goldNisab": 7274.65,
+    "silverNisab": 602.25,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-14",
+    "goldPerOz": 2572.9,
+    "silverPerOz": 30.51,
+    "goldNisab": 7236.4,
+    "silverNisab": 600.64,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-15",
+    "goldPerOz": 2570.1,
+    "silverPerOz": 30.37,
+    "goldNisab": 7228.53,
+    "silverNisab": 597.94,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-18",
+    "goldPerOz": 2614.6,
+    "silverPerOz": 31.16,
+    "goldNisab": 7353.69,
+    "silverNisab": 613.53,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-19",
+    "goldPerOz": 2631,
+    "silverPerOz": 31.21,
+    "goldNisab": 7399.81,
+    "silverNisab": 614.42,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-20",
+    "goldPerOz": 2651.7,
+    "silverPerOz": 30.96,
+    "goldNisab": 7458.03,
+    "silverNisab": 609.46,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-21",
+    "goldPerOz": 2674.9,
+    "silverPerOz": 30.91,
+    "goldNisab": 7523.28,
+    "silverNisab": 608.59,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-22",
+    "goldPerOz": 2712.2,
+    "silverPerOz": 31.31,
+    "goldNisab": 7628.19,
+    "silverNisab": 616.41,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-25",
+    "goldPerOz": 2618.5,
+    "silverPerOz": 30.21,
+    "goldNisab": 7364.66,
+    "silverNisab": 594.77,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-26",
+    "goldPerOz": 2621.3,
+    "silverPerOz": 30.39,
+    "goldNisab": 7372.53,
+    "silverNisab": 598.27,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-27",
+    "goldPerOz": 2639.9,
+    "silverPerOz": 30.11,
+    "goldNisab": 7424.84,
+    "silverNisab": 592.82,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-11-29",
+    "goldPerOz": 2657,
+    "silverPerOz": 30.68,
+    "goldNisab": 7472.94,
+    "silverNisab": 604.12,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-02",
+    "goldPerOz": 2658.5,
+    "silverPerOz": 30.45,
+    "goldNisab": 7477.16,
+    "silverNisab": 599.47,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-03",
+    "goldPerOz": 2667.9,
+    "silverPerOz": 31.08,
+    "goldNisab": 7503.59,
+    "silverNisab": 611.84,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-04",
+    "goldPerOz": 2676.2,
+    "silverPerOz": 31.5,
+    "goldNisab": 7526.94,
+    "silverNisab": 620.27,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-05",
+    "goldPerOz": 2648.4,
+    "silverPerOz": 31.13,
+    "goldNisab": 7448.75,
+    "silverNisab": 612.96,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-06",
+    "goldPerOz": 2659.6,
+    "silverPerOz": 31.19,
+    "goldNisab": 7480.25,
+    "silverNisab": 613.98,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-09",
+    "goldPerOz": 2685.8,
+    "silverPerOz": 32.22,
+    "goldNisab": 7553.94,
+    "silverNisab": 634.26,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-10",
+    "goldPerOz": 2718.4,
+    "silverPerOz": 32.36,
+    "goldNisab": 7645.63,
+    "silverNisab": 637.16,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-11",
+    "goldPerOz": 2756.7,
+    "silverPerOz": 32.56,
+    "goldNisab": 7753.35,
+    "silverNisab": 641.08,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-12",
+    "goldPerOz": 2709.4,
+    "silverPerOz": 31.23,
+    "goldNisab": 7620.32,
+    "silverNisab": 614.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-13",
+    "goldPerOz": 2675.8,
+    "silverPerOz": 30.66,
+    "goldNisab": 7525.81,
+    "silverNisab": 603.53,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-16",
+    "goldPerOz": 2670,
+    "silverPerOz": 30.7,
+    "goldNisab": 7509.5,
+    "silverNisab": 604.36,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-17",
+    "goldPerOz": 2662,
+    "silverPerOz": 30.57,
+    "goldNisab": 7487,
+    "silverNisab": 601.92,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-18",
+    "goldPerOz": 2653.3,
+    "silverPerOz": 30.41,
+    "goldNisab": 7462.53,
+    "silverNisab": 598.71,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-19",
+    "goldPerOz": 2608.1,
+    "silverPerOz": 29.09,
+    "goldNisab": 7335.4,
+    "silverNisab": 572.8,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-20",
+    "goldPerOz": 2645.1,
+    "silverPerOz": 29.66,
+    "goldNisab": 7439.47,
+    "silverNisab": 583.94,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-23",
+    "goldPerOz": 2628.2,
+    "silverPerOz": 29.89,
+    "goldNisab": 7391.94,
+    "silverNisab": 588.43,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-24",
+    "goldPerOz": 2635.5,
+    "silverPerOz": 29.97,
+    "goldNisab": 7412.47,
+    "silverNisab": 590.12,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-26",
+    "goldPerOz": 2653.9,
+    "silverPerOz": 30.05,
+    "goldNisab": 7464.22,
+    "silverNisab": 591.56,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-27",
+    "goldPerOz": 2631.9,
+    "silverPerOz": 29.66,
+    "goldNisab": 7402.34,
+    "silverNisab": 583.84,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-30",
+    "goldPerOz": 2618.1,
+    "silverPerOz": 29.11,
+    "goldNisab": 7363.53,
+    "silverNisab": 573.03,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2024-12-31",
+    "goldPerOz": 2641,
+    "silverPerOz": 28.94,
+    "goldNisab": 7427.94,
+    "silverNisab": 569.77,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-02",
+    "goldPerOz": 2669,
+    "silverPerOz": 29.62,
+    "goldNisab": 7506.69,
+    "silverNisab": 583.19,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-03",
+    "goldPerOz": 2654.7,
+    "silverPerOz": 29.81,
+    "goldNisab": 7466.47,
+    "silverNisab": 586.82,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-06",
+    "goldPerOz": 2647.4,
+    "silverPerOz": 30.34,
+    "goldNisab": 7445.94,
+    "silverNisab": 597.37,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-07",
+    "goldPerOz": 2665.4,
+    "silverPerOz": 30.45,
+    "goldNisab": 7496.56,
+    "silverNisab": 599.44,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-08",
+    "goldPerOz": 2672.4,
+    "silverPerOz": 30.45,
+    "goldNisab": 7516.25,
+    "silverNisab": 599.53,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-09",
+    "goldPerOz": 2690.8,
+    "silverPerOz": 30.79,
+    "goldNisab": 7568,
+    "silverNisab": 606.21,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-10",
+    "goldPerOz": 2715,
+    "silverPerOz": 31.09,
+    "goldNisab": 7636.07,
+    "silverNisab": 612.11,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-13",
+    "goldPerOz": 2678.6,
+    "silverPerOz": 30.09,
+    "goldNisab": 7533.69,
+    "silverNisab": 592.43,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-14",
+    "goldPerOz": 2682.3,
+    "silverPerOz": 30.13,
+    "goldNisab": 7544.1,
+    "silverNisab": 593.23,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-15",
+    "goldPerOz": 2717.8,
+    "silverPerOz": 31.32,
+    "goldNisab": 7643.94,
+    "silverNisab": 616.6,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-16",
+    "goldPerOz": 2750.9,
+    "silverPerOz": 31.52,
+    "goldNisab": 7737.04,
+    "silverNisab": 620.62,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-17",
+    "goldPerOz": 2748.7,
+    "silverPerOz": 30.95,
+    "goldNisab": 7730.85,
+    "silverNisab": 609.36,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-21",
+    "goldPerOz": 2759.2,
+    "silverPerOz": 31.31,
+    "goldNisab": 7760.38,
+    "silverNisab": 616.45,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-22",
+    "goldPerOz": 2770.9,
+    "silverPerOz": 31.24,
+    "goldNisab": 7793.29,
+    "silverNisab": 615.03,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-23",
+    "goldPerOz": 2765,
+    "silverPerOz": 30.67,
+    "goldNisab": 7776.69,
+    "silverNisab": 603.88,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-24",
+    "goldPerOz": 2778.9,
+    "silverPerOz": 31.02,
+    "goldNisab": 7815.79,
+    "silverNisab": 610.78,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-27",
+    "goldPerOz": 2738.4,
+    "silverPerOz": 30.25,
+    "goldNisab": 7701.88,
+    "silverNisab": 595.64,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-28",
+    "goldPerOz": 2767.5,
+    "silverPerOz": 30.73,
+    "goldNisab": 7783.72,
+    "silverNisab": 604.95,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-29",
+    "goldPerOz": 2769.8,
+    "silverPerOz": 31.24,
+    "goldNisab": 7790.19,
+    "silverNisab": 615.01,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-30",
+    "goldPerOz": 2823,
+    "silverPerOz": 32.36,
+    "goldNisab": 7939.82,
+    "silverNisab": 637.18,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-01-31",
+    "goldPerOz": 2812.5,
+    "silverPerOz": 32.13,
+    "goldNisab": 7910.29,
+    "silverNisab": 632.53,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-03",
+    "goldPerOz": 2857.1,
+    "silverPerOz": 32.39,
+    "goldNisab": 8035.73,
+    "silverNisab": 637.73,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-04",
+    "goldPerOz": 2875.8,
+    "silverPerOz": 32.89,
+    "goldNisab": 8088.32,
+    "silverNisab": 647.49,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-05",
+    "goldPerOz": 2893,
+    "silverPerOz": 32.86,
+    "goldNisab": 8136.7,
+    "silverNisab": 646.88,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-06",
+    "goldPerOz": 2876.7,
+    "silverPerOz": 32.52,
+    "goldNisab": 8090.85,
+    "silverNisab": 640.21,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-07",
+    "goldPerOz": 2887.6,
+    "silverPerOz": 32.33,
+    "goldNisab": 8121.51,
+    "silverNisab": 636.61,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-10",
+    "goldPerOz": 2934.4,
+    "silverPerOz": 32.39,
+    "goldNisab": 8253.14,
+    "silverNisab": 637.73,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-11",
+    "goldPerOz": 2932.6,
+    "silverPerOz": 32.23,
+    "goldNisab": 8248.08,
+    "silverNisab": 634.56,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-12",
+    "goldPerOz": 2928.7,
+    "silverPerOz": 32.69,
+    "goldNisab": 8237.11,
+    "silverNisab": 643.69,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-13",
+    "goldPerOz": 2945.4,
+    "silverPerOz": 32.65,
+    "goldNisab": 8284.08,
+    "silverNisab": 642.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-14",
+    "goldPerOz": 2900.7,
+    "silverPerOz": 32.8,
+    "goldNisab": 8158.36,
+    "silverNisab": 645.78,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-18",
+    "goldPerOz": 2949,
+    "silverPerOz": 33.32,
+    "goldNisab": 8294.2,
+    "silverNisab": 655.94,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-19",
+    "goldPerOz": 2936.1,
+    "silverPerOz": 32.99,
+    "goldNisab": 8257.92,
+    "silverNisab": 649.56,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-20",
+    "goldPerOz": 2956.1,
+    "silverPerOz": 33.44,
+    "goldNisab": 8314.17,
+    "silverNisab": 658.44,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-21",
+    "goldPerOz": 2953.2,
+    "silverPerOz": 32.98,
+    "goldNisab": 8306.01,
+    "silverNisab": 649.23,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-24",
+    "goldPerOz": 2963.2,
+    "silverPerOz": 32.58,
+    "goldNisab": 8334.14,
+    "silverNisab": 641.33,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-25",
+    "goldPerOz": 2918.8,
+    "silverPerOz": 31.8,
+    "goldNisab": 8209.26,
+    "silverNisab": 626.09,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-26",
+    "goldPerOz": 2930.6,
+    "silverPerOz": 32.25,
+    "goldNisab": 8242.45,
+    "silverNisab": 634.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-27",
+    "goldPerOz": 2895.9,
+    "silverPerOz": 31.8,
+    "goldNisab": 8144.86,
+    "silverNisab": 626.09,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-02-28",
+    "goldPerOz": 2848.5,
+    "silverPerOz": 31.22,
+    "goldNisab": 8011.54,
+    "silverNisab": 614.63,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-03",
+    "goldPerOz": 2901.1,
+    "silverPerOz": 32.03,
+    "goldNisab": 8159.48,
+    "silverNisab": 630.64,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-04",
+    "goldPerOz": 2920.6,
+    "silverPerOz": 32.11,
+    "goldNisab": 8214.33,
+    "silverNisab": 632.14,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-05",
+    "goldPerOz": 2926,
+    "silverPerOz": 32.86,
+    "goldNisab": 8229.51,
+    "silverNisab": 646.9,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-06",
+    "goldPerOz": 2926.6,
+    "silverPerOz": 33.06,
+    "goldNisab": 8231.2,
+    "silverNisab": 650.94,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-07",
+    "goldPerOz": 2914.1,
+    "silverPerOz": 32.55,
+    "goldNisab": 8196.04,
+    "silverNisab": 640.8,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-10",
+    "goldPerOz": 2899.4,
+    "silverPerOz": 32.28,
+    "goldNisab": 8154.7,
+    "silverNisab": 635.42,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-11",
+    "goldPerOz": 2920.9,
+    "silverPerOz": 32.89,
+    "goldNisab": 8215.17,
+    "silverNisab": 647.49,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-12",
+    "goldPerOz": 2946.8,
+    "silverPerOz": 33.48,
+    "goldNisab": 8288.01,
+    "silverNisab": 659.23,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-13",
+    "goldPerOz": 2991.3,
+    "silverPerOz": 34.05,
+    "goldNisab": 8413.17,
+    "silverNisab": 670.39,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-14",
+    "goldPerOz": 3001.1,
+    "silverPerOz": 34.19,
+    "goldNisab": 8440.74,
+    "silverNisab": 673.07,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-17",
+    "goldPerOz": 3006.1,
+    "silverPerOz": 34.07,
+    "goldNisab": 8454.8,
+    "silverNisab": 670.84,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-18",
+    "goldPerOz": 3040.8,
+    "silverPerOz": 34.58,
+    "goldNisab": 8552.39,
+    "silverNisab": 680.79,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-19",
+    "goldPerOz": 3041.2,
+    "silverPerOz": 33.97,
+    "goldNisab": 8553.52,
+    "silverNisab": 668.89,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-20",
+    "goldPerOz": 3043.8,
+    "silverPerOz": 33.79,
+    "goldNisab": 8560.83,
+    "silverNisab": 665.17,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-21",
+    "goldPerOz": 3021.4,
+    "silverPerOz": 33.29,
+    "goldNisab": 8497.83,
+    "silverNisab": 655.41,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-24",
+    "goldPerOz": 3015.6,
+    "silverPerOz": 33.26,
+    "goldNisab": 8481.52,
+    "silverNisab": 654.92,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-25",
+    "goldPerOz": 3025.9,
+    "silverPerOz": 34,
+    "goldNisab": 8510.49,
+    "silverNisab": 669.43,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-26",
+    "goldPerOz": 3022.5,
+    "silverPerOz": 34.03,
+    "goldNisab": 8500.92,
+    "silverNisab": 670.04,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-27",
+    "goldPerOz": 3061,
+    "silverPerOz": 34.9,
+    "goldNisab": 8609.21,
+    "silverNisab": 687.05,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-28",
+    "goldPerOz": 3086.5,
+    "silverPerOz": 34.64,
+    "goldNisab": 8680.93,
+    "silverNisab": 682.07,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-03-31",
+    "goldPerOz": 3122.8,
+    "silverPerOz": 34.46,
+    "goldNisab": 8783.02,
+    "silverNisab": 678.38,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-01",
+    "goldPerOz": 3146,
+    "silverPerOz": 34.16,
+    "goldNisab": 8848.27,
+    "silverNisab": 672.5,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-02",
+    "goldPerOz": 3166.2,
+    "silverPerOz": 34.5,
+    "goldNisab": 8905.09,
+    "silverNisab": 679.21,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-03",
+    "goldPerOz": 3121.7,
+    "silverPerOz": 31.84,
+    "goldNisab": 8779.93,
+    "silverNisab": 626.94,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-04",
+    "goldPerOz": 3035.4,
+    "silverPerOz": 29.12,
+    "goldNisab": 8537.21,
+    "silverNisab": 573.23,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-07",
+    "goldPerOz": 2973.6,
+    "silverPerOz": 29.51,
+    "goldNisab": 8363.39,
+    "silverNisab": 580.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-08",
+    "goldPerOz": 2990.2,
+    "silverPerOz": 29.59,
+    "goldNisab": 8410.08,
+    "silverNisab": 582.6,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-09",
+    "goldPerOz": 3079.4,
+    "silverPerOz": 30.32,
+    "goldNisab": 8660.96,
+    "silverNisab": 596.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-10",
+    "goldPerOz": 3177.5,
+    "silverPerOz": 30.67,
+    "goldNisab": 8936.87,
+    "silverNisab": 603.85,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-11",
+    "goldPerOz": 3244.6,
+    "silverPerOz": 31.82,
+    "goldNisab": 9125.59,
+    "silverNisab": 626.55,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-14",
+    "goldPerOz": 3226.3,
+    "silverPerOz": 32.09,
+    "goldNisab": 9074.12,
+    "silverNisab": 631.82,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-15",
+    "goldPerOz": 3240.4,
+    "silverPerOz": 32.23,
+    "goldNisab": 9113.78,
+    "silverNisab": 634.48,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-16",
+    "goldPerOz": 3346.4,
+    "silverPerOz": 32.93,
+    "goldNisab": 9411.91,
+    "silverNisab": 648.24,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-17",
+    "goldPerOz": 3328.4,
+    "silverPerOz": 32.42,
+    "goldNisab": 9361.28,
+    "silverNisab": 638.28,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-21",
+    "goldPerOz": 3425.3,
+    "silverPerOz": 32.5,
+    "goldNisab": 9633.82,
+    "silverNisab": 639.78,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-22",
+    "goldPerOz": 3419.4,
+    "silverPerOz": 32.88,
+    "goldNisab": 9617.22,
+    "silverNisab": 647.34,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-23",
+    "goldPerOz": 3294.1,
+    "silverPerOz": 33.52,
+    "goldNisab": 9264.81,
+    "silverNisab": 659.9,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-24",
+    "goldPerOz": 3348.6,
+    "silverPerOz": 33.48,
+    "goldNisab": 9418.1,
+    "silverNisab": 659.19,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-25",
+    "goldPerOz": 3298.4,
+    "silverPerOz": 32.99,
+    "goldNisab": 9276.91,
+    "silverNisab": 649.48,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-28",
+    "goldPerOz": 3347.7,
+    "silverPerOz": 32.99,
+    "goldNisab": 9415.56,
+    "silverNisab": 649.5,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-29",
+    "goldPerOz": 3333.6,
+    "silverPerOz": 33.28,
+    "goldNisab": 9375.91,
+    "silverNisab": 655.11,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-04-30",
+    "goldPerOz": 3319.1,
+    "silverPerOz": 32.53,
+    "goldNisab": 9335.13,
+    "silverNisab": 640.46,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-01",
+    "goldPerOz": 3222.2,
+    "silverPerOz": 32.19,
+    "goldNisab": 9062.59,
+    "silverNisab": 633.73,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-02",
+    "goldPerOz": 3243.3,
+    "silverPerOz": 31.99,
+    "goldNisab": 9121.93,
+    "silverNisab": 629.79,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-05",
+    "goldPerOz": 3322.3,
+    "silverPerOz": 32.21,
+    "goldNisab": 9344.13,
+    "silverNisab": 634.05,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-06",
+    "goldPerOz": 3422.8,
+    "silverPerOz": 33.11,
+    "goldNisab": 9626.79,
+    "silverNisab": 651.92,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-07",
+    "goldPerOz": 3391.9,
+    "silverPerOz": 32.53,
+    "goldNisab": 9539.88,
+    "silverNisab": 640.46,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-08",
+    "goldPerOz": 3306,
+    "silverPerOz": 32.38,
+    "goldNisab": 9298.28,
+    "silverNisab": 637.45,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-09",
+    "goldPerOz": 3344,
+    "silverPerOz": 32.68,
+    "goldNisab": 9405.16,
+    "silverNisab": 643.32,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-12",
+    "goldPerOz": 3228,
+    "silverPerOz": 32.39,
+    "goldNisab": 9078.9,
+    "silverNisab": 637.65,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-13",
+    "goldPerOz": 3247.8,
+    "silverPerOz": 32.87,
+    "goldNisab": 9134.59,
+    "silverNisab": 647.1,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-14",
+    "goldPerOz": 3188.3,
+    "silverPerOz": 32.23,
+    "goldNisab": 8967.24,
+    "silverNisab": 634.46,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-15",
+    "goldPerOz": 3226.6,
+    "silverPerOz": 32.48,
+    "goldNisab": 9074.97,
+    "silverNisab": 639.48,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-16",
+    "goldPerOz": 3187.2,
+    "silverPerOz": 32.16,
+    "goldNisab": 8964.15,
+    "silverNisab": 633.12,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-19",
+    "goldPerOz": 3233.5,
+    "silverPerOz": 32.31,
+    "goldNisab": 9094.37,
+    "silverNisab": 636.17,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-20",
+    "goldPerOz": 3284.6,
+    "silverPerOz": 32.98,
+    "goldNisab": 9238.09,
+    "silverNisab": 649.3,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-21",
+    "goldPerOz": 3313.5,
+    "silverPerOz": 33.46,
+    "goldNisab": 9319.38,
+    "silverNisab": 658.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-22",
+    "goldPerOz": 3295,
+    "silverPerOz": 33.05,
+    "goldNisab": 9267.34,
+    "silverNisab": 650.62,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-23",
+    "goldPerOz": 3365.8,
+    "silverPerOz": 33.44,
+    "goldNisab": 9466.47,
+    "silverNisab": 658.4,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-27",
+    "goldPerOz": 3300.4,
+    "silverPerOz": 33.15,
+    "goldNisab": 9282.53,
+    "silverNisab": 652.57,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-28",
+    "goldPerOz": 3294.9,
+    "silverPerOz": 33,
+    "goldNisab": 9267.06,
+    "silverNisab": 649.7,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-29",
+    "goldPerOz": 3317.1,
+    "silverPerOz": 33.28,
+    "goldNisab": 9329.5,
+    "silverNisab": 655.27,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-05-30",
+    "goldPerOz": 3288.9,
+    "silverPerOz": 32.89,
+    "goldNisab": 9250.19,
+    "silverNisab": 647.57,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-02",
+    "goldPerOz": 3397.2,
+    "silverPerOz": 34.56,
+    "goldNisab": 9554.79,
+    "silverNisab": 680.47,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-03",
+    "goldPerOz": 3377.1,
+    "silverPerOz": 34.5,
+    "goldNisab": 9498.25,
+    "silverNisab": 679.29,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-04",
+    "goldPerOz": 3399.2,
+    "silverPerOz": 34.52,
+    "goldNisab": 9560.41,
+    "silverNisab": 679.6,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-05",
+    "goldPerOz": 3375.1,
+    "silverPerOz": 35.69,
+    "goldNisab": 9492.63,
+    "silverNisab": 702.64,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-06",
+    "goldPerOz": 3346.6,
+    "silverPerOz": 36.03,
+    "goldNisab": 9412.47,
+    "silverNisab": 709.25,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-09",
+    "goldPerOz": 3354.9,
+    "silverPerOz": 36.69,
+    "goldNisab": 9435.81,
+    "silverNisab": 722.31,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-10",
+    "goldPerOz": 3343.4,
+    "silverPerOz": 36.54,
+    "goldNisab": 9403.47,
+    "silverNisab": 719.43,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-11",
+    "goldPerOz": 3343.7,
+    "silverPerOz": 36.17,
+    "goldNisab": 9404.31,
+    "silverNisab": 712.03,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-12",
+    "goldPerOz": 3402.4,
+    "silverPerOz": 36.21,
+    "goldNisab": 9569.41,
+    "silverNisab": 712.96,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-13",
+    "goldPerOz": 3452.8,
+    "silverPerOz": 36.28,
+    "goldNisab": 9711.16,
+    "silverNisab": 714.29,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-16",
+    "goldPerOz": 3417.3,
+    "silverPerOz": 36.38,
+    "goldNisab": 9611.32,
+    "silverNisab": 716.22,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-17",
+    "goldPerOz": 3406.9,
+    "silverPerOz": 37.09,
+    "goldNisab": 9582.07,
+    "silverNisab": 730.22,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-18",
+    "goldPerOz": 3408.1,
+    "silverPerOz": 36.87,
+    "goldNisab": 9585.44,
+    "silverNisab": 725.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-20",
+    "goldPerOz": 3385.7,
+    "silverPerOz": 35.98,
+    "goldNisab": 9522.44,
+    "silverNisab": 708.29,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-23",
+    "goldPerOz": 3395,
+    "silverPerOz": 36.15,
+    "goldNisab": 9548.6,
+    "silverNisab": 711.77,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-24",
+    "goldPerOz": 3333.9,
+    "silverPerOz": 35.7,
+    "goldNisab": 9376.75,
+    "silverNisab": 702.88,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-25",
+    "goldPerOz": 3343.1,
+    "silverPerOz": 36.08,
+    "goldNisab": 9402.63,
+    "silverNisab": 710.44,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-26",
+    "goldPerOz": 3348,
+    "silverPerOz": 36.59,
+    "goldNisab": 9416.41,
+    "silverNisab": 720.3,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-27",
+    "goldPerOz": 3287.6,
+    "silverPerOz": 36.04,
+    "goldNisab": 9246.53,
+    "silverNisab": 709.49,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-06-30",
+    "goldPerOz": 3307.7,
+    "silverPerOz": 35.85,
+    "goldNisab": 9303.06,
+    "silverNisab": 705.85,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-01",
+    "goldPerOz": 3349.8,
+    "silverPerOz": 36.08,
+    "goldNisab": 9421.47,
+    "silverNisab": 710.38,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-02",
+    "goldPerOz": 3359.7,
+    "silverPerOz": 36.43,
+    "goldNisab": 9449.32,
+    "silverNisab": 717.15,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-03",
+    "goldPerOz": 3342.9,
+    "silverPerOz": 36.78,
+    "goldNisab": 9402.06,
+    "silverNisab": 724.2,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-04",
+    "goldPerOz": 3346.5,
+    "silverPerOz": 36.78,
+    "goldNisab": 9412.19,
+    "silverNisab": 724.02,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-07",
+    "goldPerOz": 3342.8,
+    "silverPerOz": 36.62,
+    "goldNisab": 9401.78,
+    "silverNisab": 720.87,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-08",
+    "goldPerOz": 3316.9,
+    "silverPerOz": 36.47,
+    "goldNisab": 9328.94,
+    "silverNisab": 718.05,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-09",
+    "goldPerOz": 3321,
+    "silverPerOz": 36.35,
+    "goldNisab": 9340.47,
+    "silverNisab": 715.67,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-10",
+    "goldPerOz": 3325.7,
+    "silverPerOz": 37.04,
+    "goldNisab": 9353.69,
+    "silverNisab": 729.2,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-11",
+    "goldPerOz": 3364,
+    "silverPerOz": 38.68,
+    "goldNisab": 9461.41,
+    "silverNisab": 761.45,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-14",
+    "goldPerOz": 3359.1,
+    "silverPerOz": 38.46,
+    "goldNisab": 9447.63,
+    "silverNisab": 757.23,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-15",
+    "goldPerOz": 3336.7,
+    "silverPerOz": 37.83,
+    "goldNisab": 9384.63,
+    "silverNisab": 744.87,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-16",
+    "goldPerOz": 3359.1,
+    "silverPerOz": 37.85,
+    "goldNisab": 9447.63,
+    "silverNisab": 745.24,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-17",
+    "goldPerOz": 3345.3,
+    "silverPerOz": 38.06,
+    "goldNisab": 9408.81,
+    "silverNisab": 749.24,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-18",
+    "goldPerOz": 3358.3,
+    "silverPerOz": 38.22,
+    "goldNisab": 9445.38,
+    "silverNisab": 752.53,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-21",
+    "goldPerOz": 3406.4,
+    "silverPerOz": 39.1,
+    "goldNisab": 9580.66,
+    "silverNisab": 769.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-22",
+    "goldPerOz": 3443.7,
+    "silverPerOz": 39.32,
+    "goldNisab": 9685.57,
+    "silverNisab": 774.13,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-23",
+    "goldPerOz": 3397.6,
+    "silverPerOz": 39.28,
+    "goldNisab": 9555.91,
+    "silverNisab": 773.3,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-24",
+    "goldPerOz": 3373.5,
+    "silverPerOz": 39.02,
+    "goldNisab": 9488.13,
+    "silverNisab": 768.24,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-25",
+    "goldPerOz": 3335.6,
+    "silverPerOz": 38.17,
+    "goldNisab": 9381.53,
+    "silverNisab": 751.43,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-28",
+    "goldPerOz": 3310,
+    "silverPerOz": 38.03,
+    "goldNisab": 9309.53,
+    "silverNisab": 748.65,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-29",
+    "goldPerOz": 3324,
+    "silverPerOz": 38.08,
+    "goldNisab": 9348.91,
+    "silverNisab": 749.79,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-30",
+    "goldPerOz": 3295.8,
+    "silverPerOz": 37.57,
+    "goldNisab": 9269.59,
+    "silverNisab": 739.59,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-07-31",
+    "goldPerOz": 3293.2,
+    "silverPerOz": 36.55,
+    "goldNisab": 9262.28,
+    "silverNisab": 719.63,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-01",
+    "goldPerOz": 3399.8,
+    "silverPerOz": 36.79,
+    "goldNisab": 9562.1,
+    "silverNisab": 724.26,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-04",
+    "goldPerOz": 3426.4,
+    "silverPerOz": 37.19,
+    "goldNisab": 9636.91,
+    "silverNisab": 732.23,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-05",
+    "goldPerOz": 3434.7,
+    "silverPerOz": 37.69,
+    "goldNisab": 9660.26,
+    "silverNisab": 741.98,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-06",
+    "goldPerOz": 3433.4,
+    "silverPerOz": 37.77,
+    "goldNisab": 9656.6,
+    "silverNisab": 743.53,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-07",
+    "goldPerOz": 3453.7,
+    "silverPerOz": 38.16,
+    "goldNisab": 9713.69,
+    "silverNisab": 751.25,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-08",
+    "goldPerOz": 3491.3,
+    "silverPerOz": 38.42,
+    "goldNisab": 9819.45,
+    "silverNisab": 756.35,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-11",
+    "goldPerOz": 3404.7,
+    "silverPerOz": 37.66,
+    "goldNisab": 9575.88,
+    "silverNisab": 741.48,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-12",
+    "goldPerOz": 3399,
+    "silverPerOz": 37.9,
+    "goldNisab": 9559.85,
+    "silverNisab": 746.15,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-13",
+    "goldPerOz": 3408.3,
+    "silverPerOz": 38.5,
+    "goldNisab": 9586.01,
+    "silverNisab": 757.96,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-14",
+    "goldPerOz": 3383.2,
+    "silverPerOz": 37.98,
+    "goldNisab": 9515.41,
+    "silverNisab": 747.78,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-15",
+    "goldPerOz": 3382.6,
+    "silverPerOz": 37.89,
+    "goldNisab": 9513.72,
+    "silverNisab": 746.05,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-18",
+    "goldPerOz": 3378,
+    "silverPerOz": 37.95,
+    "goldNisab": 9500.78,
+    "silverNisab": 747.17,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-19",
+    "goldPerOz": 3358.7,
+    "silverPerOz": 37.26,
+    "goldNisab": 9446.5,
+    "silverNisab": 733.59,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-20",
+    "goldPerOz": 3388.5,
+    "silverPerOz": 37.71,
+    "goldNisab": 9530.32,
+    "silverNisab": 742.33,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-21",
+    "goldPerOz": 3381.6,
+    "silverPerOz": 38.03,
+    "goldNisab": 9510.91,
+    "silverNisab": 748.67,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-22",
+    "goldPerOz": 3418.5,
+    "silverPerOz": 39,
+    "goldNisab": 9614.69,
+    "silverNisab": 767.88,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-25",
+    "goldPerOz": 3417.5,
+    "silverPerOz": 38.68,
+    "goldNisab": 9611.88,
+    "silverNisab": 761.47,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-26",
+    "goldPerOz": 3433,
+    "silverPerOz": 38.58,
+    "goldNisab": 9655.47,
+    "silverNisab": 759.6,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-27",
+    "goldPerOz": 3448.6,
+    "silverPerOz": 38.69,
+    "goldNisab": 9699.35,
+    "silverNisab": 761.7,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-28",
+    "goldPerOz": 3474.3,
+    "silverPerOz": 39.19,
+    "goldNisab": 9771.63,
+    "silverNisab": 771.57,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-08-29",
+    "goldPerOz": 3516.1,
+    "silverPerOz": 40.2,
+    "goldNisab": 9889.2,
+    "silverNisab": 791.45,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-02",
+    "goldPerOz": 3592.2,
+    "silverPerOz": 41.07,
+    "goldNisab": 10103.23,
+    "silverNisab": 808.6,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-03",
+    "goldPerOz": 3635.5,
+    "silverPerOz": 41.54,
+    "goldNisab": 10225.02,
+    "silverNisab": 817.87,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-04",
+    "goldPerOz": 3606.7,
+    "silverPerOz": 40.91,
+    "goldNisab": 10144.01,
+    "silverNisab": 805.45,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-05",
+    "goldPerOz": 3653.3,
+    "silverPerOz": 41.07,
+    "goldNisab": 10275.08,
+    "silverNisab": 808.66,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-08",
+    "goldPerOz": 3677.4,
+    "silverPerOz": 41.43,
+    "goldNisab": 10342.86,
+    "silverNisab": 815.59,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-09",
+    "goldPerOz": 3682.2,
+    "silverPerOz": 40.88,
+    "goldNisab": 10356.36,
+    "silverNisab": 804.8,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-10",
+    "goldPerOz": 3682,
+    "silverPerOz": 41.13,
+    "goldNisab": 10355.8,
+    "silverNisab": 809.82,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-11",
+    "goldPerOz": 3673.6,
+    "silverPerOz": 41.7,
+    "goldNisab": 10332.17,
+    "silverNisab": 820.92,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-12",
+    "goldPerOz": 3686.4,
+    "silverPerOz": 42.39,
+    "goldNisab": 10368.17,
+    "silverNisab": 834.51,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-15",
+    "goldPerOz": 3719,
+    "silverPerOz": 42.52,
+    "goldNisab": 10459.86,
+    "silverNisab": 837.07,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-16",
+    "goldPerOz": 3725.1,
+    "silverPerOz": 42.47,
+    "goldNisab": 10477.02,
+    "silverNisab": 836.16,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-17",
+    "goldPerOz": 3717.8,
+    "silverPerOz": 41.72,
+    "goldNisab": 10456.49,
+    "silverNisab": 821.42,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-18",
+    "goldPerOz": 3678.3,
+    "silverPerOz": 41.71,
+    "goldNisab": 10345.39,
+    "silverNisab": 821.12,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-19",
+    "goldPerOz": 3705.8,
+    "silverPerOz": 42.54,
+    "goldNisab": 10422.74,
+    "silverNisab": 837.44,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-22",
+    "goldPerOz": 3775.1,
+    "silverPerOz": 43.8,
+    "goldNisab": 10617.65,
+    "silverNisab": 862.31,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-23",
+    "goldPerOz": 3815.7,
+    "silverPerOz": 44.19,
+    "goldNisab": 10731.84,
+    "silverNisab": 870.04,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-24",
+    "goldPerOz": 3768.1,
+    "silverPerOz": 43.78,
+    "goldNisab": 10597.96,
+    "silverNisab": 861.87,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-25",
+    "goldPerOz": 3771.1,
+    "silverPerOz": 44.7,
+    "goldNisab": 10606.4,
+    "silverNisab": 879.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-26",
+    "goldPerOz": 3809,
+    "silverPerOz": 46.22,
+    "goldNisab": 10712.99,
+    "silverNisab": 909.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-29",
+    "goldPerOz": 3855.2,
+    "silverPerOz": 46.61,
+    "goldNisab": 10842.93,
+    "silverNisab": 917.69,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-09-30",
+    "goldPerOz": 3873.2,
+    "silverPerOz": 46.25,
+    "goldNisab": 10893.56,
+    "silverNisab": 910.62,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-01",
+    "goldPerOz": 3897.5,
+    "silverPerOz": 47.29,
+    "goldNisab": 10961.9,
+    "silverNisab": 931.04,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-02",
+    "goldPerOz": 3868.1,
+    "silverPerOz": 46,
+    "goldNisab": 10879.21,
+    "silverNisab": 905.64,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-03",
+    "goldPerOz": 3908.9,
+    "silverPerOz": 47.6,
+    "goldNisab": 10993.97,
+    "silverNisab": 937.08,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-06",
+    "goldPerOz": 3976.3,
+    "silverPerOz": 48.08,
+    "goldNisab": 11183.53,
+    "silverNisab": 946.63,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-07",
+    "goldPerOz": 4004.4,
+    "silverPerOz": 47.18,
+    "goldNisab": 11262.56,
+    "silverNisab": 928.85,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-08",
+    "goldPerOz": 4070.5,
+    "silverPerOz": 48.66,
+    "goldNisab": 11448.47,
+    "silverNisab": 957.93,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-09",
+    "goldPerOz": 3972.6,
+    "silverPerOz": 46.85,
+    "goldNisab": 11173.13,
+    "silverNisab": 922.37,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-10",
+    "goldPerOz": 4000.4,
+    "silverPerOz": 46.94,
+    "goldNisab": 11251.31,
+    "silverNisab": 924.11,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-13",
+    "goldPerOz": 4133,
+    "silverPerOz": 50.13,
+    "goldNisab": 11624.26,
+    "silverNisab": 986.95,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-14",
+    "goldPerOz": 4163.4,
+    "silverPerOz": 50.31,
+    "goldNisab": 11709.76,
+    "silverNisab": 990.57,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-15",
+    "goldPerOz": 4201.6,
+    "silverPerOz": 51.07,
+    "goldNisab": 11817.2,
+    "silverNisab": 1005.52,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-16",
+    "goldPerOz": 4304.6,
+    "silverPerOz": 53.02,
+    "goldNisab": 12106.89,
+    "silverNisab": 1043.91,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-17",
+    "goldPerOz": 4213.3,
+    "silverPerOz": 49.86,
+    "goldNisab": 11850.11,
+    "silverNisab": 981.71,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-20",
+    "goldPerOz": 4359.4,
+    "silverPerOz": 51.12,
+    "goldNisab": 12261.02,
+    "silverNisab": 1006.42,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-21",
+    "goldPerOz": 4109.1,
+    "silverPerOz": 47.45,
+    "goldNisab": 11557.04,
+    "silverNisab": 934.19,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-22",
+    "goldPerOz": 4065.4,
+    "silverPerOz": 47.46,
+    "goldNisab": 11434.13,
+    "silverNisab": 934.4,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-23",
+    "goldPerOz": 4145.6,
+    "silverPerOz": 48.48,
+    "goldNisab": 11659.7,
+    "silverNisab": 954.51,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-24",
+    "goldPerOz": 4137.8,
+    "silverPerOz": 48.38,
+    "goldNisab": 11637.76,
+    "silverNisab": 952.44,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-27",
+    "goldPerOz": 4019.7,
+    "silverPerOz": 46.56,
+    "goldNisab": 11305.6,
+    "silverNisab": 916.7,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-28",
+    "goldPerOz": 3983.1,
+    "silverPerOz": 47.13,
+    "goldNisab": 11202.66,
+    "silverNisab": 927.79,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-29",
+    "goldPerOz": 4000.7,
+    "silverPerOz": 47.72,
+    "goldNisab": 11252.16,
+    "silverNisab": 939.52,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-30",
+    "goldPerOz": 4015.9,
+    "silverPerOz": 48.43,
+    "goldNisab": 11294.91,
+    "silverNisab": 953.44,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-10-31",
+    "goldPerOz": 3996.5,
+    "silverPerOz": 47.99,
+    "goldNisab": 11240.35,
+    "silverNisab": 944.9,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-03",
+    "goldPerOz": 4014,
+    "silverPerOz": 47.89,
+    "goldNisab": 11289.56,
+    "silverNisab": 942.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-04",
+    "goldPerOz": 3960.5,
+    "silverPerOz": 47.13,
+    "goldNisab": 11139.09,
+    "silverNisab": 927.89,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-05",
+    "goldPerOz": 3992.9,
+    "silverPerOz": 47.86,
+    "goldNisab": 11230.22,
+    "silverNisab": 942.32,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-06",
+    "goldPerOz": 3991,
+    "silverPerOz": 47.79,
+    "goldNisab": 11224.88,
+    "silverNisab": 940.96,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-07",
+    "goldPerOz": 4009.8,
+    "silverPerOz": 48.02,
+    "goldNisab": 11277.75,
+    "silverNisab": 945.35,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-10",
+    "goldPerOz": 4122,
+    "silverPerOz": 50.18,
+    "goldNisab": 11593.32,
+    "silverNisab": 987.88,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-11",
+    "goldPerOz": 4116.3,
+    "silverPerOz": 50.62,
+    "goldNisab": 11577.29,
+    "silverNisab": 996.56,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-12",
+    "goldPerOz": 4213.6,
+    "silverPerOz": 53.33,
+    "goldNisab": 11850.95,
+    "silverNisab": 1049.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-13",
+    "goldPerOz": 4194.5,
+    "silverPerOz": 53.07,
+    "goldNisab": 11797.23,
+    "silverNisab": 1044.91,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-14",
+    "goldPerOz": 4094.2,
+    "silverPerOz": 50.59,
+    "goldNisab": 11515.13,
+    "silverNisab": 996.01,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-17",
+    "goldPerOz": 4074.5,
+    "silverPerOz": 50.63,
+    "goldNisab": 11459.72,
+    "silverNisab": 996.7,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-18",
+    "goldPerOz": 4066.5,
+    "silverPerOz": 50.45,
+    "goldNisab": 11437.22,
+    "silverNisab": 993.25,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-19",
+    "goldPerOz": 4082.8,
+    "silverPerOz": 50.79,
+    "goldNisab": 11483.07,
+    "silverNisab": 999.94,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-20",
+    "goldPerOz": 4060,
+    "silverPerOz": 50.25,
+    "goldNisab": 11418.94,
+    "silverNisab": 989.25,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-21",
+    "goldPerOz": 4079.5,
+    "silverPerOz": 49.87,
+    "goldNisab": 11473.79,
+    "silverNisab": 981.89,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-24",
+    "goldPerOz": 4094.2,
+    "silverPerOz": 50.29,
+    "goldNisab": 11515.13,
+    "silverNisab": 990.2,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-25",
+    "goldPerOz": 4140,
+    "silverPerOz": 50.93,
+    "goldNisab": 11643.95,
+    "silverNisab": 1002.78,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-26",
+    "goldPerOz": 4165.2,
+    "silverPerOz": 52.92,
+    "goldNisab": 11714.82,
+    "silverNisab": 1041.8,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-11-28",
+    "goldPerOz": 4254.9,
+    "silverPerOz": 56.45,
+    "goldNisab": 11967.11,
+    "silverNisab": 1111.3,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-01",
+    "goldPerOz": 4274.8,
+    "silverPerOz": 58.42,
+    "goldNisab": 12023.08,
+    "silverNisab": 1150.12,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-02",
+    "goldPerOz": 4220.8,
+    "silverPerOz": 57.98,
+    "goldNisab": 11871.2,
+    "silverNisab": 1141.56,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-03",
+    "goldPerOz": 4232.5,
+    "silverPerOz": 57.92,
+    "goldNisab": 11904.11,
+    "silverNisab": 1140.34,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-04",
+    "goldPerOz": 4243,
+    "silverPerOz": 56.85,
+    "goldNisab": 11933.64,
+    "silverNisab": 1119.19,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-05",
+    "goldPerOz": 4243,
+    "silverPerOz": 58.42,
+    "goldNisab": 11933.64,
+    "silverNisab": 1150.2,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-08",
+    "goldPerOz": 4217.7,
+    "silverPerOz": 57.78,
+    "goldNisab": 11862.48,
+    "silverNisab": 1137.54,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-09",
+    "goldPerOz": 4236.2,
+    "silverPerOz": 60.17,
+    "goldNisab": 11914.51,
+    "silverNisab": 1184.6,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-10",
+    "goldPerOz": 4224.7,
+    "silverPerOz": 60.38,
+    "goldNisab": 11882.17,
+    "silverNisab": 1188.73,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-11",
+    "goldPerOz": 4313,
+    "silverPerOz": 63.93,
+    "goldNisab": 12130.52,
+    "silverNisab": 1258.62,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-12",
+    "goldPerOz": 4328.3,
+    "silverPerOz": 61.36,
+    "goldNisab": 12173.55,
+    "silverNisab": 1208.08,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-15",
+    "goldPerOz": 4335.2,
+    "silverPerOz": 62.94,
+    "goldNisab": 12192.96,
+    "silverNisab": 1239.15,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-16",
+    "goldPerOz": 4332.3,
+    "silverPerOz": 62.7,
+    "goldNisab": 12184.8,
+    "silverNisab": 1234.43,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-17",
+    "goldPerOz": 4373.9,
+    "silverPerOz": 66.24,
+    "goldNisab": 12301.8,
+    "silverNisab": 1304.06,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-18",
+    "goldPerOz": 4364.5,
+    "silverPerOz": 64.59,
+    "goldNisab": 12275.36,
+    "silverNisab": 1271.68,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-19",
+    "goldPerOz": 4387.3,
+    "silverPerOz": 66.85,
+    "goldNisab": 12339.49,
+    "silverNisab": 1316.03,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-22",
+    "goldPerOz": 4469.4,
+    "silverPerOz": 67.91,
+    "goldNisab": 12570.4,
+    "silverNisab": 1336.92,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-23",
+    "goldPerOz": 4505.7,
+    "silverPerOz": 70.49,
+    "goldNisab": 12672.49,
+    "silverNisab": 1387.7,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-24",
+    "goldPerOz": 4502.8,
+    "silverPerOz": 71.03,
+    "goldNisab": 12664.34,
+    "silverNisab": 1398.45,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-26",
+    "goldPerOz": 4552.7,
+    "silverPerOz": 76.49,
+    "goldNisab": 12804.68,
+    "silverNisab": 1505.84,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-29",
+    "goldPerOz": 4343.6,
+    "silverPerOz": 69.86,
+    "goldNisab": 12216.58,
+    "silverNisab": 1375.31,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-30",
+    "goldPerOz": 4386.3,
+    "silverPerOz": 77.37,
+    "goldNisab": 12336.68,
+    "silverNisab": 1523.33,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2025-12-31",
+    "goldPerOz": 4341.1,
+    "silverPerOz": 70.13,
+    "goldNisab": 12209.55,
+    "silverNisab": 1380.79,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-02",
+    "goldPerOz": 4329.6,
+    "silverPerOz": 70.56,
+    "goldNisab": 12177.21,
+    "silverNisab": 1389.09,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-05",
+    "goldPerOz": 4451.5,
+    "silverPerOz": 76.16,
+    "goldNisab": 12520.05,
+    "silverNisab": 1499.5,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-06",
+    "goldPerOz": 4496.1,
+    "silverPerOz": 80.53,
+    "goldNisab": 12645.49,
+    "silverNisab": 1585.46,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-07",
+    "goldPerOz": 4462.5,
+    "silverPerOz": 77.14,
+    "goldNisab": 12550.99,
+    "silverNisab": 1518.62,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-08",
+    "goldPerOz": 4460.7,
+    "silverPerOz": 74.72,
+    "goldNisab": 12545.93,
+    "silverNisab": 1471,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-09",
+    "goldPerOz": 4500.9,
+    "silverPerOz": 78.88,
+    "goldNisab": 12658.99,
+    "silverNisab": 1553.05,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-12",
+    "goldPerOz": 4614.7,
+    "silverPerOz": 84.61,
+    "goldNisab": 12979.06,
+    "silverNisab": 1665.79,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-13",
+    "goldPerOz": 4599.1,
+    "silverPerOz": 85.88,
+    "goldNisab": 12935.19,
+    "silverNisab": 1690.73,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-14",
+    "goldPerOz": 4635.7,
+    "silverPerOz": 90.87,
+    "goldNisab": 13038.13,
+    "silverNisab": 1789.01,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-15",
+    "goldPerOz": 4623.7,
+    "silverPerOz": 91.88,
+    "goldNisab": 13004.38,
+    "silverNisab": 1808.84,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-16",
+    "goldPerOz": 4595.4,
+    "silverPerOz": 88.09,
+    "goldNisab": 12924.78,
+    "silverNisab": 1734.32,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-20",
+    "goldPerOz": 4765.8,
+    "silverPerOz": 94.21,
+    "goldNisab": 13404.04,
+    "silverNisab": 1854.71,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-21",
+    "goldPerOz": 4837.5,
+    "silverPerOz": 92.21,
+    "goldNisab": 13605.7,
+    "silverNisab": 1815.41,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-22",
+    "goldPerOz": 4913.4,
+    "silverPerOz": 95.98,
+    "goldNisab": 13819.17,
+    "silverNisab": 1889.56,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-23",
+    "goldPerOz": 4979.7,
+    "silverPerOz": 100.93,
+    "goldNisab": 14005.64,
+    "silverNisab": 1986.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-26",
+    "goldPerOz": 5082.5,
+    "silverPerOz": 115.08,
+    "goldNisab": 14294.77,
+    "silverNisab": 2265.68,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-27",
+    "goldPerOz": 5082.6,
+    "silverPerOz": 105.52,
+    "goldNisab": 14295.05,
+    "silverNisab": 2077.52,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-28",
+    "goldPerOz": 5303.6,
+    "silverPerOz": 113.11,
+    "goldNisab": 14916.63,
+    "silverNisab": 2226.91,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-29",
+    "goldPerOz": 5318.4,
+    "silverPerOz": 114.04,
+    "goldNisab": 14958.25,
+    "silverNisab": 2245.14,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-01-30",
+    "goldPerOz": 4745.1,
+    "silverPerOz": 78.29,
+    "goldNisab": 13345.82,
+    "silverNisab": 1541.36,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-02",
+    "goldPerOz": 4652.6,
+    "silverPerOz": 76.78,
+    "goldNisab": 13085.66,
+    "silverNisab": 1511.59,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-03",
+    "goldPerOz": 4935,
+    "silverPerOz": 83.04,
+    "goldNisab": 13879.92,
+    "silverNisab": 1634.92,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-04",
+    "goldPerOz": 4950.8,
+    "silverPerOz": 84.17,
+    "goldNisab": 13924.36,
+    "silverNisab": 1657.03,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-05",
+    "goldPerOz": 4889.5,
+    "silverPerOz": 76.53,
+    "goldNisab": 13751.95,
+    "silverNisab": 1506.69,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-06",
+    "goldPerOz": 4979.8,
+    "silverPerOz": 76.74,
+    "goldNisab": 14005.92,
+    "silverNisab": 1510.75,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-09",
+    "goldPerOz": 5079.4,
+    "silverPerOz": 82.07,
+    "goldNisab": 14286.05,
+    "silverNisab": 1615.68,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-10",
+    "goldPerOz": 5031,
+    "silverPerOz": 80.22,
+    "goldNisab": 14149.93,
+    "silverNisab": 1579.32,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-11",
+    "goldPerOz": 5098.5,
+    "silverPerOz": 83.75,
+    "goldNisab": 14339.77,
+    "silverNisab": 1648.93,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-12",
+    "goldPerOz": 4948.4,
+    "silverPerOz": 75.55,
+    "goldNisab": 13917.61,
+    "silverNisab": 1487.34,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-13",
+    "goldPerOz": 5046.3,
+    "silverPerOz": 77.85,
+    "goldNisab": 14192.96,
+    "silverNisab": 1532.72,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-17",
+    "goldPerOz": 4905.9,
+    "silverPerOz": 73.45,
+    "goldNisab": 13798.08,
+    "silverNisab": 1446.01,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-18",
+    "goldPerOz": 5009.5,
+    "silverPerOz": 77.51,
+    "goldNisab": 14089.46,
+    "silverNisab": 1525.98,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-19",
+    "goldPerOz": 4997.4,
+    "silverPerOz": 77.57,
+    "goldNisab": 14055.42,
+    "silverNisab": 1527.09,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-20",
+    "goldPerOz": 5080.9,
+    "silverPerOz": 82.28,
+    "goldNisab": 14290.27,
+    "silverNisab": 1619.97,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-23",
+    "goldPerOz": 5225.6,
+    "silverPerOz": 86.52,
+    "goldNisab": 14697.25,
+    "silverNisab": 1703.45,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-24",
+    "goldPerOz": 5176.3,
+    "silverPerOz": 87.46,
+    "goldNisab": 14558.59,
+    "silverNisab": 1721.84,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-25",
+    "goldPerOz": 5226.2,
+    "silverPerOz": 90.94,
+    "goldNisab": 14698.94,
+    "silverNisab": 1790.39,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-26",
+    "goldPerOz": 5194.2,
+    "silverPerOz": 87,
+    "goldNisab": 14608.93,
+    "silverNisab": 1712.8,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-02-27",
+    "goldPerOz": 5247.9,
+    "silverPerOz": 92.68,
+    "goldNisab": 14759.97,
+    "silverNisab": 1824.71,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-02",
+    "goldPerOz": 5311.6,
+    "silverPerOz": 88.28,
+    "goldNisab": 14939.13,
+    "silverNisab": 1738.12,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-03",
+    "goldPerOz": 5123.7,
+    "silverPerOz": 82.92,
+    "goldNisab": 14410.65,
+    "silverNisab": 1632.57,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-04",
+    "goldPerOz": 5134.7,
+    "silverPerOz": 82.63,
+    "goldNisab": 14441.59,
+    "silverNisab": 1626.86,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-05",
+    "goldPerOz": 5078.7,
+    "silverPerOz": 81.69,
+    "goldNisab": 14284.08,
+    "silverNisab": 1608.24,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-06",
+    "goldPerOz": 5158.7,
+    "silverPerOz": 83.82,
+    "goldNisab": 14509.09,
+    "silverNisab": 1650.16,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-09",
+    "goldPerOz": 5103.7,
+    "silverPerOz": 84.03,
+    "goldNisab": 14354.4,
+    "silverNisab": 1654.41,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-10",
+    "goldPerOz": 5242.1,
+    "silverPerOz": 89.08,
+    "goldNisab": 14743.65,
+    "silverNisab": 1753.85,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-11",
+    "goldPerOz": 5179.1,
+    "silverPerOz": 85.07,
+    "goldNisab": 14566.46,
+    "silverNisab": 1674.75,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-12",
+    "goldPerOz": 5125.8,
+    "silverPerOz": 84.67,
+    "goldNisab": 14416.55,
+    "silverNisab": 1666.97,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-13",
+    "goldPerOz": 5061.7,
+    "silverPerOz": 80.91,
+    "goldNisab": 14236.27,
+    "silverNisab": 1593.02,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-16",
+    "goldPerOz": 5002.2,
+    "silverPerOz": 80.26,
+    "goldNisab": 14068.92,
+    "silverNisab": 1580.2,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-17",
+    "goldPerOz": 5008.2,
+    "silverPerOz": 79.53,
+    "goldNisab": 14085.8,
+    "silverNisab": 1565.77,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-18",
+    "goldPerOz": 4896.2,
+    "silverPerOz": 77.24,
+    "goldNisab": 13770.79,
+    "silverNisab": 1520.65,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-19",
+    "goldPerOz": 4605.7,
+    "silverPerOz": 70.9,
+    "goldNisab": 12953.75,
+    "silverNisab": 1395.91,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-20",
+    "goldPerOz": 4574.9,
+    "silverPerOz": 69.36,
+    "goldNisab": 12867.12,
+    "silverNisab": 1365.55,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-23",
+    "goldPerOz": 4407.3,
+    "silverPerOz": 69.05,
+    "goldNisab": 12395.74,
+    "silverNisab": 1359.43,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-24",
+    "goldPerOz": 4402,
+    "silverPerOz": 69.27,
+    "goldNisab": 12380.83,
+    "silverNisab": 1363.85,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-25",
+    "goldPerOz": 4552.3,
+    "silverPerOz": 72.36,
+    "goldNisab": 12803.56,
+    "silverNisab": 1424.63,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-26",
+    "goldPerOz": 4376.3,
+    "silverPerOz": 67.67,
+    "goldNisab": 12308.55,
+    "silverNisab": 1332.3,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-27",
+    "goldPerOz": 4492.5,
+    "silverPerOz": 69.54,
+    "goldNisab": 12635.37,
+    "silverNisab": 1369.19,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-30",
+    "goldPerOz": 4526,
+    "silverPerOz": 70.32,
+    "goldNisab": 12729.59,
+    "silverNisab": 1384.53,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-03-31",
+    "goldPerOz": 4647.6,
+    "silverPerOz": 74.69,
+    "goldNisab": 13071.6,
+    "silverNisab": 1470.48,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-01",
+    "goldPerOz": 4813.1,
+    "silverPerOz": 75.87,
+    "goldNisab": 13537.07,
+    "silverNisab": 1493.66,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-02",
+    "goldPerOz": 4679.7,
+    "silverPerOz": 72.74,
+    "goldNisab": 13161.88,
+    "silverNisab": 1431.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-06",
+    "goldPerOz": 4684.7,
+    "silverPerOz": 72.66,
+    "goldNisab": 13175.94,
+    "silverNisab": 1430.54,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-07",
+    "goldPerOz": 4684.7,
+    "silverPerOz": 71.83,
+    "goldNisab": 13175.94,
+    "silverNisab": 1414.1,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-08",
+    "goldPerOz": 4777.2,
+    "silverPerOz": 75.22,
+    "goldNisab": 13436.1,
+    "silverNisab": 1481,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-09",
+    "goldPerOz": 4818,
+    "silverPerOz": 76.28,
+    "goldNisab": 13550.85,
+    "silverNisab": 1501.73,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-10",
+    "goldPerOz": 4787.4,
+    "silverPerOz": 76.32,
+    "goldNisab": 13464.79,
+    "silverNisab": 1502.65,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-13",
+    "goldPerOz": 4767.4,
+    "silverPerOz": 75.52,
+    "goldNisab": 13408.54,
+    "silverNisab": 1486.88,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-14",
+    "goldPerOz": 4850.1,
+    "silverPerOz": 79.39,
+    "goldNisab": 13641.14,
+    "silverNisab": 1563.04,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-15",
+    "goldPerOz": 4823.6,
+    "silverPerOz": 79.49,
+    "goldNisab": 13566.6,
+    "silverNisab": 1565.01,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-16",
+    "goldPerOz": 4808.3,
+    "silverPerOz": 78.61,
+    "goldNisab": 13523.57,
+    "silverNisab": 1547.58,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-17",
+    "goldPerOz": 4879.6,
+    "silverPerOz": 81.74,
+    "goldNisab": 13724.11,
+    "silverNisab": 1609.24,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-20",
+    "goldPerOz": 4828.8,
+    "silverPerOz": 79.95,
+    "goldNisab": 13581.23,
+    "silverNisab": 1574.06,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-21",
+    "goldPerOz": 4719.6,
+    "silverPerOz": 76.41,
+    "goldNisab": 13274.1,
+    "silverNisab": 1504.37,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-22",
+    "goldPerOz": 4753,
+    "silverPerOz": 77.89,
+    "goldNisab": 13368.04,
+    "silverNisab": 1533.54,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-23",
+    "goldPerOz": 4724,
+    "silverPerOz": 75.46,
+    "goldNisab": 13286.47,
+    "silverNisab": 1485.74,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-24",
+    "goldPerOz": 4740.9,
+    "silverPerOz": 76.38,
+    "goldNisab": 13334.01,
+    "silverNisab": 1503.82,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-27",
+    "goldPerOz": 4693.7,
+    "silverPerOz": 75,
+    "goldNisab": 13201.25,
+    "silverNisab": 1476.65,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-28",
+    "goldPerOz": 4608.4,
+    "silverPerOz": 73.21,
+    "goldNisab": 12961.34,
+    "silverNisab": 1441.25,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-29",
+    "goldPerOz": 4561.5,
+    "silverPerOz": 71.57,
+    "goldNisab": 12829.43,
+    "silverNisab": 1409.04,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-04-30",
+    "goldPerOz": 4629.6,
+    "silverPerOz": 73.53,
+    "goldNisab": 13020.97,
+    "silverNisab": 1447.72,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-01",
+    "goldPerOz": 4644.5,
+    "silverPerOz": 75.95,
+    "goldNisab": 13062.88,
+    "silverNisab": 1495.31,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-04",
+    "goldPerOz": 4533.3,
+    "silverPerOz": 73.07,
+    "goldNisab": 12750.12,
+    "silverNisab": 1438.63,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-05",
+    "goldPerOz": 4568.5,
+    "silverPerOz": 73.11,
+    "goldNisab": 12849.12,
+    "silverNisab": 1439.34,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-06",
+    "goldPerOz": 4694.3,
+    "silverPerOz": 76.81,
+    "goldNisab": 13202.94,
+    "silverNisab": 1512.24,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-07",
+    "goldPerOz": 4710.9,
+    "silverPerOz": 79.7,
+    "goldNisab": 13249.63,
+    "silverNisab": 1569.14,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-08",
+    "goldPerOz": 4730.7,
+    "silverPerOz": 80.39,
+    "goldNisab": 13305.32,
+    "silverNisab": 1582.8,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-11",
+    "goldPerOz": 4728.7,
+    "silverPerOz": 85.49,
+    "goldNisab": 13299.69,
+    "silverNisab": 1683.01,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-12",
+    "goldPerOz": 4686.7,
+    "silverPerOz": 85.13,
+    "goldNisab": 13181.57,
+    "silverNisab": 1676.03,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-13",
+    "goldPerOz": 4706.7,
+    "silverPerOz": 88.89,
+    "goldNisab": 13237.82,
+    "silverNisab": 1750.01,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-14",
+    "goldPerOz": 4685.3,
+    "silverPerOz": 84.91,
+    "goldNisab": 13177.63,
+    "silverNisab": 1671.73,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-15",
+    "goldPerOz": 4561.9,
+    "silverPerOz": 77.16,
+    "goldNisab": 12830.56,
+    "silverNisab": 1519.13,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-18",
+    "goldPerOz": 4558,
+    "silverPerOz": 77.07,
+    "goldNisab": 12819.59,
+    "silverNisab": 1517.4,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-19",
+    "goldPerOz": 4511.2,
+    "silverPerOz": 74.83,
+    "goldNisab": 12687.96,
+    "silverNisab": 1473.2,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-20",
+    "goldPerOz": 4535.3,
+    "silverPerOz": 75.85,
+    "goldNisab": 12755.75,
+    "silverNisab": 1493.34,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-21",
+    "goldPerOz": 4542.5,
+    "silverPerOz": 76.41,
+    "goldNisab": 12776,
+    "silverNisab": 1504.43,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-22",
+    "goldPerOz": 4523.2,
+    "silverPerOz": 75.89,
+    "goldNisab": 12721.71,
+    "silverNisab": 1494.17,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-26",
+    "goldPerOz": 4502.3,
+    "silverPerOz": 76.31,
+    "goldNisab": 12662.93,
+    "silverNisab": 1502.28,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-27",
+    "goldPerOz": 4448.4,
+    "silverPerOz": 74.6,
+    "goldNisab": 12511.34,
+    "silverNisab": 1468.69,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-28",
+    "goldPerOz": 4499.3,
+    "silverPerOz": 75.64,
+    "goldNisab": 12654.49,
+    "silverNisab": 1489.29,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-05-29",
+    "goldPerOz": 4593,
+    "silverPerOz": 75.62,
+    "goldNisab": 12918.03,
+    "silverNisab": 1488.71,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-01",
+    "goldPerOz": 4506.3,
+    "silverPerOz": 75.01,
+    "goldNisab": 12674.18,
+    "silverNisab": 1476.73,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-02",
+    "goldPerOz": 4519.9,
+    "silverPerOz": 75.31,
+    "goldNisab": 12712.43,
+    "silverNisab": 1482.71,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-03",
+    "goldPerOz": 4466.9,
+    "silverPerOz": 73.48,
+    "goldNisab": 12563.37,
+    "silverNisab": 1446.58,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-04",
+    "goldPerOz": 4505,
+    "silverPerOz": 73.78,
+    "goldNisab": 12670.53,
+    "silverNisab": 1452.55,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-05",
+    "goldPerOz": 4365.3,
+    "silverPerOz": 68.94,
+    "goldNisab": 12277.61,
+    "silverNisab": 1357.34,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-08",
+    "goldPerOz": 4363.4,
+    "silverPerOz": 68.43,
+    "goldNisab": 12272.27,
+    "silverNisab": 1347.14,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-09",
+    "goldPerOz": 4286.4,
+    "silverPerOz": 65.09,
+    "goldNisab": 12055.7,
+    "silverNisab": 1281.56,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-10",
+    "goldPerOz": 4133.3,
+    "silverPerOz": 64.6,
+    "goldNisab": 11625.1,
+    "silverNisab": 1271.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-11",
+    "goldPerOz": 4114,
+    "silverPerOz": 63.88,
+    "goldNisab": 11570.82,
+    "silverNisab": 1257.76,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-12",
+    "goldPerOz": 4238.8,
+    "silverPerOz": 67.86,
+    "goldNisab": 11921.82,
+    "silverNisab": 1336,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-15",
+    "goldPerOz": 4351.6,
+    "silverPerOz": 70.07,
+    "goldNisab": 12239.08,
+    "silverNisab": 1379.45,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-16",
+    "goldPerOz": 4354.4,
+    "silverPerOz": 69.9,
+    "goldNisab": 12246.96,
+    "silverNisab": 1376.16,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-17",
+    "goldPerOz": 4381.4,
+    "silverPerOz": 70.7,
+    "goldNisab": 12322.89,
+    "silverNisab": 1391.85,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-18",
+    "goldPerOz": 4245.9,
+    "silverPerOz": 66.25,
+    "goldNisab": 11941.79,
+    "silverNisab": 1304.42,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-22",
+    "goldPerOz": 4202.7,
+    "silverPerOz": 65.53,
+    "goldNisab": 11820.29,
+    "silverNisab": 1290.08,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-23",
+    "goldPerOz": 4149.4,
+    "silverPerOz": 62.02,
+    "goldNisab": 11670.38,
+    "silverNisab": 1221.04,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-24",
+    "goldPerOz": 4008.8,
+    "silverPerOz": 58.05,
+    "goldNisab": 11274.94,
+    "silverNisab": 1142.92,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-25",
+    "goldPerOz": 4047.6,
+    "silverPerOz": 58.35,
+    "goldNisab": 11384.07,
+    "silverNisab": 1148.75,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-26",
+    "goldPerOz": 4096.3,
+    "silverPerOz": 59.22,
+    "goldNisab": 11521.04,
+    "silverNisab": 1165.85,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-29",
+    "goldPerOz": 4038.9,
+    "silverPerOz": 58.17,
+    "goldNisab": 11359.6,
+    "silverNisab": 1145.34,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-06-30",
+    "goldPerOz": 4038.5,
+    "silverPerOz": 59.48,
+    "goldNisab": 11358.47,
+    "silverNisab": 1170.97,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-01",
+    "goldPerOz": 4082.4,
+    "silverPerOz": 60.08,
+    "goldNisab": 11481.94,
+    "silverNisab": 1182.94,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-02",
+    "goldPerOz": 4125.7,
+    "silverPerOz": 60.64,
+    "goldNisab": 11603.73,
+    "silverNisab": 1193.93,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-06",
+    "goldPerOz": 4167.5,
+    "silverPerOz": 61.92,
+    "goldNisab": 11721.29,
+    "silverNisab": 1219.07,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-07",
+    "goldPerOz": 4157.4,
+    "silverPerOz": 60.93,
+    "goldNisab": 11692.88,
+    "silverNisab": 1199.6,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-08",
+    "goldPerOz": 4082.4,
+    "silverPerOz": 58.16,
+    "goldNisab": 11481.94,
+    "silverNisab": 1145.12,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-09",
+    "goldPerOz": 4140.8,
+    "silverPerOz": 60.38,
+    "goldNisab": 11646.2,
+    "silverNisab": 1188.71,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-10",
+    "goldPerOz": 4113.7,
+    "silverPerOz": 59.81,
+    "goldNisab": 11569.98,
+    "silverNisab": 1177.51,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-13",
+    "goldPerOz": 4005.7,
+    "silverPerOz": 57.63,
+    "goldNisab": 11266.22,
+    "silverNisab": 1134.69,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-14",
+    "goldPerOz": 4069.7,
+    "silverPerOz": 58.77,
+    "goldNisab": 11446.22,
+    "silverNisab": 1157.09,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-15",
+    "goldPerOz": 4051.8,
+    "silverPerOz": 57.11,
+    "goldNisab": 11395.88,
+    "silverNisab": 1124.37,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-16",
+    "goldPerOz": 3992.1,
+    "silverPerOz": 55.9,
+    "goldNisab": 11227.97,
+    "silverNisab": 1100.51,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-17",
+    "goldPerOz": 4018.8,
+    "silverPerOz": 56.04,
+    "goldNisab": 11303.07,
+    "silverNisab": 1103.27,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-20",
+    "goldPerOz": 4015.9,
+    "silverPerOz": 56.8,
+    "goldNisab": 11294.91,
+    "silverNisab": 1118.31,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-21",
+    "goldPerOz": 4076.4,
+    "silverPerOz": 58.83,
+    "goldNisab": 11465.07,
+    "silverNisab": 1158.33,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-22",
+    "goldPerOz": 4151.9,
+    "silverPerOz": 60.02,
+    "goldNisab": 11677.41,
+    "silverNisab": 1181.64,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-23",
+    "goldPerOz": 4050.2,
+    "silverPerOz": 57.8,
+    "goldNisab": 11391.38,
+    "silverNisab": 1137.92,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-24",
+    "goldPerOz": 4070.8,
+    "silverPerOz": 58.66,
+    "goldNisab": 11449.32,
+    "silverNisab": 1154.81,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-27",
+    "goldPerOz": 4077,
+    "silverPerOz": 58.47,
+    "goldNisab": 11466.76,
+    "silverNisab": 1151.19,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-28",
+    "goldPerOz": 4038.7,
+    "silverPerOz": 57.3,
+    "goldNisab": 11359.03,
+    "silverNisab": 1128.03,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-29",
+    "goldPerOz": 4036.3,
+    "silverPerOz": 57.86,
+    "goldNisab": 11352.28,
+    "silverNisab": 1139.2,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-30",
+    "goldPerOz": 4100.1,
+    "silverPerOz": 58.81,
+    "goldNisab": 11531.73,
+    "silverNisab": 1157.94,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-07-31",
+    "goldPerOz": 4107,
+    "silverPerOz": 57.59,
+    "goldNisab": 11551.13,
+    "silverNisab": 1133.84,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-03",
+    "goldPerOz": 4090.5,
+    "silverPerOz": 57.67,
+    "goldNisab": 11504.72,
+    "silverNisab": 1135.34,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-04",
+    "goldPerOz": 4152.6,
+    "silverPerOz": 60.06,
+    "goldNisab": 11679.38,
+    "silverNisab": 1182.37,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-05",
+    "goldPerOz": 4305.2,
+    "silverPerOz": 62.1,
+    "goldNisab": 12108.58,
+    "silverNisab": 1222.59,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-06",
+    "goldPerOz": 4299.6,
+    "silverPerOz": 61.44,
+    "goldNisab": 12092.83,
+    "silverNisab": 1209.6,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-07",
+    "goldPerOz": 4399.7,
+    "silverPerOz": 63.33,
+    "goldNisab": 12374.36,
+    "silverNisab": 1246.87,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-10",
+    "goldPerOz": 4419.7,
+    "silverPerOz": 65.11,
+    "goldNisab": 12430.62,
+    "silverNisab": 1281.8,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-11",
+    "goldPerOz": 4441.1,
+    "silverPerOz": 64.77,
+    "goldNisab": 12490.8,
+    "silverNisab": 1275.16,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-12",
+    "goldPerOz": 4467.5,
+    "silverPerOz": 65.56,
+    "goldNisab": 12565.06,
+    "silverNisab": 1290.64,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-13",
+    "goldPerOz": 4420.4,
+    "silverPerOz": 64.87,
+    "goldNisab": 12432.58,
+    "silverNisab": 1277.21,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-14",
+    "goldPerOz": 4437.3,
+    "silverPerOz": 64.99,
+    "goldNisab": 12480.12,
+    "silverNisab": 1279.47,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-17",
+    "goldPerOz": 4473.7,
+    "silverPerOz": 66.12,
+    "goldNisab": 12582.49,
+    "silverNisab": 1301.78,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-18",
+    "goldPerOz": 4420.6,
+    "silverPerOz": 63.94,
+    "goldNisab": 12433.15,
+    "silverNisab": 1258.86,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-19",
+    "goldPerOz": 4545.3,
+    "silverPerOz": 65.73,
+    "goldNisab": 12783.87,
+    "silverNisab": 1294.16,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-20",
+    "goldPerOz": 4571.4,
+    "silverPerOz": 68.03,
+    "goldNisab": 12857.28,
+    "silverNisab": 1339.28,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-21",
+    "goldPerOz": 4680.6,
+    "silverPerOz": 69.47,
+    "goldNisab": 13164.41,
+    "silverNisab": 1367.63,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-24",
+    "goldPerOz": 4697.8,
+    "silverPerOz": 68.54,
+    "goldNisab": 13212.78,
+    "silverNisab": 1349.42,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-25",
+    "goldPerOz": 4694.5,
+    "silverPerOz": 68.64,
+    "goldNisab": 13203.5,
+    "silverNisab": 1351.29,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-26",
+    "goldPerOz": 4653.3,
+    "silverPerOz": 67.99,
+    "goldNisab": 13087.63,
+    "silverNisab": 1338.58,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-27",
+    "goldPerOz": 4664,
+    "silverPerOz": 69.43,
+    "goldNisab": 13117.72,
+    "silverNisab": 1366.91,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-28",
+    "goldPerOz": 4529.9,
+    "silverPerOz": 67,
+    "goldNisab": 12740.56,
+    "silverNisab": 1318.99,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-08-31",
+    "goldPerOz": 4481.5,
+    "silverPerOz": 66.22,
+    "goldNisab": 12604.43,
+    "silverNisab": 1303.75,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-01",
+    "goldPerOz": 4396.4,
+    "silverPerOz": 64.62,
+    "goldNisab": 12365.08,
+    "silverNisab": 1272.19,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-02",
+    "goldPerOz": 4414.6,
+    "silverPerOz": 64.72,
+    "goldNisab": 12416.27,
+    "silverNisab": 1274.26,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-03",
+    "goldPerOz": 4539.9,
+    "silverPerOz": 66.97,
+    "goldNisab": 12768.68,
+    "silverNisab": 1318.55,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-04",
+    "goldPerOz": 4476.6,
+    "silverPerOz": 66.05,
+    "goldNisab": 12590.65,
+    "silverNisab": 1300.32,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-08",
+    "goldPerOz": 4439,
+    "silverPerOz": 66.3,
+    "goldNisab": 12484.9,
+    "silverNisab": 1305.24,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-09",
+    "goldPerOz": 4460.7,
+    "silverPerOz": 67.94,
+    "goldNisab": 12545.93,
+    "silverNisab": 1337.63,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-10",
+    "goldPerOz": 4407.3,
+    "silverPerOz": 64.28,
+    "goldNisab": 12395.74,
+    "silverNisab": 1265.61,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-11",
+    "goldPerOz": 4408.9,
+    "silverPerOz": 64.55,
+    "goldNisab": 12400.24,
+    "silverNisab": 1270.93,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-14",
+    "goldPerOz": 4351.9,
+    "silverPerOz": 63.51,
+    "goldNisab": 12239.92,
+    "silverNisab": 1250.43,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-15",
+    "goldPerOz": 4332.8,
+    "silverPerOz": 63.24,
+    "goldNisab": 12186.2,
+    "silverNisab": 1244.98,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-16",
+    "goldPerOz": 4387.5,
+    "silverPerOz": 64.29,
+    "goldNisab": 12340.05,
+    "silverNisab": 1265.69,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-17",
+    "goldPerOz": 4399.7,
+    "silverPerOz": 65.47,
+    "goldNisab": 12374.36,
+    "silverNisab": 1288.96,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-18",
+    "goldPerOz": 4424.9,
+    "silverPerOz": 66.56,
+    "goldNisab": 12445.24,
+    "silverNisab": 1310.34,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-21",
+    "goldPerOz": 4383.9,
+    "silverPerOz": 65.82,
+    "goldNisab": 12329.93,
+    "silverNisab": 1295.95,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-22",
+    "goldPerOz": 4376.4,
+    "silverPerOz": 65.93,
+    "goldNisab": 12308.83,
+    "silverNisab": 1298.06,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-23",
+    "goldPerOz": 4318.4,
+    "silverPerOz": 64.38,
+    "goldNisab": 12145.7,
+    "silverNisab": 1267.54,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-24",
+    "goldPerOz": 4298,
+    "silverPerOz": 63.46,
+    "goldNisab": 12088.33,
+    "silverNisab": 1249.33,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-25",
+    "goldPerOz": 4321.2,
+    "silverPerOz": 64.25,
+    "goldNisab": 12153.58,
+    "silverNisab": 1264.84,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-28",
+    "goldPerOz": 4168.4,
+    "silverPerOz": 61.22,
+    "goldNisab": 11723.82,
+    "silverNisab": 1205.29,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-29",
+    "goldPerOz": 4179.7,
+    "silverPerOz": 60.67,
+    "goldNisab": 11755.6,
+    "silverNisab": 1194.42,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-09-30",
+    "goldPerOz": 4186.7,
+    "silverPerOz": 60.1,
+    "goldNisab": 11775.29,
+    "silverNisab": 1183.2,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-01",
+    "goldPerOz": 4202.3,
+    "silverPerOz": 60.72,
+    "goldNisab": 11819.17,
+    "silverNisab": 1195.54,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-02",
+    "goldPerOz": 4162.3,
+    "silverPerOz": 59.98,
+    "goldNisab": 11706.67,
+    "silverNisab": 1180.82,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-05",
+    "goldPerOz": 4156.8,
+    "silverPerOz": 60.87,
+    "goldNisab": 11691.2,
+    "silverNisab": 1198.38,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-06",
+    "goldPerOz": 4187.1,
+    "silverPerOz": 61.17,
+    "goldNisab": 11776.42,
+    "silverNisab": 1204.27,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-07",
+    "goldPerOz": 4140.7,
+    "silverPerOz": 59.9,
+    "goldNisab": 11645.92,
+    "silverNisab": 1179.28,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-08",
+    "goldPerOz": 4157,
+    "silverPerOz": 59.06,
+    "goldNisab": 11691.76,
+    "silverNisab": 1162.84,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-09",
+    "goldPerOz": 4216.3,
+    "silverPerOz": 60.67,
+    "goldNisab": 11858.54,
+    "silverNisab": 1194.46,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-12",
+    "goldPerOz": 4190.6,
+    "silverPerOz": 60.14,
+    "goldNisab": 11786.26,
+    "silverNisab": 1184.05,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-13",
+    "goldPerOz": 4177.3,
+    "silverPerOz": 59.16,
+    "goldNisab": 11748.85,
+    "silverNisab": 1164.75,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-14",
+    "goldPerOz": 4107.9,
+    "silverPerOz": 55.55,
+    "goldNisab": 11553.66,
+    "silverNisab": 1093.66,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-15",
+    "goldPerOz": 4170.1,
+    "silverPerOz": 56.84,
+    "goldNisab": 11728.6,
+    "silverNisab": 1119,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-16",
+    "goldPerOz": 4181.1,
+    "silverPerOz": 56.99,
+    "goldNisab": 11759.54,
+    "silverNisab": 1122.11,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-19",
+    "goldPerOz": 4160.1,
+    "silverPerOz": 56.97,
+    "goldNisab": 11700.48,
+    "silverNisab": 1121.69,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-20",
+    "goldPerOz": 4142.6,
+    "silverPerOz": 57.71,
+    "goldNisab": 11651.26,
+    "silverNisab": 1136.11,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-21",
+    "goldPerOz": 4150,
+    "silverPerOz": 57.42,
+    "goldNisab": 11672.07,
+    "silverNisab": 1130.51,
+    "source": "COMEX futures (daily close)",
+    "backfill": true
+  },
+  {
+    "date": "2026-10-22",
+    "goldPerOz": 4086.92,
+    "silverPerOz": 55.93,
+    "goldNisab": 11494.64,
+    "silverNisab": 1101.17,
+    "source": "Swissquote"
+  },
+  {
+    "date": "2026-10-23",
+    "goldPerOz": 4029.72,
+    "silverPerOz": 54.03,
+    "goldNisab": 11333.78,
+    "silverNisab": 1063.71,
+    "source": "Swissquote"
+  },
+  {
+    "date": "2026-10-24",
+    "goldPerOz": 3997.89,
+    "silverPerOz": 53.94,
+    "goldNisab": 11244.25,
+    "silverNisab": 1061.89,
+    "source": "Swissquote"
+  },
+  {
+    "date": "2026-10-25",
+    "goldPerOz": 3997.89,
+    "silverPerOz": 53.94,
+    "goldNisab": 11244.25,
+    "silverNisab": 1061.89,
+    "source": "Swissquote"
+  },
+  {
+    "date": "2026-10-26",
+    "goldPerOz": 4017.08,
+    "silverPerOz": 54.05,
+    "goldNisab": 11298.23,
+    "silverNisab": 1064.15,
+    "source": "Swissquote"
+  },
+  {
+    "date": "2026-10-27",
+    "goldPerOz": 3996.89,
+    "silverPerOz": 53.15,
+    "goldNisab": 11241.44,
+    "silverNisab": 1046.45,
+    "source": "Swissquote"
+  },
+  {
+    "date": "2026-10-28",
+    "goldPerOz": 4050.91,
+    "silverPerOz": 53.92,
+    "goldNisab": 11393.36,
+    "silverNisab": 1061.51,
+    "source": "Swissquote"
+  }
+]
