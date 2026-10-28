@@ -12,7 +12,7 @@ const data = {
   })),
   books: bookList.map((b) => {
     const a = b.author ? scholars.get(b.author)! : null;
-    return { id: b.id, title: b.title, author: b.author, authorName: a?.short ?? '', death: a ? deathLabel(a) : '',
+    return { id: b.id, title: b.title, author: b.author, recensionBy: b.recensionBy, authorName: a?.short ?? '', death: a ? deathLabel(a) : '',
       place: bookPlace(b), influencedBy: b.influencedBy };
   }),
   places: Object.fromEntries([...places.values()].map((p) => [p.id, { name: p.name, lat: p.lat, lng: p.lng }])),
@@ -50,6 +50,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
           <li><span class="dot book"></span>Book</li>
           <li><span class="line teach"></span>Teacher → student</li>
           <li><span class="line wrote"></span>Author → book</li>
+          <li><span class="line rec"></span>Recension → book</li>
           <li><span class="line infl"></span>Book → book it influenced</li>
         </ul>
         <div id="detail" class="detail" hidden></div>
@@ -69,7 +70,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
   if (el) {
     type D = {
       scholars: { id: string; name: string; short: string; death: string; deathAh: number | null; place: string | null; places: string[]; students: string[] }[];
-      books: { id: string; title: string; author: string | null; authorName: string; death: string; place: string | null; influencedBy: string[] }[];
+      books: { id: string; title: string; author: string | null; recensionBy: string[]; authorName: string; death: string; place: string | null; influencedBy: string[] }[];
       places: Record<string, { name: string; lat: number; lng: number }>;
     };
     const d: D = JSON.parse(el.textContent!);
@@ -145,6 +146,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
       const edges = new DataSet<any>([
         ...d.scholars.flatMap((t) => t.students.map((s) => ({ from: 's:' + t.id, to: 's:' + s, color: { color: TEAL }, kind: 'teach' }))),
         ...d.books.filter((b) => b.author).map((b) => ({ from: 's:' + b.author, to: 'b:' + b.id, dashes: true, color: { color: MUTED }, kind: 'wrote' })),
+        ...d.books.flatMap((b) => b.recensionBy.map((x) => ({ from: 's:' + x, to: 'b:' + b.id, dashes: [2, 4], color: { color: '#7C3AED' }, kind: 'rec' }))),
         ...d.books.flatMap((b) => b.influencedBy.map((x) => ({ from: 'b:' + x, to: 'b:' + b.id, color: { color: GOLD }, kind: 'infl' }))),
       ].map((e, i) => ({ id: i, arrows: 'to', width: 1.5, ...e })));
 
@@ -213,6 +215,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
   .line { width: 22px; height: 0; display: inline-block; border-top: 2px solid; }
   .line.teach { border-color: #0F766E; }
   .line.wrote { border-color: #64748B; border-top-style: dashed; }
+  .line.rec { border-color: #7C3AED; border-top-style: dotted; }
   .line.infl { border-color: #D4A329; }
   .detail { margin-top: 14px; padding: 14px 16px; border: 1px solid var(--sand); border-radius: 10px; background: var(--card); display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
   .detail :global(strong) { font-family: var(--serif); font-size: 1.2rem; }

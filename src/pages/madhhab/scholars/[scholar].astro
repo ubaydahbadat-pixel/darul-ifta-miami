@@ -12,6 +12,7 @@ const rows = [
   { label: 'Teachers', items: s.teachers.map((id) => ({ href: `/madhhab/scholars/${id}/`, text: link(id).name, meta: deathLabel(link(id)) })) },
   { label: 'Students', items: s.students.map((id) => ({ href: `/madhhab/scholars/${id}/`, text: link(id).name, meta: deathLabel(link(id)) })) },
   { label: 'Books written', items: s.books.map((id) => ({ href: `/madhhab/books/${id}/`, text: books.get(id)!.title, meta: '' })) },
+  { label: 'Recensions transmitted', items: s.recensions.map((id) => { const x = books.get(id)!; const a = x.author ? scholars.get(x.author)! : null; return { href: `/madhhab/books/${id}/`, text: x.title, meta: a ? a.short : '' }; }) },
 ];
 ---
 <Base title={`${s.short} | Scholars`}>

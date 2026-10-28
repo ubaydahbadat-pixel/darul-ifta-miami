@@ -218,6 +218,16 @@ collections:
         display_fields: [short_name]
         required: false
         hint: "Enter the author under Madhhab: Scholars first. The author's date of death is taken from there."
+      - name: recension_by
+        label: Recension (riwāyah) of
+        widget: relation
+        collection: scholars
+        value_field: "{{slug}}"
+        search_fields: [name, short_name]
+        display_fields: [short_name]
+        multiple: true
+        required: false
+        hint: "If this entry is a particular recension of the book, the scholar(s) it is transmitted through, e.g. al-Aṣl in the recension of Abū Sulaymān al-Jūzjānī."
       - name: place
         label: Location
         widget: relation

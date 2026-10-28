@@ -5,10 +5,10 @@ import { getCollection } from 'astro:content';
 
 export type Scholar = {
   id: string; name: string; short: string; deathAh: number | null; approx: boolean;
-  places: string[]; teachers: string[]; students: string[]; books: string[];
+  places: string[]; teachers: string[]; students: string[]; books: string[]; recensions: string[];
 };
 export type Book = {
-  id: string; title: string; author: string | null; place: string | null; content: string;
+  id: string; title: string; author: string | null; recensionBy: string[]; place: string | null; content: string;
   fiqhPoints: string[]; influencedBy: string[]; influenced: string[];
 };
 export type Place = { id: string; name: string; lat: number; lng: number };
@@ -30,10 +30,10 @@ export async function loadMadhhab() {
   const scholars = new Map<string, Scholar>(scholarEntries.map((e) => [e.id, {
     id: e.id, name: e.data.name, short: e.data.short_name?.trim() || e.data.name,
     deathAh: e.data.death_ah ?? null, approx: e.data.death_approximate,
-    places: e.data.places.filter((p) => places.has(p)), teachers: [...e.data.teachers], students: [...e.data.students], books: [],
+    places: e.data.places.filter((p) => places.has(p)), teachers: [...e.data.teachers], students: [...e.data.students], books: [], recensions: [],
   }]));
   const books = new Map<string, Book>(bookEntries.map((e) => [e.id, {
-    id: e.id, title: e.data.title, author: e.data.author ?? null, place: e.data.place ?? null,
+    id: e.id, title: e.data.title, author: e.data.author ?? null, recensionBy: [...e.data.recension_by], place: e.data.place ?? null,
     content: e.data.content, fiqhPoints: e.data.fiqh_points,
     influencedBy: [...e.data.influenced_by], influenced: [...e.data.influenced],
   }]));
@@ -53,6 +53,8 @@ export async function loadMadhhab() {
     if (b.author && !scholars.has(b.author)) b.author = null;
     if (b.place && !places.has(b.place)) b.place = null;
     if (b.author) scholars.get(b.author)!.books.push(b.id);
+    b.recensionBy = uniq(b.recensionBy).filter((x) => scholars.has(x));
+    for (const x of b.recensionBy) scholars.get(x)!.recensions.push(b.id);
   }
   for (const b of books.values()) {
     b.influencedBy = uniq(b.influencedBy).filter((x) => books.has(x) && x !== b.id);

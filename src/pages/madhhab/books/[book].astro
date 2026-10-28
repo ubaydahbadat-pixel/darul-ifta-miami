@@ -25,6 +25,7 @@ const contentHtml = b.content ? await md(b.content) : '';
   <dl class="facts">
     {author && <><dt>Author</dt><dd><a href={`/madhhab/scholars/${author.id}/`}>{author.name}</a></dd></>}
     {author && deathLabel(author) && <><dt>Author's death</dt><dd>{deathLabel(author).replace('d. ', '')}{author.approx && ' (approximate)'}</dd></>}
+    {b.recensionBy.length > 0 && <><dt>Recension</dt><dd>{b.recensionBy.map((id, i) => <>{i > 0 && ', '}<a href={`/madhhab/scholars/${id}/`}>{scholars.get(id)!.short}</a></>)}</dd></>}
     {place && <><dt>Location</dt><dd>{places.get(place)!.name}</dd></>}
   </dl>
   {contentHtml && <section><h2>Content</h2><div set:html={contentHtml} /></section>}
