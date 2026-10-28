@@ -41,7 +41,7 @@ Every fatwa is formulated from the juristic principles (uṣūl) as presented by
 
 - **Explanation = numbered sections ("nodes")**, one per part of the question (e.g. 1. the basis of the ruling, 2. the specific case, 3. a further detail of the case). Within each node, sources follow the layers: al-Qudūrī first, then the next layer, then later works as support.
 - **No Arabic text in the Explanation** — it is for the general reader. Name sources in English transliteration; all Arabic/Urdu texts go in References.
-- **Names:** full diacritics; classical scholars get their death date on first mention in a fatwa, e.g. Imām al-Qudūrī (d. 428 AH). Contemporary authors get no date. The Mufti confirms each date.
+- **Names:** ʿAbdullāh is written as one word (also Abū ʿAbdullāh), never ʿAbd Allāh. Full diacritics; classical scholars get their death date on first mention in a fatwa, e.g. Imām al-Qudūrī (d. 428 AH). Contemporary authors get no date. The Mufti confirms each date.
 - **References:** ordered the same way, primary first. Each source is one item in the `references` list; numbering is automatic.
 
 ## Reference text conventions

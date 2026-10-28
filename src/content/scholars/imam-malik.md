@@ -1,5 +1,5 @@
 ---
-name: Abū ʿAbd Allāh Mālik ibn Anas ibn Mālik ibn Abī ʿĀmir al-Aṣbaḥī al-Ḥimyarī al-Madanī
+name: Abū ʿAbdullāh Mālik ibn Anas ibn Mālik ibn Abī ʿĀmir al-Aṣbaḥī al-Ḥimyarī al-Madanī
 short_name: Imām Mālik
 death_ah: 179
 death_approximate: false
