@@ -8,5 +8,5 @@ places:
 teachers:
   - ibrahim-al-nakhai
 students: []
-draft: true
+draft: false
 ---
