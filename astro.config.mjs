@@ -3,7 +3,7 @@ import fatwaSections from './src/plugins/fatwa-sections.mjs';
 
 export default defineConfig({
   // Change this to your real domain before going live.
-  site: 'https://example.com',
+  site: 'https://daruliftamiami.com',
   trailingSlash: 'always',
   markdown: {
     rehypePlugins: [fatwaSections],
