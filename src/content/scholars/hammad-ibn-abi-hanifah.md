@@ -1,9 +1,10 @@
 ---
-name: Ḥammād ibn Abī Ḥanīfah
+name: Ḥammād ibn al-Nuʿmān ibn Thābit al-Kūfī
 short_name: Ḥammād ibn Abī Ḥanīfah
-death_ah: null
+death_ah: 176
 death_approximate: false
-places: []
+places:
+- kufa
 chains:
 - iraq
 teachers:

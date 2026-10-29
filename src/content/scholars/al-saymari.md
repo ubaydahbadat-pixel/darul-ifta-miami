@@ -1,9 +1,10 @@
 ---
-name: al-Ṣaymarī
+name: Abū ʿAbdullāh al-Ḥusayn ibn ʿAlī ibn Muḥammad al-Ṣaymarī
 short_name: al-Ṣaymarī
-death_ah: null
+death_ah: 436
 death_approximate: false
-places: []
+places:
+- baghdad
 chains:
 - iraq
 teachers:

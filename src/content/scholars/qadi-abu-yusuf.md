@@ -12,8 +12,8 @@ places:
 chains:
 - iraq
 teachers:
-- hammad
 - abu-hanifah
-students: []
+students:
+- imam-ahmad
 draft: false
 ---

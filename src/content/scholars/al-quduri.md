@@ -1,7 +1,7 @@
 ---
-name: al-Qudūrī
+name: Abū al-Ḥasan Aḥmad ibn Muḥammad ibn Aḥmad al-Qudūrī
 short_name: al-Qudūrī
-death_ah: null
+death_ah: 428
 death_approximate: false
 places: []
 chains:

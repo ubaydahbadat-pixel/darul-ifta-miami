@@ -1,12 +1,15 @@
 ---
-name: Hilāl ibn Yaḥyā
+name: Hilāl ibn Yaḥyā ibn Muslim al-Raʾy al-Baṣrī
 short_name: Hilāl ibn Yaḥyā
-death_ah: null
+death_ah: 245
 death_approximate: false
-places: []
+places:
+- basra
 chains:
 - iraq
-teachers: []
+teachers:
+- qadi-abu-yusuf
+- imam-zufar
 students: []
 draft: false
 ---

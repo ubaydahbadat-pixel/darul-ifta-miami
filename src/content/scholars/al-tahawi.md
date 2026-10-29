@@ -1,7 +1,7 @@
 ---
-name: al-Ṭaḥāwī
+name: Abū Jaʿfar Aḥmad ibn Muḥammad ibn Salāmah al-Ṭaḥāwī
 short_name: al-Ṭaḥāwī
-death_ah: null
+death_ah: 321
 death_approximate: false
 places: []
 chains:

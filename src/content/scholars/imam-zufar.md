@@ -12,7 +12,6 @@ chains:
 - iraq
 teachers:
 - abu-hanifah
-- hammad
 students: []
 draft: false
 ---

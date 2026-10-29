@@ -1,7 +1,7 @@
 ---
-name: Muḥammad ibn Shujāʿ
-short_name: Muḥammad ibn Shujāʿ
-death_ah: null
+name: Muḥammad ibn Shujāʿ al-Thaljī
+short_name: Muḥammad ibn Shujāʿ al-Thaljī
+death_ah: 266
 death_approximate: false
 places: []
 chains:

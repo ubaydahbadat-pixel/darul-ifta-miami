@@ -1,12 +1,15 @@
 ---
-name: Muʿallā ibn Manṣūr
+name: al-Muʿallā ibn Manṣūr al-Rāzī
 short_name: Muʿallā ibn Manṣūr
-death_ah: null
+death_ah: 211
 death_approximate: false
-places: []
+places:
+- baghdad
 chains:
 - iraq
-teachers: []
+teachers:
+- qadi-abu-yusuf
+- imam-muhammad
 students: []
 draft: false
 ---

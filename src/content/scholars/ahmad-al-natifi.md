@@ -1,9 +1,10 @@
 ---
-name: Aḥmad al-Nāṭifī
+name: Abū al-ʿAbbās Aḥmad ibn Muḥammad ibn ʿUmar al-Nāṭifī
 short_name: Aḥmad al-Nāṭifī
-death_ah: null
+death_ah: 446
 death_approximate: false
-places: []
+places:
+- rayy
 chains:
 - iraq
 teachers:

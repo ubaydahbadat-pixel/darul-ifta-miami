@@ -1,12 +1,14 @@
 ---
-name: Muḥammad ibn Samāʿah
+name: Muḥammad ibn Samāʿah ibn ʿUbaydullāh al-Tamīmī, Abū ʿAbdullāh
 short_name: Muḥammad ibn Samāʿah
-death_ah: null
+death_ah: 233
 death_approximate: false
 places: []
 chains:
 - iraq
-teachers: []
+teachers:
+- qadi-abu-yusuf
+- imam-muhammad
 students: []
 draft: false
 ---

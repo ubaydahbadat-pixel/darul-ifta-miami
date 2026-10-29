@@ -1,8 +1,8 @@
 ---
 name: Naṣr ibn Muḥammad ibn Ibrāhīm ibn al-Khaṭṭāb Abū al-Layth al-Samarqandī al-Balkhī
 short_name: Abū al-Layth al-Samarqandī
-death_ah: 375
-death_approximate: false
+death_ah: 373
+death_approximate: true
 places:
 - balkh
 - samarqand

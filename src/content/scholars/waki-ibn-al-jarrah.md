@@ -1,11 +1,12 @@
 ---
-name: Wakīʿ ibn al-Jarrāḥ
+name: Wakīʿ ibn al-Jarrāḥ ibn Malīḥ, Abū Sufyān al-Kūfī
 short_name: Wakīʿ ibn al-Jarrāḥ
 tabaqah: Imāms of Fiqh
 order: 80
-death_ah: null
+death_ah: 197
 death_approximate: false
-places: []
+places:
+- kufa
 teachers:
 - abu-hanifah
 students: []

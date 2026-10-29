@@ -1,8 +1,8 @@
 ---
-name: Muḥammad ibn Abī Sahl al-Sarakhsī
-short_name: Muḥammad ibn Abī Sahl al-Sarakhsī
-death_ah: 481
-death_approximate: false
+name: Abū Bakr Muḥammad ibn Aḥmad ibn Abī Sahl al-Sarakhsī, Shams al-Aʾimmah
+short_name: Shams al-Aʾimmah al-Sarakhsī
+death_ah: 490
+death_approximate: true
 places:
 - balkh
 - sarakhs

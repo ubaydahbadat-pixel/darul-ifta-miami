@@ -1,13 +1,14 @@
 ---
-name: ʿAlqamah ibn Qays ibn ʿAbdullāh ibn Mālik ibn ʿAlqamah ibn Salāmān al-Nakhaʿī al-Kūfī
+name: ʿAlqamah ibn Qays ibn ʿAbdullāh ibn Mālik ibn ʿAlqamah ibn Salāmān al-Nakhaʿī
+  al-Kūfī
 short_name: ʿAlqamah
 tabaqah: Tābiʿūn
 death_ah: 61
-death_approximate: false
+death_approximate: true
 places:
-  - kufa
+- kufa
 teachers:
-  - abd-allah-ibn-masud
+- abd-allah-ibn-masud
 students: []
 draft: false
 ---

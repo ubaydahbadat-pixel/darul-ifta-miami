@@ -8,12 +8,15 @@ death_approximate: false
 places:
 - kufa
 - wasit
+- baghdad
+- rayy
 chains:
 - iraq
 teachers:
 - qadi-abu-yusuf
 - abu-hanifah
 - imam-malik
-students: []
+students:
+- imam-al-shafii
 draft: false
 ---

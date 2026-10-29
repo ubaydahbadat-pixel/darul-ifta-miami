@@ -1,8 +1,8 @@
 ---
-name: Muḥammad ibn Yaḥyā al-Jurjānī
+name: Abū ʿAbdullāh Muḥammad ibn Yaḥyā ibn Mahdī al-Jurjānī
 short_name: Muḥammad ibn Yaḥyā al-Jurjānī
-death_ah: null
-death_approximate: false
+death_ah: 397
+death_approximate: true
 places: []
 chains:
 - iraq
