@@ -6,8 +6,11 @@ death_approximate: true
 places:
 - baghdad
 - juzjan
+chains:
+- balkh
 teachers:
 - imam-muhammad
+- qadi-abu-yusuf
 students: []
 draft: false
 ---

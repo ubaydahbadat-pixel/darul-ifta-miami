@@ -52,6 +52,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
         <div class="controls">
           <label class="toggle"><input type="checkbox" id="show-scholars" checked /> Scholars</label>
           <label class="toggle"><input type="checkbox" id="show-books" checked /> Books</label>
+          <label class="toggle"><input type="checkbox" id="show-unlinked" /> Scholars with no links yet <span class="count-unlinked"></span></label>
         </div>
         <div id="net" class="canvas"></div>
         <ul class="legend">
@@ -216,17 +217,20 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
         });
       });
       const bookLevel = (b: D['books'][number]): number => {
-        const own = (b.author && sById2.get(b.author) ? rowOfScholar(sById2.get(b.author)!) : (maxGen + 1) * 2) + 1;
+        const based = b.basedOn.some((x) => bById.has(x));
+        // A book with no author entered sits just under the book it is based on (or on the bottom row).
+        const own = b.author && sById2.get(b.author) ? rowOfScholar(sById2.get(b.author)!) + 1 : based ? 0 : (maxGen + 1) * 2 + 1;
         const below = b.basedOn.filter((x) => bById.has(x)).map((x) => bookLevel(bById.get(x)!) + 1);
         return Math.max(own, ...below);
       };
       const plural = (t: string) => ({ 'Commentary (Sharḥ)': 'Commentaries', 'Abridgement (Mukhtaṣar)': 'Abridgements', 'Gloss (Ḥāshiyah)': 'Glosses' } as Record<string, string>)[t] ?? 'Works';
-      const nodes = new DataSet<any>([
+      const allNodes: any[] = ([
         ...d.scholars.map((s) => ({ id: 's:' + s.id, label: s.short + (s.death ? `\n${s.death}` : ''), group: s.chains[0] && chainById.has(s.chains[0]) ? 'chain:' + s.chains[0] : 'scholar', kind: 's', ref: s, level: rowOfScholar(s) })),
         ...d.books.filter((b) => !collapsed.has(b.id)).map((b) => ({ id: 'b:' + b.id, label: wrap(b.title), group: 'book', kind: 'b', ref: b, level: bookLevel(b) })),
         ...summaries.map((g) => ({ id: g.id, label: `${plural(g.type)} (${g.count})`, group: 'summary', kind: 'g', ref: g, level: bookLevel(bById.get(g.base)!) + 1 })),
       ]);
-      const edges = new DataSet<any>([
+      const nodeById = new Map(allNodes.map((n) => [n.id, n]));
+      const allEdges: any[] = ([
         ...d.scholars.flatMap((t) => t.students.map((s) => ({ from: 's:' + t.id, to: 's:' + s, color: { color: TEAL }, kind: 'teach' }))),
         ...d.books.filter((b) => b.author && !collapsed.has(b.id)).map((b) => ({ from: 's:' + b.author, to: 'b:' + b.id, dashes: true, color: { color: MUTED }, kind: 'wrote' })),
         ...d.books.flatMap((b) => b.recensionBy.map((x) => ({ from: 's:' + x, to: 'b:' + b.id, dashes: [2, 4], color: { color: '#7C3AED' }, kind: 'rec' }))),
@@ -240,7 +244,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
         color: { background: bg, border, highlight: { background: bg, border: '#0F172A' }, hover: { background: bg, border: '#0F172A' } },
         font: { size: 14, face: 'Source Sans 3, system-ui', color: '#FFFFFF', multi: false } });
       const chainGroups = Object.fromEntries(d.chains.map((c) => ['chain:' + c.id, scholarStyle(c.colour, c.colour)]));
-      const net = new Network(document.getElementById('net')!, { nodes, edges }, {
+      const net = new Network(document.getElementById('net')!, { nodes: new DataSet<any>([]), edges: new DataSet<any>([]) }, {
         groups: {
           ...chainGroups,
           scholar: { shape: 'box', margin: 8, shapeProperties: { borderRadius: 14 }, color: { background: TEAL, border: '#0B5A54', highlight: { background: '#14A396', border: '#0B5A54' }, hover: { background: '#14A396', border: '#0B5A54' } }, font: { size: 14, face: 'Source Sans 3, system-ui', color: '#FFFFFF', multi: false } },
@@ -256,7 +260,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
       const detail = document.getElementById('detail')!;
       function select(id: string | undefined) {
         if (!id) { detail.hidden = true; return; }
-        const n: any = nodes.get(id);
+        const n: any = nodeById.get(id);
         if (!n) return;
         detail.hidden = false;
         if (n.kind === 'g') {
@@ -270,27 +274,33 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
       }
       net.on('click', (p: any) => select(p.nodes[0]));
 
-      // Show/hide scholars or books.
-      // With a chain chosen, only its scholars and their books (and works on those books) stay visible.
+      // What is drawn: scholars and/or books, one chain or all, and (only when asked for) scholars with no
+      // links yet. The network is redrawn each time so the layout closes up around what is shown.
+      const unlinkedBox = document.getElementById('show-unlinked') as HTMLInputElement;
+      const unlinkedCount = d.scholars.filter((s) => !linked(s)).length;
+      document.querySelector('.count-unlinked')!.textContent = unlinkedCount ? `(${unlinkedCount})` : '';
+      if (!unlinkedCount) unlinkedBox.closest('label')!.hidden = true;
       const filter = () => {
         const sOn = (document.getElementById('show-scholars') as HTMLInputElement).checked;
         const bOn = (document.getElementById('show-books') as HTMLInputElement).checked;
         const c = current();
-        const ids = new Set(d.scholars.filter((s) => inChain(s, c)).map((s) => s.id));
+        const ids = new Set(d.scholars.filter((s) => inChain(s, c) && (unlinkedBox.checked || linked(s))).map((s) => s.id));
         const bookIn = (b: D['books'][number]): boolean => !c || (!!b.author && ids.has(b.author)) || b.recensionBy.some((x) => ids.has(x));
-        nodes.update(nodes.get().map((n: any) => ({ id: n.id, hidden:
-          n.kind === 's' ? !sOn || !ids.has(n.ref.id)
-          : n.kind === 'b' ? !bOn || !bookIn(n.ref)
-          : !bOn || !bookIn(bById.get(n.ref.base)!) })));
-        if (c) setTimeout(() => net.fit({ animation: true }), 30);
+        const shown = allNodes.filter((n) => n.kind === 's' ? sOn && ids.has(n.ref.id)
+          : n.kind === 'b' ? bOn && bookIn(n.ref) : bOn && bookIn(bById.get(n.ref.base)!));
+        const on = new Set(shown.map((n) => n.id));
+        net.setData({ nodes: new DataSet<any>(shown), edges: new DataSet<any>(allEdges.filter((e) => on.has(e.from) && on.has(e.to))) });
+        detail.hidden = true;
       };
       applyNetChain = filter;
-      filter();
-      ['show-scholars', 'show-books'].forEach((id) => document.getElementById(id)!.addEventListener('change', filter));
+      ['show-scholars', 'show-books', 'show-unlinked'].forEach((id) => document.getElementById(id)!.addEventListener('change', filter));
 
       // ?focus=s:<id> or b:<id> opens straight onto that scholar or book.
       const focus = new URLSearchParams(location.search).get('focus');
-      if (focus && nodes.get(focus)) {
+      const fn = focus ? nodeById.get(focus) : null;
+      if (fn?.kind === 's' && !linked(fn.ref)) unlinkedBox.checked = true;
+      filter();
+      if (focus && fn) {
         setTimeout(() => { net.selectNodes([focus]); net.focus(focus, { scale: 1.2, animation: true }); select(focus); }, 50);
       }
     }
