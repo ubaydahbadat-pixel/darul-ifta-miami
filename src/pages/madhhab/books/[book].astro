@@ -2,6 +2,7 @@
 import Base from '../../../layouts/Base.astro';
 import { loadMadhhab, deathLabel, WORK_TYPES, shortType } from '../../../data/madhhab';
 import { md } from '../../../data/markdown';
+import ScholarBio from '../../../components/ScholarBio.astro';
 export async function getStaticPaths() {
   const { bookList } = await loadMadhhab();
   return bookList.map((b) => ({ params: { book: b.id } }));
@@ -31,7 +32,7 @@ const contentHtml = b.content ? await md(b.content) : '';
   <dl class="facts">
     {b.type && b.type !== 'Original work' && <><dt>Type</dt><dd>{b.type}{b.basedOn.length > 0 && <> on {b.basedOn.map((id, i) => <>{i > 0 && ', '}<a href={`/madhhab/books/${id}/`}>{books.get(id)!.title}</a></>)}</>}</dd></>}
     {(!b.type || b.type === 'Original work') && b.basedOn.length > 0 && <><dt>Based on</dt><dd>{b.basedOn.map((id, i) => <>{i > 0 && ', '}<a href={`/madhhab/books/${id}/`}>{books.get(id)!.title}</a></>)}</dd></>}
-    {author && <><dt>Author</dt><dd><a href={`/madhhab/scholars/${author.id}/`}>{author.short}</a></dd></>}
+    {author && <><dt>Author</dt><dd><ScholarBio scholar={author} /></dd></>}
     {author && deathLabel(author) && <><dt>Author's death</dt><dd>{deathLabel(author).replace('d. ', '')}{author.approx && ' (approximate)'}</dd></>}
     {b.recensionBy.length > 0 && <><dt>Recension</dt><dd>{b.recensionBy.map((id, i) => <>{i > 0 && ', '}<a href={`/madhhab/scholars/${id}/`}>{scholars.get(id)!.short}</a></>)}</dd></>}
     {place && <><dt>Location</dt><dd>{places.get(place)!.name}</dd></>}

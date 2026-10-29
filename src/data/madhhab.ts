@@ -4,7 +4,7 @@
 import { getCollection } from 'astro:content';
 
 export type Scholar = {
-  id: string; name: string; short: string; tabaqah: string | null; order: number | null; deathAh: number | null; approx: boolean;
+  id: string; name: string; short: string; tabaqah: string | null; order: number | null; bio: string; bioSource: string; deathAh: number | null; approx: boolean;
   places: string[]; chains: string[]; teachers: string[]; students: string[]; books: string[]; recensions: string[];
 };
 export type Book = {
@@ -50,7 +50,7 @@ export async function loadMadhhab() {
 
   const places = new Map<string, Place>(placeEntries.map((p) => [p.id, { id: p.id, name: p.data.name, lat: p.data.latitude, lng: p.data.longitude }]));
   const scholars = new Map<string, Scholar>(scholarEntries.map((e) => [e.id, {
-    id: e.id, name: e.data.name, short: e.data.short_name?.trim() || e.data.name, tabaqah: e.data.tabaqah?.trim() || null, order: e.data.order ?? null,
+    id: e.id, name: e.data.name, short: e.data.short_name?.trim() || e.data.name, tabaqah: e.data.tabaqah?.trim() || null, order: e.data.order ?? null, bio: e.data.biography.trim(), bioSource: e.data.biography_source?.trim() || '',
     deathAh: e.data.death_ah ?? null, approx: e.data.death_approximate,
     places: e.data.places.filter((p) => places.has(p)), chains: e.data.chains.filter((c) => chains.has(c)), teachers: [...e.data.teachers], students: [...e.data.students], books: [], recensions: [],
   }]));

@@ -172,6 +172,16 @@ collections:
         value_type: int
         required: false
         hint: "Optional. Lower numbers come first within the group (e.g. 10, 20, 30, leaving gaps to insert others later). Without a number, scholars follow in order of death."
+      - name: biography
+        label: Biography
+        widget: text
+        required: false
+        hint: "Opens when a reader clicks the scholar's name. Separate paragraphs with a blank line. English for the general reader; Arabic quotations can go in their own paragraph."
+      - name: biography_source
+        label: Source of the biography
+        widget: string
+        required: false
+        hint: "e.g. al-Naqīb, al-Madhhab al-Ḥanafī, p. 65."
       - name: death_ah
         label: Date of death (AH)
         widget: number

@@ -9,6 +9,7 @@ const data = {
   scholars: scholarList.map((s) => ({
     id: s.id, name: s.name, short: s.short, death: deathLabel(s), deathAh: s.deathAh,
     place: s.places[0] ?? null, places: s.places, students: s.students, chains: s.chains,
+    bio: s.bio ? (s.bio.replace(/[*_#>]/g, '').split(/\n\s*\n/)[0].slice(0, 280) + (s.bio.length > 280 ? '…' : '')) : '',
   })),
   chains: [...chains.values()].map((c) => ({ id: c.id, name: c.name, colour: c.colour })),
   books: bookList.map((b) => {
@@ -80,7 +81,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
   const el = document.getElementById('madhhab-data');
   if (el) {
     type D = {
-      scholars: { id: string; name: string; short: string; death: string; deathAh: number | null; place: string | null; places: string[]; students: string[]; chains: string[] }[];
+      scholars: { id: string; name: string; short: string; death: string; deathAh: number | null; place: string | null; places: string[]; students: string[]; chains: string[]; bio: string }[];
       chains: { id: string; name: string; colour: string }[];
       books: { id: string; title: string; author: string | null; recensionBy: string[]; authorName: string; death: string; place: string | null; influencedBy: string[]; type: string | null; basedOn: string[]; derived: string[] }[];
       places: Record<string, { name: string; lat: number; lng: number }>;
@@ -269,7 +270,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
           return;
         }
         detail.innerHTML = n.kind === 's'
-          ? `<strong>${esc(n.ref.short)}</strong>${n.ref.death ? `<span>${esc(n.ref.death)}</span>` : ''}<a class="button" href="/madhhab/scholars/${n.ref.id}/">Open scholar</a>`
+          ? `<strong>${esc(n.ref.short)}</strong>${n.ref.death ? `<span>${esc(n.ref.death)}</span>` : ''}<a class="button" href="/madhhab/scholars/${n.ref.id}/">Open scholar</a>${n.ref.bio ? `<p class="bio">${esc(n.ref.bio)}</p>` : ''}`
           : `<strong>${esc(n.ref.title)}</strong>${n.ref.authorName ? `<span>${esc(n.ref.authorName)}${n.ref.death ? ' · ' + esc(n.ref.death) : ''}</span>` : ''}<a class="button" href="/madhhab/books/${n.ref.id}/">Open book</a>`;
       }
       net.on('click', (p: any) => select(p.nodes[0]));
@@ -341,6 +342,7 @@ const empty = data.scholars.length === 0 && data.books.length === 0;
   .detail :global(strong) { font-family: var(--serif); font-size: 1.2rem; }
   .detail :global(span) { color: var(--muted); font-size: .92rem; }
   .detail :global(.button) { margin-left: auto; }
+  .detail :global(.bio) { flex-basis: 100%; margin: 6px 0 0; font-size: .95rem; color: var(--ink); }
   #map :global(.pop-h) { margin: 8px 0 2px; font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: #64748B; }
   #map :global(ul) { margin: 0; padding-left: 16px; }
   #map :global(li span) { color: #64748B; font-size: .85em; }

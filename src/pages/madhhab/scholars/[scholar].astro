@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { loadMadhhab, deathLabel } from '../../../data/madhhab';
+import ScholarBio from '../../../components/ScholarBio.astro';
 export async function getStaticPaths() {
   const { scholarList } = await loadMadhhab();
   return scholarList.map((s) => ({ params: { scholar: s.id } }));
@@ -17,7 +18,7 @@ const rows = [
 ---
 <Base title={`${s.short} | Scholars`}>
   <nav class="crumbs"><a href="/madhhab/">Madhhab</a><span>›</span><a href="/madhhab/scholars/">Scholars</a></nav>
-  <h1>{s.short}</h1>
+  <ScholarBio scholar={s} heading />
   <hr class="rule" />
   <dl class="facts">
     {s.name !== s.short && <><dt>Full name</dt><dd>{s.name}</dd></>}

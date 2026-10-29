@@ -1,12 +1,15 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { loadMadhhab, deathLabel, TABAQAT } from '../../../data/madhhab';
+import { md } from '../../../data/markdown';
 const { scholarList, places } = await loadMadhhab();
 // Rasūlullāh ﷺ stands on his own. Everyone else is grouped by the Ṭabaqah field in /admin
 // (Ṣaḥābah, Tābiʿūn, Imāms of Fiqh, Ṭabaqah 1, 2, …), and by date of death within each group.
 const byOrder = (a: (typeof scholarList)[number], b: (typeof scholarList)[number]) =>
   (a.order ?? 1e9) - (b.order ?? 1e9) || (a.deathAh ?? 1e9) - (b.deathAh ?? 1e9);
+const bios = new Map(await Promise.all(scholarList.filter((s) => s.bio).map(async (s) => [s.id, await md(s.bio)] as const)));
 const card = (s: (typeof scholarList)[number]) => ({
+  id: s.id, bio: bios.get(s.id) ?? '', bioSource: s.bioSource,
   href: `/madhhab/scholars/${s.id}/`, name: s.short,
   meta: [deathLabel(s), s.places.map((p) => places.get(p)!.name).join(', ')].filter(Boolean).join(' · '),
 });
@@ -36,7 +39,9 @@ const anchor = (n: string) => n.normalize('NFD').replace(/[̀-ͯ]/g, '').replace
     <section id={anchor(g.name)}>
       <h2>{g.name}</h2>
       <ul class="cards">
-        {g.items.map((s) => <li><a href={s.href}><span class="name">{s.name}</span>{s.meta && <span class="meta">{s.meta}</span>}</a></li>)}
+        {g.items.map((s) => <li class:list={{ 'has-bio': !!s.bio }}><a href={s.href}><span class="name">{s.name}</span>{s.meta && <span class="meta">{s.meta}</span>}</a>{s.bio && (
+          <details class="card-bio"><summary>Biography <span aria-hidden="true">▾</span></summary><div class="body" set:html={s.bio} />{s.bioSource && <p class="src">Source: {s.bioSource}</p>}</details>
+        )}</li>)}
       </ul>
     </section>
   ))}
@@ -50,4 +55,13 @@ const anchor = (n: string) => n.normalize('NFD').replace(/[̀-ͯ]/g, '').replace
   .jump a:hover { border-color: var(--teal); }
   section { margin-top: 32px; scroll-margin-top: 16px; }
   .more { margin-top: 28px; }
+  .has-bio { background: var(--card); border: 1px solid var(--sand); border-radius: 10px; }
+  .has-bio > a { border: 0 !important; }
+  .card-bio { padding: 0 20px 14px; }
+  .card-bio summary { cursor: pointer; font-size: .85rem; font-weight: 600; color: var(--teal); list-style: none; display: inline-block; }
+  .card-bio summary::-webkit-details-marker { display: none; }
+  .card-bio[open] summary span { display: inline-block; transform: rotate(180deg); }
+  .card-bio .body { margin-top: 10px; padding-left: 12px; border-left: 3px solid var(--gold); }
+  .card-bio .body :global(p) { margin: 0 0 .7em; }
+  .card-bio .src { margin: 8px 0 0; font-size: .85rem; color: var(--muted); }
 </style>
