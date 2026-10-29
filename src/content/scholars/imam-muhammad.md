@@ -8,6 +8,8 @@ death_approximate: false
 places:
 - kufa
 - wasit
+chains:
+- iraq
 teachers:
 - qadi-abu-yusuf
 - abu-hanifah

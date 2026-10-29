@@ -8,6 +8,7 @@ places:
 - juzjan
 chains:
 - balkh
+- iraq
 teachers:
 - imam-muhammad
 - qadi-abu-yusuf

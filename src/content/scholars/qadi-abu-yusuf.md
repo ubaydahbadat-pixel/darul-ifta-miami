@@ -9,6 +9,8 @@ death_approximate: false
 places:
 - kufa
 - baghdad
+chains:
+- iraq
 teachers:
 - hammad
 - abu-hanifah

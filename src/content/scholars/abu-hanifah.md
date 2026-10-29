@@ -8,6 +8,8 @@ death_approximate: false
 places:
 - baghdad
 - kufa
+chains:
+- iraq
 teachers:
 - hammad
 students: []

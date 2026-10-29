@@ -6,6 +6,8 @@ order: 60
 death_ah: null
 death_approximate: false
 places: []
+chains:
+- iraq
 teachers:
 - abu-hanifah
 - qadi-abu-yusuf

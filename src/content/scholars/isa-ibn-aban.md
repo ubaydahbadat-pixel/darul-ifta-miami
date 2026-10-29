@@ -5,6 +5,8 @@ death_ah: 221
 death_approximate: false
 places:
 - basra
+chains:
+- iraq
 teachers:
 - imam-muhammad
 students: []
