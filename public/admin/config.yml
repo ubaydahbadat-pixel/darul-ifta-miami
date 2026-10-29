@@ -182,6 +182,11 @@ collections:
         widget: string
         required: false
         hint: "e.g. al-Naqīb, al-Madhhab al-Ḥanafī, p. 65."
+      - name: biography_checked
+        label: "Biography checked — show it on the site"
+        widget: boolean
+        default: false
+        hint: "Biographies drafted by Claude stay hidden until this is ticked."
       - name: death_ah
         label: Date of death (AH)
         widget: number
