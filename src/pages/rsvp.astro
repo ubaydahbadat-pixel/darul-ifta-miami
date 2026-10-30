@@ -1,0 +1,15 @@
+---
+// Short address for posters: /rsvp/ goes to the RSVP form of the next upcoming event that has RSVP ticked.
+import Base from '../layouts/Base.astro';
+import { getEvents, eventDate } from '../data/events';
+const { upcoming } = await getEvents();
+const open = upcoming.filter((e) => e.data.rsvp);
+const target = open.length ? `/events/${open[0].id}/#rsvp` : '/events/';
+---
+<Base title="RSVP" description="RSVP for upcoming events.">
+  <h1>RSVP</h1>
+  {open.length
+    ? <ul>{open.map((e) => <li><a href={`/events/${e.id}/#rsvp`}>{e.data.title}</a>, {eventDate(e)}</li>)}</ul>
+    : <p>There are no events taking RSVPs right now. See <a href="/events/">all events</a>.</p>}
+</Base>
+<script define:vars={{ target }}>location.replace(target);</script>

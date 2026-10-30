@@ -187,6 +187,12 @@ collections:
         label: Registration or sign-up link
         widget: string
         required: false
+      - name: rsvp
+        label: RSVP form
+        widget: boolean
+        default: false
+        required: false
+        hint: Shows an RSVP form on the event page (replies come to the site's email). daruliftamiami.com/rsvp goes to the next event with this ticked. Hidden after the event.
       - name: materials
         label: Course materials to pay for
         widget: boolean

@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { getEvents, eventDate, eventTime, lastDay, todayNY } from '../../data/events';
 import { md } from '../../data/markdown';
-import { WHATSAPP_CHANNEL } from '../../data/site';
+import { WHATSAPP_CHANNEL, FORM_ACCESS_KEY } from '../../data/site';
 export async function getStaticPaths() {
   const { all } = await getEvents();
   return all.map((e) => ({ params: { event: e.id }, props: { e } }));
@@ -27,6 +27,27 @@ const maps = d.address ? `https://www.google.com/maps/search/?api=1&query=${enco
     {d.address && <><dt>Address</dt><dd>{d.address} · <a href={maps} target="_blank" rel="noopener">Directions</a></dd></>}
   </dl>
   {d.registration_url && !isPast && <p class="register"><a class="button" href={d.registration_url} target="_blank" rel="noopener">Register</a></p>}
+  {d.rsvp && !isPast && (
+    <section class="rsvp" id="rsvp">
+      <h2>RSVP</h2>
+      <p class="note">Let us know you're coming so we can plan seating and materials.</p>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value={FORM_ACCESS_KEY} />
+        <input type="hidden" name="subject" value={`RSVP: ${d.title} (${eventDate(e)})`} />
+        <input type="hidden" name="event" value={`${d.title}, ${eventDate(e)}`} />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+        <label for="r-name">Name <span aria-hidden="true">*</span></label>
+        <input id="r-name" name="name" required autocomplete="name" />
+        <label for="r-email">Email</label>
+        <input id="r-email" name="email" type="email" autocomplete="email" />
+        <label for="r-phone">Phone</label>
+        <input id="r-phone" name="phone" type="tel" autocomplete="tel" />
+        <label for="r-count">How many people (including you)? <span aria-hidden="true">*</span></label>
+        <input id="r-count" name="attending" type="number" min="1" max="20" value="1" required />
+        <p style="margin-top:18px"><button class="button" type="submit">Send RSVP</button></p>
+      </form>
+    </section>
+  )}
   {d.materials && !isPast && (
     <section class="materials">
       <h2>Course Materials</h2>
@@ -47,6 +68,7 @@ const maps = d.address ? `https://www.google.com/maps/search/?api=1&query=${enco
     el.textContent = 'Completed event';
     document.querySelector('.register')?.remove();
     document.querySelector('.materials')?.remove();
+    document.querySelector('.rsvp')?.remove();
   }
 </script>
 <style>
@@ -58,6 +80,10 @@ const maps = d.address ? `https://www.google.com/maps/search/?api=1&query=${enco
   .tz { color: var(--muted); font-size: .9rem; }
   .register { margin: 0 0 24px; }
   section { margin: 24px 0; }
+  .rsvp { padding: 18px 20px; border: 1px solid var(--sand); border-radius: 10px; scroll-margin-top: 90px; }
+  .rsvp h2 { margin: 0 0 6px; font-size: 1.2rem; }
+  .rsvp .note { margin: 0 0 8px; color: var(--muted); }
+  .rsvp input { width: 100%; max-width: 420px; }
   .materials { padding: 18px 20px; border: 1px solid var(--sand); border-radius: 10px; }
   .materials h2 { margin: 0 0 8px; font-size: 1.2rem; }
   .materials p { margin: 0; }

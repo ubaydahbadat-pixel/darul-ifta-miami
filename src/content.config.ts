@@ -109,6 +109,7 @@ const events = defineCollection({
     summary: z.string().nullish(),
     description: z.string().default(''),
     registration_url: z.string().nullish(),
+    rsvp: z.boolean().default(false),
     materials: z.boolean().default(false),
     materials_price: z.string().nullish(),
     materials_url: z.string().nullish(),
