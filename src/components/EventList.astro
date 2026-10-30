@@ -1,0 +1,32 @@
+---
+// A list of events as cards. Each card carries its last day so the page can move it to "Completed"
+// in the visitor's browser if the site hasn't been rebuilt since the event ended.
+import { eventDate, eventTime, lastDay, type Event } from '../data/events';
+interface Props { items: Event[]; past?: boolean }
+const { items, past = false } = Astro.props;
+---
+<ul class="cards events">
+  {items.map((e) => (
+    <li data-last-day={lastDay(e)}>
+      <a href={`/events/${e.id}/`}>
+        <span class="when">
+          <span class="mon">{e.data.date.toLocaleDateString('en-GB', { month: 'short', timeZone: 'UTC' })}</span>
+          <span class="day">{e.data.date.getUTCDate()}</span>
+        </span>
+        <span class="what">
+          <span class="name">{e.data.title}</span>
+          <span class="meta">{[eventDate(e), !past && eventTime(e), e.data.location].filter(Boolean).join(' · ')}</span>
+          {e.data.summary && <span class="sum">{e.data.summary}</span>}
+        </span>
+      </a>
+    </li>
+  ))}
+</ul>
+<style>
+  .events a { display: flex; gap: 16px; align-items: flex-start; }
+  .when { flex: 0 0 auto; width: 58px; text-align: center; border: 1px solid var(--sand); border-top: 3px solid var(--gold); border-radius: 8px; background: var(--cream); padding: 4px 0 6px; line-height: 1.1; }
+  .mon { display: block; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+  .day { display: block; font-family: var(--serif); font-size: 1.6rem; font-weight: 600; color: var(--ink); }
+  .what { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .sum { font-size: .95rem; color: var(--ink); }
+</style>

@@ -7,6 +7,7 @@ import { loadMadhhab } from '../data/madhhab';
 import { getCollection } from 'astro:content';
 import { nisab, WHATSAPP_CHANNEL } from '../data/site';
 import askSettings from '../data/ask-settings.json';
+import { getEvents } from '../data/events';
 
 // The home page: an overview of every part of the site, each linking through.
 const fatawa = await getFatawa();
@@ -17,6 +18,7 @@ const byCategory = categories
 const { scholarList, bookList, chains } = await loadMadhhab();
 const articles = (await getCollection('articles', ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const turnaround = (askSettings.askTurnaround || '').trim();
+const { upcoming: upcomingEvents, past: pastEvents } = await getEvents();
 const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
 ---
@@ -77,6 +79,14 @@ const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one :
       </div>
 
       <div class="panel">
+        <a class="head" href="/events/"><span class="label">Events</span><span class="title">{upcomingEvents.length ? `${plural(upcomingEvents.length, 'upcoming event', 'upcoming events')}` : 'No upcoming events yet'}</span></a>
+        {upcomingEvents.length > 0
+          ? <ul class="links ev">{upcomingEvents.slice(0, 3).map((e) => <li><a href={`/events/${e.id}/`}>{e.data.title}</a> <span>{[e.data.date.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }), e.data.start_time].filter(Boolean).join(', ')}</span></li>)}</ul>
+          : <p class="note">New events are announced here and on our WhatsApp channel.{pastEvents.length > 0 && <> See our <a href="/events/#completed">completed events</a>.</>}</p>}
+        <a class="more" href="/events/">All events →</a>
+      </div>
+
+      <div class="panel">
         <a class="head" href="/articles/"><span class="label">Articles</span><span class="title">{articles.length ? plural(articles.length, 'article', 'articles') : 'Coming soon'}</span></a>
         {articles.length > 0 && <ul class="links">{articles.slice(0, 3).map((a) => <li><a href={`/articles/${a.id}/`}>{a.data.title}</a></li>)}</ul>}
         <a class="more" href="/articles/">Articles →</a>
@@ -108,7 +118,7 @@ const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one :
   .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
   section + section { margin-top: 48px; }
   .grid { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
-  @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .grid > .panel:last-child:nth-child(odd) { grid-column: 1 / -1; } }
   .panel { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px; background: var(--card); border: 1px solid var(--sand); border-top: 3px solid var(--gold); border-radius: 10px; }
   .head { display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: var(--ink); }
   .head:hover .title { color: var(--teal); }
@@ -119,6 +129,7 @@ const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one :
   .links { list-style: none; margin: 0; padding: 0; font-size: .97rem; }
   .links li { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; border-top: 1px solid var(--sand); }
   .links li span { color: var(--muted); font-size: .88rem; white-space: nowrap; }
+  .links.ev li { flex-direction: column; gap: 0; }
   .note { margin: 0; color: var(--muted); font-size: .97rem; }
   .more { color: var(--teal); font-weight: 600; margin-top: auto; padding-top: 4px; text-decoration: none; }
   .more:hover { text-decoration: underline; }

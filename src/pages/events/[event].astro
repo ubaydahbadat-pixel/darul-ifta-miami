@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getEvents, eventDate, eventTime, lastDay, todayNY } from '../../data/events';
+import { md } from '../../data/markdown';
+import { WHATSAPP_CHANNEL } from '../../data/site';
+export async function getStaticPaths() {
+  const { all } = await getEvents();
+  return all.map((e) => ({ params: { event: e.id }, props: { e } }));
+}
+const { e } = Astro.props;
+const d = e.data;
+const isPast = lastDay(e) < todayNY();
+const descHtml = await md(d.description);
+const recapHtml = await md(d.recap);
+const maps = d.address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(d.address)}` : '';
+---
+<Base title={`${d.title} | Events`} description={d.summary ?? `${d.title}, ${eventDate(e)}.`}>
+  <nav class="crumbs"><a href="/events/">Events</a></nav>
+  <p class="status" data-last-day={lastDay(e)}>{isPast ? 'Completed event' : 'Upcoming event'}</p>
+  <h1>{d.title}</h1>
+  <hr class="rule" />
+  {d.image && <img class="poster" src={d.image} alt={`Poster for ${d.title}`} />}
+  <dl class="facts">
+    <dt>Date</dt><dd>{eventDate(e)}</dd>
+    {eventTime(e) && <><dt>Time</dt><dd>{eventTime(e)} <span class="tz">(Miami time)</span></dd></>}
+    {d.location && <><dt>Venue</dt><dd>{d.location}</dd></>}
+    {d.address && <><dt>Address</dt><dd>{d.address} · <a href={maps} target="_blank" rel="noopener">Directions</a></dd></>}
+  </dl>
+  {d.registration_url && !isPast && <p class="register"><a class="button" href={d.registration_url} target="_blank" rel="noopener">Register</a></p>}
+  {descHtml && <section set:html={descHtml} />}
+  {isPast && recapHtml && <section class="recap"><h2>After the Event</h2><div set:html={recapHtml} /></section>}
+  <p class="more"><a href="/events/">All events →</a> <span class="wa">Event announcements are also shared on our <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener">WhatsApp channel</a>.</span></p>
+</Base>
+<script>
+  const el = document.querySelector<HTMLElement>('.status[data-last-day]');
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  if (el && el.dataset.lastDay! < today) {
+    el.textContent = 'Completed event';
+    document.querySelector('.register')?.remove();
+  }
+</script>
+<style>
+  .status { margin: 0 0 6px; font-size: .82rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); }
+  .poster { border-radius: 10px; border: 1px solid var(--sand); margin: 0 0 24px; max-height: 520px; width: auto; }
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0 0 24px; }
+  .facts dt { font-weight: 600; color: var(--muted); }
+  .facts dd { margin: 0; min-width: 0; }
+  .tz { color: var(--muted); font-size: .9rem; }
+  .register { margin: 0 0 24px; }
+  section { margin: 24px 0; }
+  .recap { padding-top: 8px; border-top: 1px solid var(--sand); }
+  .more { margin-top: 32px; display: flex; flex-direction: column; gap: 6px; }
+  .wa { color: var(--muted); font-size: .95rem; }
+</style>

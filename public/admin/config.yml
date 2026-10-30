@@ -125,6 +125,83 @@ collections:
         default: true
         hint: "Switch off to publish."
 
+  # ── Events ─────────────────────────────────────────────────────
+  - name: events
+    label: Events
+    label_singular: Event
+    folder: src/content/events
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{date}}-{{title}}"
+    summary: "{{date}} · {{title}}"
+    sortable_fields: [date, title]
+    fields:
+      - name: title
+        label: Event title
+        widget: string
+      - name: date
+        label: Date
+        widget: datetime
+        time_format: false
+        date_format: YYYY-MM-DD
+        format: YYYY-MM-DD
+        hint: "The day of the event (or its first day). After this date (or the end date) it moves to Completed Events automatically."
+      - name: end_date
+        label: End date (multi-day events only)
+        widget: datetime
+        time_format: false
+        date_format: YYYY-MM-DD
+        format: YYYY-MM-DD
+        required: false
+      - name: start_time
+        label: Start time
+        widget: string
+        required: false
+        hint: "e.g. 6:30 pm"
+      - name: end_time
+        label: End time
+        widget: string
+        required: false
+      - name: location
+        label: Venue
+        widget: string
+        required: false
+        hint: "e.g. Masjid name, or Online"
+      - name: address
+        label: Address
+        widget: string
+        required: false
+        hint: "Shown with a link to directions."
+      - name: summary
+        label: One-line summary
+        widget: string
+        required: false
+        hint: "Shown in the event lists."
+      - name: description
+        label: Details
+        widget: text
+        required: false
+        hint: "Separate paragraphs with a blank line."
+      - name: registration_url
+        label: Registration or sign-up link
+        widget: string
+        required: false
+      - name: image
+        label: Poster or image
+        widget: image
+        required: false
+      - name: recap
+        label: After the event (recap)
+        widget: text
+        required: false
+        hint: "Optional. Shown on the event's page once it is completed, e.g. a short summary or attendance."
+      - name: draft
+        label: "Draft — keep hidden from the website"
+        widget: boolean
+        default: true
+        hint: "Switch off to publish."
+
   # ── Madhhab section ────────────────────────────────────────────
   # Scholars, Books and Places feed the Madhhab pages and both interactive maps.
   - name: scholars

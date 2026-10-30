@@ -71,6 +71,9 @@ const articles = listDir('src/content/articles', '.md').map((f) => {
 });
 write(`${OUT}/content/articles.json`, json(articles));
 
+// ── Events ──
+write(`${OUT}/content/events.json`, json(listDir('src/content/events', '.md').map((f) => ({ id: id(f), ...frontMatter(path.join('src/content/events', f)).data }))));
+
 // ── Madhhab: scholars, books, places ──
 const fm = (dir) => listDir(dir, '.md').map((f) => ({ id: id(f), ...frontMatter(path.join(dir, f)).data }));
 write(`${OUT}/content/madhhab/scholars.json`, json(fm('src/content/scholars')));

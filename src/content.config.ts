@@ -95,4 +95,24 @@ const books = defineCollection({
   }),
 });
 
-export const collections = { fatawa, articles, places, chains, scholars, books };
+// Events run by Darul Iftāʾ Miami. Upcoming/completed is decided by the date (New York time).
+const events = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/events' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    end_date: z.coerce.date().nullish(),
+    start_time: z.string().nullish(),
+    end_time: z.string().nullish(),
+    location: z.string().nullish(),
+    address: z.string().nullish(),
+    summary: z.string().nullish(),
+    description: z.string().default(''),
+    registration_url: z.string().nullish(),
+    image: z.string().nullish(),
+    recap: z.string().default(''),
+    draft: z.boolean().default(true),
+  }),
+});
+
+export const collections = { fatawa, articles, places, chains, scholars, books, events };

@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import EventList from '../../components/EventList.astro';
+import { getEvents } from '../../data/events';
+const { upcoming, past } = await getEvents();
+---
+<Base title="Events" description="Upcoming and completed events held by Darul Iftāʾ Miami.">
+  <h1>Events</h1>
+  <hr class="rule" />
+  <p class="lead">Classes, talks and gatherings held by Darul Iftāʾ Miami.</p>
+
+  <section id="upcoming">
+    <h2>Upcoming Events</h2>
+    {upcoming.length ? <EventList items={upcoming} /> : <p class="empty" data-empty>No upcoming events at the moment. New events are announced here and on our WhatsApp channel.</p>}
+  </section>
+
+  <section id="completed" hidden={past.length === 0}>
+    <h2>Completed Events</h2>
+    {past.length ? <EventList items={past} past /> : <ul class="cards events"></ul>}
+  </section>
+</Base>
+
+<script>
+  // Move any event whose last day has passed (New York time) into Completed, in case the site
+  // hasn't been rebuilt since it ended.
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const up = document.querySelector('#upcoming ul');
+  const done = document.querySelector('#completed ul');
+  if (up && done) {
+    const ended = [...up.querySelectorAll<HTMLElement>('li[data-last-day]')].filter((li) => li.dataset.lastDay! < today);
+    ended.reverse().forEach((li) => done.prepend(li));
+    if (ended.length) {
+      document.getElementById('completed')!.hidden = false;
+      if (!up.children.length) up.outerHTML = '<p class="empty">No upcoming events at the moment. New events are announced here and on our WhatsApp channel.</p>';
+    }
+  }
+</script>
+
+<style>
+  section { margin-top: 32px; }
+</style>
