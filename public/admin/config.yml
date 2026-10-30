@@ -187,6 +187,22 @@ collections:
         label: Registration or sign-up link
         widget: string
         required: false
+      - name: materials
+        label: Course materials to pay for
+        widget: boolean
+        default: false
+        required: false
+        hint: Shows a Course Materials box on the event page. Hidden after the event.
+      - name: materials_price
+        label: Course materials price
+        widget: string
+        required: false
+        hint: e.g. $20
+      - name: materials_url
+        label: Course materials payment link
+        widget: string
+        required: false
+        hint: Paste the payment link (Square, PayPal, Zeffy etc.). Until it is filled in, the page says the payment link is coming soon.
       - name: image
         label: Poster or image
         widget: image

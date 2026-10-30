@@ -27,6 +27,15 @@ const maps = d.address ? `https://www.google.com/maps/search/?api=1&query=${enco
     {d.address && <><dt>Address</dt><dd>{d.address} · <a href={maps} target="_blank" rel="noopener">Directions</a></dd></>}
   </dl>
   {d.registration_url && !isPast && <p class="register"><a class="button" href={d.registration_url} target="_blank" rel="noopener">Register</a></p>}
+  {d.materials && !isPast && (
+    <section class="materials">
+      <h2>Course Materials</h2>
+      {d.materials_price && <p class="price">{d.materials_price}</p>}
+      {d.materials_url
+        ? <p><a class="button" href={d.materials_url} target="_blank" rel="noopener">Pay for course materials</a></p>
+        : <p class="soon">Payment link coming soon.</p>}
+    </section>
+  )}
   {descHtml && <section set:html={descHtml} />}
   {isPast && recapHtml && <section class="recap"><h2>After the Event</h2><div set:html={recapHtml} /></section>}
   <p class="more"><a href="/events/">All events →</a> <span class="wa">Event announcements are also shared on our <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener">WhatsApp channel</a>.</span></p>
@@ -37,6 +46,7 @@ const maps = d.address ? `https://www.google.com/maps/search/?api=1&query=${enco
   if (el && el.dataset.lastDay! < today) {
     el.textContent = 'Completed event';
     document.querySelector('.register')?.remove();
+    document.querySelector('.materials')?.remove();
   }
 </script>
 <style>
@@ -48,6 +58,11 @@ const maps = d.address ? `https://www.google.com/maps/search/?api=1&query=${enco
   .tz { color: var(--muted); font-size: .9rem; }
   .register { margin: 0 0 24px; }
   section { margin: 24px 0; }
+  .materials { padding: 18px 20px; border: 1px solid var(--sand); border-radius: 10px; }
+  .materials h2 { margin: 0 0 8px; font-size: 1.2rem; }
+  .materials p { margin: 0; }
+  .materials .price { font-weight: 600; margin-bottom: 10px; }
+  .soon { color: var(--muted); }
   .recap { padding-top: 8px; border-top: 1px solid var(--sand); }
   .more { margin-top: 32px; display: flex; flex-direction: column; gap: 6px; }
   .wa { color: var(--muted); font-size: .95rem; }
