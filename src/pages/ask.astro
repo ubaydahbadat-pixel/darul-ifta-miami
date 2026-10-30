@@ -11,6 +11,16 @@ const turnaround = (askSettings.askTurnaround || '').trim();
   <p class="lead">Submit your question and it will be answered according to the Ḥanafī madhhab. Selected questions may be published on the site without any identifying details.</p>
   {turnaround && <p><strong>Most questions are answered within {turnaround}.</strong></p>}
   <p>Please do not use this form for urgent matters.</p>
-  <p>Before asking, you may find your answer already in the <a href="/fatawa/">Fatāwā</a>.</p>
+  <p>Before asking, you may find your answer already in the <a href="/fatawa/">Fatāwā</a>: try the search box there.</p>
   <MessageForm kind="ask" />
 </Base>
+<script>
+  // Coming from the search box: put the words the person typed into the question box.
+  const q = new URLSearchParams(location.search).get('q');
+  const box = document.querySelector<HTMLTextAreaElement>('#message');
+  if (q && box && !box.value) {
+    box.value = q;
+    box.focus();
+    box.setSelectionRange(q.length, q.length);
+  }
+</script>

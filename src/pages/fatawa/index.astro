@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import FatwaList from '../../components/FatwaList.astro';
+import Search from '../../components/Search.astro';
 import { categories } from '../../data/categories';
 import { getFatawa } from '../../data/fatawa';
 
@@ -14,6 +15,7 @@ const withCounts = categories
   <h1>Fatāwā</h1>
   <hr class="rule" />
   <p class="lead">Answers according to the Ḥanafī madhhab, arranged in the order of the books of fiqh.</p>
+  <div class="search-wrap"><Search label="Search the fatāwā" /></div>
 
   <h2>Categories</h2>
   {withCounts.length ? (
@@ -33,3 +35,7 @@ const withCounts = categories
     <FatwaList items={fatawa.slice(0, 10)} showPath />
   </>}
 </Base>
+<style>
+  .search-wrap { margin: 8px 0 32px; }
+  .search-wrap :global(.site-search) { margin: 0; }
+</style>

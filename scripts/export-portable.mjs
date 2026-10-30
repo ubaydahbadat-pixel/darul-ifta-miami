@@ -115,7 +115,7 @@ for (const f of fs.readdirSync('public')) {
 if (fs.existsSync('public/uploads')) fs.cpSync('public/uploads', `${OUT}/assets/uploads`, { recursive: true });
 
 // ── Logic: the parts of the site that calculate or update things, as reference for a rebuild ──
-for (const f of ['scripts/update-nisab.mjs', 'scripts/update-hilal.mjs', 'src/pages/nisab/calculator.astro', 'src/pages/nisab.astro', 'src/data/madhhab.ts', 'src/plugins/fatwa-sections.mjs', 'src/data/markdown.ts', 'src/styles/global.css']) {
+for (const f of ['scripts/update-nisab.mjs', 'scripts/update-hilal.mjs', 'src/pages/nisab/calculator.astro', 'src/pages/nisab.astro', 'src/data/madhhab.ts', 'src/plugins/fatwa-sections.mjs', 'src/data/markdown.ts', 'src/styles/global.css', 'src/components/Search.astro', 'src/data/search-synonyms.ts', 'src/data/events.ts']) {
   if (fs.existsSync(f)) { mk(`${OUT}/logic`); fs.copyFileSync(f, `${OUT}/logic/${path.basename(f)}.txt`); }
 }
 

@@ -53,7 +53,7 @@ const references = await Promise.all(
 
     {explanation.length > 0 && (
       <details class="drop">
-        <summary>Explanation</summary>
+        <summary><span>Explanation<span class="sub">The reasoning, in numbered sections</span></span></summary>
         <div class="drop-body">
           {explanation.map((e, i) => (
             <><h3 class="node">{i + 1}. {e.heading}</h3><Fragment set:html={e.html} /></>
@@ -64,14 +64,14 @@ const references = await Promise.all(
 
     {hikmah && (
       <details class="drop">
-        <summary>Wisdom of the Ruling (Ḥikmah)</summary>
+        <summary><span>Wisdom of the Ruling (Ḥikmah)<span class="sub">The wisdom behind the ruling</span></span></summary>
         <div class="drop-body"><Fragment set:html={hikmah} /></div>
       </details>
     )}
 
     {references.length > 0 && (
       <details class="drop">
-        <summary>References</summary>
+        <summary><span>References<span class="sub">The original texts, for students of knowledge</span></span></summary>
         <div class="drop-body">
           {references.map((r, i) => (
             <>
@@ -97,5 +97,6 @@ const references = await Promise.all(
 
 <style>
   .meta-line { color: var(--muted); margin: 0; }
+  .sub { display: block; font-family: var(--sans); font-size: .85rem; font-weight: 400; color: var(--muted); letter-spacing: 0; text-transform: none; margin-top: 2px; }
   .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--sand); }
 </style>

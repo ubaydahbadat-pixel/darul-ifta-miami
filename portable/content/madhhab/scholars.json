@@ -1,1 +1,2119 @@
-[]
+[
+  {
+    "id": "abd-al-hadi-ibn-abi-nasr",
+    "name": "ʿAbd al-Hādī ibn Abī Naṣr al-Thānī",
+    "short_name": "ʿAbd al-Hādī ibn Abī Naṣr",
+    "biography": "ʿAbd al-Hādī ibn Abī Naṣr al-Thānī was one of the great teachers in Balkh and its Shaykh al-Islām. He was alive in 450 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 89, no. 47 (translated)",
+    "biography_checked": false,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abd-al-muttalib-al-hashimi",
+    "name": "ʿAbd al-Muṭṭalib ibn al-Faḍl ibn ʿAbd al-Muṭṭalib ibn al-Ḥusayn al-Qurashī al-Hāshimī al-Balkhī",
+    "short_name": "ʿAbd al-Muṭṭalib al-Hāshimī",
+    "biography": "ʿAbd al-Muṭṭalib ibn al-Faḍl al-Qurashī al-Hāshimī al-Balkhī was a faqīh, born in Balkh, who gave fatwā and debated. He wrote a commentary on al-Jāmiʿ al-Kabīr of al-Shaybānī. The leadership of the Ḥanafīs in Aleppo passed to him, and he died there in 616 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 92, no. 69 (translated)",
+    "biography_checked": false,
+    "death_ah": 616,
+    "death_approximate": false,
+    "places": [
+      "balkh",
+      "aleppo"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abd-al-rahman-al-sarakhsi",
+    "name": "ʿAbd al-Raḥmān al-Sarakhsī",
+    "short_name": "ʿAbd al-Raḥmān al-Sarakhsī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-quduri"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abd-al-rahman-al-ukbari",
+    "name": "ʿAbd al-Raḥmān al-ʿUkbarī",
+    "short_name": "ʿAbd al-Raḥmān al-ʿUkbarī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-quduri"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abd-al-wahhab-al-balkhi",
+    "name": "ʿAbd al-Wahhāb ibn Muḥammad ibn ʿUthmān al-Balkhī",
+    "short_name": "ʿAbd al-Wahhāb al-Balkhī",
+    "biography": "ʿAbd al-Wahhāb ibn Muḥammad ibn ʿUthmān al-Balkhī, Balkhī by origin and born in Aleppo, was a Ḥanafī faqīh whose father was among the great Ḥanafī jurists. He narrated ḥadīth and taught at al-Madrasah al-Ashrafiyyah in Cairo, and died there in 720 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 92, no. 71 (translated)",
+    "biography_checked": false,
+    "death_ah": 720,
+    "death_approximate": false,
+    "places": [
+      "balkh",
+      "aleppo",
+      "cairo"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abd-allah-ibn-masud",
+    "name": "ʿAbdullāh ibn Masʿūd ibn Ghāfil ibn Ḥabīb al-Ṣāhilī al-Hudhalī",
+    "short_name": "ʿAbdullāh ibn Masʿūd",
+    "tabaqah": "Ṣaḥābah",
+    "death_ah": 32,
+    "death_approximate": false,
+    "places": [
+      "madinah",
+      "makkah",
+      "kufa"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-abdullah-al-damaghani",
+    "name": "Abū ʿAbdullāh al-Dāmaghānī",
+    "short_name": "Abū ʿAbdullāh al-Dāmaghānī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-quduri",
+      "al-saymari"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-abdullah-al-qalasi",
+    "name": "Muḥammad ibn Khuzaymah Abū ʿAbdullāh al-Qalāsī al-Balkhī",
+    "short_name": "Abū ʿAbdullāh al-Qalāsī",
+    "biography": "Muḥammad ibn Khuzaymah Abū ʿAbdullāh al-Qalāsī al-Balkhī was one of the shaykhs of Balkh, with his own preferred positions (ikhtiyārāt) within the madhhab of Abū Ḥanīfah. He died in 314 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 87, no. 36 (translated)",
+    "biography_checked": false,
+    "death_ah": 314,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-al-ala-ibn-khusraw",
+    "name": "Abū al-ʿAlāʾ ibn Khusraw al-Balkhī",
+    "short_name": "Abū al-ʿAlāʾ ibn Khusraw",
+    "biography": "Abū al-ʿAlāʾ ibn Khusraw al-Balkhī was a ḥāfiẓ, with positions of his own in fiqh.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 90, no. 51 (translated)",
+    "biography_checked": false,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-al-fath-al-walwaliji",
+    "name": "ʿAbd al-Rashīd ibn Abī Ḥanīfah al-Nuʿmān ibn ʿAbd al-Razzāq ibn ʿAbdullāh Abū al-Fatḥ al-Walwālijī al-Badakhshī",
+    "short_name": "Abū al-Fatḥ al-Walwālijī",
+    "biography": "ʿAbd al-Rashīd ibn Abī Ḥanīfah al-Nuʿmān Abū al-Fatḥ al-Walwālijī al-Badakhshī was an imām of distinction and vast learning, Ḥanafī in madhhab. He came to Balkh and studied fiqh there, with Abū Bakr al-Qadhdhār among others, and is the author of al-Fatāwā al-Walwālijiyyah. He was born in Walwālij and died there in 540 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, pp. 89, 91, nos. 46, 60 (translated)",
+    "biography_checked": false,
+    "death_ah": 540,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [
+      "abu-bakr-al-qadhdhar"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-al-hasan-al-damaghani",
+    "name": "Abū al-Ḥasan al-Dāmaghānī",
+    "short_name": "Abū al-Ḥasan al-Dāmaghānī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-abdullah-al-damaghani"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-al-haytham",
+    "name": "Abū al-Haytham",
+    "short_name": "Abū al-Haytham",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "qadi-al-haramayn"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-al-husayn-al-zafarani",
+    "name": "Abū al-Ḥusayn al-Zaʿfarānī",
+    "short_name": "Abū al-Ḥusayn al-Zaʿfarānī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-jassas"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-al-layth-al-samarqandi",
+    "name": "Naṣr ibn Muḥammad ibn Ibrāhīm ibn al-Khaṭṭāb Abū al-Layth al-Samarqandī al-Balkhī",
+    "short_name": "Abū al-Layth al-Samarqandī",
+    "biography": "Abū al-Layth Naṣr ibn Muḥammad al-Samarqandī al-Balkhī, called Imām al-Hudā, was the well-known faqīh, author of useful positions and famous works. He studied and taught in Balkh, and studied with Abū Jaʿfar al-Hinduwānī. He gathered the fatāwā of the people of Balkh in his al-Nawāzil, and was known simply as \"al-Faqīh\". He dictated to his students the books of Muḥammad and Abū Yūsuf together with his own commentaries on them.\n\nHis works also include a Tafsīr, a commentary on al-Jāmiʿ al-Ṣaghīr, Khizānat al-Fiqh, ʿUyūn al-Masāʾil and Mukhtalif al-Riwāyah. Al-Naqīb gives his death as between 373 and 393 AH; Mashāyikh Balkh says he died in Balkh in 375 AH, according to the soundest view.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 146; al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 89, no. 43 (translated)",
+    "biography_checked": false,
+    "death_ah": 373,
+    "death_approximate": true,
+    "places": [
+      "balkh",
+      "samarqand"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [
+      "abu-jafar-al-hinduwani"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-al-qasim-al-damaghani",
+    "name": "Abū al-Qāsim al-Dāmaghānī",
+    "short_name": "Abū al-Qāsim al-Dāmaghānī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-al-hasan-al-damaghani"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-al-qasim-al-saffar",
+    "name": "Aḥmad ibn Ḥām ibn ʿIṣmah (or ʿAḍd) Abū al-Qāsim al-Ṣaffār al-Balkhī",
+    "short_name": "Abū al-Qāsim al-Ṣaffār",
+    "biography": "Aḥmad ibn Ḥām ibn ʿIṣmah (or ʿAḍd) Abū al-Qāsim al-Ṣaffār al-Balkhī was one of the great figures and jurists of Balkh. He reached such a level in fiqh and confidence in his own reasoning that he said: \"I differed from Abū Ḥanīfah in a thousand questions, giving fatwā by my own preference and ijtihād, and the fatwā today is on my view in these thousand questions.\"\n\nHe lived from the earnings of his own hands, and people competed to study with him. He took from Nuṣayr ibn Yaḥyā, and Abū Jaʿfar al-Hinduwānī took from him. He died in 326 or 336 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, pp. 87–88, no. 38 (translated)",
+    "biography_checked": false,
+    "death_ah": 326,
+    "death_approximate": true,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [
+      "nusayr-ibn-yahya"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-ali-al-bahili",
+    "name": "Muḥammad ibn Yūsuf Abū ʿAlī al-Balkhī al-Bāhilī",
+    "short_name": "Abū ʿAlī al-Bāhilī",
+    "biography": "Muḥammad ibn Yūsuf Abū ʿAlī al-Balkhī al-Bāhilī was a faqīh, and his brothers ʿIṣām and Ibrāhīm were also among the jurists.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 85, no. 19 (translated)",
+    "biography_checked": false,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-ali-al-daqqaq",
+    "name": "Abū ʿAlī al-Daqqāq",
+    "short_name": "Abū ʿAlī al-Daqqāq",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-bakr-al-amash",
+    "name": "Muḥammad ibn Abī Saʿīd (or Abī Saʿd) Abū Bakr al-Aʿmash al-Balkhī",
+    "short_name": "Abū Bakr al-Aʿmash",
+    "biography": "Muḥammad ibn Abī Saʿīd (or Abī Saʿd) Abū Bakr al-Aʿmash al-Balkhī, the faqīh, was the teacher of Abū Jaʿfar al-Hinduwānī, and his son ʿUbaydullāh also took from him. He died in 328 or 348 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 87, no. 37 (translated)",
+    "biography_checked": false,
+    "death_ah": 328,
+    "death_approximate": true,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [
+      "abu-bakr-al-iskaf"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-bakr-al-iskaf",
+    "name": "Muḥammad ibn Aḥmad (or Aḥyad) Abū Bakr al-Iskāf",
+    "short_name": "Abū Bakr al-Iskāf",
+    "biography": "Muḥammad ibn Aḥmad (or Aḥyad) Abū Bakr al-Iskāf was a well-known faqīh. He took from Muḥammad ibn Salamah and Abū Sulaymān al-Jūzjānī, and was the teacher of Abū Jaʿfar al-Hinduwānī and of Abū Bakr ibn Abī Saʿīd. He wrote works, and died in 333 or 336 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 88, no. 39 (translated)",
+    "biography_checked": false,
+    "death_ah": 333,
+    "death_approximate": true,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [
+      "muhammad-ibn-salamah",
+      "abu-sulayman-al-juzjani"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-bakr-al-juzjani",
+    "name": "Abū Bakr al-Jūzjānī",
+    "short_name": "Abū Bakr al-Jūzjānī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-sulayman-al-juzjani"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-bakr-al-khwarizmi",
+    "name": "Abū Bakr al-Khwārizmī",
+    "short_name": "Abū Bakr al-Khwārizmī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-jassas"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-bakr-al-qadhdhar",
+    "name": "Muḥammad ibn Aḥmad ibn ʿAlī Abū Bakr al-Qadhdhār al-Balkhī",
+    "short_name": "Abū Bakr al-Qadhdhār",
+    "biography": "Muḥammad ibn Aḥmad ibn ʿAlī Abū Bakr al-Qadhdhār al-Balkhī was a faqīh, with whom Abū al-Fatḥ ʿAbd al-Rashīd al-Walwālijī, author of al-Fatāwā al-Walwālijiyyah, studied fiqh.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 89, no. 46 (translated)",
+    "biography_checked": false,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-bakr-shadhan",
+    "name": "Abū Bakr Shādhān al-Balkhī",
+    "short_name": "Abū Bakr Shādhān",
+    "biography": "Abū Bakr Shādhān al-Balkhī was a faqīh and a scholar of vast learning.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 86, no. 30 (translated)",
+    "biography_checked": false,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-hafs-al-balkhi",
+    "name": "ʿUmar ibn ʿAbd al-Muʾmin Abū Ḥafṣ al-Balkhī",
+    "short_name": "Abū Ḥafṣ al-Balkhī",
+    "biography": "ʿUmar ibn ʿAbd al-Muʾmin Abū Ḥafṣ al-Balkhī was Shaykh al-Islām. He died in 559 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 92, no. 65 (translated)",
+    "biography_checked": false,
+    "death_ah": 559,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-hafs-al-kabir",
+    "name": "Abū Ḥafṣ Aḥmad ibn Ḥafṣ ibn al-Zibriqān ibn ʿAbdullāh ibn Abjar al-ʿIjlī al-Bukhārī",
+    "short_name": "Abū Ḥafṣ al-Kabīr",
+    "biography": "Abū Ḥafṣ al-Kabīr, Aḥmad ibn Ḥafṣ al-Bukhārī, took his knowledge from Muḥammad ibn al-Ḥasan and had many companions. He died in 217 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 115 (translated)",
+    "biography_checked": false,
+    "death_ah": 217,
+    "death_approximate": false,
+    "places": [
+      "bukhara"
+    ],
+    "teachers": [
+      "imam-muhammad"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-hamid-al-abari",
+    "name": "Aḥmad ibn Yaḥyā ibn Hishām Abū Ḥāmid al-Abarī",
+    "short_name": "Abū Ḥāmid al-Abarī",
+    "biography": "Aḥmad ibn Yaḥyā ibn Hishām Abū Ḥāmid al-Abarī was a well-known scholar. He died in 305 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 87, no. 34 (translated)",
+    "biography_checked": false,
+    "death_ah": 305,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-hamid-al-balkhi",
+    "name": "Aḥmad ibn Sahl Abū Ḥāmid al-Balkhī",
+    "short_name": "Abū Ḥāmid al-Balkhī",
+    "biography": "Aḥmad ibn Sahl Abū Ḥāmid al-Balkhī, the faqīh, died in 340 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 88, no. 40 (translated)",
+    "biography_checked": false,
+    "death_ah": 340,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-hanifah",
+    "name": "Al-Nuʿmān ibn Thābit ibn Zūṭā ibn Marzubān",
+    "short_name": "Abū Ḥanīfah",
+    "tabaqah": "Imāms of Fiqh",
+    "order": 10,
+    "biography": "Abū Ḥanīfah al-Nuʿmān ibn Thābit al-Kūfī was born in Kufa in 80 AH, lived most of his life there, and died in Baghdad in 150 AH at the age of seventy.\n\nHe began as a merchant, until al-Shaʿbī noticed his intelligence and urged him to study and to sit with the scholars. In 102 AH, at the age of twenty-two, he turned to fiqh and joined the circle of Ḥammād ibn Abī Sulaymān, the faqīh of Kufa, staying with him for eighteen years until Ḥammād's death.\n\nWhen Ḥammād died in 120 AH, his companions chose Abū Ḥanīfah, then forty, to lead the circle. He taught and gave fatwā for some thirty years, and a great number of students trained under him, many of whom became imāms in their own right.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 47–57 (translated, abridged)",
+    "biography_checked": false,
+    "death_ah": 150,
+    "death_approximate": false,
+    "places": [
+      "baghdad",
+      "kufa"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "hammad"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-jafar-al-hinduwani",
+    "name": "Muḥammad ibn ʿAbdullāh ibn Muḥammad ibn ʿUmar Abū Jaʿfar al-Hinduwānī",
+    "short_name": "Abū Jaʿfar al-Hinduwānī",
+    "biography": "Abū Jaʿfar Muḥammad ibn ʿAbdullāh ibn Muḥammad ibn ʿUmar al-Hinduwānī al-Balkhī was one of the great Ḥanafī jurists of his time. For his fiqh he was called \"Abū Ḥanīfah al-Ṣaghīr\". A faqīh of great standing and remarkable intelligence, he used to say of himself: \"If all the sayings of Abū Ḥanīfah, the dictations of Abū Yūsuf, and the nawādir and ziyādāt of Muḥammad ibn al-Ḥasan were burned, I could write them out from memory without putting a letter before or after its place.\"\n\nHe took from al-Aʿmash, al-Iskāf and al-Ṣaffār, and Abū al-Layth al-Samarqandī and other scholars of the madhhab studied with him. He died in 362 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 258; al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 88, no. 42 (translated)",
+    "biography_checked": false,
+    "death_ah": 362,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [
+      "abu-bakr-al-amash",
+      "abu-bakr-al-iskaf",
+      "abu-al-qasim-al-saffar"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-jafar-al-nasafi",
+    "name": "Abū Jaʿfar al-Nasafī",
+    "short_name": "Abū Jaʿfar al-Nasafī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-jassas"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-jafar-al-zali",
+    "name": "Muḥammad ibn Muḥammad ibn al-Ḥasan Abū Jaʿfar al-Zālī",
+    "short_name": "Abū Jaʿfar al-Zālī",
+    "biography": "Muḥammad ibn Muḥammad ibn al-Ḥasan Abū Jaʿfar al-Zālī was Shaykh al-Islām; in his time no one came near him in fiqh, fatwā and nawāzil. He died in 517 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 90, no. 54 (translated)",
+    "biography_checked": false,
+    "death_ah": 517,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-khazim",
+    "name": "Abū Khāzim",
+    "short_name": "Abū Khāzim",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "bakr-al-ammi"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-muti-al-balkhi",
+    "name": "Abū Muṭīʿ al-Balkhī",
+    "short_name": "Abū Muṭīʿ al-Balkhī",
+    "chains": [
+      "balkh"
+    ],
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-nasr-al-aqta",
+    "name": "Abū Naṣr al-Aqṭaʿ",
+    "short_name": "Abū Naṣr al-Aqṭaʿ",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-quduri"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-nasr-ibn-sallam",
+    "name": "Muḥammad ibn Muḥammad ibn Sallām Abū Naṣr al-Balkhī",
+    "short_name": "Abū Naṣr ibn Sallām",
+    "biography": "Muḥammad ibn Muḥammad ibn Sallām Abū Naṣr al-Balkhī was a faqīh held in awe and great honour. He died in 305 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 86, no. 33 (translated)",
+    "biography_checked": false,
+    "death_ah": 305,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-said-al-bardhai",
+    "name": "Abū Saʿīd al-Bardhaʿī",
+    "short_name": "Abū Saʿīd al-Bardhaʿī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-ali-al-daqqaq",
+      "ismail-ibn-hammad"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-shuja-al-bistami",
+    "name": "ʿUmar ibn Muḥammad ibn ʿAbdullāh Abū Shujāʿ al-Bisṭāmī al-Balkhī",
+    "short_name": "Abū Shujāʿ al-Bisṭāmī",
+    "biography": "ʿUmar ibn Muḥammad ibn ʿAbdullāh Abū Shujāʿ al-Bisṭāmī al-Balkhī: his forebears were from Bisṭām and settled in Balkh. He was a man of letters, a writer and a poet, and a faqīh, muḥaddith and ḥāfiẓ. He died in Balkh, where he had been born in 475 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 92, no. 66 (translated)",
+    "biography_checked": false,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-sulayman-al-juzjani",
+    "name": "Abū Sulaymān Mūsā ibn Sulaymān al-Jūzjānī al-Baghdādī",
+    "short_name": "Abū Sulaymān al-Jūzjānī",
+    "biography": "Abū Sulaymān Mūsā ibn Sulaymān al-Jūzjānī al-Balkhī heard from ʿAbdullāh ibn al-Mubārak, and from Muḥammad ibn al-Ḥasan and Abū Yūsuf among the companions of Abū Ḥanīfah. He narrated their books and dictations (amālī), and of those who did so with al-Muʿallā ibn Manṣūr he was the older and the better known.\n\nA perceptive faqīh in raʾy, he made his own copies of Muḥammad ibn al-Ḥasan's books and narrated them from him, with differences from the narration of Abū Ḥafṣ al-Bukhārī. Through him the books of Muḥammad ibn al-Ḥasan spread in Khurāsān, where he lived and taught ḥadīth. He died after 200 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 115; al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 85, no. 23 (translated)",
+    "biography_checked": false,
+    "death_ah": 200,
+    "death_approximate": true,
+    "places": [
+      "baghdad",
+      "juzjan"
+    ],
+    "chains": [
+      "balkh",
+      "iraq"
+    ],
+    "teachers": [
+      "imam-muhammad",
+      "qadi-abu-yusuf"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-tahir-al-dabbas",
+    "name": "Abū Ṭāhir al-Dabbās",
+    "short_name": "Abū Ṭāhir al-Dabbās",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-khazim"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "abu-zayd-al-balkhi",
+    "name": "Aḥmad ibn Sahl Abū Zayd al-Balkhī",
+    "short_name": "Abū Zayd al-Balkhī",
+    "biography": "Aḥmad ibn Sahl Abū Zayd al-Balkhī was one of the outstanding great scholars of Islam, combining the Sharīʿah with philosophy, literature and the arts. He was born in one of the villages of Balkh and travelled widely before returning. The ruler of Balkh offered him the vizierate and he refused; the post of secretary was then put to him and he accepted it, though it vexed him until he died in Balkh.\n\nHe preceded the scholars of Islam in drawing maps of the earth, in his book Ṣuwar al-Aqālīm al-Islāmiyyah. Ibn al-Nadīm lists his works, among them al-Siyāsah al-Kabīr, al-Siyāsah al-Ṣaghīr, Mā Yaṣiḥḥu min Aḥkām al-Nujūm, a book on chess, Faḍāʾil Balkh and Naẓm al-Qurʾān.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 87, no. 35 (translated)",
+    "biography_checked": false,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "afiyah",
+    "name": "ʿĀfiyah ibn Yazīd ibn Qays al-Awdī al-Kūfī",
+    "short_name": "ʿĀfiyah",
+    "tabaqah": "Imāms of Fiqh",
+    "order": 70,
+    "biography": "ʿĀfiyah ibn Yazīd ibn Qays al-Awdī al-Kūfī was one of the leading imāms and a companion of Imām Abū Ḥanīfah. When ʿĀfiyah was absent from a discussion, Abū Ḥanīfah would tell his companions not to settle the question until ʿĀfiyah was present. Al-Mahdī appointed him qāḍī of the eastern side of Baghdad. He died after 160 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 96 (translated)",
+    "biography_checked": false,
+    "death_ah": 160,
+    "death_approximate": true,
+    "places": [
+      "kufa",
+      "baghdad"
+    ],
+    "teachers": [
+      "abu-hanifah"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ahmad-al-natifi",
+    "name": "Abū al-ʿAbbās Aḥmad ibn Muḥammad ibn ʿUmar al-Nāṭifī",
+    "short_name": "Aḥmad al-Nāṭifī",
+    "biography": "Abū al-ʿAbbās Aḥmad ibn Muḥammad ibn ʿUmar al-Nāṭifī was one of the great Ḥanafī jurists. His works include al-Aḥkām. He died in al-Rayy in 446 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 146 (translated)",
+    "biography_checked": false,
+    "death_ah": 446,
+    "death_approximate": false,
+    "places": [
+      "rayy"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "muhammad-ibn-yahya-al-jurjani"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ahmad-ibn-abi-imran",
+    "name": "Aḥmad ibn Abī ʿImrān",
+    "short_name": "Aḥmad ibn Abī ʿImrān",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ahmad-ibn-ali-al-baghdadi",
+    "name": "Aḥmad ibn ʿAlī al-Baghdādī",
+    "short_name": "Aḥmad ibn ʿAlī al-Baghdādī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-abdullah-al-damaghani"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "al-burhan-al-balkhi",
+    "name": "ʿAlī ibn al-Ḥasan ibn Muḥammad Abū al-Ḥasan al-Balkhī, known as al-Burhān",
+    "short_name": "al-Burhān al-Balkhī",
+    "biography": "ʿAlī ibn al-Ḥasan ibn Muḥammad Abū al-Ḥasan al-Balkhī, known as al-Burhān, was an ascetic shaykh and imām of great standing, one of those who spread knowledge in the lands of Islam. He was the first to teach at several madrasahs when they were founded, and taught in Bukhārā and Aleppo. He died in al-Shām in 548 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 91, no. 62 (translated)",
+    "biography_checked": false,
+    "death_ah": 548,
+    "death_approximate": false,
+    "places": [
+      "balkh",
+      "bukhara",
+      "aleppo"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "al-hakim-al-shahid",
+    "name": "Abū al-Faḍl Muḥammad ibn Muḥammad ibn Aḥmad al-Marwazī, al-Ḥākim al-Shahīd",
+    "short_name": "al-Ḥākim al-Shahīd",
+    "tabaqah": "",
+    "order": null,
+    "biography": "Abū al-Faḍl Muḥammad ibn Muḥammad ibn Aḥmad al-Marwazī, al-Ḥākim al-Shahīd, was a great imām and faqīh. He served as qāḍī of Bukhārā and later became vizier to the Amīr al-Ḥamīd, ruler of Khurāsān.\n\nHis works include al-Ishārāt, al-Muntaqā and, most importantly, al-Kāfī, in which he summarised the books of Imām Muḥammad ibn al-Ḥasan, and on which al-Sarakhsī wrote his famous commentary al-Mabsūṭ. Al-Naqīb says he was killed in 334 AH; Mashāyikh Balkh gives 344 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 144–145; al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 89, no. 48 (translated)",
+    "biography_checked": true,
+    "death_ah": 334,
+    "death_approximate": false,
+    "places": [
+      "balkh",
+      "bukhara"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "al-jassas",
+    "name": "Abū Bakr Aḥmad ibn ʿAlī al-Rāzī al-Jaṣṣāṣ",
+    "short_name": "al-Jaṣṣāṣ",
+    "biography": "Abū Bakr Aḥmad ibn ʿAlī al-Rāzī al-Jaṣṣāṣ was a faqīh, uṣūlī and mufassir, and the leadership of the Ḥanafīs passed to him in his time. He studied fiqh with Abū al-Ḥasan al-Karkhī and lived in Baghdad, where he died in 370 AH.\n\nHis works include Aḥkām al-Qurʾān, his Uṣūl, his abridgement of al-Ṭaḥāwī's Ikhtilāf al-ʿUlamāʾ, and commentaries on al-Jāmiʿ al-Kabīr, al-Jāmiʿ al-Ṣaghīr, Mukhtaṣar al-Ṭaḥāwī and Mukhtaṣar al-Karkhī.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 145 (translated)",
+    "biography_checked": false,
+    "death_ah": 370,
+    "death_approximate": false,
+    "places": [
+      "baghdad"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-karkhi"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "al-karkhi",
+    "name": "Abū al-Ḥasan ʿUbaydullāh ibn al-Ḥusayn ibn Dallāl al-Karkhī",
+    "short_name": "al-Karkhī",
+    "biography": "Abū al-Ḥasan ʿUbaydullāh ibn al-Ḥusayn ibn Dallāl al-Karkhī was the shaykh of al-Shāshī and al-Jaṣṣāṣ, and the leadership of the Ḥanafīs passed to him in his time. His works include commentaries on al-Jāmiʿ al-Ṣaghīr and al-Jāmiʿ al-Kabīr, and his Mukhtaṣar. He died in 340 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 130, 145 (translated)",
+    "biography_checked": false,
+    "death_ah": 340,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-khazim",
+      "abu-said-al-bardhai"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "al-khalil-ibn-ahmad-al-shajari",
+    "name": "al-Khalīl ibn Aḥmad ibn Ismāʿīl al-Shajarī",
+    "short_name": "al-Khalīl ibn Aḥmad al-Shajarī",
+    "biography": "Al-Khalīl ibn Aḥmad ibn Ismāʿīl al-Shajarī, the qāḍī, was Shaykh al-Islām in Balkh, a faqīh who narrated ḥadīth. He died in 481 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 90, no. 50 (translated)",
+    "biography_checked": false,
+    "death_ah": 481,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "al-khulmi",
+    "name": "Muḥammad ibn Muḥammad ibn Bakr al-Khulmī",
+    "short_name": "al-Khulmī",
+    "biography": "Muḥammad ibn Muḥammad ibn Bakr al-Khulmī was Shaykh al-Islām. The leadership of the Ḥanafī madhhab passed to him, and he served as qāḍī of Balkh. He died in 544 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 91, no. 61 (translated)",
+    "biography_checked": false,
+    "death_ah": 544,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "al-layth",
+    "name": "al-Layth ibn Saʿd ibn ʿAbd al-Raḥmān, Abū al-Ḥārith al-Fahmī",
+    "short_name": "al-Layth",
+    "tabaqah": "Imāms of Fiqh",
+    "order": 110,
+    "biography": "Abū al-Ḥārith al-Layth ibn Saʿd ibn ʿAbd al-Raḥmān al-Fahmī was the faqīh and muḥaddith of Egypt, one of those of whom a whole land could be proud. He died in 175 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 412 (translated)",
+    "biography_checked": false,
+    "death_ah": 175,
+    "death_approximate": false,
+    "places": [
+      "cairo"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "al-quduri",
+    "name": "Abū al-Ḥasan Aḥmad ibn Muḥammad ibn Aḥmad al-Qudūrī",
+    "short_name": "al-Qudūrī",
+    "tabaqah": "",
+    "order": null,
+    "biography": "Abū al-Ḥasan Aḥmad ibn Muḥammad ibn Aḥmad al-Qudūrī: the leadership of the Ḥanafīs in Iraq passed to him, and he was held in great esteem and standing among them. His works include his Mukhtaṣar, al-Tajrīd, al-Taqrīb and a commentary on Mukhtaṣar al-Karkhī. He died in 428 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 146 (translated)",
+    "biography_checked": false,
+    "death_ah": 428,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "muhammad-ibn-yahya-al-jurjani"
+    ],
+    "students": [
+      "abu-nasr-al-aqta"
+    ],
+    "draft": false
+  },
+  {
+    "id": "al-saymari",
+    "name": "Abū ʿAbdullāh al-Ḥusayn ibn ʿAlī ibn Muḥammad al-Ṣaymarī",
+    "short_name": "al-Ṣaymarī",
+    "biography": "Abū ʿAbdullāh al-Ḥusayn ibn ʿAlī ibn Muḥammad al-Ṣaymarī was the imām of the Ḥanafīs in Baghdad: a qāḍī, a scholar and a good man. His works include Akhbār Abī Ḥanīfah wa Aṣḥābih, a commentary on Mukhtaṣar al-Ṭaḥāwī, and Masāʾil al-Khilāf in uṣūl al-fiqh. He died in 436 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 89 (translated)",
+    "biography_checked": false,
+    "death_ah": 436,
+    "death_approximate": false,
+    "places": [
+      "baghdad"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-bakr-al-khwarizmi"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "al-tahawi",
+    "name": "Abū Jaʿfar Aḥmad ibn Muḥammad ibn Salāmah al-Ṭaḥāwī",
+    "short_name": "al-Ṭaḥāwī",
+    "biography": "Abū Jaʿfar Aḥmad ibn Muḥammad ibn Salāmah al-Ṭaḥāwī was an eminent imām, faqīh, muḥaddith and mufassir, learned in the schools of all the jurists. He died in 321 AH. Among his many works are Aḥkām al-Qurʾān, Sharḥ Maʿānī al-Āthār and al-Mukhtaṣar in fiqh.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 131 (translated)",
+    "biography_checked": false,
+    "death_ah": 321,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "bakkar-ibn-qutaybah",
+      "ahmad-ibn-abi-imran"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "al-warraq-al-tirmidhi",
+    "name": "Muḥammad ibn ʿUmar al-Warrāq al-Tirmidhī",
+    "short_name": "al-Warrāq al-Tirmidhī",
+    "biography": "Muḥammad ibn ʿUmar al-Warrāq al-Tirmidhī lived in Balkh and was a scrupulous and upright scholar. His works include Kitāb al-ʿĀlim wa al-Mutaʿallim, al-Furūq, al-ʿItq wa al-Fikāk and al-Darajāt. He died in 294 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 86, no. 31 (translated)",
+    "biography_checked": false,
+    "death_ah": 294,
+    "death_approximate": false,
+    "places": [
+      "balkh",
+      "tirmidh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "al-zahir-al-balkhi",
+    "name": "Aḥmad ibn ʿAlī ibn ʿAbd al-ʿAzīz Abū Bakr al-Balkhī, known as al-Ẓahīr",
+    "short_name": "al-Ẓahīr al-Balkhī",
+    "biography": "Aḥmad ibn ʿAlī ibn ʿAbd al-ʿAzīz Abū Bakr al-Balkhī, known as al-Ẓahīr, was an imām in furūʿ and uṣūl, skilled in both the rational and the transmitted sciences. He wrote a commentary on al-Jāmiʿ al-Ṣaghīr of Muḥammad ibn al-Ḥasan, taught in Marāghah, al-Shām and Aleppo, and died in 553 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 91, no. 63 (translated)",
+    "biography_checked": false,
+    "death_ah": 553,
+    "death_approximate": false,
+    "places": [
+      "balkh",
+      "aleppo"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ali-ibn-ahmad-al-farisi",
+    "name": "ʿAlī ibn Aḥmad al-Fārisī",
+    "short_name": "ʿAlī ibn Aḥmad al-Fārisī",
+    "biography": "ʿAlī ibn Aḥmad al-Fārisī was a well-known faqīh. He died in 355 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 88, no. 41 (translated)",
+    "biography_checked": false,
+    "death_ah": 355,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ali-ibn-ahmad-al-shajari",
+    "name": "ʿAlī ibn Aḥmad ibn ʿAlī al-Shajarī al-Balkhī",
+    "short_name": "ʿAlī ibn Aḥmad al-Shajarī",
+    "biography": "ʿAlī ibn Aḥmad ibn ʿAlī al-Shajarī al-Balkhī was the foremost of the companions of Abū Ḥanīfah [that is, the Ḥanafīs] in his time. He narrated a great deal of ḥadīth, which was carried from him. He died in 528 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 90, no. 55 (translated)",
+    "biography_checked": false,
+    "death_ah": 528,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ali-ibn-al-hasan-al-saklakandi",
+    "name": "ʿAlī ibn al-Ḥasan al-Saklakandī al-Badakhshī al-Balkhī",
+    "short_name": "ʿAlī ibn al-Ḥasan al-Saklakandī",
+    "biography": "ʿAlī ibn al-Ḥasan al-Saklakandī al-Badakhshī al-Balkhī attached himself to al-Burhān al-Balkhī and took fiqh from him. He settled in Damascus and died there in 505 AH; it is also said that he died in Aleppo in 547 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 90, no. 52 (translated)",
+    "biography_checked": false,
+    "death_ah": 505,
+    "death_approximate": true,
+    "places": [
+      "balkh",
+      "damascus"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [
+      "al-burhan-al-balkhi"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "alim-al-din-al-balkhi",
+    "name": "ʿAlīm al-Dīn ibn ʿAtīq Allāh ibn Faḍl Allāh al-Balkhī",
+    "short_name": "ʿAlīm al-Dīn al-Balkhī",
+    "biography": "ʿAlīm al-Dīn ibn ʿAtīq Allāh ibn Faḍl Allāh al-Balkhī was a Sufi and a Ḥanafī faqīh. His works include Zubdat al-Riwāyāt fī Furūʿ al-Fiqh.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 93, no. 73 (translated)",
+    "biography_checked": false,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "alqamah",
+    "name": "ʿAlqamah ibn Qays ibn ʿAbdullāh ibn Mālik ibn ʿAlqamah ibn Salāmān al-Nakhaʿī al-Kūfī",
+    "short_name": "ʿAlqamah",
+    "tabaqah": "Tābiʿūn",
+    "biography": "Abū Shibl ʿAlqamah ibn Qays ibn ʿAbdullāh al-Nakhaʿī al-Kūfī was a Tābiʿī, born in the lifetime of Rasūlullāh ﷺ. He was the companion of ʿAbdullāh ibn Masʿūd and took his knowledge from him, and of all people he most resembled him in guidance and bearing.\n\nOf Ibn Masʿūd's companions he had the greatest share of his knowledge, fiqh and ḥadīth. He stayed with him until he graduated under him, and after him took up fatwā and leadership. He died between 61 and 73 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 83–84 (translated)",
+    "biography_checked": false,
+    "death_ah": 61,
+    "death_approximate": true,
+    "places": [
+      "kufa"
+    ],
+    "teachers": [
+      "abd-allah-ibn-masud"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "bahaa-al-din-walad",
+    "name": "Muḥammad Bahāʾ al-Dīn Walad al-Balkhī",
+    "short_name": "Bahāʾ al-Dīn Walad",
+    "biography": "Muḥammad Bahāʾ al-Dīn Walad al-Balkhī, the father of Mawlānā Jalāl al-Dīn al-Rūmī, was an ascetic and a Sufi faqīh, titled Sulṭān al-ʿUlamāʾ, to whom questions were sent from all parts of Khurāsān. He died in Konya, in the lands of Rūm, in 628 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 92, no. 70 (translated)",
+    "biography_checked": false,
+    "death_ah": 628,
+    "death_approximate": false,
+    "places": [
+      "balkh",
+      "konya"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "bakkar-ibn-qutaybah",
+    "name": "Abū Bakrah Bakkār ibn Qutaybah ibn Asad al-Thaqafī",
+    "short_name": "Bakkār ibn Qutaybah",
+    "biography": "Abū Bakrah Bakkār ibn Qutaybah ibn Asad al-Thaqafī was qāḍī of Egypt and the shaykh of al-Ṭaḥāwī, and among the most learned in fiqh of his time in the madhhab. His works include al-Shurūṭ, al-Maḥāḍir wa al-Sijillāt and al-Wathāʾiq wa al-ʿUhūd. He died in 270 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 143–144 (translated)",
+    "biography_checked": false,
+    "death_ah": 270,
+    "death_approximate": false,
+    "places": [
+      "cairo"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "bakr-al-ammi",
+    "name": "Bakr al-ʿAmmī",
+    "short_name": "Bakr al-ʿAmmī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "muhammad-ibn-samaah"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "bishr-ibn-al-walid",
+    "name": "Bishr ibn al-Walīd",
+    "short_name": "Bishr ibn al-Walīd",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "hammad-ibn-abi-hanifah",
+    "name": "Ḥammād ibn al-Nuʿmān ibn Thābit al-Kūfī",
+    "short_name": "Ḥammād ibn Abī Ḥanīfah",
+    "biography": "Ḥammād ibn al-Nuʿmān ibn Thābit al-Kūfī, the son of the Imām, studied fiqh with his father and gave fatwā in his time. He was of the generation of Zufar, Abū Yūsuf, Muḥammad and al-Ḥasan ibn Ziyād among his father's companions, and was known above all for his scrupulousness. He died in 176 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 99 (translated)",
+    "biography_checked": false,
+    "death_ah": 176,
+    "death_approximate": false,
+    "places": [
+      "kufa"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-hanifah"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "hammad",
+    "name": "Ḥammād ibn Abī Sulaymān",
+    "short_name": "Ḥammād",
+    "tabaqah": "Tābiʿūn",
+    "biography": "Abū Ismāʿīl Ḥammād ibn Abī Sulaymān Muslim al-Kūfī, the faqīh of Iraq, was known for his intelligence and generosity, and was a man of wealth and dignity. He narrated from Anas ibn Mālik, Saʿīd ibn al-Musayyib, al-Ḥasan al-Baṣrī and others.\n\nHe studied fiqh with Ibrāhīm al-Nakhaʿī, the faqīh of Kufa in his time, and was the most distinguished of his companions. After al-Nakhaʿī's death he became the muftī of Kufa. Abū Ḥanīfah took most of his knowledge from him and stayed with him for eighteen years. He died in 120 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 53–55 (translated)",
+    "biography_checked": false,
+    "death_ah": 120,
+    "death_approximate": false,
+    "places": [
+      "kufa"
+    ],
+    "teachers": [
+      "ibrahim-al-nakhai"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "hasan-ibn-makki",
+    "name": "Ḥasan ibn Makkī ibn Ibrāhīm",
+    "short_name": "Ḥasan ibn Makkī",
+    "biography": "Ḥasan ibn Makkī ibn Ibrāhīm was a scholar of vast learning.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 85, no. 21 (translated)",
+    "biography_checked": false,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "hasan-ibn-ziyad",
+    "name": "Abū ʿAlī al-Ḥasan ibn Ziyād al-Luʾluʾī al-Kūfī",
+    "short_name": "Ḥasan ibn Ziyād al-Luʾluʾī",
+    "tabaqah": "Imāms of Fiqh",
+    "order": 60,
+    "biography": "Abū ʿAlī al-Ḥasan ibn Ziyād al-Luʾluʾī was of Kufan origin and settled in Baghdad. He was one of the most gifted in raʾy, a lover and follower of the Sunnah, learned in the narrations from Abū Ḥanīfah, and foremost in questioning and deriving rulings. Yaḥyā ibn Ādam said of him: \"I have not seen anyone more learned in fiqh than al-Ḥasan ibn Ziyād.\"\n\nHe studied with Abū Ḥanīfah for a time, and after his death with Zufar and Abū Yūsuf. He was appointed qāḍī but it did not suit him and he asked to be relieved, devoting himself instead to fatwā and teaching. He died in 204 AH, in his eighties, leaving works in fiqh and ḥadīth.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 67–68, 120 (translated)",
+    "biography_checked": false,
+    "death_ah": 204,
+    "death_approximate": false,
+    "places": [
+      "kufa",
+      "baghdad"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-hanifah",
+      "qadi-abu-yusuf",
+      "imam-zufar"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "hilal-ibn-yahya",
+    "name": "Hilāl ibn Yaḥyā ibn Muslim al-Raʾy al-Baṣrī",
+    "short_name": "Hilāl ibn Yaḥyā",
+    "biography": "Hilāl ibn Yaḥyā ibn Muslim al-Raʾy al-Baṣrī took his knowledge from Abū Yūsuf and Zufar. His works include Kitāb al-Ḥudūd, Aḥkām al-Waqf and al-Shurūṭ. He died in 245 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 118, 143–144 (translated)",
+    "biography_checked": false,
+    "death_ah": 245,
+    "death_approximate": false,
+    "places": [
+      "basra"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "qadi-abu-yusuf",
+      "imam-zufar"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ibn-abi-al-qasir",
+    "name": "Muḥammad ibn Abī Muḥammad ibn Abī al-Qaṣīr al-Balkhī",
+    "short_name": "Ibn Abī al-Qaṣīr",
+    "biography": "Muḥammad ibn Abī Muḥammad ibn Abī al-Qaṣīr al-Balkhī was known for fiqh, juristic reasoning and fatwā, and his fatwās were relied upon. He died in 511 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 90, no. 53 (translated)",
+    "biography_checked": false,
+    "death_ah": 511,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ibn-al-turkmani-al-balkhi",
+    "name": "Aḥmad ibn ʿUthmān ibn al-Turkmānī al-Balkhī",
+    "short_name": "Ibn al-Turkmānī al-Balkhī",
+    "biography": "Aḥmad ibn ʿUthmān ibn al-Turkmānī al-Balkhī came from a family known for knowledge and virtue, and was Ḥanafī in madhhab. He died in Egypt in 744 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 93, no. 72 (translated)",
+    "biography_checked": false,
+    "death_ah": 744,
+    "death_approximate": false,
+    "places": [
+      "balkh",
+      "cairo"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ibrahim-al-nakhai",
+    "name": "Abū ʿImrān Ibrāhīm ibn Yazīd ibn Qays ibn al-Aswad al-Nakhaʿī al-Yamānī al-Kūfī",
+    "short_name": "Ibrāhīm al-Nakhaʿī",
+    "tabaqah": "Tābiʿūn",
+    "biography": "Abū ʿImrān Ibrāhīm ibn Yazīd ibn Qays al-Nakhaʿī al-Kūfī was one of the renowned scholars of Kufa. He studied fiqh with his uncle ʿAlqamah and other companions of Ibn Masʿūd, and many took knowledge from him. He died in 95 or 96 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 53 (translated)",
+    "biography_checked": false,
+    "death_ah": 95,
+    "death_approximate": true,
+    "places": [
+      "kufa"
+    ],
+    "teachers": [
+      "alqamah"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ibrahim-ibn-yusuf",
+    "name": "Ibrāhīm ibn Yūsuf",
+    "short_name": "Ibrāhīm ibn Yūsuf",
+    "biography": "Ibrāhīm ibn Yūsuf, the brother of ʿIṣām and Muḥammad, was a man held in awe and skilled in debate. He took from Abū Yūsuf and accompanied Zufar, and was the shaykh and scholar of Balkh in his time. He died in 239 or 241 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 85, no. 24 (translated)",
+    "biography_checked": false,
+    "death_ah": 239,
+    "death_approximate": true,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [
+      "qadi-abu-yusuf",
+      "imam-zufar"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "imam-ahmad",
+    "name": "Imām Aḥmad ibn Ḥanbal",
+    "short_name": "Imām Aḥmad",
+    "tabaqah": "Imāms of Fiqh",
+    "order": 100,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "imam-al-shafii",
+    "name": "Abū ʿAbdullāh Muḥammad ibn Idrīs al-Shāfiʿī al-Muṭṭalibī al-Qurashī",
+    "short_name": "Imām al-Shāfiʿī",
+    "tabaqah": "Imāms of Fiqh",
+    "order": 90,
+    "death_ah": 204,
+    "death_approximate": false,
+    "places": [],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "imam-malik",
+    "name": "Abū ʿAbdullāh Mālik ibn Anas ibn Mālik ibn Abī ʿĀmir al-Aṣbaḥī al-Ḥimyarī al-Madanī",
+    "short_name": "Imām Mālik",
+    "tabaqah": "Imāms of Fiqh",
+    "order": 20,
+    "death_ah": 179,
+    "death_approximate": false,
+    "places": [
+      "madinah"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "imam-muhammad",
+    "name": "Imām Muḥammad ibn al-Ḥasan al-Shaybānī al-Kūfī",
+    "short_name": "Imām Muḥammad",
+    "tabaqah": "Imāms of Fiqh",
+    "order": 40,
+    "biography": "Abū ʿAbdullāh Muḥammad ibn al-Ḥasan ibn Farqad al-Shaybānī was born in Wāsiṭ in the first half of the 130s AH and raised in Kufa. He lived in Baghdad and taught ḥadīth there, and died in al-Rayy in 189 AH.\n\nOne of the most brilliant of people, a leading imām in fiqh and skilled in Arabic, grammar and arithmetic, he studied with Abū Ḥanīfah in the last part of his life, then with Abū Yūsuf, until he mastered fiqh; he also heard from Imām Mālik and others. Imām al-Shāfiʿī studied with him and stayed with him, and said: \"I have never sat with anyone more learned in fiqh.\"\n\nHe was appointed qāḍī by al-Rashīd, and recorded the Ḥanafī fiqh in books, among them al-Mabsūṭ (also called al-Aṣl), al-Jāmiʿ al-Ṣaghīr, al-Jāmiʿ al-Kabīr, al-Ḥujjah ʿalā Ahl al-Madīnah, al-Ziyādāt, Ziyādāt al-Ziyādāt and al-Siyar.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 65–67 (translated)",
+    "biography_checked": false,
+    "death_ah": 189,
+    "death_approximate": false,
+    "places": [
+      "kufa",
+      "wasit",
+      "baghdad",
+      "rayy"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "qadi-abu-yusuf",
+      "abu-hanifah",
+      "imam-malik"
+    ],
+    "students": [
+      "imam-al-shafii"
+    ],
+    "draft": false
+  },
+  {
+    "id": "imam-zufar",
+    "name": "Zufar ibn al-Hudhayl al-ʿAnbarī al-Tamīmī al-Baṣrī",
+    "short_name": "Imām Zufar",
+    "tabaqah": "Imāms of Fiqh",
+    "order": 50,
+    "biography": "Abū al-Hudhayl Zufar ibn al-Hudhayl ibn Qays al-ʿAnbarī, the eldest of Abū Ḥanīfah's four great companions, was born in 110 AH. He was one of the oceans of fiqh and among the most intelligent of his time: a man of intellect, religion, understanding and scrupulousness, who combined knowledge, worship, fiqh and ḥadīth.\n\nHe studied fiqh with Abū Ḥanīfah and sat with him for a long time, and Abū Ḥanīfah honoured him greatly. After Abū Ḥanīfah's death, Zufar succeeded him in his teaching circle. He was appointed qāḍī of Basra and died there in 158 AH, eight years after his teacher.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 60–62 (translated)",
+    "biography_checked": false,
+    "death_ah": 158,
+    "death_approximate": false,
+    "places": [
+      "kufa",
+      "basra"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-hanifah"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "isa-ibn-aban",
+    "name": "Abū Mūsā ʿĪsā ibn Abān ibn Ṣadaqah",
+    "short_name": "ʿĪsā ibn Abān",
+    "biography": "The qāḍī ʿĪsā ibn Abān ibn Ṣadaqah studied fiqh with Muḥammad ibn al-Ḥasan and accompanied him, and was known for his intelligence and breadth of knowledge. He was among the first after the imāms to write in the madhhab; his works include Kitāb al-Ḥujjah, Ithbāt al-Qiyās, Ijtihād al-Raʾy, al-Shahādāt and Khabar al-Wāḥid. He died in 221 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 116, 143 (translated)",
+    "biography_checked": false,
+    "death_ah": 221,
+    "death_approximate": false,
+    "places": [
+      "basra"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "imam-muhammad"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ismail-ibn-hammad",
+    "name": "Ismāʿīl ibn Ḥammād ibn Abī Ḥanīfah",
+    "short_name": "Ismāʿīl ibn Ḥammād",
+    "biography": "Ismāʿīl ibn Ḥammād ibn Abī Ḥanīfah studied fiqh with his father Ḥammād and with al-Ḥasan ibn Ziyād, but did not meet his grandfather. He served as qāḍī and died young, in 212 AH. Among his works are al-Jāmiʿ in fiqh and a refutation of the Qadariyyah.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 115 (translated)",
+    "biography_checked": false,
+    "death_ah": 212,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "hammad-ibn-abi-hanifah",
+      "hasan-ibn-ziyad"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "khwajaki-al-balkhi",
+    "name": "Muḥammad ibn Abī Bakr ibn ʿAṭāʾ al-Balkhī, known as Khwājakī",
+    "short_name": "Khwājakī al-Balkhī",
+    "biography": "Muḥammad ibn Abī Bakr ibn ʿAṭāʾ, known as Khwājakī, was a distinguished faqīh and debater who travelled through the lands. He died in 537, 538 or 539 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 91, no. 59 (translated)",
+    "biography_checked": false,
+    "death_ah": 537,
+    "death_approximate": true,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "makki-ibn-ibrahim",
+    "name": "Makkī ibn Ibrāhīm",
+    "short_name": "Makkī ibn Ibrāhīm",
+    "biography": "Makkī ibn Ibrāhīm accompanied Abū Ḥanīfah, took fiqh from him and narrated ḥadīth from him.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 85, no. 20 (translated)",
+    "biography_checked": false,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [
+      "abu-hanifah"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "mualla-ibn-mansur",
+    "name": "al-Muʿallā ibn Manṣūr al-Rāzī",
+    "short_name": "Muʿallā ibn Manṣūr",
+    "biography": "Al-Muʿallā ibn Manṣūr al-Rāzī studied fiqh first with Abū Yūsuf and then with Muḥammad, and narrated their books and dictations. He lived in Baghdad and died in 211 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 115 (translated)",
+    "biography_checked": false,
+    "death_ah": 211,
+    "death_approximate": false,
+    "places": [
+      "baghdad"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "qadi-abu-yusuf",
+      "imam-muhammad"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "mufaddal-ibn-muhammad-ibn-misar",
+    "name": "Mufaḍḍal ibn Muḥammad ibn Misʿar",
+    "short_name": "Mufaḍḍal ibn Muḥammad ibn Misʿar",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-quduri"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-abdullah-al-bistami",
+    "name": "Muḥammad ibn ʿAbdullāh ibn Naṣr al-Bisṭāmī al-Balkhī",
+    "short_name": "Muḥammad ibn ʿAbdullāh al-Bisṭāmī",
+    "biography": "Muḥammad ibn ʿAbdullāh ibn Naṣr al-Bisṭāmī al-Balkhī, the eminent shaykh and most excellent imām, was famous for fiqh, tafsīr and ḥadīth. He was born and raised in Balkh, and died in 584 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 92, no. 67 (translated)",
+    "biography_checked": false,
+    "death_ah": 584,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-abi-sahl-al-sarakhsi",
+    "name": "Abū Bakr Muḥammad ibn Aḥmad ibn Abī Sahl al-Sarakhsī, Shams al-Aʾimmah",
+    "short_name": "Shams al-Aʾimmah al-Sarakhsī",
+    "biography": "Abū Bakr Muḥammad ibn Aḥmad ibn Abī Sahl al-Sarakhsī, Shams al-Aʾimmah, was one of the great imāms: Sarakhsī by origin, Bukhārī by homeland, Farghānī in his teaching, Ḥanafī in knowledge, and buried in Balkh.\n\nHis works include his Uṣūl, al-Mabsūṭ, al-Muḥīṭ, and commentaries on al-Jāmiʿ al-Kabīr, al-Jāmiʿ al-Ṣaghīr, al-Siyar al-Kabīr, Ziyādāt al-Ziyādāt and Mukhtaṣar al-Ṭaḥāwī. Al-Naqīb gives his death as around 490 AH; Mashāyikh Balkh gives 481 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 147; al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 90, no. 49 (translated)",
+    "biography_checked": false,
+    "death_ah": 490,
+    "death_approximate": true,
+    "places": [
+      "balkh",
+      "sarakhs",
+      "bukhara"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-ahmad-al-zahid",
+    "name": "Muḥammad ibn Aḥmad ibn Ibrāhīm al-Zāhid al-Balkhī",
+    "short_name": "Muḥammad ibn Aḥmad al-Zāhid",
+    "biography": "Muḥammad ibn Aḥmad ibn Ibrāhīm al-Zāhid al-Balkhī was one of the great scholars and a reference for the eminent imāms. He died in 584 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 92, no. 68 (translated)",
+    "biography_checked": false,
+    "death_ah": 584,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-al-fadl-al-sarakhsi",
+    "name": "Muḥammad ibn al-Faḍl al-Sarakhsī",
+    "short_name": "Muḥammad ibn al-Faḍl al-Sarakhsī",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-quduri"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-al-husayn-al-qalanisi",
+    "name": "Muḥammad ibn al-Ḥusayn ibn ʿAlī al-Qalānisī al-Balkhī",
+    "short_name": "Muḥammad ibn al-Ḥusayn al-Qalānisī",
+    "biography": "Muḥammad ibn al-Ḥusayn ibn ʿAlī al-Qalānisī al-Balkhī was a meticulous and accomplished imām who became the foremost of the imāms of Balkh. He died in 535 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 90, no. 57 (translated)",
+    "biography_checked": false,
+    "death_ah": 535,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-aqil",
+    "name": "Muḥammad ibn ʿAqīl ibn al-Azhar Abū ʿAbdullāh al-Balkhī",
+    "short_name": "Muḥammad ibn ʿAqīl al-Balkhī",
+    "biography": "Muḥammad ibn ʿAqīl ibn al-Azhar Abū ʿAbdullāh al-Balkhī was a faqīh and a well-known muḥaddith, one of the great imāms. He died in 278 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 86, no. 28 (translated)",
+    "biography_checked": false,
+    "death_ah": 278,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-malik-al-balkhi",
+    "name": "Muḥammad ibn Mālik ibn Bakr ibn Bakkār ibn Qays ibn al-Ḥurūb ibn al-Ḥārith ibn al-Hāshim al-ʿArabī al-Balkhī",
+    "short_name": "Muḥammad ibn Mālik al-Balkhī",
+    "biography": "Muḥammad ibn Mālik al-Balkhī had no equal in fiqh. He narrated the khuṭbah of nikāḥ from Abū Ḥanīfah. He died in 244 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 85, no. 25 (translated)",
+    "biography_checked": false,
+    "death_ah": 244,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-salamah",
+    "name": "Muḥammad ibn Salamah Abū ʿAbdullāh al-Balkhī",
+    "short_name": "Muḥammad ibn Salamah",
+    "biography": "Muḥammad ibn Salamah Abū ʿAbdullāh al-Balkhī studied fiqh with Shaddād ibn Ḥakīm and then with Abū Sulaymān al-Jūzjānī, and Abū Bakr al-Iskāf took from him. He died in 278 or 279 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 86, no. 29 (translated)",
+    "biography_checked": false,
+    "death_ah": 278,
+    "death_approximate": true,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [
+      "abu-sulayman-al-juzjani"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-samaah",
+    "name": "Muḥammad ibn Samāʿah ibn ʿUbaydullāh al-Tamīmī, Abū ʿAbdullāh",
+    "short_name": "Muḥammad ibn Samāʿah",
+    "biography": "Abū ʿAbdullāh Muḥammad ibn Samāʿah ibn ʿUbaydullāh al-Tamīmī was one of the companions of Abū Yūsuf and Muḥammad. He wrote down their nawādir and narrated their books and dictations. His works include Adab al-Qāḍī and al-Maḥāḍir wa al-Sijillāt. He died in 233 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 116, 143 (translated)",
+    "biography_checked": false,
+    "death_ah": 233,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "qadi-abu-yusuf",
+      "imam-muhammad"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-shuja",
+    "name": "Muḥammad ibn Shujāʿ al-Thaljī",
+    "short_name": "Muḥammad ibn Shujāʿ al-Thaljī",
+    "biography": "Muḥammad ibn Shujāʿ al-Thaljī was the faqīh of Iraq in his time and one of the best-known students of al-Ḥasan ibn Ziyād; it was said that he \"opened up the fiqh of Abū Ḥanīfah, argued for it, brought out its reasons and strengthened it with ḥadīth\".\n\nHe was devoted to worship, night prayer and recitation, and was known for his knowledge of ḥadīth, though the muḥaddithūn considered him weak, and he had leanings towards the Muʿtazilah. His works include al-Muḍārabah, al-Manāsik and al-Nawādir. He died in 266 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 120, 143–144 (translated)",
+    "biography_checked": false,
+    "death_ah": 266,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "hasan-ibn-ziyad"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-umar-ibn-abd-al-samad",
+    "name": "Muḥammad ibn ʿUmar ibn ʿAbd al-Ṣamad al-Balkhī",
+    "short_name": "Muḥammad ibn ʿUmar al-Balkhī",
+    "biography": "Muḥammad ibn ʿUmar ibn ʿAbd al-Ṣamad al-Balkhī was a faqīh among the companions of Abū Ḥanīfah [that is, the Ḥanafīs], and narrated ḥadīth. He died in 552 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 91, no. 64 (translated)",
+    "biography_checked": false,
+    "death_ah": 552,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-yahya-al-jurjani",
+    "name": "Abū ʿAbdullāh Muḥammad ibn Yaḥyā ibn Mahdī al-Jurjānī",
+    "short_name": "Muḥammad ibn Yaḥyā al-Jurjānī",
+    "biography": "Abū ʿAbdullāh Muḥammad ibn Yaḥyā ibn Mahdī al-Jurjānī was a student of Abū Bakr al-Rāzī (al-Jaṣṣāṣ), the shaykh of al-Qudūrī and al-Nāṭifī, and one of the great Ḥanafī jurists of his time. He died in 397 or 398 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 196 (translated)",
+    "biography_checked": false,
+    "death_ah": 397,
+    "death_approximate": true,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-jassas"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-yahya-student-of-al-quduri",
+    "name": "Muḥammad ibn Yaḥyā",
+    "short_name": "Muḥammad ibn Yaḥyā",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "al-quduri"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "muhammad-ibn-yazid-al-naysaburi",
+    "name": "Muḥammad ibn Yazīd ibn ʿAbdullāh Abū ʿAbdullāh al-Naysābūrī al-Balkhī",
+    "short_name": "Muḥammad ibn Yazīd al-Naysābūrī",
+    "biography": "Muḥammad ibn Yazīd ibn ʿAbdullāh Abū ʿAbdullāh al-Naysābūrī al-Balkhī, known as Maḥmash, was the shaykh of the companions of Abū Ḥanīfah in Nishapur. He died in 259 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 86, no. 26 (translated)",
+    "biography_checked": false,
+    "death_ah": 259,
+    "death_approximate": false,
+    "places": [
+      "balkh",
+      "nishapur"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "musa-ibn-nasr",
+    "name": "Mūsā ibn Naṣr",
+    "short_name": "Mūsā ibn Naṣr",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "nasr-ibn-ibrahim",
+    "name": "Naṣr ibn Ibrāhīm ibn Yūsuf",
+    "short_name": "Naṣr ibn Ibrāhīm",
+    "biography": "Naṣr ibn Ibrāhīm ibn Yūsuf was one of the well-known scholars. He died in 303 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 86, no. 32 (translated)",
+    "biography_checked": false,
+    "death_ah": 303,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "nusayr-ibn-yahya",
+    "name": "Nuṣayr ibn Yaḥyā al-Balkhī",
+    "short_name": "Nuṣayr ibn Yaḥyā",
+    "biography": "Nuṣayr ibn Yaḥyā al-Balkhī was a faqīh, a scholar and an ascetic. He died in 268 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 86, no. 27 (translated)",
+    "biography_checked": false,
+    "death_ah": 268,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "qadi-abu-yusuf",
+    "name": "Abū Yūsuf Yaʿqūb ibn Ibrāhīm ibn Ḥabīb ibn Khunays ibn Saʿd al-Anṣārī al-Kūfī al-Baghdādī",
+    "short_name": "Qāḍī Abū Yūsuf",
+    "tabaqah": "Imāms of Fiqh",
+    "order": 30,
+    "biography": "Abū Yūsuf Yaʿqūb ibn Ibrāhīm ibn Ḥabīb al-Anṣārī was born in 113 AH. A faqīh and scholar who knew tafsīr, the maghāzī and the history of the Arabs, he was held in high regard by Hārūn al-Rashīd, and in his time was given authority over judgeships from the east to the west.\n\nHe studied first with Ibn Abī Laylā, then went to Abū Ḥanīfah, studied fiqh with him and stayed with him until his death; he said that he accompanied him for seventeen years. Imāms such as Muḥammad ibn al-Ḥasan and Aḥmad ibn Ḥanbal took from him.\n\nHe died in Baghdad in 182 AH, having served as qāḍī there under three ʿAbbāsid caliphs: al-Mahdī, al-Hādī and al-Rashīd. Among his works are Kitāb al-Āthār, Ikhtilāf Abī Ḥanīfah wa Ibn Abī Laylā, al-Kharāj and al-Radd ʿalā Siyar al-Awzāʿī.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, pp. 62–65 (translated)",
+    "biography_checked": false,
+    "death_ah": 182,
+    "death_approximate": false,
+    "places": [
+      "kufa",
+      "baghdad"
+    ],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-hanifah"
+    ],
+    "students": [
+      "imam-ahmad"
+    ],
+    "draft": false
+  },
+  {
+    "id": "qadi-al-haramayn",
+    "name": "Qāḍī al-Ḥaramayn",
+    "short_name": "Qāḍī al-Ḥaramayn",
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [],
+    "chains": [
+      "iraq"
+    ],
+    "teachers": [
+      "abu-khazim"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "ubaydullah-ibn-abi-bakr",
+    "name": "ʿUbaydullāh ibn Abī Bakr ibn Abī Saʿīd Abū al-Qāsim",
+    "short_name": "ʿUbaydullāh ibn Abī Bakr",
+    "biography": "ʿUbaydullāh ibn Abī Bakr ibn Abī Saʿīd Abū al-Qāsim was a scholar and faqīh, praised by Abū Jaʿfar al-Hinduwānī. He died in 370 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 89, no. 44 (translated)",
+    "biography_checked": false,
+    "death_ah": 370,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [
+      "abu-bakr-al-amash"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "uthman-ibn-ahmad-al-halabi",
+    "name": "ʿUthmān ibn Aḥmad ibn Muḥammad al-Ḥalabī al-Balkhī",
+    "short_name": "ʿUthmān ibn Aḥmad al-Ḥalabī",
+    "biography": "ʿUthmān ibn Aḥmad ibn Muḥammad al-Ḥalabī al-Balkhī was an imām, a faqīh and a muftī skilled in debate, who became Shaykh al-Islām in Balkh; he heard ḥadīth. He died in 529 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 90, no. 56 (translated)",
+    "biography_checked": false,
+    "death_ah": 529,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "uthman-ibn-umar-al-ghaznawi",
+    "name": "ʿUthmān ibn ʿUmar ibn ʿAlī ibn Abī Bakr al-Ghaznawī al-Shafarī al-Muqrī",
+    "short_name": "ʿUthmān ibn ʿUmar al-Ghaznawī",
+    "biography": "ʿUthmān ibn ʿUmar ibn ʿAlī ibn Abī Bakr al-Ghaznawī al-Shafarī al-Muqrī was deeply learned in knowledge, fatwā and the sciences of fiqh. He died in 536 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 91, no. 58 (translated)",
+    "biography_checked": false,
+    "death_ah": 536,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "waki-ibn-al-jarrah",
+    "name": "Wakīʿ ibn al-Jarrāḥ ibn Malīḥ, Abū Sufyān al-Kūfī",
+    "short_name": "Wakīʿ ibn al-Jarrāḥ",
+    "tabaqah": "Imāms of Fiqh",
+    "order": 80,
+    "biography": "Abū Sufyān Wakīʿ ibn al-Jarrāḥ ibn Malīḥ al-Kūfī was an imām and ḥāfiẓ, the muḥaddith of Iraq, and one of the oceans of knowledge and imāms of memorisation. Despite his own standing, he held Zufar in high esteem and frequented him. He died in 197 AH.",
+    "biography_source": "al-Naqīb, al-Madhhab al-Ḥanafī, p. 61 (translated)",
+    "biography_checked": false,
+    "death_ah": 197,
+    "death_approximate": false,
+    "places": [
+      "kufa"
+    ],
+    "teachers": [
+      "abu-hanifah"
+    ],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "yaqub-ibn-makki",
+    "name": "Yaʿqūb ibn Makkī ibn Ibrāhīm",
+    "short_name": "Yaʿqūb ibn Makkī",
+    "biography": "Yaʿqūb ibn Makkī ibn Ibrāhīm was a scholar of vast learning.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 85, no. 22 (translated)",
+    "biography_checked": false,
+    "death_ah": null,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  },
+  {
+    "id": "yunus-ibn-tahir-al-nusayri",
+    "name": "Yūnus ibn Ṭāhir al-Nuṣayrī",
+    "short_name": "Yūnus ibn Ṭāhir al-Nuṣayrī",
+    "biography": "Yūnus ibn Ṭāhir al-Nuṣayrī was Shaykh al-Islām and one of the leading scholars of Balkh. His works include al-Bahjah fī Dhikr Aṣḥāb Abī Ḥanīfah. He was the first to be called Shaykh al-Islām in Balkh, and died in 411 AH.",
+    "biography_source": "al-Mudarris, Mashāyikh Balkh min al-Ḥanafiyyah, p. 89, no. 45 (translated)",
+    "biography_checked": false,
+    "death_ah": 411,
+    "death_approximate": false,
+    "places": [
+      "balkh"
+    ],
+    "chains": [
+      "balkh"
+    ],
+    "teachers": [],
+    "students": [],
+    "draft": false
+  }
+]

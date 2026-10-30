@@ -48,7 +48,7 @@ const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'nume
     <p><a class="button" href="/nisab/calculator/">Open the Zakāh Calculator →</a></p>
   </section>
 
-  <section class="box mahr">
+  <section class="box mahr" id="mahr">
     <h2>Mahr</h2>
     <h3 class="q">What is mahr?</h3>
     <p>Mahr is the marital gift a husband gives to his wife on marriage. It is her right and belongs to her alone.</p>
@@ -68,7 +68,7 @@ const time = new Date(nisab.updatedAt).toLocaleTimeString('en-US', { hour: 'nume
     </ol>
   </section>
 
-  <section class="box">
+  <section class="box" id="fitr">
     <h2>Niṣāb of Ṣadaqat al-Fiṭr <span class="muted small">({fitr.year})</span></h2>
     {fitr.amountPerPerson
       ? <p class="v">{usd(fitr.amountPerPerson)} <span class="muted small">per person</span></p>

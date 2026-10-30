@@ -78,6 +78,12 @@
     "longitude": 35.2354
   },
   {
+    "id": "juzjan",
+    "name": "Jūzjān",
+    "latitude": 36.665,
+    "longitude": 65.752
+  },
+  {
     "id": "karachi",
     "name": "Karachi",
     "latitude": 24.8607,
@@ -94,6 +100,12 @@
     "name": "Kāshghar",
     "latitude": 39.4704,
     "longitude": 75.9898
+  },
+  {
+    "id": "konya",
+    "name": "Konya",
+    "latitude": 37.8746,
+    "longitude": 32.4932
   },
   {
     "id": "kufa",

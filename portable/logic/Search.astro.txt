@@ -1,0 +1,136 @@
+---
+// Search box for the published fatāwā. Matches words, common spellings and related words
+// (src/data/search-synonyms.ts), and tolerates small typos. If nothing fits, it offers to send
+// the question to the Ask page with the words already filled in.
+interface Props { placeholder?: string; autofocus?: boolean; label?: string }
+const { placeholder = 'e.g. missed fasts, praying while travelling, zakāh on gold', label = 'Search our answers' } = Astro.props;
+---
+<div class="site-search">
+  <form role="search" action="/fatawa/" onsubmit="return false">
+    <label class="ss-label" for="ss-input">{label}</label>
+    <div class="ss-box">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+      <input id="ss-input" class="ss-input" type="search" name="q" autocomplete="off" placeholder={placeholder} />
+    </div>
+  </form>
+  <div class="ss-results" aria-live="polite"></div>
+</div>
+
+<script>
+  type Item = { t: string; u: string; c: string; cb: string; p: string; q: string; s: string };
+  type Index = { items: Item[]; synonyms: string[][]; stop: string[] };
+  let indexP: Promise<Index> | null = null;
+  const load = () => (indexP ??= fetch('/search-index.json').then((r) => r.json()));
+
+  const norm = (s: string) =>
+    s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[ʿʾ'’‘`]/g, '').toLowerCase();
+  const words = (s: string) => norm(s).split(/[^a-z0-9]+/).filter((w) => w.length > 1);
+  const stem = (w: string) => (w.length > 4 && w.endsWith('s') ? w.slice(0, -1) : w);
+
+  function close(a: string, b: string) {
+    if (a === b) return true;
+    if (a.length >= 4 && b.startsWith(a)) return true;
+    if (Math.min(a.length, b.length) < 6 || Math.abs(a.length - b.length) > 1) return false;
+    // One letter added, removed or changed.
+    let i = 0, j = 0, edits = 0;
+    while (i < a.length && j < b.length) {
+      if (a[i] === b[j]) { i++; j++; continue; }
+      if (++edits > 1) return false;
+      if (a.length > b.length) i++; else if (b.length > a.length) j++; else { i++; j++; }
+    }
+    return edits + (a.length - i) + (b.length - j) <= 1;
+  }
+
+  function prepare(ix: Index) {
+    const groups = new Map<string, Set<string>>();
+    for (const g of ix.synonyms) {
+      const toks = new Set(g.flatMap(words).map(stem));
+      for (const t of toks) groups.set(t, new Set([...(groups.get(t) ?? []), ...toks]));
+    }
+    const docs = ix.items.map((it) => ({
+      it,
+      fields: [
+        { w: 3, t: new Set(words(it.t).map(stem)) },
+        { w: 2.5, t: new Set(words(it.p).map(stem)) },
+        { w: 1.5, t: new Set(words(it.c + ' ' + it.cb).map(stem)) },
+        { w: 1, t: new Set(words(it.q + ' ' + it.s).map(stem)) },
+      ],
+    }));
+    return { groups, docs, stop: new Set(ix.stop) };
+  }
+  let prepared: ReturnType<typeof prepare> | null = null;
+
+  function search(query: string) {
+    const P = prepared!;
+    const qs = [...new Set(words(query).filter((w) => !P.stop.has(w)).map(stem))];
+    if (!qs.length) return { qs, hits: [] as { it: Item; score: number }[] };
+    const hits = P.docs.map(({ it, fields }) => {
+      let score = 0, matched = 0;
+      for (const q of qs) {
+        const alts = [q, ...(P.groups.get(q) ?? [])];
+        let best = 0;
+        for (const f of fields) {
+          for (const t of f.t) {
+            if (alts.some((a) => (a === q ? close(a, t) : a === t))) { best = Math.max(best, f.w); break; }
+          }
+        }
+        if (best) { score += best; matched++; }
+      }
+      // Favour answers that match more of the words typed.
+      // With three or more words, at least half must match.
+      if (qs.length >= 3 && matched < Math.ceil(qs.length / 2)) return { it, score: 0 };
+      return { it, score: matched ? score * (matched / qs.length) : 0 };
+    }).filter((h) => h.score > 0).sort((a, b) => b.score - a.score);
+    // Drop weak matches far below the best one.
+    const top = hits[0]?.score ?? 0;
+    return { qs, hits: hits.filter((h) => h.score >= top * 0.4).slice(0, 6) };
+  }
+
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  const clip = (s: string, n = 150) => (s.length > n ? s.slice(0, s.lastIndexOf(' ', n)) + '…' : s);
+
+  for (const root of document.querySelectorAll<HTMLElement>('.site-search')) {
+    const input = root.querySelector<HTMLInputElement>('.ss-input')!;
+    const out = root.querySelector<HTMLElement>('.ss-results')!;
+    let timer = 0;
+    const run = async () => {
+      const q = input.value.trim();
+      if (q.length < 2) { out.innerHTML = ''; return; }
+      if (!prepared) prepared = prepare(await load());
+      const { qs, hits } = search(q);
+      const ask = `/ask/?q=${encodeURIComponent(q)}`;
+      if (!qs.length) { out.innerHTML = ''; return; }
+      out.innerHTML = hits.length
+        ? `<ul class="ss-list">${hits.map(({ it }) => `<li><a href="${it.u}"><span class="ss-path">${esc(it.c)} › ${esc(it.p)}</span><span class="ss-title">${esc(it.t)}</span>${it.s ? `<span class="ss-short">${esc(clip(it.s))}</span>` : ''}</a></li>`).join('')}</ul>
+           <p class="ss-ask">Not quite your question? <a href="${ask}">Ask it here →</a></p>`
+        : `<div class="ss-none"><p><strong>We haven't answered this yet.</strong> You can send it to the Mufti, and your words will be filled in for you.</p><p><a class="button" href="${ask}">Ask this question</a></p></div>`;
+    };
+    input.addEventListener('focus', () => { load(); }, { once: true });
+    input.addEventListener('input', () => { clearTimeout(timer); timer = window.setTimeout(run, 180); });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); clearTimeout(timer); run(); }
+    });
+    const pre = new URLSearchParams(location.search).get('q');
+    if (pre && root.dataset.readQuery !== 'no') { input.value = pre; run(); }
+  }
+</script>
+
+<style is:global>
+  /* Global because results are added by the script. Everything is scoped under .site-search. */
+  .site-search { width: 100%; max-width: 680px; margin: 0 auto; text-align: left; }
+  .site-search .ss-label { display: block; font-weight: 600; margin: 0 0 8px; }
+  .site-search .ss-box { display: flex; align-items: center; gap: 10px; background: #fff; border: 2px solid var(--teal); border-radius: 999px; padding: 4px 18px; box-shadow: 0 2px 10px rgba(14, 90, 85, .08); }
+  .site-search .ss-box svg { color: var(--teal); flex: none; }
+  .site-search .ss-input { flex: 1; min-width: 0; border: 0 !important; outline: 0; background: transparent !important; font-size: 1.08rem; padding: 12px 0 !important; box-shadow: none !important; margin: 0 !important; }
+  .site-search .ss-results:empty { display: none; }
+  .site-search .ss-results { margin-top: 10px; background: var(--card); border: 1px solid var(--sand); border-radius: 12px; padding: 6px 16px 10px; }
+  .site-search .ss-list { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+  .site-search .ss-list li + li { border-top: 1px solid var(--sand); }
+  .site-search .ss-list a { display: flex; flex-direction: column; gap: 2px; padding: 10px 0; text-decoration: none; color: var(--ink); }
+  .site-search .ss-list a:hover .ss-title { color: var(--teal); text-decoration: underline; }
+  .site-search .ss-path { font-size: .8rem; color: var(--muted); }
+  .site-search .ss-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; }
+  .site-search .ss-short { font-size: .93rem; color: var(--muted); }
+  .site-search .ss-ask { margin: 6px 0 0; font-size: .95rem; }
+  .site-search .ss-none p { margin: 8px 0; }
+</style>

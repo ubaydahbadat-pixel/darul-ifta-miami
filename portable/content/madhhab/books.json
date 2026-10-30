@@ -1,1 +1,110 @@
-[]
+[
+  {
+    "id": "al-asl",
+    "title": "al-Aṣl",
+    "author": "imam-muhammad",
+    "recension_by": [
+      "abu-sulayman-al-juzjani"
+    ],
+    "draft": false
+  },
+  {
+    "id": "al-bahjah",
+    "title": "al-Bahjah fī Dhikr Aṣḥāb Abī Ḥanīfah",
+    "author": "yunus-ibn-tahir-al-nusayri",
+    "draft": false
+  },
+  {
+    "id": "al-fatawa-al-walwalijiyyah",
+    "title": "al-Fatāwā al-Walwālijiyyah",
+    "author": "abu-al-fath-al-walwaliji",
+    "draft": false
+  },
+  {
+    "id": "al-jami-al-kabir",
+    "title": "al-Jāmiʿ al-Kabīr",
+    "author": "imam-muhammad",
+    "draft": false
+  },
+  {
+    "id": "al-jami-al-saghir",
+    "title": "al-Jāmiʿ al-Ṣaghīr",
+    "author": "imam-muhammad",
+    "draft": false
+  },
+  {
+    "id": "al-kafi",
+    "title": "al-Kāfī",
+    "author": "al-hakim-al-shahid",
+    "draft": false
+  },
+  {
+    "id": "al-kharaj",
+    "title": "al-Kharāj",
+    "author": "qadi-abu-yusuf",
+    "draft": false
+  },
+  {
+    "id": "al-mabsut",
+    "title": "al-Mabsūṭ",
+    "author": "muhammad-ibn-abi-sahl-al-sarakhsi",
+    "work_type": "Commentary (Sharḥ)",
+    "based_on": [
+      "al-kafi"
+    ],
+    "draft": false
+  },
+  {
+    "id": "al-nawazil",
+    "title": "al-Nawāzil",
+    "author": "abu-al-layth-al-samarqandi",
+    "draft": false
+  },
+  {
+    "id": "al-siyar-al-kabir",
+    "title": "al-Siyar al-Kabīr",
+    "author": "imam-muhammad",
+    "draft": false
+  },
+  {
+    "id": "al-ziyadat",
+    "title": "al-Ziyādāt",
+    "author": "imam-muhammad",
+    "draft": false
+  },
+  {
+    "id": "muwatta-imam-muhammad",
+    "title": "Muwaṭṭaʾ Imām Muḥammad",
+    "author": "imam-malik",
+    "recension_by": [
+      "imam-muhammad"
+    ],
+    "draft": false
+  },
+  {
+    "id": "sharh-al-jami-al-kabir-al-hashimi",
+    "title": "Sharḥ al-Jāmiʿ al-Kabīr",
+    "author": "abd-al-muttalib-al-hashimi",
+    "work_type": "Commentary (Sharḥ)",
+    "based_on": [
+      "al-jami-al-kabir"
+    ],
+    "draft": false
+  },
+  {
+    "id": "sharh-al-jami-al-saghir-al-zahir",
+    "title": "Sharḥ al-Jāmiʿ al-Ṣaghīr",
+    "author": "al-zahir-al-balkhi",
+    "work_type": "Commentary (Sharḥ)",
+    "based_on": [
+      "al-jami-al-saghir"
+    ],
+    "draft": false
+  },
+  {
+    "id": "zubdat-al-riwayat",
+    "title": "Zubdat al-Riwāyāt fī Furūʿ al-Fiqh",
+    "author": "alim-al-din-al-balkhi",
+    "draft": false
+  }
+]

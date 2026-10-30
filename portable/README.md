@@ -43,3 +43,7 @@ everything else is overwritten on each run, so do not edit those files here: edi
 
 The working rules for fatwa pages (methodology order, references in full and never corrected, naming and
 dates, privacy) are in `CLAUDE.md` at the top of the repository. They are not tied to Astro.
+
+## Search (added 30 Oct 2026)
+
+The site search is a keyword search over published fatāwā (title, topic, category, question, short answer), with groups of related words and spellings (`src/data/search-synonyms.ts`, copied in `logic/` when exported) and one-letter typo tolerance for longer words. If nothing matches, it links to the Ask form with the typed words prefilled (`/ask/?q=…`). It needs only the fatāwā content and the synonym list to rebuild.

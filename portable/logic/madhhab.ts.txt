@@ -4,16 +4,33 @@
 import { getCollection } from 'astro:content';
 
 export type Scholar = {
-  id: string; name: string; short: string; deathAh: number | null; approx: boolean;
-  places: string[]; teachers: string[]; students: string[]; books: string[];
+  id: string; name: string; short: string; tabaqah: string | null; order: number | null; bio: string; bioSource: string; deathAh: number | null; approx: boolean;
+  places: string[]; chains: string[]; teachers: string[]; students: string[]; books: string[]; recensions: string[];
 };
 export type Book = {
-  id: string; title: string; author: string | null; place: string | null; content: string;
+  id: string; title: string; author: string | null; recensionBy: string[];
+  type: string | null; basedOn: string[]; derived: string[]; place: string | null; content: string;
   fiqhPoints: string[]; influencedBy: string[]; influenced: string[];
 };
 export type Place = { id: string; name: string; lat: number; lng: number };
+export type Chain = { id: string; name: string; colour: string; order: number | null };
 
 const uniq = (a: string[]) => [...new Set(a)];
+
+// The groups on the Scholars page, in order. Keep the same list in public/admin/config.yml (Ṭabaqah field).
+export const TABAQAT = ['Ṣaḥābah', 'Tābiʿūn', 'Imāms of Fiqh',
+  ...Array.from({ length: 10 }, (_, i) => `Ṭabaqah ${i + 1}`)];
+
+// Kinds of work, as offered in /admin (Books → Type of work). Keep the two lists the same.
+// `plural` is the heading on the base book's page.
+export const WORK_TYPES = [
+  { name: 'Original work', plural: '' },
+  { name: 'Commentary (Sharḥ)', plural: 'Commentaries (Shurūḥ)' },
+  { name: 'Abridgement (Mukhtaṣar)', plural: 'Abridgements (Mukhtaṣarāt)' },
+  { name: 'Gloss (Ḥāshiyah)', plural: 'Glosses (Ḥawāshī)' },
+  { name: 'Other', plural: 'Other works based on it' },
+];
+export const shortType = (t: string | null) => (t ? t.replace(/\s*\(.*\)$/, '') : '');
 
 export function deathLabel(s: { deathAh: number | null; approx: boolean }) {
   if (s.deathAh == null) return '';
@@ -23,17 +40,26 @@ export function deathLabel(s: { deathAh: number | null; approx: boolean }) {
 export async function loadMadhhab() {
   const visible = (e: { data: { draft?: boolean } }) => import.meta.env.DEV || !e.data.draft;
   const placeEntries = await getCollection('places');
+  const chainEntries = await getCollection('chains');
+  const chains = new Map<string, Chain>(chainEntries
+    .map((c) => ({ id: c.id, name: c.data.name, colour: c.data.colour, order: c.data.order ?? null }))
+    .sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9) || a.name.localeCompare(b.name))
+    .map((c) => [c.id, c]));
   const scholarEntries = (await getCollection('scholars')).filter(visible);
   const bookEntries = (await getCollection('books')).filter(visible);
 
   const places = new Map<string, Place>(placeEntries.map((p) => [p.id, { id: p.id, name: p.data.name, lat: p.data.latitude, lng: p.data.longitude }]));
   const scholars = new Map<string, Scholar>(scholarEntries.map((e) => [e.id, {
-    id: e.id, name: e.data.name, short: e.data.short_name?.trim() || e.data.name,
+    id: e.id, name: e.data.name, short: e.data.short_name?.trim() || e.data.name, tabaqah: e.data.tabaqah?.trim() || null, order: e.data.order ?? null,
+    // A biography shows on the site only once the Mufti has ticked "Biography checked" (always shown in local preview).
+    bio: e.data.biography_checked || import.meta.env.DEV ? e.data.biography.trim() : '',
+    bioSource: e.data.biography_source?.trim() || '',
     deathAh: e.data.death_ah ?? null, approx: e.data.death_approximate,
-    places: e.data.places.filter((p) => places.has(p)), teachers: [...e.data.teachers], students: [...e.data.students], books: [],
+    places: e.data.places.filter((p) => places.has(p)), chains: e.data.chains.filter((c) => chains.has(c)), teachers: [...e.data.teachers], students: [...e.data.students], books: [], recensions: [],
   }]));
   const books = new Map<string, Book>(bookEntries.map((e) => [e.id, {
-    id: e.id, title: e.data.title, author: e.data.author ?? null, place: e.data.place ?? null,
+    id: e.id, title: e.data.title, author: e.data.author ?? null, recensionBy: [...e.data.recension_by],
+    type: e.data.work_type?.trim() || null, basedOn: [...e.data.based_on], derived: [], place: e.data.place ?? null,
     content: e.data.content, fiqhPoints: e.data.fiqh_points,
     influencedBy: [...e.data.influenced_by], influenced: [...e.data.influenced],
   }]));
@@ -53,6 +79,13 @@ export async function loadMadhhab() {
     if (b.author && !scholars.has(b.author)) b.author = null;
     if (b.place && !places.has(b.place)) b.place = null;
     if (b.author) scholars.get(b.author)!.books.push(b.id);
+    b.recensionBy = uniq(b.recensionBy).filter((x) => scholars.has(x));
+    for (const x of b.recensionBy) scholars.get(x)!.recensions.push(b.id);
+  }
+  // Works based on another book (commentaries, abridgements, glosses) are listed on the base book.
+  for (const b of books.values()) {
+    b.basedOn = uniq(b.basedOn).filter((x) => books.has(x) && x !== b.id);
+    for (const x of b.basedOn) books.get(x)!.derived.push(b.id);
   }
   for (const b of books.values()) {
     b.influencedBy = uniq(b.influencedBy).filter((x) => books.has(x) && x !== b.id);
@@ -66,5 +99,5 @@ export async function loadMadhhab() {
   // A book with no place of its own is shown at its author's main place.
   const bookPlace = (b: Book) => b.place ?? (b.author ? scholars.get(b.author)!.places[0] ?? null : null);
 
-  return { places, scholars, books, scholarList, bookList, bookPlace };
+  return { chains, places, scholars, books, scholarList, bookList, bookPlace };
 }
